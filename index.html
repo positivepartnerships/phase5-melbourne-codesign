@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Melbourne co-design prep — Positive Partnerships Phase 5</title>
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --paper: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --ink-faint: #7a7a7a;
+    --rule: #e5e2dc;
+    --rule-soft: #f0ede7;
+    --accent: #1f4e4f;
+    --accent-soft: #e8efee;
+    --warn: #8a4b1c;
+    --warn-soft: #f5ece1;
+    --tag-bg: #f3efe8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { text-decoration: none; }
+
+  .layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+  nav.toc {
+    position: sticky; top: 0; align-self: start;
+    height: 100vh; overflow-y: auto;
+    background: var(--paper);
+    border-right: 1px solid var(--rule);
+    padding: 28px 22px;
+    font-size: 14px;
+  }
+  nav.toc .brand { font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 18px; }
+  nav.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: tocsec; }
+  nav.toc li { counter-increment: tocsec; margin: 0 0 6px 0; }
+  nav.toc li a {
+    display: block;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 6px;
+    line-height: 1.35;
+  }
+  nav.toc li a:hover { background: var(--accent-soft); color: var(--accent); }
+  nav.toc li a::before { content: counter(tocsec) ".  "; color: var(--ink-faint); }
+  nav.toc .meta { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 12.5px; color: var(--ink-faint); line-height: 1.5; }
+  nav.toc .controls { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  nav.toc button {
+    font: inherit; font-size: 13px;
+    padding: 8px 10px;
+    background: var(--paper);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  nav.toc button:hover { background: var(--accent-soft); }
+
+  main { padding: 56px 64px 96px 64px; max-width: 980px; }
+  header.hero { margin-bottom: 48px; }
+  header.hero .eyebrow { font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+  header.hero h1 { font-size: 34px; line-height: 1.15; margin: 0 0 14px 0; font-weight: 600; letter-spacing: -0.01em; }
+  header.hero p.lede { font-size: 17px; color: var(--ink-soft); max-width: 68ch; margin: 0 0 14px 0; }
+
+  .frame {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 22px 0 36px 0;
+    border-radius: 4px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .frame strong { color: var(--ink); }
+
+  section.section { margin-bottom: 64px; scroll-margin-top: 24px; }
+  section.section > h2 {
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+    margin: 0 0 6px 0; font-weight: 600;
+  }
+  section.section > h2 .num { color: var(--ink-faint); margin-right: 8px; }
+  section.section > h3.title { font-size: 26px; line-height: 1.2; margin: 0 0 10px 0; font-weight: 600; letter-spacing: -0.005em; }
+  section.section > p.intro { font-size: 16px; color: var(--ink-soft); max-width: 72ch; margin: 0 0 28px 0; }
+
+  h4 { font-size: 16px; margin: 28px 0 10px 0; font-weight: 600; }
+  h5 { font-size: 14px; margin: 18px 0 8px 0; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* Service cards */
+  .services { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .service {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 18px 22px;
+  }
+  .service-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+  .service-num {
+    font-weight: 600; color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 10px; border-radius: 999px; font-size: 13px;
+  }
+  .service-name { font-size: 17px; font-weight: 600; }
+  .service-tag { font-size: 12px; color: var(--ink-faint); border: 1px solid var(--rule); padding: 2px 8px; border-radius: 999px; }
+  .service-body { font-size: 15px; color: var(--ink-soft); }
+  .service dl { display: grid; grid-template-columns: 130px 1fr; gap: 6px 14px; margin: 10px 0 0 0; font-size: 14px; }
+  .service dt { color: var(--ink-faint); font-weight: 500; }
+  .service dd { margin: 0; color: var(--ink); }
+
+  /* Catalogue tables */
+  table.cat {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden;
+    margin: 8px 0 22px 0;
+  }
+  table.cat th, table.cat td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule-soft); }
+  table.cat th { background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; }
+  table.cat tr:last-child td { border-bottom: none; }
+  table.cat td.svc { white-space: nowrap; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+
+  /* Voices grid */
+  .voices { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .voice {
+    border: 1px solid var(--rule); border-radius: 6px; background: var(--paper);
+    padding: 14px 16px; font-size: 14px;
+  }
+  .voice h4 { margin: 0 0 6px 0; font-size: 15px; }
+  .voice .where { font-size: 12.5px; color: var(--ink-faint); margin-top: 8px; }
+
+  /* Agenda */
+  ol.agenda { list-style: none; padding: 0; margin: 0; counter-reset: ag; }
+  ol.agenda li {
+    counter-increment: ag;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 18px 14px 64px;
+    margin: 0 0 10px 0;
+    position: relative;
+    font-size: 15px;
+  }
+  ol.agenda li::before {
+    content: counter(ag);
+    position: absolute; left: 18px; top: 14px;
+    width: 30px; height: 30px; line-height: 30px; text-align: center;
+    background: var(--accent); color: #fff; font-weight: 600; font-size: 13px;
+    border-radius: 999px;
+  }
+  ol.agenda .when { font-size: 12.5px; color: var(--ink-faint); display: block; margin-bottom: 4px; letter-spacing: 0.02em; text-transform: uppercase; }
+  ol.agenda .what { font-weight: 600; margin-bottom: 4px; }
+  ol.agenda .how { color: var(--ink-soft); font-size: 14px; }
+
+  /* Question list */
+  ol.qs { padding-left: 22px; }
+  ol.qs li { margin-bottom: 14px; font-size: 15px; }
+  ol.qs li .q { font-weight: 600; }
+  ol.qs li .why { color: var(--ink-soft); font-size: 14px; display: block; margin-top: 2px; }
+
+  /* Slides */
+  .slide-deck { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .slide {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 6px;
+    padding: 22px 26px; position: relative;
+  }
+  .slide .slide-num { position: absolute; top: 14px; right: 18px; font-size: 12px; color: var(--ink-faint); letter-spacing: 0.05em; text-transform: uppercase; }
+  .slide h4 { font-size: 19px; margin: 0 0 6px 0; }
+  .slide .subtitle { font-size: 13.5px; color: var(--ink-faint); margin-bottom: 14px; }
+  .slide ul { margin: 8px 0 0 0; padding-left: 20px; }
+  .slide ul li { margin-bottom: 6px; font-size: 15px; }
+  .slide .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .slide .stat { font-size: 28px; font-weight: 600; color: var(--accent); display: block; line-height: 1.1; }
+  .slide .stat-label { font-size: 12.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.04em; }
+  .slide .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 8px; padding: 14px 0; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
+
+  /* Tags */
+  .pill {
+    display: inline-block; padding: 2px 8px;
+    background: var(--tag-bg); color: var(--ink-soft);
+    border-radius: 999px; font-size: 12px; margin-right: 5px; margin-bottom: 4px;
+  }
+  .pill.warn { background: var(--warn-soft); color: var(--warn); }
+  .pill.accent { background: var(--accent-soft); color: var(--accent); }
+
+  ul.clean { list-style: none; padding: 0; margin: 8px 0; }
+  ul.clean li { padding: 8px 0; border-top: 1px solid var(--rule-soft); font-size: 15px; }
+  ul.clean li:first-child { border-top: none; }
+  ul.clean li strong { color: var(--ink); }
+
+  /* Presenter mode */
+  body.presenter nav.toc { display: none; }
+  body.presenter .layout { grid-template-columns: 1fr; }
+  body.presenter main { padding: 0; max-width: none; background: #0f1717; min-height: 100vh; }
+  body.presenter section { display: none; }
+  body.presenter section#sec-5 { display: block; }
+  body.presenter section#sec-5 > h2,
+  body.presenter section#sec-5 > h3.title,
+  body.presenter section#sec-5 > p.intro { display: none; }
+  body.presenter .slide-deck { display: block; }
+  body.presenter .slide {
+    display: none;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 8vh 10vw;
+    min-height: 100vh;
+    margin: 0;
+  }
+  body.presenter .slide.active { display: block; }
+  body.presenter .slide h4 { font-size: 42px; margin-bottom: 12px; }
+  body.presenter .slide .subtitle { font-size: 18px; margin-bottom: 32px; }
+  body.presenter .slide ul li { font-size: 22px; margin-bottom: 12px; }
+  body.presenter .slide .stat { font-size: 56px; }
+  body.presenter .slide .stat-label { font-size: 14px; }
+  body.presenter .slide .slide-num { font-size: 14px; top: 24px; right: 32px; }
+  body.presenter .presenter-controls { display: flex; }
+  .presenter-controls { display: none; position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); gap: 12px; background: rgba(15,23,23,0.92); padding: 10px 14px; border-radius: 999px; z-index: 100; }
+  .presenter-controls button {
+    font: inherit; font-size: 13px;
+    padding: 6px 14px;
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,0.3); border-radius: 999px;
+    cursor: pointer;
+  }
+  .presenter-controls button:hover { background: rgba(255,255,255,0.1); }
+  .presenter-controls .pos { color: rgba(255,255,255,0.7); font-size: 13px; align-self: center; padding: 0 6px; }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.toc { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule); }
+    main { padding: 32px 22px 64px 22px; }
+    header.hero h1 { font-size: 26px; }
+    .service dl { grid-template-columns: 1fr; gap: 2px; }
+    .service dt { margin-top: 6px; }
+    .slide .stats { grid-template-columns: repeat(2, 1fr); }
+    .slide .grid2 { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    nav.toc, .presenter-controls { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    main { padding: 0; max-width: none; }
+    body { background: #fff; font-size: 11pt; }
+    section.section { page-break-inside: avoid; margin-bottom: 32px; }
+    .service, .slide, table.cat { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Sections">
+    <div class="brand">Melbourne co-design prep</div>
+    <ol>
+      <li><a href="#sec-1">Service requirements inventory</a></li>
+      <li><a href="#sec-2">Program / session catalogue</a></li>
+      <li><a href="#sec-3">Co-design inputs needed</a></li>
+      <li><a href="#sec-4">Draft workshop flow</a></li>
+      <li><a href="#sec-5">Slide outline</a></li>
+      <li><a href="#sec-6">Open questions for Cheryl</a></li>
+      <li><a href="#sec-7">Evaluation framework considerations</a></li>
+    </ol>
+    <div class="controls">
+      <button id="presenter-toggle" type="button">Enter presenter mode</button>
+      <button onclick="window.print()" type="button">Print / save PDF</button>
+    </div>
+    <div class="meta">
+      Working scaffold prepared ahead of the Melbourne co-design session with Autism CRC. Drawn from RFT PRN. ESE25/10020 Schedule 1.
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">Positive Partnerships Phase 5 · Working scaffold, not a method</div>
+      <h1>Prep pack for the Melbourne co-design session with Autism CRC</h1>
+      <p class="lede">A starting scaffold so the room has something to react to rather than starting from a blank page. It is not a co-design framework, and it does not preempt Cheryl's process — it surfaces the service requirements from the RFT, the session and resource types that have to be designed, and where lived experience and student voice need to be embedded.</p>
+      <div class="frame">
+        <strong>How to use this.</strong> Share before the meeting if helpful, or pull it up at the start to anchor the conversation. The aim is to save the first hour of orientation so the room can spend more time on the harder co-design questions. Cheryl owns the method; this only sketches the surface area.
+      </div>
+    </header>
+
+    <!-- =================== SECTION 1 =================== -->
+    <section class="section" id="sec-1">
+      <h2><span class="num">01</span>Service requirements inventory</h2>
+      <h3 class="title">Nine services to design and deliver across 1 July 2026 – 30 June 2029</h3>
+      <p class="intro">All nine services from Schedule 1 of the RFT, with their audiences, required delivery modes, embedded co-design expectations, and headline KPIs. Services 1–5 are the participant-facing offer; Services 6–8 are the platform, engagement and assurance layer; Service 9 is on-call.</p>
+
+      <div class="services">
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 1</span>
+            <span class="service-name">Professional Learning for teachers, principals and other school staff</span>
+            <span class="service-tag">Participant-facing</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Audience</dt><dd>Teachers, principals, school leaders, paraprofessionals (teacher aides / learning assistants), inclusion / learning-support coordinators</dd>
+              <dt>Delivery modes</dt><dd>F2F multi-day · F2F short topic · virtual classroom · self-paced · mixed-mode · faculty / leadership team · early-career-tailored</dd>
+              <dt>Sub-services</dt><dd>1A design &amp; develop · 1B deliver · 1C educator Community of Practice</dd>
+              <dt>Co-design with</dt><dd>Educators, education authorities, Autistic people, people with disability, First Nations, CALD</dd>
+              <dt>Anchored to</dt><dd>DDA 1992 · DSE 2005 · NCCD · Australian Curriculum v9 · APST · APSP · National Autism Strategy 2025–31</dd>
+              <dt>Critical hooks</dt><dd>Must meet teacher regulatory authority PL recognition; align with Autism Microcredential</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 2</span>
+            <span class="service-name">Parent and carer workshops and training</span>
+            <span class="service-tag">Participant-facing</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Audience</dt><dd>Parents and carers of Autistic school-age students, primary and secondary</dd>
+              <dt>Delivery modes</dt><dd>F2F multi-day · F2F short topic · virtual classroom · mixed-mode · weekend &amp; after-hours</dd>
+              <dt>Sub-services</dt><dd>2A design &amp; develop · 2B deliver · 2C post-training networking / forum</dd>
+              <dt>Co-design with</dt><dd>Lived experience (Autistic, autism community), First Nations, CALD parents and carers</dd>
+              <dt>Topic anchors</dt><dd>DDA · DSE participant rights · advocacy mechanisms · home–school partnerships · transitions (pre-school → primary → secondary → post-school)</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 3</span>
+            <span class="service-name">Training and support for whole school communities</span>
+            <span class="service-tag">Participant-facing</span>
+            <span class="pill warn">Student voice expected</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Audience</dt><dd>Whole school community: leadership, staff, parents and carers, students (where appropriate)</dd>
+              <dt>Engagement phases</dt><dd>1) Pre-engagement &amp; assessment · 2) Targeted PL + whole-school training · 3) Collaboration &amp; student voice · 4) Ongoing support &amp; champion role</dd>
+              <dt>Co-design with</dt><dd>School leadership, school champion, parents/carers, students where appropriate, Service 7 stakeholders</dd>
+              <dt>Targets</dt><dd>Min 15 schools yr 1; min 20 schools yr 2 onwards. Min 12 months of support per school.</dd>
+              <dt>Outputs per school</dt><dd>Action plan with milestones, school champion identified, formal follow-up session, links to school strategic plan</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 4</span>
+            <span class="service-name">Outreach for First Nations communities</span>
+            <span class="service-tag">Participant-facing</span>
+            <span class="pill warn">Co-design mandated</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Audience</dt><dd>Educators, parents and carers of Autistic First Nations school students; ACCO staff</dd>
+              <dt>Co-design partners</dt><dd>First Nations communities, ACCOs, First Peoples Disability Network</dd>
+              <dt>Principles</dt><dd>Cultural safety · co-design · community-led engagement · strengths-based · reciprocity &amp; respect · alignment with Closing the Gap and ATSIEAP</dd>
+              <dt>Targets</dt><dd>Min 10 workshops per year. Min 2 ACCO partnerships per year, supported across the contract period.</dd>
+              <dt>Translation</dt><dd>Materials adaptable to local context; First Nations language translation where required</dd>
+              <dt>Compliance</dt><dd>IPP / MMR if any Remote Area delivery; capability uplift evidenced via ACCO-endorsed case report</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 5</span>
+            <span class="service-name">Targeted workshops and training for CALD families</span>
+            <span class="service-tag">Participant-facing</span>
+            <span class="pill warn">Co-design mandated</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Audience</dt><dd>CALD parents and carers of Autistic school-age students. CALD includes the Deaf community.</dd>
+              <dt>Co-design partners</dt><dd>CALD communities, National Ethnic Disability Alliance, advocacy groups, Autistic CALD voices</dd>
+              <dt>Targets</dt><dd>Min 10 workshops per year. Priority access for new migrants and refugees. Delivered nationally including regional, rural, remote.</dd>
+              <dt>Translation</dt><dd>Materials adaptable to community; translation into community languages and Auslan</dd>
+              <dt>Facilitators</dt><dd>Persons with experience working with CALD families; able to speak the community's primary language(s)</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 6</span>
+            <span class="service-name">Online learning and information services</span>
+            <span class="service-tag">Platform</span>
+            <span class="pill accent">MVP 1 Jul 2026 · Full release 31 Dec 2026</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Sub-services</dt><dd>6A program website · 6B online learning system · 6C information &amp; learning resources</dd>
+              <dt>Resource formats</dt><dd>Fact sheets · articles / blogs · videos &amp; animations · webinars · interactive tools · podcasts</dd>
+              <dt>Accessibility</dt><dd>WCAG 2.1 AA · Easy Read · Auslan · 15+ community languages</dd>
+              <dt>Co-design via</dt><dd>User-Centred Design with diverse users incl. people with disability, First Nations, CALD, key stakeholders, the department</dd>
+              <dt>Standards</dt><dd>Australian Government Digital Experience Policy (Service / Access / Inclusion / Performance Standards) · 99.95% uptime · PSPF / ISM / Essential Eight</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 7</span>
+            <span class="service-name">Stakeholder engagement and promotion</span>
+            <span class="service-tag">Engagement</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Sub-services</dt><dd>7A communications &amp; promotion plan · 7B stakeholder forums</dd>
+              <dt>Forum cohorts</dt><dd>1) Autism &amp; disability associations + allied health · 2) First Nations (FPDN, ACCOs, community members) · 3) CALD (NEDA, advocacy, Deaf community) · 4) Australian Government · 5) State / Territory + non-gov education authorities + parent &amp; carer associations</dd>
+              <dt>Purpose</dt><dd>Forums inform Services 1–6; promote across jurisdictions; encourage participation from priority cohorts</dd>
+              <dt>Note for Melbourne</dt><dd>Autism CRC's role in co-design needs to be located clearly relative to these forums (see open questions, §6).</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 8</span>
+            <span class="service-name">Program data, performance monitoring and continuous improvement</span>
+            <span class="service-tag">Assurance</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Sub-services</dt><dd>8A data collection &amp; management · 8B performance monitoring &amp; CI</dd>
+              <dt>Plan</dt><dd>Data, Performance and Continuous Improvement Plan, approved by the department</dd>
+              <dt>Inputs</dt><dd>Service metrics · participant feedback &amp; surveys · website &amp; social analytics · stakeholder forum feedback · delivery partner input</dd>
+              <dt>Reporting</dt><dd>Quarterly progress · annual reports · IPP QPR · AIP implementation · ad hoc · final report</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-num">Service 9</span>
+            <span class="service-name">Targeted projects (if required)</span>
+            <span class="service-tag">On-call</span>
+          </div>
+          <div class="service-body">
+            <dl>
+              <dt>Scope</dt><dd>Research projects · new training resources · tailored training for identified cohorts. Earliest commencement: 1 July 2027.</dd>
+              <dt>Triggers</dt><dd>Emerging issues or new government priorities, agreed in writing with the department</dd>
+              <dt>Costing basis</dt><dd>Hourly &amp; daily rates, plus indicative costs for: a research project + report; a new learning resource; a new training session</dd>
+            </dl>
+          </div>
+        </article>
+
+      </div>
+
+      <h4>Cross-cutting requirements that shape co-design</h4>
+      <ul class="clean">
+        <li><strong>Requirement 5 — Co-design method.</strong> The RFT specifies that, where co-design is required, the supplier must adhere to the principles and follow the guidance of the <em>People with Disability Australia (PWDA) Co-Design Programming Overview</em>. This is the named methodology in the contract.</li>
+        <li><strong>Lived experience throughout.</strong> Content and delivery must incorporate lived experience and the perspectives of the autism community across <em>all</em> services, not only Services 4 and 5.</li>
+        <li><strong>Student voice.</strong> Explicitly named in Service 3 ("options for a student voice, where appropriate") within the whole-school community model. No equivalent named hook in Services 1, 2, 4, 5, 6 — worth deciding whether to embed it more widely.</li>
+        <li><strong>Department approval.</strong> All training materials, online resources, website content and promotional content must be approved by the department prior to publication or use.</li>
+        <li><strong>Phase 4 inheritance.</strong> Existing Phase 4 materials will be handed over and must be reviewed, refreshed, replaced or built on — co-design starts from a body of existing content, not a blank slate.</li>
+      </ul>
+    </section>
+
+    <!-- =================== SECTION 2 =================== -->
+    <section class="section" id="sec-2">
+      <h2><span class="num">02</span>Program / session catalogue</h2>
+      <h3 class="title">The actual things that need to be designed</h3>
+      <p class="intro">Pulled out of the RFT and grouped by modality so the room can see, in one place, the surface area of what has to be co-designed. Durations are indicative — the RFT names some formats explicitly (multi-day, virtual classroom, short topic) but leaves length to the tenderer; 90-minute topic sessions are flagged here as a likely default for the online topic offer.</p>
+
+      <h4>Face-to-face</h4>
+      <table class="cat">
+        <thead><tr><th>Format</th><th>Indicative duration</th><th>Audience</th><th>Service(s)</th></tr></thead>
+        <tbody>
+          <tr><td>Comprehensive PL workshop</td><td>1–2 days</td><td>Teachers, school leaders, paraprofessionals</td><td class="svc">1, 3</td></tr>
+          <tr><td>Short / targeted topic session</td><td>Half-day or 90 min</td><td>Teachers, school leaders</td><td class="svc">1, 3</td></tr>
+          <tr><td>Faculty / leadership team training</td><td>Half-day to full day</td><td>School leadership groups</td><td class="svc">1, 3</td></tr>
+          <tr><td>Comprehensive parent / carer workshop</td><td>1 day</td><td>Parents and carers</td><td class="svc">2, 3</td></tr>
+          <tr><td>Parent / carer topic session</td><td>2–3 hrs (incl. weekend / after-hours)</td><td>Parents and carers</td><td class="svc">2</td></tr>
+          <tr><td>Whole-school community workshop</td><td>Variable, scoped per school</td><td>Staff + parents + leadership</td><td class="svc">3</td></tr>
+          <tr><td>First Nations community workshop</td><td>Co-designed with community</td><td>Educators, parents, carers in First Nations communities</td><td class="svc">4</td></tr>
+          <tr><td>CALD community workshop</td><td>Co-designed with community, in language</td><td>CALD parents and carers</td><td class="svc">5</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Online — live</h4>
+      <table class="cat">
+        <thead><tr><th>Format</th><th>Indicative duration</th><th>Audience</th><th>Service(s)</th></tr></thead>
+        <tbody>
+          <tr><td>Virtual classroom (interactive PL)</td><td>2 hrs typical</td><td>Teachers, school staff</td><td class="svc">1, 3</td></tr>
+          <tr><td>Virtual parent / carer session</td><td>90 min typical</td><td>Parents and carers</td><td class="svc">2</td></tr>
+          <tr><td>Online topic session</td><td>90 min</td><td>Teachers, parents (varies by topic)</td><td class="svc">1, 2, 3, 6B</td></tr>
+          <tr><td>Webinar (broadcast format)</td><td>45–60 min</td><td>All audiences</td><td class="svc">6C</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Online — self-paced and mixed</h4>
+      <table class="cat">
+        <thead><tr><th>Format</th><th>Indicative duration</th><th>Audience</th><th>Service(s)</th></tr></thead>
+        <tbody>
+          <tr><td>Foundational online module (accredited)</td><td>30–60 min per module</td><td>Teachers, school staff</td><td class="svc">6B</td></tr>
+          <tr><td>Topic module (self-paced)</td><td>20–45 min</td><td>All audiences</td><td class="svc">6B</td></tr>
+          <tr><td>Mixed-mode (pre-work + live workshop)</td><td>Module + 1–2 hr live</td><td>Teachers, parents</td><td class="svc">1, 2, 3</td></tr>
+          <tr><td>Educator Community of Practice</td><td>Ongoing</td><td>Past PL participants</td><td class="svc">1C, 6A</td></tr>
+          <tr><td>Parent / carer networking forum</td><td>Ongoing</td><td>Past participants</td><td class="svc">2C, 6A</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Information &amp; learning resources (Service 6C)</h4>
+      <table class="cat">
+        <thead><tr><th>Format</th><th>Audience focus</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Fact sheet</td><td>All audiences (general &amp; targeted)</td><td>Easy Read, Auslan, 15+ community languages where applicable</td></tr>
+          <tr><td>Article / blog</td><td>Parents, school staff</td><td>Topical / current-issue focus</td></tr>
+          <tr><td>Video / animation</td><td>All audiences</td><td>Strong fit for First Nations, CALD, Easy Read variants</td></tr>
+          <tr><td>Webinar (recording)</td><td>All audiences</td><td>Companion to live broadcasts</td></tr>
+          <tr><td>Interactive tool</td><td>Parents, school staff</td><td>Higher build cost — co-design priority</td></tr>
+          <tr><td>Podcast</td><td>Parents, school staff, community</td><td>Strong vehicle for lived-experience storytelling</td></tr>
+        </tbody>
+      </table>
+
+      <h4>What the catalogue tells us about the co-design surface area</h4>
+      <ul class="clean">
+        <li><strong>Five distinct audience streams</strong> — educators, parents/carers, whole-school communities, First Nations, CALD — each with their own variant of most formats.</li>
+        <li><strong>Three layers of intensity</strong> — long-form comprehensive workshops, mid-form 90-minute sessions, short-form modules and resources.</li>
+        <li><strong>One platform spine</strong> — Service 6 — that has to integrate with all of the above, on a fixed deadline.</li>
+        <li><strong>Two ongoing community structures</strong> — educator CoP and parent / carer networking forum — that need their own co-design and moderation model.</li>
+      </ul>
+    </section>
+
+    <!-- =================== SECTION 3 =================== -->
+    <section class="section" id="sec-3">
+      <h2><span class="num">03</span>Co-design inputs needed</h2>
+      <h3 class="title">Whose voice we need, and where it lands</h3>
+      <p class="intro">A first-pass map of the participation expectations the RFT places on Phase 5. The aim here is not to assign people to roles — that's part of what Cheryl's process will do — but to make visible the range of voices that need to be embedded, and where each one matters most.</p>
+
+      <div class="voices">
+        <div class="voice">
+          <h4>Autistic people</h4>
+          Lived experience must shape content and delivery across <em>all</em> services. Includes Autistic adults, Autistic students (with appropriate consent and support), Autistic educators and Autistic parents.
+          <div class="where">Embedded across · Services 1, 2, 3, 6 mandate · Services 4, 5 cross-cut</div>
+        </div>
+        <div class="voice">
+          <h4>People with disability (broader)</h4>
+          The RFT names "people with disability" alongside Autistic people. Co-design via PWDA's framework is the named methodology under Requirement 5.
+          <div class="where">Method anchor · all services</div>
+        </div>
+        <div class="voice">
+          <h4>Students (student voice)</h4>
+          Explicitly named only in Service 3 ("options for a student voice, where appropriate"). A genuine open question for Melbourne is whether it should also reach into Services 1, 2 and 6.
+          <div class="where">Named · Service 3 · candidate for · 1, 2, 6</div>
+        </div>
+        <div class="voice">
+          <h4>Parents and carers</h4>
+          Both as participants and as co-designers. Required perspective in resource development, parent / carer training, whole-school community model, and resource formats.
+          <div class="where">Embedded · Services 2, 3, 6C</div>
+        </div>
+        <div class="voice">
+          <h4>First Nations communities</h4>
+          Co-design is mandated, not optional. Cultural safety, community-led engagement, ACCO partnerships, alignment with Closing the Gap and ATSIEAP. First Peoples Disability Network in Service 7B.
+          <div class="where">Mandated · Service 4 · cross-cut · 1, 2, 6</div>
+        </div>
+        <div class="voice">
+          <h4>CALD communities</h4>
+          Co-design is mandated. NEDA in Service 7B. Includes new migrants, refugees, the Deaf community. Translation into 15+ community languages and Auslan.
+          <div class="where">Mandated · Service 5 · cross-cut · 1, 2, 6</div>
+        </div>
+        <div class="voice">
+          <h4>Teachers, principals, school leaders</h4>
+          Co-design with educators and education authorities is required to ensure local context, policies and priorities are reflected. Must align with APST / APSP and teacher PL accreditation.
+          <div class="where">Required · Services 1, 3, 6</div>
+        </div>
+        <div class="voice">
+          <h4>Education authorities</h4>
+          State / territory government, Catholic, independent. They sit in Service 7B, but they also gate the practical question of whether PL is recognised in each jurisdiction.
+          <div class="where">Forum · Service 7B · gating · Service 1</div>
+        </div>
+        <div class="voice">
+          <h4>Allied health and peak bodies</h4>
+          Speech pathologists, occupational therapists, autism / disability advocacy peak bodies. Inform resources and identify communities and schools.
+          <div class="where">Forum · Service 7B</div>
+        </div>
+        <div class="voice">
+          <h4>Department of Education</h4>
+          Approves all materials. Approves the co-design method (via Quality Management Plan). Convenes Service 7 forums. Member of every governance loop.
+          <div class="where">Approval · all services</div>
+        </div>
+        <div class="voice">
+          <h4>Phase 4 evidence base</h4>
+          Existing materials, evaluation findings, and an 80,000+ participant body of feedback. Treat this as a "voice in the room" — co-design starts informed, not from zero.
+          <div class="where">Inheritance · all services</div>
+        </div>
+        <div class="voice">
+          <h4>Autism CRC</h4>
+          Named in Requirement 5 as a research source the supplier should "pay particular attention to". Their position in the Phase 5 co-design model — peer, advisor, deliverable contributor — is exactly the question Melbourne is meant to start to answer.
+          <div class="where">RFT-named research source · role TBD</div>
+        </div>
+      </div>
+
+      <h4>Layers of input — a working distinction</h4>
+      <ul class="clean">
+        <li><strong>Direction</strong> — voices that shape what gets designed in the first place. Lived experience advisors, First Nations and CALD community representatives, education authorities. Most leverage when engaged earliest.</li>
+        <li><strong>Co-creation</strong> — voices in the room while content is being made. Autistic educators, parents, students (where appropriate), allied health.</li>
+        <li><strong>Validation</strong> — voices that test what's been made. UCD testing for Service 6, user acceptance testing, pilot delivery.</li>
+        <li><strong>Continuous</strong> — voices that keep informing change after launch. Service 7B forums, the educator CoP, Service 8 surveys, ad-hoc participant feedback.</li>
+      </ul>
+    </section>
+
+    <!-- =================== SECTION 4 =================== -->
+    <section class="section" id="sec-4">
+      <h2><span class="num">04</span>Draft workshop flow</h2>
+      <h3 class="title">A possible shape for the Melbourne session</h3>
+      <p class="intro">A lightweight running order for the in-room session, designed to defer to Cheryl's facilitation while making sure the working surface area gets covered. Times are indicative; the spine matters more than the clock.</p>
+
+      <ol class="agenda">
+        <li>
+          <span class="when">Open · ~15 min · Cheryl-led</span>
+          <span class="what">Welcome, framing, and Cheryl's co-design approach</span>
+          <span class="how">Cheryl sets the method for the session and the broader phase. The PP team listens before pitching anything.</span>
+        </li>
+        <li>
+          <span class="when">Orient · ~20 min</span>
+          <span class="what">Walk through the service inventory and program catalogue</span>
+          <span class="how">PP / Autism CRC together skim §1 and §2 of this scaffold, just to anchor shared understanding of the surface area. Not a debate.</span>
+        </li>
+        <li>
+          <span class="when">Map · ~30 min</span>
+          <span class="what">Where does co-design land hardest?</span>
+          <span class="how">Group identifies the 3–4 services where co-design has the highest stakes (likely 3, 4, 5, 6 — but let the room decide). These get the deeper attention; the others are flagged for later workstreams.</span>
+        </li>
+        <li>
+          <span class="when">Voice · ~30 min</span>
+          <span class="what">Whose voice, where, in what role</span>
+          <span class="how">Walk through §3. Treat the four layers (direction / co-creation / validation / continuous) as a working frame — not a deliverable. The student-voice question is worth surfacing here explicitly.</span>
+        </li>
+        <li>
+          <span class="when">Frame · ~30 min · Cheryl-led</span>
+          <span class="what">Sketch a working co-design framework</span>
+          <span class="how">Cheryl drives — using whatever method she's bringing, informed by what's been mapped. Outcome: a shared rough framework, even if it's still a sketch.</span>
+        </li>
+        <li>
+          <span class="when">Position · ~20 min</span>
+          <span class="what">Autism CRC's role in Phase 5</span>
+          <span class="how">Where does Autism CRC sit relative to the Service 7B forums? Are they an advisor, a research partner, a delivery partner, or a hybrid? This needs an explicit answer or an explicit "we'll resolve it by date X".</span>
+        </li>
+        <li>
+          <span class="when">Close · ~15 min</span>
+          <span class="what">Decisions, parking lot, owners, dates</span>
+          <span class="how">Capture: what was decided, what's parked for next session, who owns what, and the next 2–3 milestones. Send the page back out updated within 48 hrs.</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- =================== SECTION 5 =================== -->
+    <section class="section" id="sec-5">
+      <h2><span class="num">05</span>Slide outline</h2>
+      <h3 class="title">A small visual deck for projecting at the start</h3>
+      <p class="intro">Five slides, designed to be shown only if the room wants something at the front. Click <strong>Enter presenter mode</strong> in the side bar to step through them full-screen; arrow keys / Esc to navigate and exit.</p>
+
+      <div class="slide-deck">
+
+        <article class="slide" data-slide="1">
+          <span class="slide-num">Slide 1 / 5</span>
+          <h4>Phase 5 at a glance</h4>
+          <div class="subtitle">1 July 2026 – 30 June 2029, with possible 24-month extension</div>
+          <div class="stats">
+            <div><span class="stat">9</span><span class="stat-label">Services</span></div>
+            <div><span class="stat">5</span><span class="stat-label">Audience streams</span></div>
+            <div><span class="stat">3</span><span class="stat-label">Years</span></div>
+            <div><span class="stat">15+</span><span class="stat-label">Languages</span></div>
+          </div>
+          <ul>
+            <li>Services 1–5 are participant-facing (PL, parents, whole school, First Nations, CALD)</li>
+            <li>Service 6 is the platform — website MVP by 1 July 2026, full release by 31 Dec 2026</li>
+            <li>Services 7–9 are engagement, assurance, and on-call projects</li>
+          </ul>
+        </article>
+
+        <article class="slide" data-slide="2">
+          <span class="slide-num">Slide 2 / 5</span>
+          <h4>What needs to be designed</h4>
+          <div class="subtitle">The surface area of Phase 5 co-design</div>
+          <div class="grid2">
+            <div>
+              <h5>Sessions &amp; workshops</h5>
+              <ul>
+                <li>Comprehensive PL (multi-day)</li>
+                <li>Targeted / 90-min topic sessions</li>
+                <li>Whole-school community model</li>
+                <li>First Nations community workshops</li>
+                <li>CALD community workshops</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Platform &amp; resources</h5>
+              <ul>
+                <li>New website + online learning system</li>
+                <li>Self-paced modules (accredited)</li>
+                <li>Webinars, podcasts, videos, interactive tools</li>
+                <li>Easy Read, Auslan, 15+ languages</li>
+                <li>Educator Community of Practice + parent forum</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" data-slide="3">
+          <span class="slide-num">Slide 3 / 5</span>
+          <h4>Voices to embed</h4>
+          <div class="subtitle">PWDA Co-Design Programming Overview is the RFT-named method</div>
+          <ul>
+            <li><strong>Always present</strong> — Autistic people, people with disability, lived experience of the autism community</li>
+            <li><strong>Mandated co-design partners</strong> — First Nations communities &amp; ACCOs, CALD communities incl. the Deaf community</li>
+            <li><strong>System voices</strong> — teachers, principals, education authorities, parents and carers</li>
+            <li><strong>Named explicitly in RFT</strong> — student voice in Service 3; open question whether it reaches further</li>
+            <li><strong>Working distinction</strong> — direction · co-creation · validation · continuous</li>
+          </ul>
+        </article>
+
+        <article class="slide" data-slide="4">
+          <span class="slide-num">Slide 4 / 5</span>
+          <h4>Where co-design lands hardest</h4>
+          <div class="subtitle">Where the room's attention is most leveraged</div>
+          <ul>
+            <li><strong>Service 3 — whole school community.</strong> Action plan, school champion, student voice, 12-month support cycle.</li>
+            <li><strong>Service 4 — First Nations.</strong> ACCO partnerships, cultural safety, capability uplift, IPP / MMR if remote.</li>
+            <li><strong>Service 5 — CALD.</strong> Community-by-community design, in-language delivery, new migrant / refugee priority.</li>
+            <li><strong>Service 6 — platform.</strong> UCD with diverse users; 1 July 2026 MVP deadline forces early co-design decisions.</li>
+            <li><strong>Service 7B — forums.</strong> Standing structures that feed all of the above.</li>
+          </ul>
+        </article>
+
+        <article class="slide" data-slide="5">
+          <span class="slide-num">Slide 5 / 5</span>
+          <h4>What we want from this session</h4>
+          <div class="subtitle">A starting scaffold, not a finished method</div>
+          <ul>
+            <li>A shared map of the co-design surface area we agree on</li>
+            <li>A working framework — Cheryl-led — that the team can take forward</li>
+            <li>A clear-enough answer to "how does Autism CRC sit in this?"</li>
+            <li>Three or four next steps with named owners and dates</li>
+            <li>An explicit list of what we're <em>not</em> deciding today</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="presenter-controls" id="presenter-controls" role="toolbar" aria-label="Presenter controls">
+        <button id="prev-slide" type="button">← Prev</button>
+        <span class="pos" id="slide-pos">1 / 5</span>
+        <button id="next-slide" type="button">Next →</button>
+        <button id="exit-presenter" type="button">Exit</button>
+      </div>
+    </section>
+
+    <!-- =================== SECTION 6 =================== -->
+    <section class="section" id="sec-6">
+      <h2><span class="num">06</span>Open questions for Cheryl</h2>
+      <h3 class="title">Worth asking before the meeting, so the room starts ahead</h3>
+      <p class="intro">Things to raise in the pre-meeting so the team isn't dependent on Cheryl bringing all the structure. None of these displace her process — they just make sure the day uses the room well.</p>
+
+      <ol class="qs">
+        <li>
+          <span class="q">What co-design method are you bringing into the room?</span>
+          <span class="why">The RFT names the PWDA Co-Design Programming Overview as the contractual anchor under Requirement 5. Knowing whether Cheryl is using PWDA as-is, an adaptation, or a different framework that she'll map to PWDA tells us how the day's work translates into the QMP later.</span>
+        </li>
+        <li>
+          <span class="q">Where do you want lived-experience advisors in the room vs. consulted out of session?</span>
+          <span class="why">Sets expectations for how Melbourne itself models the co-design we're trying to design. Also clarifies whether the room is "PP + Autism CRC" planning, or "PP + Autism CRC + lived experience" co-creating.</span>
+        </li>
+        <li>
+          <span class="q">How do you see Autism CRC's role across Phase 5?</span>
+          <span class="why">Are they a research source we cite, an advisory partner that sits alongside Service 7B forums, or a delivery contributor on specific services? Different answers imply different governance, different IP arrangements, and different framing for this Melbourne meeting itself.</span>
+        </li>
+        <li>
+          <span class="q">How do you want student voice to operate?</span>
+          <span class="why">The RFT names it only in Service 3, but the spirit of co-design points wider. A position before Melbourne avoids the room re-litigating it under time pressure.</span>
+        </li>
+        <li>
+          <span class="q">What cadence of co-design milestones do you envisage across the three years?</span>
+          <span class="why">Phase 1 transition runs Jan–Jun 2026; service delivery starts 1 Jul 2026; full website by 31 Dec 2026. The co-design rhythm needs to fit those gates. A rough sketch from Cheryl saves the room from improvising one.</span>
+        </li>
+        <li>
+          <span class="q">Where do you want the PP team holding a pen, vs. holding the space?</span>
+          <span class="why">Avoids the trap where PP staff drift into co-designing on behalf of the people we should be co-designing with. Also tells the team how to behave in the room.</span>
+        </li>
+        <li>
+          <span class="q">What's a "good outcome" for the Melbourne session in your view?</span>
+          <span class="why">Gives the team a single shared definition of done so the day doesn't become open-ended. Pairs with §4's "decisions, parking lot, owners" close.</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- =================== SECTION 7 =================== -->
+    <section class="section" id="sec-7">
+      <h2><span class="num">07</span>Evaluation framework considerations</h2>
+      <h3 class="title">What we need to bake in now so ACER can evaluate it later</h3>
+      <p class="intro">The independent evaluation of Phase 5 will be commissioned by the Department of Education and is likely to be run by an external research body such as ACER. Service 8 is the supplier's own data and continuous-improvement infrastructure; the independent evaluation sits over the top of it. The decisions we make in co-design — what we measure, who we ask, how we capture lived experience, what counts as success — directly determine whether the program is evaluable when the time comes.</p>
+
+      <div class="frame">
+        <strong>What the RFT actually says.</strong> Requirement 2 obliges the supplier to fully cooperate with any evaluation activities initiated by the department and undertaken by a third party — including provision of Contract Material, information and data, and access to personnel, subcontractors and participants. Service 8A requires a Data, Performance and Continuous Improvement Plan agreed with the department. The independent evaluation is the department's call; the supplier's job is to make sure the program is set up to support it.
+      </div>
+
+      <h4>Considerations the framework needs to cover</h4>
+      <div class="voices">
+        <div class="voice">
+          <h4>Theory of change / program logic</h4>
+          A clear logic model linking inputs → activities → outputs → short-term outcomes → long-term outcomes for each audience stream. Without this, evaluators are reverse-engineering intent. Should be co-designed early and approved through the Quality Management Plan.
+          <div class="where">Foundational · sets what counts as success</div>
+        </div>
+        <div class="voice">
+          <h4>Outcome dimensions</h4>
+          Multiple chains, multiple audiences. Educator change (knowledge, confidence, classroom practice). Parent / carer change (knowledge, advocacy, engagement). Student experience and inclusion. School-level culture and policy. Each needs its own measurement approach.
+          <div class="where">Avoid conflating delivery volume with impact</div>
+        </div>
+        <div class="voice">
+          <h4>KPIs vs evaluation outcomes</h4>
+          Annual delivery targets and KPIs (Attachment A) measure that the program ran. Evaluation measures whether it worked. Both matter, but they're different instruments — an evaluation framework that only restates the KPIs has no independent yield.
+          <div class="where">Distinct from contract performance reporting</div>
+        </div>
+        <div class="voice">
+          <h4>Baseline and longitudinal capture</h4>
+          Pre-program / pre-session measurement so change can be attributed. Follow-up at 3, 6, 12 months for the lasting question — does new educator practice persist; does parent advocacy stick. Whole-school community model (Service 3) has a 12-month cycle that lends itself naturally to this.
+          <div class="where">Service 3 cycle · CoP follow-up · forum data</div>
+        </div>
+        <div class="voice">
+          <h4>Phase 4 continuity</h4>
+          Phase 4 ran 2021–2026 with 80,000+ participants. Continuity of measures matters: the more Phase 5 instruments mirror Phase 4, the stronger the longitudinal story. Any deliberate divergence should be deliberate, documented, and defensible.
+          <div class="where">Inheritance · longitudinal claim space</div>
+        </div>
+        <div class="voice">
+          <h4>Comparison logic</h4>
+          A national open-access program is hard to run a true counterfactual on. Realistic options: pre / post within participants; matched comparisons across schools; staggered roll-out designs; comparison with non-participating school cohorts. Worth flagging early — it shapes the data architecture.
+          <div class="where">Methodological choice with design consequences</div>
+        </div>
+        <div class="voice">
+          <h4>Equity disaggregation</h4>
+          Outcomes broken down by First Nations, CALD, remoteness, sector, school type, age band. A whole-of-program average can hide that the program works for one cohort and not another. The evaluation framework needs the data to support this from day one.
+          <div class="where">All audience streams · priority cohorts</div>
+        </div>
+        <div class="voice">
+          <h4>First Nations data sovereignty</h4>
+          Data about First Nations participants requires Indigenous Data Governance principles, community endorsement, and ACCO involvement in evaluation design — not only delivery design. ACCO-endorsed case reports under Service 4C are part of this picture but not all of it.
+          <div class="where">Service 4 · cross-cuts evaluation method</div>
+        </div>
+        <div class="voice">
+          <h4>Culturally safe instruments</h4>
+          Surveys, interview protocols and outcome measures need cultural and linguistic adaptation, not just translation. Includes Auslan, Easy Read, plain-English variants, and instruments validated for use with Autistic respondents.
+          <div class="where">Services 4, 5, 6 · accessibility &amp; cultural fit</div>
+        </div>
+        <div class="voice">
+          <h4>Lived experience in evaluation design</h4>
+          The same logic that drives co-design of services applies to evaluation: Autistic people, parents, students (where appropriate), First Nations and CALD voices should help shape what success looks like and how it's measured. Otherwise the evaluation reproduces external assumptions about what good outcomes are.
+          <div class="where">Mirrors PWDA co-design framing</div>
+        </div>
+        <div class="voice">
+          <h4>Student voice and ethics</h4>
+          Where students are part of evaluation (consistent with Service 3's "options for student voice"), it needs ethical review, age-appropriate consent, supported participation, and clear protocols on what's done with what they say. Worth a position before ACER asks.
+          <div class="where">Service 3 named · candidate for wider use</div>
+        </div>
+        <div class="voice">
+          <h4>Privacy, consent, data sharing</h4>
+          APP-compliant collection, clear privacy statements, consent for downstream sharing with third-party evaluators, and ISM / PSPF-compliant storage and access. Service 6's website needs to support this from MVP day-one — adding consent retrospectively is painful.
+          <div class="where">Requirement 2 · Requirement 3 · Service 6A</div>
+        </div>
+        <div class="voice">
+          <h4>Process vs outcome vs impact</h4>
+          Three distinct lenses the evaluator will likely run in parallel. Process: was the program delivered as designed (fidelity, reach, accessibility). Outcomes: did participants change. Impact: are Autistic students experiencing different educational outcomes. The framework needs data feeding all three.
+          <div class="where">Determines what data is collected and when</div>
+        </div>
+        <div class="voice">
+          <h4>Cost-effectiveness / value for money</h4>
+          Increasingly expected of Commonwealth program evaluations. Requires unit-cost data per participant, per workshop, per resource — which has to be tracked through delivery, not reconstructed afterwards.
+          <div class="where">Needs delivery-side cost capture from day one</div>
+        </div>
+        <div class="voice">
+          <h4>Alignment with the National Autism Strategy</h4>
+          Phase 5 is named as an existing priority under the National Autism Strategy 2025–31. The evaluation will be read for its contribution to strategy outcomes, not only program-internal outcomes. The framework should make that contribution legible.
+          <div class="where">External alignment · whole-of-government read</div>
+        </div>
+        <div class="voice">
+          <h4>Independence safeguards</h4>
+          Evaluator needs unfiltered access to data, participants, personnel and materials. Supplier doesn't pre-screen findings. Worth being explicit early so the working culture supports it — independence is easier to design in than to retrofit.
+          <div class="where">Requirement 2 · contractual obligation</div>
+        </div>
+      </div>
+
+      <h4>What this means for the Melbourne conversation</h4>
+      <ul class="clean">
+        <li><strong>Co-design the logic model alongside the services.</strong> The conversation about <em>what good looks like</em> is the same conversation in both directions. If the room agrees on outcomes, the evaluation framework is half written.</li>
+        <li><strong>Decide measurement at the same time as design.</strong> Each service should leave Melbourne with at least a draft answer to "what would tell us this is working?" — even if the instruments come later.</li>
+        <li><strong>Bring lived experience into evaluation design, not just service design.</strong> Otherwise the people the program is for don't get a say in what success means for them.</li>
+        <li><strong>Map who holds what.</strong> Supplier owns delivery data and continuous improvement. Department commissions and owns the independent evaluation. ACER (or whoever) brings methodological independence. Autism CRC's role here is part of §6's open questions.</li>
+        <li><strong>Build for evaluability from MVP.</strong> Service 6's MVP on 1 July 2026 is the practical deadline for whether registration, consent capture, and data linkage are designed-in or bolted-on.</li>
+      </ul>
+
+      <h4>Working questions to flag for the department and ACER</h4>
+      <ol class="qs">
+        <li>
+          <span class="q">Will ACER (or another body) be commissioned for the full term, or for milestone-based evaluation moments?</span>
+          <span class="why">Determines whether evaluation is continuous and embedded, or summative and periodic. The data architecture is different in each case.</span>
+        </li>
+        <li>
+          <span class="q">Is there a Phase 4 evaluation report we should be designing continuity from?</span>
+          <span class="why">If Phase 4 outcomes were measured a certain way, repeating those measures gives a longitudinal story. Diverging deliberately is fine — diverging accidentally is wasted information.</span>
+        </li>
+        <li>
+          <span class="q">What outcome statements does the department most want to be able to make at the end of Phase 5?</span>
+          <span class="why">Working backwards from the desired statement defines the data you need to collect. Saves the team from over-collecting and from under-collecting in equal measure.</span>
+        </li>
+        <li>
+          <span class="q">How will First Nations data sovereignty be operationalised in the evaluation?</span>
+          <span class="why">Affects what data is collected, who holds it, who consents on whose behalf, and how findings about First Nations participants are reported. Best resolved with ACCO partners early.</span>
+        </li>
+        <li>
+          <span class="q">Where does the supplier's continuous improvement reporting end and the independent evaluation begin?</span>
+          <span class="why">Avoids duplication and avoids gaps. Service 8 is the supplier's instrument; the independent evaluation is the department's. The handshake between the two is the point worth defining.</span>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Presenter mode
+  const body = document.body;
+  const toggle = document.getElementById('presenter-toggle');
+  const exitBtn = document.getElementById('exit-presenter');
+  const prev = document.getElementById('prev-slide');
+  const next = document.getElementById('next-slide');
+  const pos = document.getElementById('slide-pos');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  let idx = 0;
+
+  function setActive(i) {
+    idx = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, n) => s.classList.toggle('active', n === idx));
+    if (pos) pos.textContent = (idx + 1) + ' / ' + slides.length;
+  }
+
+  function enter() {
+    body.classList.add('presenter');
+    setActive(0);
+    window.scrollTo(0, 0);
+    toggle.textContent = 'Exit presenter mode';
+  }
+  function exit() {
+    body.classList.remove('presenter');
+    slides.forEach(s => s.classList.remove('active'));
+    toggle.textContent = 'Enter presenter mode';
+    document.getElementById('sec-5').scrollIntoView({ behavior: 'instant', block: 'start' });
+  }
+  function isPresenter() { return body.classList.contains('presenter'); }
+
+  toggle.addEventListener('click', () => isPresenter() ? exit() : enter());
+  exitBtn.addEventListener('click', exit);
+  prev.addEventListener('click', () => setActive(idx - 1));
+  next.addEventListener('click', () => setActive(idx + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!isPresenter()) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); setActive(idx + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); setActive(idx - 1); }
+    else if (e.key === 'Escape') { exit(); }
+    else if (e.key === 'Home') { setActive(0); }
+    else if (e.key === 'End') { setActive(slides.length - 1); }
+  });
+</script>
+</body>
+</html>
