@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phase 5 Co-Design — Workshop Pre-Reading</title>
+<meta name="description" content="Pre-reading and workshop materials for the Phase 5 Positive Partnerships Melbourne co-design workshops. The Service Brief, the Co-Design Atlas, and the workshop Timetable." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   PHASE 5 CO-DESIGN — landing & pre-reading
+   Positive Partnerships · Melbourne workshop materials
+   ===================================================================== */
+
+:root {
+  --ink: #1a1f2c;
+  --ink-soft: #2c3344;
+  --ink-faint: #5a6072;
+  --parchment: #f4efe5;
+  --vellum: #fbf7ee;
+  --vellum-deep: #ede4d0;
+  --rule: #c4b79f;
+  --rule-soft: #d8cdb6;
+  --amber: #c25a1f;
+  --amber-soft: #e89464;
+  --verdigris: #1f5c5f;
+  --verdigris-deep: #133c3f;
+  --gold: #b48438;
+  --highlight: #f5d99b;
+  --cardinal: #8e2d22;
+  --shadow: 0 1px 0 rgba(26, 31, 44, 0.06), 0 12px 28px -18px rgba(26, 31, 44, 0.4);
+  --shadow-hover: 0 2px 0 rgba(26, 31, 44, 0.08), 0 24px 50px -22px rgba(26, 31, 44, 0.55);
+
+  --display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-feature-settings: "kern", "liga", "onum";
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--parchment);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+::selection { background: var(--highlight); color: var(--ink); }
+
+a { color: var(--amber); }
+
+.shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 3vw, 2.5rem);
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+.masthead .stamp {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.masthead .stamp .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+}
+.masthead h1 {
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 300;
+  line-height: 0.93;
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4em;
+}
+.masthead h1 .em {
+  font-style: italic;
+  font-weight: 350;
+  color: var(--verdigris-deep);
+}
+.masthead .deck {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  line-height: 1.4;
+  max-width: 55ch;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+  font-variation-settings: "opsz" 36, "SOFT" 40;
+}
+.masthead .welcome {
+  max-width: 60ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.masthead .welcome p { margin: 0 0 1em; }
+.masthead .welcome p:first-of-type::first-letter {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-size: 4rem;
+  line-height: 0.85;
+  float: left;
+  padding: 0.05em 0.12em 0 0;
+  color: var(--amber);
+  font-weight: 400;
+}
+
+/* ---------- Section frame ---------- */
+section { padding: clamp(2.5rem, 5vw, 4rem) 0; position: relative; }
+section + section { border-top: 1px solid var(--rule-soft); }
+
+.section-head {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: baseline;
+  margin-bottom: clamp(1.6rem, 3vw, 2.5rem);
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-top: 2px solid var(--amber);
+  padding-top: 0.6rem;
+}
+.section-num .glyph {
+  display: block;
+  font-size: 1.25rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0;
+  margin-top: 0.3rem;
+  text-transform: none;
+}
+.section-title {
+  font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+  line-height: 1.05;
+  font-weight: 400;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  letter-spacing: -0.02em;
+}
+.section-title em { color: var(--verdigris-deep); font-style: italic; }
+.section-lede {
+  grid-column: 2;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  max-width: 65ch;
+  font-style: italic;
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24;
+}
+
+/* ---------- Materials cards ---------- */
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 980px) {
+  .materials-grid { grid-template-columns: 1fr; }
+}
+
+.material-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  padding: 1.8rem 1.8rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  min-height: 460px;
+  scroll-margin-top: 1.5rem;
+}
+.material-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 4px;
+}
+.material-card--amber::before { background: var(--amber); }
+.material-card--verdigris::before { background: var(--verdigris); }
+.material-card--gold::before { background: var(--gold); }
+
+.material-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  text-decoration: none;
+}
+.material-card--amber:hover { border-color: var(--amber-soft); }
+.material-card--verdigris:hover { border-color: var(--verdigris); }
+.material-card--gold:hover { border-color: var(--gold); }
+
+.material-card .type-stamp {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.material-card .type-stamp .ord {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variation-settings: "opsz" 24, "WONK" 1;
+}
+.material-card--amber .type-stamp .ord { color: var(--amber); }
+.material-card--verdigris .type-stamp .ord { color: var(--verdigris); }
+.material-card--gold .type-stamp .ord { color: var(--gold); }
+
+.material-card h3 {
+  font-size: 1.7rem;
+  line-height: 1.05;
+  font-weight: 400;
+  font-variation-settings: "opsz" 72, "SOFT" 30;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.4rem;
+}
+.material-card h3 .em { font-style: italic; }
+.material-card--amber h3 .em { color: var(--amber); }
+.material-card--verdigris h3 .em { color: var(--verdigris-deep); }
+.material-card--gold h3 .em { color: var(--gold); }
+
+.material-card .tagline {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.2rem;
+  font-variation-settings: "opsz" 24;
+}
+.material-card .description {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0 0 1rem;
+  flex: 1;
+}
+.material-card .what-you-see {
+  margin: 0 0 1.2rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.material-card .what-you-see li {
+  padding: 0.25rem 0 0.25rem 1rem;
+  position: relative;
+  color: var(--ink-soft);
+}
+.material-card .what-you-see li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--ink-faint);
+}
+.material-card--amber .what-you-see li::before { color: var(--amber); }
+.material-card--verdigris .what-you-see li::before { color: var(--verdigris); }
+.material-card--gold .what-you-see li::before { color: var(--gold); }
+
+.material-card .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.material-card .footer .time {
+  color: var(--ink-faint);
+}
+.material-card .footer .enter {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+.material-card--amber .footer .enter { color: var(--amber); }
+.material-card--verdigris .footer .enter { color: var(--verdigris); }
+.material-card--gold .footer .enter { color: var(--gold); }
+.material-card .footer .enter::after { content: " →"; }
+
+/* ---------- How to use ---------- */
+.howto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 800px) { .howto { grid-template-columns: 1fr; } }
+
+.howto-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule-soft);
+  padding: 1.5rem 1.6rem;
+}
+.howto-card h4 {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  font-variation-settings: "opsz" 36;
+  color: var(--verdigris-deep);
+  font-style: italic;
+}
+.howto-card ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.howto-card ol li {
+  counter-increment: step;
+  padding: 0.5rem 0 0.5rem 2.4rem;
+  position: relative;
+  border-top: 1px dotted var(--rule-soft);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.howto-card ol li:first-child { border-top: none; }
+.howto-card ol li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--amber);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  top: 0.6rem;
+}
+.howto-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.howto-card ul li {
+  padding: 0.4rem 0 0.4rem 1rem;
+  position: relative;
+  border-top: 1px dotted var(--rule-soft);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.howto-card ul li:first-child { border-top: none; }
+.howto-card ul li::before {
+  content: "§";
+  position: absolute;
+  left: 0;
+  color: var(--amber);
+  font-family: var(--display);
+  font-style: italic;
+}
+
+/* ---------- Library ---------- */
+.library {
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+}
+.lib-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 1.4rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.lib-row:last-child { border-bottom: none; }
+.lib-row:hover { background: var(--vellum-deep); }
+.lib-row .cat {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+  padding-top: 0.15rem;
+}
+.lib-row .docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+.lib-row .docs a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 1px;
+}
+.lib-row .docs a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+.lib-row .docs .sep { color: var(--rule); }
+
+/* ---------- Footer ---------- */
+footer {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  padding: 2rem 0 3rem;
+  border-top: 2px solid var(--ink);
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+footer h5 {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+footer ul { list-style: none; margin: 0; padding: 0; }
+footer li { padding: 0.18rem 0; }
+footer a { color: var(--ink); }
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: white; font-size: 11pt; }
+  .material-card { box-shadow: none; min-height: 0; }
+  section { padding: 1.5rem 0; }
+  .masthead h1 { font-size: 3rem; }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+  .section-head { grid-template-columns: 1fr; gap: 0.4rem; }
+  .section-lede { grid-column: 1; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="stamp">
+      <span>Positive&nbsp;Partnerships</span>
+      <span class="dot"></span>
+      <span>Phase&nbsp;5</span>
+      <span class="dot"></span>
+      <span>Melbourne&nbsp;Co-Design&nbsp;Workshop</span>
+      <span class="dot"></span>
+      <span>Pre-reading</span>
+    </div>
+    <h1>
+      Phase 5 <span class="em">Co-Design</span>.
+    </h1>
+    <p class="deck">
+      Three materials to read before — and refer to during — the Melbourne co-design workshop.
+    </p>
+    <div class="welcome">
+      <p>
+        Welcome. This page is your starting point for the Phase 5 co-design workshop materials. There are three
+        things to look at: a working <strong>Brief</strong> that maps the contract to its nine Service Types; a
+        deeper <strong>Atlas</strong> that maps the policy anchors to eight content pillars; and the
+        <strong>Timetable</strong> for the three days we'll spend together.
+      </p>
+      <p>
+        Read the Brief first. Browse the Atlas for depth. Bring the Timetable to each session. None of these
+        are finished documents — they are drafts to test, deepen, contest and improve together.
+      </p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- §01 MATERIALS -->
+<section id="materials" class="shell">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;01 <span class="glyph">Materials</span></div>
+    <h2 class="section-title">Three pre-reading <em>materials</em>.</h2>
+    <p class="section-lede">
+      Open in any order. The Brief is the working document; the Atlas is the deeper reading; the Timetable is
+      the schedule for the workshop itself.
+    </p>
+  </div>
+
+  <div class="materials-grid">
+
+    <!-- CARD 01: BRIEF -->
+    <a class="material-card material-card--amber" href="brief/">
+      <div class="type-stamp">
+        <span class="ord">i</span><span>Working dashboard</span>
+      </div>
+      <h3>The Phase 5 <span class="em">Service</span> Brief</h3>
+      <p class="tagline">From contract to workshop — services first.</p>
+      <p class="description">
+        A service-first dashboard of the nine RFT Service Types — with annual delivery targets, KPI measures,
+        anchor documents and recommended content direction for each. The working document for tender response
+        drafting and team planning.
+      </p>
+      <ul class="what-you-see">
+        <li>9 Services laid out as cards with sub-services, targets, anchors</li>
+        <li>53 specific content recommendations, each linked to its source</li>
+        <li>Service × Document master matrix · 27-document categorised list</li>
+      </ul>
+      <div class="footer">
+        <span class="time">Dashboard&nbsp;·&nbsp;~25 min</span>
+        <span class="enter">Open the Brief</span>
+      </div>
+    </a>
+
+    <!-- CARD 02: ATLAS -->
+    <a class="material-card material-card--verdigris" href="atlas/">
+      <div class="type-stamp">
+        <span class="ord">ii</span><span>Deep reading</span>
+      </div>
+      <h3>The Phase 5 Co-Design <span class="em">Atlas</span></h3>
+      <p class="tagline">Anchor documents &amp; eight content pillars.</p>
+      <p class="description">
+        The policy-first reading. Maps ten anchor documents — seven Commonwealth foundations plus three
+        AutismCRC best-practice guidelines — against eight workshop content pillars, with editorial
+        recommendations drafted for AutismCRC co-authorship.
+      </p>
+      <ul class="what-you-see">
+        <li>8 pillar essays — Rights · Consultation · Adjustments · Curriculum · Belonging · Leadership · Family · Transitions</li>
+        <li>10 high-level strategic recommendations</li>
+        <li>Pillar × Document matrix · Cohorts · Co-design notes</li>
+      </ul>
+      <div class="footer">
+        <span class="time">Long-form&nbsp;·&nbsp;~45 min</span>
+        <span class="enter">Open the Atlas</span>
+      </div>
+    </a>
+
+    <!-- CARD 03: TIMETABLE -->
+    <a class="material-card material-card--gold" href="timetable/">
+      <div class="type-stamp">
+        <span class="ord">iii</span><span>Workshop schedule</span>
+      </div>
+      <h3>The Melbourne <span class="em">Timetable</span></h3>
+      <p class="tagline">Three days, Wednesday → Friday.</p>
+      <p class="description">
+        The day-by-day timetable for the Melbourne co-design workshop. Sessions, times, and what each block
+        of work is about. Bring it to each session — it is editable in place so we can revise as we go.
+      </p>
+      <ul class="what-you-see">
+        <li>Three days of sessions, with times and prompts</li>
+        <li>Editable inline — revise as we go</li>
+        <li>Doubles as a journal for parking-lot items and decisions</li>
+      </ul>
+      <div class="footer">
+        <span class="time">Reference&nbsp;·&nbsp;~5 min</span>
+        <span class="enter">Open the Timetable</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- §02 HOW TO USE -->
+<section id="howto" class="shell">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;02 <span class="glyph">How to use</span></div>
+    <h2 class="section-title">Before, during, after.</h2>
+    <p class="section-lede">A short guide for getting the most from these materials.</p>
+  </div>
+
+  <div class="howto">
+
+    <div class="howto-card">
+      <h4>Suggested reading order</h4>
+      <ol>
+        <li>Open <strong>the Brief</strong>. Read §01 (Contract at a glance) and skim §02 (the three workshop services). 15 minutes.</li>
+        <li>Open <strong>the Atlas</strong>. Read §01 Preamble and §03 The Matrix. Browse the pillars that map to your area. 20–30 minutes.</li>
+        <li>Open <strong>the Timetable</strong>. Note your sessions. Bring questions, perspectives, and any sharp disagreements.</li>
+      </ol>
+    </div>
+
+    <div class="howto-card">
+      <h4>What to bring</h4>
+      <ul>
+        <li>Where you think the Brief is wrong, missing, or too thin.</li>
+        <li>Where the Atlas's recommendations need to be challenged, sharpened, or replaced.</li>
+        <li>One concrete example from your own work that tests the framework.</li>
+        <li>One question only you can ask.</li>
+      </ul>
+    </div>
+
+    <div class="howto-card">
+      <h4>What these documents are not</h4>
+      <ul>
+        <li>Finished. They are drafts, deliberately incomplete, written to be argued with.</li>
+        <li>Co-designed. They are one reader's analytical synthesis, offered as a starting point.</li>
+        <li>Final policy positions of Positive Partnerships.</li>
+        <li>A substitute for reading the source documents themselves.</li>
+      </ul>
+    </div>
+
+    <div class="howto-card">
+      <h4>If you only have ten minutes</h4>
+      <ul>
+        <li>Read the Brief §01 — the contract on one page. (5 min)</li>
+        <li>Read the Atlas §05 — ten recommendations. (5 min)</li>
+        <li>Bring one challenge to the workshop.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- §03 SOURCE DOCUMENTS -->
+<section id="library" class="shell">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;03 <span class="glyph">Library</span></div>
+    <h2 class="section-title">Source documents.</h2>
+    <p class="section-lede">
+      The anchor PDFs that back the Brief and Atlas. Open any of them to read in detail; all are linked from
+      the Brief's and Atlas's pages as well.
+    </p>
+  </div>
+
+  <div class="library">
+
+    <div class="lib-row">
+      <div class="cat">Statutory floor</div>
+      <div class="docs">
+        <a href="docs/DDA-1992_compilation-2024-10-14.pdf">DDA&nbsp;1992</a><span class="sep">·</span>
+        <a href="docs/DSE-2005_Disability-Standards-for-Education.pdf">DSE&nbsp;2005</a><span class="sep">·</span>
+        <a href="docs/DSE-2005_Guidance-Notes.pdf">DSE&nbsp;Guidance&nbsp;Notes</a><span class="sep">·</span>
+        <a href="docs/DSE-2025_Amendment-Standards.pdf">DSE&nbsp;Amendment&nbsp;2025</a>
+      </div>
+    </div>
+
+    <div class="lib-row">
+      <div class="cat">Operational</div>
+      <div class="docs">
+        <a href="docs/NCCD-Guidelines-2025.pdf">NCCD&nbsp;Guidelines&nbsp;2025</a><span class="sep">·</span>
+        <a href="docs/NCCD-Operational-Guidelines-NSW-2024.pdf">NCCD&nbsp;NSW&nbsp;Operational</a><span class="sep">·</span>
+        <a href="docs/Australian-Curriculum-v9_workbook.xlsx">Australian&nbsp;Curriculum&nbsp;v9</a><span class="sep">·</span>
+        <a href="docs/APST_Australian-Professional-Standards-for-Teachers.pdf">APST</a><span class="sep">·</span>
+        <a href="docs/APSP_Australian-Professional-Standard-for-Principals.pdf">APSP</a>
+      </div>
+    </div>
+
+    <div class="lib-row">
+      <div class="cat">Strategic policy</div>
+      <div class="docs">
+        <a href="docs/National-Autism-Strategy-2025-2031.pdf">National&nbsp;Autism&nbsp;Strategy&nbsp;2025–31</a><span class="sep">·</span>
+        <a href="docs/National-Autism-Strategy-First-Action-Plan-2025-2026.pdf">NAS&nbsp;First&nbsp;Action&nbsp;Plan</a>
+      </div>
+    </div>
+
+    <div class="lib-row">
+      <div class="cat">AutismCRC</div>
+      <div class="docs">
+        <a href="docs/AutismCRC_Assessment-and-Diagnosis-Guideline-2023.pdf">A&amp;D&nbsp;Guideline&nbsp;2023</a><span class="sep">·</span>
+        <a href="docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf">Supporting&nbsp;Children&nbsp;2022</a><span class="sep">·</span>
+        <a href="docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf">Strengths&nbsp;&amp;&nbsp;Support&nbsp;Needs&nbsp;2024</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="shell">
+  <div>
+    <h5>Materials</h5>
+    <ul>
+      <li><a href="brief/">Service Brief</a></li>
+      <li><a href="atlas/">Co-Design Atlas</a></li>
+      <li><a href="timetable/">Workshop Timetable</a></li>
+    </ul>
+  </div>
+  <div>
+    <h5>Versions</h5>
+    <ul>
+      <li>Landing page · v0.1 · 2026-05-15</li>
+      <li>Brief · v0.1 working draft</li>
+      <li>Atlas · v0.1 working draft</li>
+      <li>For Melbourne co-design · pre-reading</li>
+    </ul>
+  </div>
+  <div>
+    <h5>Language</h5>
+    <ul style="font-size: 0.72rem; line-height: 1.55;">
+      <li>Identity-first ("Autistic person")</li>
+      <li>No functioning labels</li>
+      <li>No puzzle imagery</li>
+      <li>"Social communication" / "social interaction"</li>
+    </ul>
+  </div>
+  <div>
+    <h5>About</h5>
+    <ul style="font-size: 0.72rem; line-height: 1.55;">
+      <li>Prepared for Positive Partnerships Phase 5.</li>
+      <li>For co-authorship with AutismCRC.</li>
+      <li>Draft. Written to be argued with.</li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

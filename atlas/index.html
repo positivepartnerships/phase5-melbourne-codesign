@@ -1,0 +1,2999 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Phase 5 Co-Design Atlas — Positive Partnerships Workshop Content Map</title>
+<meta name="description" content="A working framework, drafted for co-authorship with AutismCRC, mapping Australia's anchor documents on disability rights, education and autism against the workshop content priorities Positive Partnerships should design for in Phase 5 (2026–2029)." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   THE PHASE 5 CO-DESIGN ATLAS — editorial policy atlas
+   Positive Partnerships, with AutismCRC · 2026–2029 content map
+   ===================================================================== */
+
+:root {
+  --ink: #1a1f2c;
+  --ink-soft: #2c3344;
+  --ink-faint: #5a6072;
+  --parchment: #f4efe5;
+  --vellum: #fbf7ee;
+  --vellum-deep: #ede4d0;
+  --rule: #c4b79f;
+  --rule-soft: #d8cdb6;
+  --amber: #c25a1f;
+  --amber-soft: #e89464;
+  --verdigris: #1f5c5f;
+  --verdigris-deep: #133c3f;
+  --gold: #b48438;
+  --highlight: #f5d99b;
+  --cardinal: #8e2d22;
+  --shadow: 0 1px 0 rgba(26, 31, 44, 0.06), 0 12px 28px -18px rgba(26, 31, 44, 0.4);
+  --shadow-hover: 0 1px 0 rgba(26, 31, 44, 0.08), 0 20px 40px -20px rgba(26, 31, 44, 0.5);
+
+  --display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  --measure: 68ch;
+  --gutter: clamp(1.25rem, 3vw, 2.5rem);
+  --page-max: 1320px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-feature-settings: "kern", "liga", "onum", "calt";
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--parchment);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-repeat: repeat;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+}
+
+p, li, dd, dt { hyphens: auto; }
+
+a {
+  color: var(--amber);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(194, 90, 31, 0.4);
+}
+a:hover {
+  text-decoration-color: var(--amber);
+  background: rgba(245, 217, 155, 0.4);
+}
+
+.mono {
+  font-family: var(--mono);
+  font-variation-settings: normal;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+  color: var(--ink-soft);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.tag--verdigris { color: var(--verdigris-deep); border-color: var(--verdigris); }
+.tag--amber { color: var(--amber); border-color: var(--amber-soft); background: rgba(245, 217, 155, 0.35); }
+.tag--cardinal { color: var(--cardinal); border-color: var(--cardinal); background: rgba(142, 45, 34, 0.05); }
+.tag--ink { color: var(--vellum); border-color: var(--ink); background: var(--ink); }
+
+/* ---------- Layout shell ---------- */
+.shell {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(2rem, 5vw, 4rem) 0 clamp(2rem, 4vw, 3rem);
+  position: relative;
+}
+.masthead::after {
+  content: "";
+  position: absolute;
+  left: var(--gutter); right: var(--gutter); bottom: -1px; height: 1px;
+  background: var(--rule);
+  box-shadow: 0 3px 0 var(--parchment), 0 4px 0 var(--rule);
+}
+
+.masthead .top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 2rem;
+}
+.masthead .top-meta .dot {
+  display: inline-block; width: 6px; height: 6px;
+  background: var(--amber); border-radius: 50%;
+  vertical-align: middle; margin: 0 0.4em;
+}
+
+.masthead h1 {
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  font-weight: 300;
+  line-height: 0.95;
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.6em;
+}
+.masthead h1 .ital {
+  font-style: italic;
+  font-weight: 350;
+  color: var(--verdigris-deep);
+}
+.masthead h1 .amp {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--amber);
+  font-weight: 300;
+}
+
+.deck {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 350;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  margin-top: 0.5em;
+  font-variation-settings: "opsz" 36, "SOFT" 40;
+}
+
+.byline {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+.byline dt {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.66rem;
+  color: var(--ink-faint);
+  margin-bottom: 0.3rem;
+}
+.byline dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+/* ---------- Section frame ---------- */
+section {
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  position: relative;
+}
+section + section { border-top: 1px solid var(--rule-soft); }
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(0, 3fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: baseline;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-top: 2px solid var(--amber);
+  padding-top: 0.6rem;
+  align-self: start;
+}
+.section-num .glyph {
+  display: block;
+  font-size: 1.3rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0;
+  margin-top: 0.3rem;
+  text-transform: none;
+}
+.section-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+  line-height: 1.05;
+  font-weight: 400;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  letter-spacing: -0.02em;
+}
+.section-title em { color: var(--verdigris-deep); font-style: italic; }
+.section-lede {
+  grid-column: 2;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  font-style: italic;
+  font-family: var(--display);
+  font-variation-settings: "opsz" 36;
+}
+
+/* ---------- Preamble ---------- */
+.preamble {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(0, 3fr);
+  gap: clamp(1rem, 3vw, 3rem);
+}
+.preamble .marginalia {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--rule);
+  padding-top: 0.8rem;
+}
+.preamble .marginalia strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.66rem;
+  color: var(--amber);
+  margin-bottom: 0.4rem;
+}
+.preamble .body {
+  max-width: var(--measure);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+.preamble .body p + p { margin-top: 1em; }
+.preamble .body p:first-child::first-letter {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-size: 5.2rem;
+  line-height: 0.85;
+  float: left;
+  padding: 0.05em 0.12em 0 0;
+  color: var(--amber);
+  font-weight: 400;
+}
+
+/* ---------- Anchor document cards ---------- */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.doc-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  padding: 1.4rem 1.4rem 1.2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.doc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  background: var(--vellum);
+  text-decoration: none;
+}
+.doc-card .call-number {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doc-card .call-number .year {
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+}
+.doc-card h3 {
+  font-size: 1.2rem;
+  line-height: 1.15;
+  font-weight: 400;
+  font-variation-settings: "opsz" 36, "SOFT" 30;
+}
+.doc-card h3 .italic {
+  font-style: italic;
+  color: var(--verdigris-deep);
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+}
+.doc-card .gloss {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  flex: 1;
+}
+.doc-card .key-sections {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.5rem;
+}
+.doc-card .key-sections span {
+  background: var(--parchment);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--rule-soft);
+}
+.doc-card .download {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  padding: 0.18rem 0.45rem;
+  border-radius: 2px;
+  background: var(--parchment);
+}
+.doc-card .download:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+  background: var(--vellum);
+}
+
+/* ---------- The Matrix ---------- */
+.matrix-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+  box-shadow: var(--shadow);
+}
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  min-width: 800px;
+}
+.matrix caption {
+  caption-side: bottom;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--ink-faint);
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: var(--parchment);
+  border-top: 1px solid var(--rule-soft);
+}
+.matrix th, .matrix td {
+  border: 1px solid var(--rule-soft);
+  padding: 0.6rem 0.7rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.matrix thead th {
+  background: var(--ink);
+  color: var(--vellum);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 0.8rem 0.5rem;
+  position: sticky;
+  top: 0;
+}
+.matrix th.row-head {
+  background: var(--parchment);
+  color: var(--ink);
+  text-align: left;
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.88rem;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  padding: 0.9rem 0.8rem;
+  font-variation-settings: "opsz" 36, "SOFT" 30;
+  width: 22%;
+  position: sticky;
+  left: 0;
+}
+.matrix th.row-head .pillar-num {
+  display: inline-block;
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  margin-right: 0.4em;
+  vertical-align: 0.2em;
+}
+.matrix td.cell {
+  color: var(--ink-soft);
+  background: var(--vellum);
+  cursor: default;
+}
+.matrix td.cell:hover {
+  background: rgba(245, 217, 155, 0.4);
+  color: var(--ink);
+}
+.matrix td.cell--heavy {
+  background: rgba(31, 92, 95, 0.08);
+  color: var(--verdigris-deep);
+  font-weight: 500;
+}
+.matrix td.cell--heavy:hover {
+  background: rgba(31, 92, 95, 0.18);
+}
+.matrix td.cell--key {
+  background: rgba(194, 90, 31, 0.12);
+  color: var(--amber);
+  font-weight: 600;
+  position: relative;
+}
+.matrix td.cell--key::after {
+  content: "★";
+  position: absolute;
+  top: 2px; right: 4px;
+  font-size: 0.6rem;
+  color: var(--amber);
+}
+.matrix td.cell--empty {
+  color: var(--rule);
+}
+
+.matrix-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+.matrix-legend .swatch {
+  display: inline-block;
+  width: 14px; height: 14px;
+  vertical-align: middle;
+  margin-right: 0.4em;
+  border: 1px solid var(--rule);
+}
+
+/* ---------- Pillar essays ---------- */
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+.pillar {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  position: relative;
+  scroll-margin-top: 1.5rem;
+  transition: box-shadow 0.25s ease;
+}
+.pillar:hover { box-shadow: var(--shadow); }
+.pillar.is-fav {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 1px var(--amber-soft), var(--shadow);
+}
+
+.pillar-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--rule-soft);
+  background: var(--vellum-deep);
+  position: relative;
+}
+.pillar-header::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 4px;
+  background: var(--amber);
+}
+.pillar-header .number {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.6rem;
+}
+.pillar-header h3 {
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 72, "SOFT" 30;
+}
+.pillar-header h3 .em { font-style: italic; color: var(--verdigris-deep); }
+.pillar-header .one-liner {
+  margin-top: 0.6rem;
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  max-width: 60ch;
+}
+
+.pillar-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.fav-btn {
+  background: var(--parchment);
+  border: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  color: var(--ink-faint);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  transition: all 0.2s ease;
+}
+.fav-btn:hover { color: var(--amber); border-color: var(--amber-soft); }
+.fav-btn[aria-pressed="true"] {
+  color: var(--amber);
+  border-color: var(--amber);
+  background: rgba(245, 217, 155, 0.4);
+}
+.fav-btn .star { font-size: 0.95rem; line-height: 1; }
+.fav-btn[aria-pressed="true"] .star { color: var(--amber); }
+
+.pillar-body {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+.pillar-body .prose {
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+.pillar-body .prose h4 {
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-style: normal;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-variation-settings: "opsz" 16;
+}
+.pillar-body .prose h4:first-child { margin-top: 0; }
+.pillar-body .prose p + p { margin-top: 1em; }
+.pillar-body .prose ul {
+  margin: 0.6em 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pillar-body .prose ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5em;
+}
+.pillar-body .prose ul li::before {
+  content: "§";
+  position: absolute;
+  left: 0;
+  font-family: var(--display);
+  color: var(--amber);
+  font-style: italic;
+  font-weight: 400;
+  top: -0.05em;
+}
+.pillar-body .marginalia {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  background: var(--parchment);
+  border: 1px solid var(--rule-soft);
+  padding: 1rem 1.1rem;
+  align-self: start;
+}
+.pillar-body .marginalia h5 {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  color: var(--amber);
+  font-weight: 500;
+}
+.pillar-body .marginalia ul {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.pillar-body .marginalia li {
+  padding: 0.45rem 0;
+  border-bottom: 1px dotted var(--rule);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+.pillar-body .marginalia li:last-child { border-bottom: none; padding-bottom: 0; }
+.pillar-body .marginalia li:first-child { padding-top: 0; }
+.pillar-body .marginalia .ref-doc {
+  font-weight: 600;
+  color: var(--verdigris-deep);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+}
+.pillar-body .marginalia .ref-cite {
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+}
+
+.pull-quote {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--verdigris-deep);
+  border-left: 3px solid var(--amber);
+  padding: 0.4rem 0 0.4rem 1.2rem;
+  margin: 1.6rem 0;
+  font-variation-settings: "opsz" 60, "SOFT" 30;
+}
+.pull-quote cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin-top: 0.6rem;
+}
+
+.callout {
+  border: 1px dashed var(--cardinal);
+  padding: 1rem 1.2rem;
+  background: rgba(142, 45, 34, 0.04);
+  margin: 1.4rem 0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.callout strong {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--cardinal);
+  font-weight: 500;
+}
+
+/* ---------- Audience filter ---------- */
+.audience-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 1.5rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule-soft);
+}
+.audience-bar .label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: 0.4rem;
+}
+.audience-btn {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+.audience-btn:hover { border-color: var(--amber); color: var(--amber); }
+.audience-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--vellum);
+  border-color: var(--ink);
+}
+
+.pillar.is-dim { opacity: 0.35; }
+
+/* ---------- Recommendations ---------- */
+.recs {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) minmax(0, 3fr);
+  gap: clamp(1rem, 3vw, 3rem);
+}
+.recs .marginalia {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--ink-faint);
+}
+.recs .marginalia h5 {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 0.6rem;
+  border-top: 2px solid var(--amber);
+  padding-top: 0.5rem;
+}
+.recs .marginalia p { margin: 0 0 0.8rem; }
+
+.rec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: rec;
+}
+.rec {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--rule-soft);
+  counter-increment: rec;
+}
+.rec:first-child { padding-top: 0; }
+.rec:last-child { border-bottom: none; }
+.rec-number {
+  font-family: var(--display);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 0.9;
+  color: var(--amber);
+  font-variation-settings: "opsz" 96, "WONK" 1;
+  font-style: italic;
+}
+.rec-number::before { content: counter(rec, decimal-leading-zero); }
+.rec-content h4 {
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 72, "SOFT" 30;
+}
+.rec-content h4 .em { font-style: italic; color: var(--verdigris-deep); }
+.rec-content p {
+  margin: 0 0 0.7em;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.rec-content .anchors {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.rec-content .anchors .tag { font-size: 0.66rem; }
+
+.rec-content .where {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  text-decoration: none;
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px dotted var(--rule);
+}
+.rec-content .where .lbl {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  flex-shrink: 0;
+}
+.rec-content .where .arrow {
+  color: var(--amber);
+  font-family: var(--mono);
+  flex-shrink: 0;
+}
+.rec-content .where .ref {
+  color: var(--verdigris-deep);
+  border-bottom: 1px dotted var(--verdigris);
+  padding-bottom: 1px;
+  flex: 1;
+}
+.rec-content .where:hover .ref {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
+/* ---------- Cohorts ---------- */
+.cohort-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.8rem;
+}
+.cohort {
+  background: var(--vellum);
+  border: 1px solid var(--rule-soft);
+  padding: 1.1rem 1.2rem;
+  position: relative;
+}
+.cohort::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1.1rem;
+  width: 3px; height: 1.5rem;
+  background: var(--verdigris);
+}
+.cohort h4 {
+  font-family: var(--display);
+  font-size: 1.02rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  font-variation-settings: "opsz" 36;
+}
+.cohort p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ---------- Co-design ---------- */
+.codesign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+.codesign {
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+  padding: 1.4rem;
+}
+.codesign h4 {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--verdigris-deep);
+  font-style: italic;
+  font-variation-settings: "opsz" 36;
+}
+.codesign p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- Colophon ---------- */
+.colophon {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  padding: 2.5rem 0 4rem;
+  border-top: 2px solid var(--ink);
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.colophon h5 {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+}
+.colophon ul { list-style: none; margin: 0; padding: 0; }
+.colophon li { padding: 0.2rem 0; }
+.colophon a { color: var(--ink); }
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: white; font-size: 11pt; }
+  .audience-bar, .fav-btn, .doc-card .download { display: none; }
+  .pillar, .doc-card, .matrix-wrap { box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
+  section { padding: 1.5rem 0; }
+  .masthead h1 { font-size: 3.5rem; }
+  .doc-grid, .cohort-grid, .codesign-grid { gap: 0.5rem; }
+  a { color: black; text-decoration: none; }
+  .pillar { border: 1px solid #888; }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+  .section-head, .preamble, .recs {
+    grid-template-columns: 1fr;
+  }
+  .section-lede { grid-column: 1; }
+  .pillar-body {
+    grid-template-columns: 1fr;
+  }
+  .pillar-header { grid-template-columns: 1fr; }
+  .pillar-actions { justify-self: end; }
+  .rec { grid-template-columns: 1fr; gap: 0.4rem; }
+  .rec-number { font-size: 2.2rem; }
+  .masthead .top-meta {
+    flex-wrap: wrap;
+    font-size: 0.62rem;
+  }
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--highlight);
+  color: var(--ink);
+}
+
+/* ---------- Sticky Index Bar ---------- */
+.index-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 239, 229, 0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: box-shadow 0.25s ease;
+}
+.index-bar.is-stuck {
+  box-shadow: 0 4px 12px -8px rgba(26, 31, 44, 0.3);
+}
+.index-bar .shell {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 48px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+.index-bar .shell::-webkit-scrollbar { height: 4px; }
+.index-bar .shell::-webkit-scrollbar-track { background: transparent; }
+.index-bar .shell::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 2px; }
+
+.index-brand {
+  flex-shrink: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.92rem;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  padding-right: 1.2rem;
+  border-right: 1px solid var(--rule);
+  margin-right: 0.4rem;
+  font-variation-settings: "opsz" 24, "SOFT" 40;
+  white-space: nowrap;
+}
+.index-brand .num {
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: block;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+
+.index-link {
+  flex-shrink: 0;
+  position: relative;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.5rem 0.65rem;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.index-link .glyph {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+  opacity: 0.7;
+}
+.index-link:hover {
+  color: var(--ink);
+  background: rgba(245, 217, 155, 0.4);
+  text-decoration: none;
+}
+.index-link[aria-current="true"] {
+  color: var(--ink);
+  background: rgba(245, 217, 155, 0.55);
+}
+.index-link[aria-current="true"] .glyph { opacity: 1; }
+
+.index-toggle {
+  flex-shrink: 0;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  padding: 0.4rem 0.7rem;
+  border-left: 1px solid var(--rule);
+  display: none;
+}
+.index-toggle:hover { color: var(--amber); }
+.index-companion {
+  flex-shrink: 0;
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  border-left: 1px solid var(--rule);
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.index-companion:hover { color: var(--amber); }
+@media (max-width: 760px) {
+  .index-companion { display: none; }
+}
+
+/* expanded pillar drawer */
+.index-drawer {
+  display: none;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+.index-drawer.is-open { display: block; }
+.index-drawer .shell {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem 1.2rem;
+}
+.index-drawer h6 {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 0.4rem;
+  grid-column: 1 / -1;
+}
+.index-drawer a {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.92rem;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted var(--rule-soft);
+  font-variation-settings: "opsz" 24;
+}
+.index-drawer a:hover { color: var(--amber); }
+.index-drawer a .num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  margin-right: 0.5em;
+}
+
+@media (max-width: 760px) {
+  .index-toggle { display: inline-flex; align-items: center; }
+}
+
+@media print {
+  .index-bar, .index-drawer { display: none; }
+}
+
+/* ---------- Skip link ---------- */
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem; top: 1rem;
+  background: var(--ink);
+  color: var(--vellum);
+  padding: 0.6rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  z-index: 999;
+}
+</style>
+</head>
+<body>
+<a href="#preamble" class="skip">Skip to content</a>
+
+<header class="masthead" id="top">
+  <div class="shell">
+    <div class="top-meta">
+      <span>Positive&nbsp;Partnerships <span class="dot"></span> Phase&nbsp;5 Workshop&nbsp;Content&nbsp;Map</span>
+      <span>Working&nbsp;Draft <span class="dot"></span> 2026–2029 <span class="dot"></span> v0.1</span>
+    </div>
+    <h1>
+      The Phase 5 <span class="ital">Co-Design</span> Atlas
+      <span style="display:block;font-size:0.55em;font-style:italic;color:var(--ink-soft);font-weight:300;margin-top:0.3em;letter-spacing:-0.02em;">
+        anchor documents <span class="amp">&amp;</span> eight pillars
+      </span>
+    </h1>
+    <p class="deck">
+      A working framework that maps the legal, professional and policy anchors of Australian inclusive education
+      against the nine Service Types named in the Phase 5 RFT — drawn down so educators, families and Autistic
+      co-authors can read the same map underneath the contract.
+    </p>
+    <dl class="byline">
+      <div><dt>For</dt><dd>Positive Partnerships <span style="color:var(--ink-faint)">·</span> co-design with AutismCRC</dd></div>
+      <div><dt>Reads as</dt><dd>policy-first · long-form · editorial</dd></div>
+      <div><dt>Companion</dt><dd><a href="../brief/" style="color:inherit;text-decoration:underline;text-decoration-color:var(--amber);">↗ The Phase 5 Service Brief</a> · dashboard</dd></div>
+      <div><dt>Sources</dt><dd>ten anchor documents · RFT PRN. ESE25/10020</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="index-bar" aria-label="Atlas sections">
+  <div class="shell">
+    <a href="#top" class="index-brand" style="text-decoration:none;">
+      <span class="num">Atlas · §00</span>The <em>Co-Design</em> Atlas
+    </a>
+    <a class="index-link" href="#preamble"><span class="glyph">§01</span>Preamble</a>
+    <a class="index-link" href="#documents"><span class="glyph">§02</span>Anchors</a>
+    <a class="index-link" href="#matrix"><span class="glyph">§03</span>Matrix</a>
+    <a class="index-link" href="#pillars"><span class="glyph">§04</span>Pillars</a>
+    <a class="index-link" href="#recommendations"><span class="glyph">§05</span>Recommendations</a>
+    <a class="index-link" href="#tender"><span class="glyph">§06</span>Tender Map</a>
+    <a class="index-link" href="#cohorts"><span class="glyph">§07</span>Cohorts</a>
+    <a class="index-link" href="#codesign"><span class="glyph">§08</span>AutismCRC</a>
+    <button class="index-toggle" type="button" aria-expanded="false" aria-controls="index-drawer">Pillars ▾</button>
+    <a class="index-companion" href="../brief/">↗ Companion · Service Brief</a>
+  </div>
+  <div class="index-drawer" id="index-drawer" aria-hidden="true">
+    <div class="shell">
+      <h6>§04 · The eight pillars</h6>
+      <a href="#pillar-1"><span class="num">P 1</span>Rights, Standards &amp; the ECEC frontier</a>
+      <a href="#pillar-2"><span class="num">P 2</span>Consultation as practice</a>
+      <a href="#pillar-3"><span class="num">P 3</span>Reasonable adjustments</a>
+      <a href="#pillar-4"><span class="num">P 4</span>Curriculum access</a>
+      <a href="#pillar-5"><span class="num">P 5</span>Belonging, safety &amp; anti-bullying</a>
+      <a href="#pillar-6"><span class="num">P 6</span>Whole-school leadership</a>
+      <a href="#pillar-7"><span class="num">P 7</span>Family partnership</a>
+      <a href="#pillar-8"><span class="num">P 8</span>Transitions</a>
+    </div>
+  </div>
+</nav>
+
+<main class="shell" id="content">
+
+<!-- §01 ============================================ PREAMBLE -->
+<section id="preamble">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;01 <span class="glyph">Preamble</span></div>
+    <h2 class="section-title">A working map, not a <em>compliance checklist</em>.</h2>
+    <p class="section-lede">
+      Why this atlas exists, what it is for, and what kind of artefact it is.
+    </p>
+  </div>
+  <div class="preamble">
+    <aside class="marginalia">
+      <strong>What it is</strong>
+      A single-file webpage you can read, print, or extend. Not a content library. Not a curriculum.
+      A scaffold for Phase 5 design decisions, anchored in the documents PP is funded against.
+      <br><br>
+      <strong>What it is not</strong>
+      A summary of the source documents. The PDFs are linked beneath each anchor card —
+      read them, do not let a derivative replace them.
+    </aside>
+    <div class="body">
+      <p>
+        Positive Partnerships does not get to choose, as a sector, which document is load-bearing. Educators carry the
+        <span class="mono">DDA&nbsp;1992</span> and the <span class="mono">DSE&nbsp;2005</span> as floor obligations.
+        School leaders carry the <span class="mono">APSP</span> and the system's responsibilities under the
+        <span class="mono">NCCD</span>. Teachers carry the <span class="mono">APST</span> and the
+        <span class="mono">Australian Curriculum v9</span>. Families carry rights as associates under the
+        <span class="mono">DDA</span> and (newly, from August&nbsp;2026) into early childhood under the
+        <span class="mono">DSE 2025 Amendment</span>. And every Autistic student, family and educator is now also held
+        within the <span class="mono">National Autism Strategy&nbsp;2025–31</span>, which moves the conversation from
+        compliance to recognition, belonging and co-design.
+      </p>
+      <p>
+        Held together, these seven Commonwealth documents tell a coherent story — one that few educators, families
+        or workshop designers have ever been handed in one piece. Sitting alongside them is a second register: the
+        three <em>AutismCRC best-practice guidelines</em> the RFT directs Phase 5 content to draw on. Together they
+        form the foundation; this atlas is the attempt to lay them in one place so that Phase 5 workshop content
+        can be designed against the whole picture, not a fragment of it.
+      </p>
+      <p>
+        The structure is simple. <strong>Anchor documents</strong> across the top of the matrix. <strong>Eight
+        content pillars</strong> down the side. The cells point to where each document binds, suggests or speaks
+        into each pillar. Below the matrix, each pillar opens out into a working brief — what the documents say,
+        what they mean in a classroom or early childhood centre, and what the workshop should actually equip people
+        to do. The final third of the atlas is editorial: recommendations for Phase 5, a map onto the nine RFT
+        Services, and notes for the conversation with AutismCRC.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- §02 ============================================ THE ANCHOR DOCUMENTS -->
+<section id="documents">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;02 <span class="glyph">The Anchors</span></div>
+    <h2 class="section-title">Two registers: Commonwealth foundations, AutismCRC <em>best-practice guidelines</em>.</h2>
+    <p class="section-lede">
+      Seven Commonwealth documents set the legal and policy floor. Three AutismCRC best-practice guidelines name
+      the evidence base and the co-design standards. Tap a card to open the PDF.
+    </p>
+  </div>
+
+  <h3 style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin: 0 0 1rem; font-weight: 500;">Register A &middot; Commonwealth foundations</h3>
+
+  <div class="doc-grid">
+
+    <a class="doc-card" href="../docs/DDA-1992_compilation-2024-10-14.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">DDA&nbsp;·&nbsp;1992 <span class="year">in&nbsp;force&nbsp;2024</span></div>
+      <h3>Disability Discrimination Act 1992
+        <span class="italic">the floor — the right to be free from discrimination</span></h3>
+      <p class="gloss">
+        Commonwealth Act prohibiting direct and indirect disability discrimination across education, employment,
+        services and access. Establishes the duty to make reasonable adjustments, protects <em>associates</em>
+        (parents, carers, siblings), prohibits harassment and victimisation, and is the head of power for the DSE.
+      </p>
+      <div class="key-sections">
+        <span>s 5–9 discrimination</span><span>s 22 education</span><span>s 31 standards</span>
+        <span>s 42 victimisation</span><span>s 123 provider liability</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/DSE-2005_Disability-Standards-for-Education.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">DSE&nbsp;·&nbsp;2005 <span class="year">as&nbsp;made</span></div>
+      <h3>Disability Standards for Education 2005
+        <span class="italic">how the DDA actually operates in education</span></h3>
+      <p class="gloss">
+        Subordinate legislation that translates the DDA into five education domains: <em>enrolment, participation,
+        curriculum, support services, harassment &amp; victimisation</em>. Sets the consultation duty (s&nbsp;3.5),
+        defines reasonable adjustments (s&nbsp;3.4), and applies to all education providers including preschools
+        and schools.
+      </p>
+      <div class="key-sections">
+        <span>s 2.2 same basis</span><span>Part 3 adjustments</span><span>Part 4–7 domains</span>
+        <span>Part 8 anti-bullying</span><span>Part 9 associates</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">DSE&nbsp;25&nbsp;·&nbsp;2025 <span class="year">commences&nbsp;1&nbsp;Aug&nbsp;2026</span></div>
+      <h3>DSE Amendment Standards 2025
+        <span class="italic">the Standards reach into early childhood for the first time</span></h3>
+      <p class="gloss">
+        Made 12 November 2025; commences 1 August 2026. Extends the Standards to <em>educational early childhood
+        services</em> (preschools, kindergartens, centre-based day care, family day care, OSHC, vacation care,
+        in-home care). Inserts new <em>Statement of Rights</em> boxes at the head of Parts 4–8 and modernises
+        language throughout.
+      </p>
+      <div class="key-sections">
+        <span>Sch 1 ECEC scope</span><span>Statement of Rights</span><span>s 2.1A definition</span>
+        <span>HREOC → AHRC</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/NCCD-Guidelines-2025.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">NCCD&nbsp;·&nbsp;2025 <span class="year">annual&nbsp;collection</span></div>
+      <h3>Nationally Consistent Collection of Data on School Students with Disability
+        <span class="italic">the evidence base, and the funding loading attached to it</span></h3>
+      <p class="gloss">
+        Annual collection at every school of students receiving adjustments. Defines four <em>levels of
+        adjustment</em> (Quality Differentiated Teaching Practice, Supplementary, Substantial, Extensive) and four
+        <em>categories of disability</em> (Physical, Cognitive, Sensory, Social/Emotional). Evidence has four
+        elements; consultation is one of them.
+      </p>
+      <div class="key-sections">
+        <span>4 levels</span><span>4 categories</span><span>4 evidence elements</span>
+        <span>approved authority duties</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/Australian-Curriculum-v9_workbook.xlsx" target="_blank" rel="noopener">
+      <span class="download">XLSX</span>
+      <div class="call-number">AC&nbsp;v9&nbsp;·&nbsp;2022 <span class="year">implementation&nbsp;ongoing</span></div>
+      <h3>Australian Curriculum v9.0
+        <span class="italic">what every student is entitled to participate in</span></h3>
+      <p class="gloss">
+        ACARA's national curriculum from F to Year 10, in eight learning areas, with seven General Capabilities and
+        three Cross-curriculum Priorities. Adjustments under the DSE operate <em>on</em> this curriculum — they do
+        not replace it. The General Capabilities (especially Personal and Social) are the natural inclusion levers.
+      </p>
+      <div class="key-sections">
+        <span>8 learning areas</span><span>7 General Capabilities</span><span>3 Cross-curriculum Priorities</span>
+        <span>achievement standards</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/APST_Australian-Professional-Standards-for-Teachers.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">APST&nbsp;·&nbsp;AITSL <span class="year">national&nbsp;teacher&nbsp;standards</span></div>
+      <h3>Australian Professional Standards for Teachers
+        <span class="italic">seven standards, four career stages</span></h3>
+      <p class="gloss">
+        Seven Standards across Professional Knowledge, Practice and Engagement. Inclusion sits explicitly in
+        Standard 1.5 (differentiating teaching) and Standard 1.6 (strategies to support full participation of
+        students with disability). Standards 4 and 7 carry the safety, communication and parent-engagement load.
+      </p>
+      <div class="key-sections">
+        <span>1.5 differentiation</span><span>1.6 disability</span><span>3.3 strategies</span>
+        <span>4.4 safety</span><span>7.3 parents/carers</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/APSP_Australian-Professional-Standard-for-Principals.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">APSP&nbsp;·&nbsp;AITSL <span class="year">leadership&nbsp;profile</span></div>
+      <h3>Australian Professional Standard for Principals
+        <span class="italic">where school culture is set, or unset</span></h3>
+      <p class="gloss">
+        Three Leadership Requirements and five Professional Practices (Leading teaching &amp; learning; Developing
+        self &amp; others; Leading improvement, innovation &amp; change; Leading the management of the school;
+        Engaging and working with the community). Inclusion lives in every Practice when the principal lets it.
+      </p>
+      <div class="key-sections">
+        <span>3 requirements</span><span>5 practices</span><span>community engagement</span>
+        <span>due-diligence partner</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number">NAS&nbsp;·&nbsp;2025–31 <span class="year">first&nbsp;national&nbsp;strategy</span></div>
+      <h3>National Autism Strategy 2025–2031
+        <span class="italic">co-designed; identity-first; strengths-based</span></h3>
+      <p class="gloss">
+        Australia's first National Autism Strategy. Four outcome areas — <em>Social Inclusion, Economic Inclusion,
+        Diagnosis Services &amp; Supports, Health and Mental Health</em>. Identity-first language. No functioning
+        labels. Co-designed with Autistic people. Priority cohorts named. First Action Plan 2025–2026 sits alongside.
+      </p>
+      <div class="key-sections">
+        <span>4 outcomes</span><span>5 themes</span><span>priority cohorts</span>
+        <span>co-design principle</span>
+      </div>
+    </a>
+
+  </div>
+
+  <h3 style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--verdigris-deep); margin: 2.5rem 0 1rem; font-weight: 500;">Register B &middot; AutismCRC best-practice guidelines</h3>
+
+  <p style="font-family: var(--display); font-style: italic; color: var(--ink-soft); font-size: 1rem; max-width: 60ch; margin: 0 0 1.2rem; font-variation-settings: 'opsz' 36;">
+    Three NHMRC-approved guidelines and frameworks published by AutismCRC. The RFT directs Phase 5 content to be
+    informed by AutismCRC research (General Requirement 5). These guidelines are where that direction
+    operationalises.
+  </p>
+
+  <div class="doc-grid">
+
+    <a class="doc-card" href="../docs/AutismCRC_Assessment-and-Diagnosis-Guideline-2023.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number" style="color: var(--verdigris-deep);">A&amp;D&nbsp;·&nbsp;2023 <span class="year">NHMRC-approved&nbsp;8&nbsp;Dec&nbsp;2023</span></div>
+      <h3>National Guideline for the Assessment and Diagnosis of Autism in Australia
+        <span class="italic">11 Guiding Principles · 66 Consensus-Based Recommendations</span></h3>
+      <p class="gloss">
+        The unified national guideline for autism assessment and diagnosis. Second edition, 2023. Eleven Guiding
+        Principles — <em>client- &amp; family-centred, strengths-focused, holistic, helpful, evidence-based,
+        culturally-affirming, respecting First Nations Peoples, neurodiversity-affirming, competent, safe,
+        individualised</em> — each with NHMRC-approved Recommendations across referral, Comprehensive Needs
+        Assessment, and Diagnostic Evaluation.
+      </p>
+      <div class="key-sections">
+        <span>Guiding Principles</span><span>66 Recommendations</span><span>NHMRC-approved</span>
+        <span>strengths-focused</span><span>neurodiversity-affirming</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number" style="color: var(--verdigris-deep);">SAC&nbsp;·&nbsp;2022 <span class="year">NHMRC-approved&nbsp;6&nbsp;Dec&nbsp;2022</span></div>
+      <h3>National Guideline for Supporting the Learning, Participation and Wellbeing of Autistic Children and Their Families
+        <span class="italic">84 Consensus-Based Recommendations · ages 0–12, lifespan perspective</span></h3>
+      <p class="gloss">
+        The first national best-practice guideline for supporting Autistic children. 84 Recommendations across
+        five sections: Guiding Principles, Goal Setting, Selecting &amp; Planning Supports, Delivering Supports,
+        and Outcomes/Quality/Safeguarding. Foregrounds <em>honouring childhood</em>, children's right to
+        <em>assent</em>, parents' right to <em>informed consent</em>, and accessible environments. Non-pharmacological;
+        Positive Partnerships' Jessica Feary on the Guideline Development Group.
+      </p>
+      <div class="key-sections">
+        <span>5 sections</span><span>84 Recommendations</span><span>NHMRC-approved</span>
+        <span>honour childhood</span><span>assent &amp; consent</span>
+      </div>
+    </a>
+
+    <a class="doc-card" href="../docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf" target="_blank" rel="noopener">
+      <span class="download">PDF</span>
+      <div class="call-number" style="color: var(--verdigris-deep);">S&amp;S&nbsp;·&nbsp;Dec&nbsp;2024 <span class="year">v1.1 · 23 co-producing orgs</span></div>
+      <h3>National Framework for Assessing Children's Functional Strengths and Support Needs in Australia
+        <span class="italic">applies regardless of diagnosis · cross-sector · ICF-aligned</span></h3>
+      <p class="gloss">
+        Cross-sector framework for assessing, differentiating and reporting children's functional strengths and
+        support needs (ages 0–12). Six Guiding Principles — <em>child- &amp; family-centred, culturally responsive,
+        evidence-based, inclusive, equitable, coordinated</em>. Grounded in the UN Conventions on the Rights of
+        the Child, of Indigenous Peoples, and of Persons with Disabilities. Built on the ICF's
+        <em>F-Words framework</em> — Fitness, Functioning, Friends, Family, Fun, Future.
+      </p>
+      <div class="key-sections">
+        <span>6 Guiding Principles</span><span>ICF + F-Words</span><span>23 co-producing orgs</span>
+        <span>cross-sector</span><span>diagnosis-agnostic</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="callout" style="margin-top: 1.5rem; border-color: var(--verdigris); background: rgba(31, 92, 95, 0.05);">
+    <strong style="color: var(--verdigris-deep);">Why both registers belong in this atlas: </strong>The
+    Commonwealth foundations (Register A) say <em>what schools, services and providers must do</em>. The
+    AutismCRC guidelines (Register B) say <em>what good practice looks like in detail</em>, drawn from autistic
+    voices and the evidence base. Phase 5 workshop content sits at the intersection — translating the
+    obligations of Register A through the practice guidance of Register B.
+  </div>
+</section>
+
+<!-- §03 ============================================ THE MATRIX -->
+<section id="matrix">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;03 <span class="glyph">The Matrix</span></div>
+    <h2 class="section-title">Eight pillars × seven documents.</h2>
+    <p class="section-lede">
+      Tap a row title to read the full pillar brief. Cells show the most pointed reference; a starred cell flags the
+      pillar's primary anchor. Marked at heaviness, not equivalence.
+    </p>
+  </div>
+
+  <div class="matrix-wrap">
+    <table class="matrix" aria-label="Eight content pillars mapped against seven anchor documents">
+      <caption>Star = primary anchor. Tinted = strong anchor. Plain = touches on. Dash = not directly engaged.</caption>
+      <thead>
+        <tr>
+          <th class="row-head" scope="col">Pillar</th>
+          <th scope="col">DDA</th>
+          <th scope="col">DSE&nbsp;05</th>
+          <th scope="col">DSE&nbsp;25</th>
+          <th scope="col">NCCD</th>
+          <th scope="col">AC&nbsp;v9</th>
+          <th scope="col">APST</th>
+          <th scope="col">APSP</th>
+          <th scope="col">NAS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-1" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;1</span> Rights, Standards &amp; the new ECEC frontier</a></th>
+          <td class="cell cell--key">s 22, 31</td>
+          <td class="cell cell--key">Parts 1–2</td>
+          <td class="cell cell--key">whole</td>
+          <td class="cell">underlying</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell">1.6</td>
+          <td class="cell">P5</td>
+          <td class="cell cell--heavy">all 4 outcomes</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-2" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;2</span> Consultation as practice, not paperwork</a></th>
+          <td class="cell">underlying</td>
+          <td class="cell cell--key">s 3.5</td>
+          <td class="cell cell--heavy">Statement of Rights</td>
+          <td class="cell cell--heavy">Evidence&nbsp;1</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell cell--heavy">7.3</td>
+          <td class="cell">P5</td>
+          <td class="cell cell--key">co-design</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-3" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;3</span> Reasonable adjustments in real classrooms</a></th>
+          <td class="cell">s 5–6</td>
+          <td class="cell cell--key">Part 3</td>
+          <td class="cell">s 6.2 updated</td>
+          <td class="cell cell--heavy">4 levels</td>
+          <td class="cell cell--heavy">access basis</td>
+          <td class="cell cell--key">1.5, 1.6, 3.3</td>
+          <td class="cell">P1</td>
+          <td class="cell">strengths-based</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-4" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;4</span> Curriculum access on the same basis</a></th>
+          <td class="cell">underlying</td>
+          <td class="cell cell--key">Part 6</td>
+          <td class="cell cell--heavy">s 6.2 rewritten</td>
+          <td class="cell">QDTP</td>
+          <td class="cell cell--key">General Capabilities</td>
+          <td class="cell cell--heavy">1.1, 1.2, 2.1</td>
+          <td class="cell">P1</td>
+          <td class="cell">Social Inclusion</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-5" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;5</span> Belonging, safety &amp; anti-bullying</a></th>
+          <td class="cell cell--heavy">s 42</td>
+          <td class="cell cell--key">Part 8 (no UH)</td>
+          <td class="cell cell--heavy">8.1A Rights</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell cell--heavy">4.4</td>
+          <td class="cell">P5</td>
+          <td class="cell cell--key">Social Inclusion</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-6" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;6</span> Whole-school leadership for inclusion</a></th>
+          <td class="cell cell--heavy">s 123</td>
+          <td class="cell">Guidance §7–8</td>
+          <td class="cell">whole</td>
+          <td class="cell cell--heavy">approved authority</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell">6.1–6.4</td>
+          <td class="cell cell--key">all 5 Practices</td>
+          <td class="cell cell--heavy">workforce</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-7" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;7</span> Family partnership &amp; lived experience</a></th>
+          <td class="cell cell--heavy">s 4 associates</td>
+          <td class="cell cell--key">Part 9</td>
+          <td class="cell">child &amp; associate</td>
+          <td class="cell cell--heavy">consultation</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell cell--heavy">7.3</td>
+          <td class="cell">P5</td>
+          <td class="cell cell--key">co-design</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><a href="#pillar-8" style="text-decoration:none;color:inherit;"><span class="pillar-num">P&nbsp;8</span> Transitions &amp; life-stage continuity</a></th>
+          <td class="cell">s 22</td>
+          <td class="cell">Parts 4–5</td>
+          <td class="cell cell--key">ECEC&nbsp;→&nbsp;school</td>
+          <td class="cell cell--heavy">evidence&nbsp;travel</td>
+          <td class="cell">Foundation</td>
+          <td class="cell">1.1</td>
+          <td class="cell">P4</td>
+          <td class="cell cell--heavy">life-stages</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="matrix-legend">
+    <span><span class="swatch" style="background: rgba(194,90,31,0.12);"></span>Primary anchor</span>
+    <span><span class="swatch" style="background: rgba(31,92,95,0.08);"></span>Strong anchor</span>
+    <span><span class="swatch" style="background: var(--vellum);"></span>Touches on</span>
+    <span><span class="swatch" style="background: var(--vellum); color: var(--rule);">—</span>Not directly engaged</span>
+  </div>
+</section>
+
+<!-- §04 ============================================ THE EIGHT PILLARS -->
+<section id="pillars">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;04 <span class="glyph">The Pillars</span></div>
+    <h2 class="section-title">Eight content pillars, <em>read in conversation</em>.</h2>
+    <p class="section-lede">
+      Each pillar opens with one sentence — the design provocation — and a working brief for content. Star a pillar
+      to keep it; favourites persist locally on this device.
+    </p>
+  </div>
+
+  <div class="audience-bar" role="group" aria-label="Filter pillars by audience">
+    <span class="label">Foreground for:</span>
+    <button class="audience-btn" data-audience="all" aria-pressed="true">All</button>
+    <button class="audience-btn" data-audience="educators" aria-pressed="false">Educators</button>
+    <button class="audience-btn" data-audience="leaders" aria-pressed="false">School &amp; ECEC leaders</button>
+    <button class="audience-btn" data-audience="families" aria-pressed="false">Families &amp; carers</button>
+    <button class="audience-btn" data-audience="codesign" aria-pressed="false">Co-design partners</button>
+  </div>
+
+  <div class="pillars" id="pillar-list">
+
+    <!-- PILLAR 1 ============================================ -->
+    <article class="pillar" id="pillar-1" data-pillar="1" data-audience="educators leaders families codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 01 · Foundations</div>
+          <h3>Rights, <span class="em">Standards</span> &amp; the new ECEC frontier</h3>
+          <p class="one-liner">
+            What educators, families and ECEC providers operate within — and what changes on 1 August 2026.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="1" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>Why this is first</h4>
+          <p>
+            Every other pillar sits on top of the DDA's twin questions: <em>is this person being denied something
+            comparable to a person without disability?</em> and <em>has the duty to adjust been honoured?</em> The
+            DSE 2005 was the answer the Commonwealth gave for education. The 2025 Amendment, which commences on 1
+            August 2026, extends that answer for the first time into early childhood services — preschools,
+            kindergartens, centre-based day care, family day care, OSHC, vacation care and in-home care. The
+            workforce that has not yet been bound by these Standards is about to be.
+          </p>
+          <p class="callout">
+            <strong>The Phase 5 implication: </strong>Positive Partnerships has a narrow window — roughly six months
+            from now — to build ECEC-facing content. The educators reached for the last twenty years were teachers;
+            the educators about to need the same workshops are early childhood professionals who have never sat
+            under the DSE.
+          </p>
+
+          <h4>What workshops must equip people to do</h4>
+          <ul>
+            <li>Read the phrase &ldquo;on the same basis&rdquo; (DSE s&nbsp;2.2) as a working test, not legal jargon —
+              <em>are the opportunities and choices comparable?</em></li>
+            <li>Distinguish direct from indirect discrimination (DDA ss&nbsp;5–6) — most education complaints turn on the
+              second.</li>
+            <li>Recognise <em>imputed</em> disability (DDA s&nbsp;4(k)): the duty arises before a formal diagnosis.</li>
+            <li>Know that associates — parents, carers, siblings — are protected in their own right (DDA s&nbsp;4,
+              DSE Part 9).</li>
+            <li>For ECEC providers: understand that from 1 August 2026 the Standards apply to your service, your
+              children and any associate seeking enrolment.</li>
+            <li>Read the new <em>Statement of Rights</em> boxes the 2025 Amendment inserts at the head of Parts 4, 5, 6,
+              7 and 8 — these are designed to make the rights legible to the people they belong to.</li>
+          </ul>
+
+          <p class="pull-quote">
+            &ldquo;An education provider treats a student with a disability on the same basis as a student without
+            a disability if the provider makes any decisions about admission or enrolment on the basis that
+            reasonable adjustments will be provided.&rdquo;
+            <cite>DSE 2005, s 2.2(2)</cite>
+          </p>
+
+          <h4>Where the workshop content has historically been weak</h4>
+          <p>
+            Two failure modes are common in this domain. The first is treating the DSE as a paperwork exercise — a
+            register of forms — rather than a description of what schools and services must <em>actually do</em>.
+            The second is the &ldquo;diagnosis-first&rdquo; misconception, where families and educators believe a
+            formal autism diagnosis is required before adjustments are due. Both can be unlearned in a one-hour
+            workshop. Both will recur if Phase 5 does not name them.
+          </p>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DDA</span><span class="ref-cite">ss 5–9, 22, 31, 42, 123</span></li>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">Parts 1–2, 9, 10</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">Sch 1 items 1–20; Statement of Rights 4.1A, 5.1A, 6.1A, 7.1A, 8.1A</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">1.6</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">levelling the playing field; Outcome: Social Inclusion</span></li>
+            <li><span class="ref-doc">S&amp;S 2024</span><span class="ref-cite">applies regardless of diagnosis — supports DSE imputed-disability reach</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 2 ============================================ -->
+    <article class="pillar" id="pillar-2" data-pillar="2" data-audience="educators leaders families codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 02 · Consultation</div>
+          <h3>Consultation as <span class="em">practice</span>, not paperwork.</h3>
+          <p class="one-liner">
+            The most-repeated obligation across every framework — and the one done most thinly in practice.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="2" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>Why this is the load-bearing wall</h4>
+          <p>
+            The duty to consult is the same duty appearing under different headings across four of the seven
+            anchors. The DSE writes it five times — at enrolment (4.2(3)), participation (5.2(2)), curriculum
+            (6.2(2)), support services (7.2(5)/(6)) and as a general adjustment principle (3.5). NCCD writes it
+            as the first of its four evidence elements. APST 7.3 writes it as a Standard. The National Autism
+            Strategy writes it as a Guiding Principle — co-design. The duty does not move; only its label does.
+          </p>
+          <p>
+            That repetition matters for Phase 5 because it identifies a single transferable competency. Whoever
+            can consult well — at enrolment, in an adjustment review, around an incident, at a transition — has the
+            single most useful skill in this entire framework. Whoever cannot will fail every other duty, however
+            well-intentioned.
+          </p>
+
+          <p>
+            The AutismCRC guidelines deepen this picture. The <em>Supporting Autistic Children Guideline</em>
+            makes the consultation duty bilateral by separating <strong>assent</strong> (Recommendation 11 —
+            children's right to say no, whether they communicate using words or in other ways) from
+            <strong>informed consent</strong> (Recommendation 12 — parents having the information they need to
+            make informed choices). The <em>Assessment &amp; Diagnosis Guideline</em>'s first Guiding Principle
+            is <em>client- and family-centred</em>: practitioners collaborate with respect, valuing the client's
+            unique reasons, preferences and context. Phase 5 consultation literacy should teach educators that
+            assent and consent are not the same — and that both belong in every adjustment conversation.
+          </p>
+
+          <h4>What real consultation looks like</h4>
+          <ul>
+            <li>Begins with the student themselves where possible (DSE s 3.5 names the student first, the associate
+              second).</li>
+            <li>Recognises AAC, gesture, drawing and other modes of communication — non-speaking students are not
+              outside the duty.</li>
+            <li>Asks the question prescribed by s 3.5(c): is there <em>any other adjustment that would be less
+              disruptive and intrusive and no less beneficial?</em> This is the student's right to redirect.</li>
+            <li>Captures what was said, by whom, when — for the NCCD evidence base and for the student's record.</li>
+            <li>Repeats. DSE s&nbsp;5.2(3) requires the process to recur as needs change.</li>
+          </ul>
+
+          <p class="callout">
+            <strong>Design provocation: </strong>What would it look like to name &ldquo;consultation literacy&rdquo;
+            as a single transferable skill across every PP workshop, taught explicitly with practice and
+            assessment? At present it is implicit in many workshops and absent from the rest.
+          </p>
+
+          <h4>The 2025 Amendment's quiet shift</h4>
+          <p>
+            The Amendment's new <em>Statement of Rights</em> boxes do something subtle to consultation. They
+            re-frame each Part of the Standards as a description of the student's entitlement — not the
+            provider's obligation. That changes the script of a consultation conversation. Workshop content can
+            and should reproduce these boxes visibly so educators and families read the same words.
+          </p>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">s 3.5, 3.7; 4.2(3); 5.2(2); 5.2(3); 6.2(2); 7.2(5)(6)</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">Statement of Rights, every Part</span></li>
+            <li><span class="ref-doc">NCCD</span><span class="ref-cite">Evidence element 1 — consultation</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">7.3 engage with parents/carers</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">Guiding principle: co-design</span></li>
+            <li><span class="ref-doc">DSE Guidance</span><span class="ref-cite">§4.2 accessible &amp; transparent processes</span></li>
+            <li><span class="ref-doc">A&amp;D 2023</span><span class="ref-cite">Rec 1 client &amp; family-centred</span></li>
+            <li><span class="ref-doc">SAC 2022</span><span class="ref-cite">Rec 11 assent, Rec 12 informed consent</span></li>
+            <li><span class="ref-doc">S&amp;S 2024</span><span class="ref-cite">Foundation: children's voices</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 3 ============================================ -->
+    <article class="pillar" id="pillar-3" data-pillar="3" data-audience="educators leaders families">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 03 · Adjustments</div>
+          <h3>Reasonable adjustments in <span class="em">real</span> classrooms.</h3>
+          <p class="one-liner">
+            From legal concept to daily practice, and the language teachers need to share with families.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="3" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>The working definition</h4>
+          <p>
+            DSE s&nbsp;3.3 defines an adjustment as &ldquo;a measure or action&hellip; that has the effect of
+            assisting a student with a disability&rdquo; to participate <em>on the same basis</em> as a student
+            without a disability. DSE s&nbsp;3.4 makes it <em>reasonable</em> when it &ldquo;balances the interests
+            of all parties.&rdquo; The factors named in s&nbsp;3.4(2) — the student's disability, the student's
+            views, effect on the student, effect on others, costs and benefits — are not a checklist; they are the
+            terms of a conversation.
+          </p>
+          <p>
+            The NCCD then carries the same concept into national language. Adjustments come in four levels —
+            <em>Quality Differentiated Teaching Practice, Supplementary, Substantial, Extensive</em> — and four
+            categories of disability are recorded — <em>Physical, Cognitive, Sensory, Social/Emotional</em>. Most
+            Autistic students who receive adjustments are recorded under Cognitive and Social/Emotional, often both.
+          </p>
+
+          <h4>What is an adjustment <em>not</em>?</h4>
+          <p>
+            It is not a modification of the curriculum standard a student is expected to reach. DSE s&nbsp;3.4(3)
+            preserves the academic integrity of the course. The 2025 Amendment rewrites s&nbsp;6.2(1) to make this
+            sharper: the course or program must be designed so that a student with a disability is able to
+            participate in the learning experiences <em>and assessment and certification requirements</em> on the
+            same basis, without discrimination. Adjustments operate on the standard curriculum (v9); they do not
+            substitute for it.
+          </p>
+
+          <h4>What workshops should equip people to do</h4>
+          <ul>
+            <li>Distinguish QDTP (universal practice, no NCCD recording above QDTP) from supplementary, substantial
+              and extensive.</li>
+            <li>Use a working vocabulary of <em>sensory adjustments</em> — lighting, sound, transitions, predictable
+              routines, regulated retreat spaces — without medicalising them.</li>
+            <li>Use a working vocabulary of <em>communication adjustments</em> — AAC, visual supports, processing
+              time, pre-teaching of vocabulary, written checking.</li>
+            <li>Use a working vocabulary of <em>cognitive load adjustments</em> — chunking, scaffolds, organisers,
+              executive function supports.</li>
+            <li>Document the adjustment, the consultation that informed it, and the review interval — for NCCD,
+              for the student's record, and for the consultation history that follows the student into the next
+              setting.</li>
+          </ul>
+
+          <p class="pull-quote">
+            &ldquo;Compliance with the measures is not required if the legal obligation can be met in other
+            ways.&rdquo;
+            <cite>DSE 2005, Introduction</cite>
+          </p>
+
+          <h4>How the AutismCRC guidelines sharpen the adjustments conversation</h4>
+          <p>
+            The <em>Supporting Autistic Children Guideline</em> structures its 84 Recommendations around nine
+            focal areas — communication, sensory experiences, cognitive development, social-emotional
+            development and wellbeing, motor development, academic skills, daily activities and participation,
+            family wellbeing, and accessible environments. Read against DSE Part 3, these become a practical
+            taxonomy for the adjustments conversation. Where DSE says &ldquo;reasonable adjustment&rdquo; in the
+            abstract, this Guideline names <em>what</em> is being adjusted.
+          </p>
+          <p>
+            The <em>National Framework</em> reaches further. Its <em>F-Words framework</em> — Fitness,
+            Functioning, Friends, Family, Fun, Future — derived from the ICF and Rosenbaum &amp; Gorter (2012),
+            offers a single child-focused vocabulary for what an adjustment is <em>for</em>. A workshop module
+            that maps DSE adjustments and NCCD levels through the F-Words gives teachers and families a shared
+            language they do not currently have.
+          </p>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">ss 3.3, 3.4, 3.6, 3.7, 6.2</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">s 6.2(1) rewritten</span></li>
+            <li><span class="ref-doc">NCCD</span><span class="ref-cite">4 levels × 4 categories</span></li>
+            <li><span class="ref-doc">AC v9</span><span class="ref-cite">achievement standards retained</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">1.5, 1.6, 3.3</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">strengths-based; individualised supports</span></li>
+            <li><span class="ref-doc">A&amp;D 2023</span><span class="ref-cite">Rec 2 strengths-focused; Rec 8 neurodiversity-affirming</span></li>
+            <li><span class="ref-doc">SAC 2022</span><span class="ref-cite">9 focal areas of support</span></li>
+            <li><span class="ref-doc">S&amp;S 2024</span><span class="ref-cite">F-Words: Fitness · Functioning · Friends · Family · Fun · Future</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 4 ============================================ -->
+    <article class="pillar" id="pillar-4" data-pillar="4" data-audience="educators leaders codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 04 · Curriculum</div>
+          <h3>Curriculum access <span class="em">on the same basis</span>.</h3>
+          <p class="one-liner">
+            What &ldquo;same basis&rdquo; means across F–10 and senior secondary, when the curriculum is held constant.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="4" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>The two halves of the same right</h4>
+          <p>
+            Curriculum access has two halves and both must be designed for. The first is <em>delivery</em> — the
+            student must be able to participate in the learning experiences as designed (DSE s&nbsp;6.2). The
+            second is <em>assessment and certification</em> — the student must be able to participate in the
+            assessment regime, including its certification requirements. The 2025 Amendment makes this second half
+            explicit in a rewritten s&nbsp;6.2(1) — closing a long-standing ambiguity that had let some providers
+            adjust pedagogy without adjusting assessment.
+          </p>
+
+          <h4>v9 as inclusion architecture</h4>
+          <p>
+            The Australian Curriculum v9 is not an obstacle to inclusion. The seven General Capabilities — Literacy,
+            Numeracy, Digital Literacy, Critical and Creative Thinking, Personal and Social, Ethical Understanding,
+            Intercultural Understanding — are <em>already</em> the natural levers. The Personal and Social
+            Capability in particular sits across every learning area and offers the explicit framing of
+            self-awareness, self-management, social awareness and social management without the deficit overlay of
+            &ldquo;social skills training.&rdquo; The HPE learning area carries identity, respectful relationships
+            and emotional regulation across the years.
+          </p>
+
+          <p class="callout">
+            <strong>Language note: </strong>This atlas avoids the phrase &ldquo;social skills.&rdquo; The
+            Curriculum's own framing is &ldquo;social awareness&rdquo; and &ldquo;social management&rdquo; — and
+            Autistic-led research consistently prefers &ldquo;social interaction&rdquo; and &ldquo;social
+            communication.&rdquo; The change is small, the message is large: this is a two-way capacity, not a
+            unilateral deficit.
+          </p>
+
+          <h4>What workshops should equip people to do</h4>
+          <ul>
+            <li>Use the difference between adjustment, differentiation and modification as a precise instrument —
+              they are not synonyms in NCCD or DSE.</li>
+            <li>Design assessment access without diluting the assessed construct (extra time, alternative formats,
+              oral response, scribe, breaks, environment).</li>
+            <li>Map adjustments to General Capabilities — Personal and Social is the most generative.</li>
+            <li>Translate v9 architecture across the jurisdictional implementations (VIC v2.0, NSW K–10 syllabuses,
+              etc.).</li>
+            <li>Plan with Universal Design for Learning principles — multiple means of engagement, representation,
+              action and expression — knowing they sit cleanly within v9's framing.</li>
+          </ul>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">Part 6; ss 6.2, 6.3</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">s 6.2(1) — assessment &amp; certification</span></li>
+            <li><span class="ref-doc">AC v9</span><span class="ref-cite">8 learning areas; 7 General Capabilities; Personal &amp; Social capability</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">1.1, 1.2, 2.1, 5.1</span></li>
+            <li><span class="ref-doc">NCCD</span><span class="ref-cite">QDTP &amp; differentiation</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 5 ============================================ -->
+    <article class="pillar" id="pillar-5" data-pillar="5" data-audience="educators leaders families codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 05 · Belonging</div>
+          <h3>Belonging, safety &amp; <span class="em">anti-bullying</span>.</h3>
+          <p class="one-liner">
+            The one DSE Part that allows no unjustifiable hardship exception — and the area where outcomes for Autistic
+            students are weakest.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="5" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>The unyielding standard</h4>
+          <p>
+            DSE Part 8 is unique among the Standards. The exception in s&nbsp;10.2 — unjustifiable hardship — does
+            not apply to anti-bullying obligations. A provider cannot tell a court that preventing harassment of a
+            student with a disability would have been too expensive, too inconvenient or too administratively
+            difficult. The duty is to have strategies and programs in place (s&nbsp;8.3) and to extend them to
+            students who have an associate with a disability (Guidance Notes §9).
+          </p>
+
+          <h4>What the data tells Phase 5</h4>
+          <p>
+            68.9% of Autistic Australians aged 5–20 experience difficulty at their place of learning (NAS, p.16).
+            Autistic children experience disproportionate rates of bullying, harassment and educational exclusion
+            (NAS, p.14). 2.5 times the rate of depression in Autistic adults (NAS, p.17). These are not abstract
+            policy facts. They are the result of belonging not being designed for.
+          </p>
+
+          <p class="pull-quote">
+            &ldquo;Inclusion means systemic, societal and attitudinal change across all four outcome areas of the
+            Strategy.&rdquo;
+            <cite>National Autism Strategy 2025–2031, p.7</cite>
+          </p>
+
+          <h4>What workshops should equip people to do</h4>
+          <ul>
+            <li>Treat anti-bullying as a primary curriculum object, not an after-incident response.</li>
+            <li>Recognise that masking — the work of camouflaging Autistic traits to fit a neurotypical environment
+              — is itself a safety signal that belonging is not being designed for (NAS Statement on Autism).</li>
+            <li>Design peer culture interventions explicitly: neurodiversity literacy across <em>all</em> students,
+              not just Autistic students.</li>
+            <li>Cover the schoolyard, structured-time and online environments — Part 8 does not stop at the
+              classroom door.</li>
+            <li>Recognise that associates (siblings, parents) are also captured by Part 8 — sibling harassment based
+              on a brother or sister's disability is the same duty.</li>
+            <li>Build feedback mechanisms students will actually use — many existing complaint pathways are
+              inaccessible by design.</li>
+          </ul>
+
+          <p class="callout">
+            <strong>Phase 5 design provocation: </strong>Make Pillar 5 a workshop in its own right. Treating
+            anti-bullying as a sub-bullet within a generic inclusion workshop has reliably under-delivered for
+            twenty years. The data is clear; the Standard is unyielding; the design choice follows.
+          </p>
+
+          <h4>What the AutismCRC guidelines add</h4>
+          <p>
+            The <em>Supporting Autistic Children Guideline</em> places safeguarding at the heart of practice.
+            Its Section 5 names the work: ensuring a <em>safe environment</em>, managing adverse effects,
+            providing feedback and complaints pathways, declaring conflicts of interest, and — crucially —
+            protecting the rights of children and families. Recommendation 5 directs that supports
+            <em>honour childhood</em>: play, relationships and personal discovery. Recommendation 7 frames
+            ethical practice as protecting the child's and family's rights. Read alongside DSE Part 8, this
+            stops anti-bullying from being a reactive policy and re-frames it as a positive design parameter
+            for every classroom.
+          </p>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DDA</span><span class="ref-cite">s 42 victimisation; Part 2 Div 4</span></li>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">Part 8 (ss 8.1, 8.2, 8.3); no UH exception</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">s 8.1A Statement of Rights — incl. associates</span></li>
+            <li><span class="ref-doc">DSE Guidance</span><span class="ref-cite">§9</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">4.4 maintain student safety</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">Social Inclusion outcome; p.14, p.16, p.17</span></li>
+            <li><span class="ref-doc">SAC 2022</span><span class="ref-cite">Rec 5 honour childhood; Rec 7 ethical; Section 5 safeguarding</span></li>
+            <li><span class="ref-doc">S&amp;S 2024</span><span class="ref-cite">Section 7 safeguarding; "deconstructing exclusion"</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 6 ============================================ -->
+    <article class="pillar" id="pillar-6" data-pillar="6" data-audience="leaders codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 06 · Leadership</div>
+          <h3>Whole-school <span class="em">leadership</span> for inclusion.</h3>
+          <p class="one-liner">
+            The layer historically thinnest in PP's offering — and the one without which the rest decays.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="6" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>Why the leadership tier matters</h4>
+          <p>
+            Classroom inclusion does not happen in isolation. The APSP names three Leadership Requirements (Vision
+            and Values; Knowledge and Understanding; Personal Qualities, Social and Interpersonal Skills) and five
+            Practices (Leading teaching &amp; learning; Developing self &amp; others; Leading improvement,
+            innovation and change; Leading the management of the school; Engaging and working with the community).
+            Inclusion lives across every one of those Practices when a principal lets it; it lives in none of them
+            when a principal does not.
+          </p>
+          <p>
+            Section 123 of the DDA places the provider — usually represented by the principal — in the
+            liability seat for the unlawful conduct of staff, unless reasonable precautions and due diligence are
+            shown. DSE Guidance Notes §7 specifies what those precautions look like in practice: staff induction,
+            ongoing professional development, monitoring, and accessible complaint mechanisms. None of these are
+            classroom-teacher tasks.
+          </p>
+
+          <h4>The system layer: approved authorities under NCCD</h4>
+          <p>
+            NCCD adds a system-level duty. The approved authority — the diocesan office, the independent school
+            board, the government system — is responsible for the integrity of the evidence base across its
+            schools. Workshops for leaders that ignore this layer leave them under-prepared for the conversations
+            that come from their system.
+          </p>
+
+          <p class="callout">
+            <strong>Phase 5 recommendation (anticipated below): </strong>Build a discrete leadership stratum — a
+            half-day principal offering, plus a middle-leadership content stream for heads of inclusion, deputies
+            and ECEC directors. Without it, the classroom workshops are perpetually rebuilding what leadership has
+            not held.
+          </p>
+
+          <h4>What workshops should equip leaders to do</h4>
+          <ul>
+            <li>Build staff capability over the year — induction, scheduled PD, performance review tied to
+              inclusion practice.</li>
+            <li>Design the school's complaint resolution process so it is accessible, transparent, and used.</li>
+            <li>Make resourcing decisions through an inclusion lens, including how the NCCD-linked loading is
+              applied at the school level.</li>
+            <li>Engage the community partners — including autistic-led organisations and Autism CRC — as part of
+              the school's culture, not as guest speakers.</li>
+            <li>Model rights-respecting practice visibly: the principal who reads the Statement of Rights at a
+              staff meeting changes the school's posture in a way no policy document can.</li>
+          </ul>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DDA</span><span class="ref-cite">s 123 provider liability</span></li>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">all Parts; Guidance §7, §8</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">applies whole-of-provider; ECEC directors newly bound</span></li>
+            <li><span class="ref-doc">NCCD</span><span class="ref-cite">approved authority duties</span></li>
+            <li><span class="ref-doc">APSP</span><span class="ref-cite">3 Requirements × 5 Practices</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">6.1–6.4 professional engagement</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">enabling commitments — workforce capability</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 7 ============================================ -->
+    <article class="pillar" id="pillar-7" data-pillar="7" data-audience="families educators codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 07 · Family Partnership</div>
+          <h3>Family partnership &amp; <span class="em">lived experience</span>.</h3>
+          <p class="one-liner">
+            Families and carers are not stakeholders; they are rights-holders, co-experts and consultation partners.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="7" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>Two rights at once</h4>
+          <p>
+            Families and carers occupy a doubled position in this framework. They hold rights as the natural
+            <em>consultation partner</em> for the student under DSE s&nbsp;3.5 and Part 9. They also hold rights
+            <em>in their own person</em> as associates of a person with a disability under DDA s&nbsp;4 — the Act
+            protects them from discrimination based on the disability of someone they are connected to. Workshop
+            content that treats families only in the first sense — as a route to the child — misses the second
+            entirely.
+          </p>
+
+          <h4>Family workshops as rights education</h4>
+          <p>
+            Phase 5 family content should treat parents and carers as rights-bearing adults who need a working
+            grasp of: <em>their child's rights under the DSE</em>, <em>the consultation duty</em> they are entitled
+            to participate in, <em>the NCCD process</em> their child's adjustments are being recorded against, and
+            <em>their own protections</em> under the DDA as associates. The current sector default — workshops
+            framed as parenting tips, regulation strategies and self-care — under-uses what families can actually
+            do with knowledge of their position.
+          </p>
+
+          <p class="pull-quote">
+            &ldquo;Families and carers can themselves face challenges in navigating complex systems, such as
+            healthcare and social services, and in overcoming barriers to advocating for, and securing,
+            appropriate resources, accommodations and services.&rdquo;
+            <cite>National Autism Strategy 2025–2031, p.14</cite>
+          </p>
+
+          <h4>Cultural humility</h4>
+          <p>
+            The NAS names First Nations, CALD and CARM families as priority cohorts. PP family workshops have
+            historically reached an over-represented sample of English-speaking, urban families. Phase 5 content
+            should design from the start for cultural responsiveness — interpreters, culturally specific framings,
+            community-led delivery — rather than translating an existing English workshop after the fact.
+          </p>
+
+          <h4>What family workshops should equip people to do</h4>
+          <ul>
+            <li>Read &ldquo;on the same basis&rdquo; as the right their child holds, not a phrase to fight for.</li>
+            <li>Prepare for, participate in, and follow up after a consultation — including non-verbally with their
+              child.</li>
+            <li>Understand the four NCCD evidence elements and how the family contribution shapes the record.</li>
+            <li>Navigate complaint pathways within the school, with the system, and with the AHRC.</li>
+            <li>Recognise the associate's own protections under the DDA — and use them.</li>
+            <li>Connect with Autistic-led community as part of identity development, not pathology management.</li>
+          </ul>
+
+          <h4>The Supporting Children Guideline as a parent compass</h4>
+          <p>
+            The <em>Supporting Autistic Children Guideline</em>'s 84 Recommendations are the most concrete
+            account of family-partnership practice currently available in Australia. Its goal-setting section
+            (Section 2) anchors every plan in three tests — is the goal <em>relevant, safe, desired, and
+            feasible</em>? Its delivery section (Section 4) names who should be involved, what knowledge and
+            skills are needed, what settings, formats and modes are appropriate, and how to engage with other
+            service providers. Recommendation 1 — <em>child- and family-centred</em> — establishes that
+            individual goals, preferences and circumstances are respected, valued, and supported through
+            <em>shared decision making</em>. Phase 5 family workshops should treat this document as their
+            practical companion.
+          </p>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DDA</span><span class="ref-cite">s 4 (associate); s 22 (education)</span></li>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">s 3.5; Part 9; Part 4.2(3); 5.2(2)</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">child seeking enrolment incl. via associate</span></li>
+            <li><span class="ref-doc">NCCD</span><span class="ref-cite">consultation evidence — family voice</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">7.3</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">co-design with families; priority cohorts</span></li>
+            <li><span class="ref-doc">SAC 2022</span><span class="ref-cite">Rec 1 child &amp; family-centred; Section 2 goal-setting; Section 4 delivery</span></li>
+            <li><span class="ref-doc">S&amp;S 2024</span><span class="ref-cite">Foundation: children and families; "empowering children and families"</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+    <!-- PILLAR 8 ============================================ -->
+    <article class="pillar" id="pillar-8" data-pillar="8" data-audience="educators leaders families codesign">
+      <header class="pillar-header">
+        <div>
+          <div class="number">Pillar 08 · Transitions</div>
+          <h3>Transitions &amp; <span class="em">life-stage</span> continuity.</h3>
+          <p class="one-liner">
+            From early childhood entry through to post-school — every transition is a known fracture point and the
+            DSE 2025 Amendment now reaches the earliest one.
+          </p>
+        </div>
+        <div class="pillar-actions">
+          <button class="fav-btn" data-fav="8" aria-pressed="false">
+            <span class="star">☆</span><span>Save</span>
+          </button>
+        </div>
+      </header>
+      <div class="pillar-body">
+        <div class="prose">
+          <h4>Why transitions are a pillar in their own right</h4>
+          <p>
+            The Standards apply afresh at every new setting. A child entering preschool, a student entering Year 7,
+            a young person leaving Year 12 — each is a new prospective student in a new institution, and the
+            enrolment and participation duties begin again. In practice this is where consultation evidence is
+            most often lost. The new setting does not see the old setting's record; the new educators ask the
+            family to start over; the student is exhausted; the adjustments lapse for a term. Every transition
+            costs.
+          </p>
+
+          <h4>The ECEC frontier (1 August 2026)</h4>
+          <p>
+            From 1 August 2026 the DSE applies to educational early childhood services. This dramatically extends
+            the first transition — preschool to primary school — into a regulated handover. The ECEC service has
+            now been consulting and adjusting for the child; the school inherits that history (with consent) and
+            is bound to continue it. Phase 5 has a once-in-a-generation chance to design content for both halves
+            of that handover at the same moment.
+          </p>
+
+          <p class="callout">
+            <strong>Phase 5 design provocation: </strong>Build a single &ldquo;warm handover&rdquo; protocol that
+            spans ECEC&nbsp;→&nbsp;school, primary&nbsp;→&nbsp;secondary and secondary&nbsp;→&nbsp;post-school —
+            the consultation history is the artefact that travels with the student, not a fresh form at every
+            stage.
+          </p>
+
+          <h4>What workshops should equip people to do</h4>
+          <ul>
+            <li>Document consultations in a form that can travel — with family consent — into the next setting.</li>
+            <li>Use the early Year 7 window deliberately — it is the most under-resourced moment in many students'
+              educational lives, and a known mental-health inflection point.</li>
+            <li>Plan post-school continuity early — Year 10 onwards — across the NDIS, higher education access
+              schemes, employment supports, and post-school education.</li>
+            <li>Recognise that <em>identity</em> is also a transition: many Autistic young people are diagnosed
+              after, not before, the school transitions that affected them.</li>
+            <li>Treat the family as the continuity carrier between settings — they are the only adults present at
+              every transition.</li>
+          </ul>
+        </div>
+        <aside class="marginalia">
+          <h5>Anchor references</h5>
+          <ul>
+            <li><span class="ref-doc">DSE 05</span><span class="ref-cite">Parts 4, 5 — apply at each setting</span></li>
+            <li><span class="ref-doc">DSE 25</span><span class="ref-cite">Sch 1 — ECEC bound from 1 Aug 2026</span></li>
+            <li><span class="ref-doc">NCCD</span><span class="ref-cite">evidence — consultation history</span></li>
+            <li><span class="ref-doc">AC v9</span><span class="ref-cite">Foundation Year content</span></li>
+            <li><span class="ref-doc">APST</span><span class="ref-cite">1.1 development across age ranges</span></li>
+            <li><span class="ref-doc">NAS</span><span class="ref-cite">life-stage focus; Children &amp; young people priority cohort</span></li>
+            <li><span class="ref-doc">A&amp;D 2023</span><span class="ref-cite">Rec 3 holistic — &ldquo;now and into the future&rdquo;</span></li>
+            <li><span class="ref-doc">SAC 2022</span><span class="ref-cite">Rec 6 foundation for the future</span></li>
+            <li><span class="ref-doc">S&amp;S 2024</span><span class="ref-cite">developmental perspective; F-Word "Future"</span></li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- §05 ============================================ RECOMMENDATIONS -->
+<section id="recommendations">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;05 <span class="glyph">Recommendations</span></div>
+    <h2 class="section-title">Ten recommendations for <em>Phase 5</em> content, 2026–2029.</h2>
+    <p class="section-lede">
+      The map above is descriptive. The list below is editorial: where I think the design weight should be placed,
+      and why, read from the documents in conversation with each other.
+    </p>
+  </div>
+  <div class="recs">
+    <aside class="marginalia">
+      <h5>How to read this</h5>
+      <p>
+        These are not co-designed recommendations. They are one reader's analytical reading of the seven anchor
+        documents, offered as a draft for AutismCRC co-authorship to test, deepen or contest.
+      </p>
+      <p>
+        They are not in priority order — they are in the order they sit in the logic of the framework. Recommendation
+        01, however, is time-bound and the most consequential.
+      </p>
+      <p style="margin-top: 1rem; padding-top: 0.6rem; border-top: 1px solid var(--rule-soft);">
+        <em>One short sentence I keep returning to: the seven documents are already saying the same things in
+        different vocabularies. Phase 5's job is to give educators and families a single vocabulary they can use
+        across all seven.</em>
+      </p>
+    </aside>
+    <ol class="rec-list">
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Pivot to ECEC by mid-2026 — this is the <span class="em">phase-defining</span> shift.</h4>
+          <p>
+            The DSE 2025 Amendment commences 1 August 2026 — 31 days into Phase 5 — extending the Standards for the
+            first time to preschools, kindergartens, centre-based day care, family day care, OSHC, vacation care, and
+            in-home care. That workforce has never been bound by the DSE before. Phase 5's first deliverable should
+            be an ECEC-facing stream: educators, directors, and parents/carers of preschool-aged Autistic children.
+          </p>
+          <a class="where" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 Sch 1 items 1–20 · Service 1 direction 01 in the Brief</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Name <span class="em">&ldquo;consultation literacy&rdquo;</span> as a single transferable skill across every workshop.</h4>
+          <p>
+            The same competency is asked of every educator at every juncture — at enrolment, in adjustment review,
+            around an incident, at NCCD evidence-gathering, at every transition. The same competency is asked of
+            every family, every co-designer, every leader. Phase 5 should make it explicit, named, taught, practised
+            and assessed — the named skill that links all eight pillars.
+          </p>
+          <a class="where" href="../docs/DSE-2005_Disability-Standards-for-Education.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 2005 s 3.5 + every Part · Service 1 direction 02 in the Brief</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Co-author with Autistic adults — <span class="em">visibly</span>, in every workshop.</h4>
+          <p>
+            The NAS was co-designed; the First Action Plan continues that mode. Phase 5 content development should
+            mirror what the Strategy prescribes. Every workshop — educator, leader, family — should have paid
+            Autistic co-design on the development team and Autistic facilitation or co-presentation on the delivery
+            roster, not added as a guest segment. The content models the practice it asks of schools.
+          </p>
+          <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS 2025–31 Co-design principle p.21 · Brief Services 1–8 directions</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Bring the new <em>Statement of Rights</em> boxes into the room.</h4>
+          <p>
+            The 2025 Amendment inserts a plain-language Statement of Rights at the head of DSE Parts 4 to 8. This
+            is quietly the most powerful rhetorical change in the amendment — reframing &ldquo;the provider's
+            obligation&rdquo; as &ldquo;the student's right&rdquo; rotates the conversation by ninety degrees.
+            Workshop materials should reproduce the boxes verbatim, so educators and families read the same words.
+          </p>
+          <a class="where" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 ss 4.1A, 5.1A, 6.1A, 7.1A, 8.1A · Brief Service 1 rec 04 + Service 2 rec 05</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Build the missing <em>leadership stratum</em>.</h4>
+          <p>
+            PP has historically focused on classroom teachers and families; the principal, ECEC director and middle
+            leadership tier has been thin. Phase 5 should add a half-day principal / ECEC-director offering and a
+            continuing middle-leadership content stream (heads of inclusion, deputies, learning support
+            coordinators), carrying Approved Authority responsibilities under NCCD into the leadership content.
+          </p>
+          <a class="where" href="../docs/APSP_Australian-Professional-Standard-for-Principals.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">APSP 5 Practices · DDA s 123 · Service 3 direction 01 in the Brief</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Make <em>anti-bullying</em> a workshop in its own right.</h4>
+          <p>
+            DSE Part 8 allows no unjustifiable hardship exception. NAS data: 68.9% of Autistic 5–20 year-olds
+            experience difficulty at their place of learning; disproportionate bullying, harassment and educational
+            exclusion. Sub-bullet treatment within a general inclusion workshop has under-delivered for two decades.
+            Phase 5 should design a discrete Pillar 5 workshop — covering peer culture, masking as a safety signal,
+            online safety, and Part 9 associate reach.
+          </p>
+          <a class="where" href="../docs/DSE-2005_Disability-Standards-for-Education.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 2005 Part 8 (no UH) · NAS pp.14–17 · Service 3 direction 02 in the Brief</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Make NCCD <em>comprehensible to families</em>.</h4>
+          <p>
+            Most families have never heard of NCCD. Most do not know that their child's adjustments are being
+            recorded against four levels and four categories every year, or that family voice is one of NCCD's four
+            evidence elements. A short, accessible &ldquo;NCCD for families&rdquo; module converts families from
+            passive subjects of the data collection into active partners in its accuracy.
+          </p>
+          <a class="where" href="../docs/NCCD-Guidelines-2025.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NCCD Guidelines 2025 Evidence Area 1 · Service 2 direction 01 in the Brief</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Adopt the NAS <em>language settings</em>, deliberately and across the board.</h4>
+          <p>
+            Identity-first (&ldquo;Autistic person&rdquo;). No functioning labels. Strengths-based.
+            Neurodiversity-affirming. &ldquo;Social communication&rdquo; / &ldquo;social interaction&rdquo;, not
+            &ldquo;social skills&rdquo;. No puzzle imagery. Audit every piece of inherited PP material against this
+            language standard before any new workshop is delivered. The work is small; the signal is large.
+          </p>
+          <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Statement on Language p.8 · NAS Statement on Autism p.9</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Design for <em>intersectionality</em> from the first sketch.</h4>
+          <p>
+            The NAS names 12 priority cohorts. PP content has historically reached an over-represented default:
+            urban, English-speaking, school-aged, boy-coded, verbally-fluent. Co-design panels need cohort
+            representation; case material needs cohort range; workshop delivery needs interpreters and culturally
+            responsive framings designed in, not bolted on. The signal of seriousness is the visible diversity of
+            the people on the workshop development teams.
+          </p>
+          <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Priority Cohorts pp.10–15 · §07 Cohorts below</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="rec">
+        <span class="rec-number"></span>
+        <div class="rec-content">
+          <h4>Build <em>identity and mental health</em> in — quietly, accurately.</h4>
+          <p>
+            NAS data: 2.5× depression rate. The Autism Health Roadmap will land during Phase 5. Educators are not
+            clinicians and shouldn't be invited to become them — but they're protective factors when they support
+            identity, recognise masking-related distress, and know warm-handover pathways. Workshop content should
+            equip without over-equipping.
+          </p>
+          <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Outcome 4 p.18 · Service 9 direction 01 in the Brief</span>
+          </a>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- §06 ============================================ MAPPING TO THE TENDER -->
+<section id="tender">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;06 <span class="glyph">Mapping to the Tender</span></div>
+    <h2 class="section-title">Nine Services, eight pillars — <em>the contract underneath the framework</em>.</h2>
+    <p class="section-lede">
+      The RFT for Phase 5 (PRN. ESE25/10020, closing 3 December 2025) names nine Service Types and ten General
+      Requirements. This section maps the eight pillars above onto those nine services, names the anchors the
+      RFT adds beyond the original seven, and flags where the framework speaks back to the Tender.
+    </p>
+  </div>
+
+  <div class="preamble" style="margin-bottom: 2.5rem;">
+    <aside class="marginalia">
+      <strong>RFT at a glance</strong>
+      Phase 5 runs 1 July 2026 – 30 June 2029, with possible 24-month extension. Tender closes 3 Dec 2025. Free
+      service delivery; national scope; targets and KPIs in Schedule 1 Attachment A.
+      <br><br>
+      <strong>Funded for</strong>
+      Professional learning for school staff; parent/carer training; whole-school community support; First Nations
+      &amp; CALD outreach; an online learning &amp; information service; stakeholder engagement; data &amp;
+      continuous improvement; targeted projects on request.
+    </aside>
+    <div class="body">
+      <p>
+        The RFT confirms what the policy reading already implied. The Commonwealth wants Phase 5 to be designed
+        against the seven anchors named in §02 — the RFT specifies the DDA, the DSE 2005, the NCCD, Curriculum
+        v9, the APST, the APSP and the NAS by name (Service 1; General Requirement 5). It adds a small number of
+        further anchors the atlas should hold alongside them: Australia's Disability Strategy 2021–31, the
+        Disability Royal Commission's recommendations, two Senate Inquiries, Autism CRC's research base, the
+        forthcoming Australian Government autism microcredential, and the PWDA Co-Design Programming Overview as
+        the prescribed co-design standard.
+      </p>
+      <p>
+        The Services themselves are structurally familiar — five delivery streams (educators, parents/carers,
+        whole school, First Nations, CALD), an online and resources layer, a stakeholder &amp; promotion layer, a
+        data &amp; continuous improvement layer, and an on-request targeted-projects layer. The eight pillars in
+        §04 sit underneath every delivery stream, and almost every General Requirement.
+      </p>
+    </div>
+  </div>
+
+  <h3 style="font-family: var(--display); font-size: 1.4rem; font-weight: 500; margin: 2rem 0 1rem; letter-spacing: -0.01em; font-variation-settings: 'opsz' 72;">Service × Pillar map</h3>
+
+  <div class="matrix-wrap">
+    <table class="matrix" aria-label="Nine RFT Service Types mapped against eight content pillars">
+      <caption>Star = service primarily carries this pillar. Tinted = strong carry. Plain = touches on.</caption>
+      <thead>
+        <tr>
+          <th class="row-head" scope="col">RFT Service</th>
+          <th scope="col">P&nbsp;1<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Rights</span></th>
+          <th scope="col">P&nbsp;2<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Consult</span></th>
+          <th scope="col">P&nbsp;3<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Adjust</span></th>
+          <th scope="col">P&nbsp;4<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Curric</span></th>
+          <th scope="col">P&nbsp;5<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Belong</span></th>
+          <th scope="col">P&nbsp;6<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Leader</span></th>
+          <th scope="col">P&nbsp;7<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Family</span></th>
+          <th scope="col">P&nbsp;8<br><span style="font-size:0.7em;text-transform:none;letter-spacing:0;font-weight:400;">Transit</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;1</span> PL for teachers, principals &amp; school staff</th>
+          <td class="cell cell--key">explicit</td>
+          <td class="cell cell--key">core</td>
+          <td class="cell cell--key">core</td>
+          <td class="cell cell--key">v9 adj.</td>
+          <td class="cell cell--heavy">inclusion</td>
+          <td class="cell cell--heavy">principals</td>
+          <td class="cell cell--heavy">partnership</td>
+          <td class="cell cell--key">named</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;2</span> Parent &amp; carer workshops</th>
+          <td class="cell cell--heavy">DDA/DSE</td>
+          <td class="cell cell--heavy">advocacy</td>
+          <td class="cell cell--heavy">work with educators</td>
+          <td class="cell">touches</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell cell--key">core</td>
+          <td class="cell cell--heavy">named</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;3</span> Whole school community training &amp; support</th>
+          <td class="cell cell--heavy">culture</td>
+          <td class="cell cell--heavy">forum</td>
+          <td class="cell cell--heavy">action plan</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--key">community</td>
+          <td class="cell cell--key">strategic plan</td>
+          <td class="cell cell--heavy">parents in</td>
+          <td class="cell">touches</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;4</span> First Nations outreach (ACCOs)</th>
+          <td class="cell cell--heavy">cultural safety</td>
+          <td class="cell cell--key">community-led</td>
+          <td class="cell cell--heavy">tailored</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--heavy">belonging</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--heavy">kinship</td>
+          <td class="cell">touches</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;5</span> CALD &amp; Deaf community workshops</th>
+          <td class="cell cell--heavy">rights in language</td>
+          <td class="cell cell--heavy">in-language</td>
+          <td class="cell cell--heavy">tailored</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--heavy">belonging</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell cell--heavy">family-led</td>
+          <td class="cell">touches</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;6</span> Online learning &amp; information services</th>
+          <td class="cell cell--heavy">discoverability</td>
+          <td class="cell cell--heavy">CoP</td>
+          <td class="cell cell--heavy">resources</td>
+          <td class="cell cell--heavy">module library</td>
+          <td class="cell cell--heavy">peer culture</td>
+          <td class="cell cell--heavy">leader content</td>
+          <td class="cell cell--heavy">parent landing</td>
+          <td class="cell cell--heavy">transition content</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;7</span> Stakeholder engagement &amp; forums</th>
+          <td class="cell">touches</td>
+          <td class="cell cell--key">co-design infra</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--empty">—</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--heavy">ed. authorities</td>
+          <td class="cell cell--heavy">parent peaks</td>
+          <td class="cell">touches</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;8</span> Data, performance &amp; continuous improvement</th>
+          <td class="cell">underlies all</td>
+          <td class="cell cell--heavy">consultation evidence</td>
+          <td class="cell cell--heavy">outcome data</td>
+          <td class="cell">touches</td>
+          <td class="cell">touches</td>
+          <td class="cell cell--heavy">reporting</td>
+          <td class="cell">touches</td>
+          <td class="cell">touches</td>
+        </tr>
+        <tr>
+          <th class="row-head" scope="row"><span class="pillar-num">S&nbsp;9</span> Targeted projects (on request)</th>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+          <td class="cell">flexible</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family: var(--display); font-size: 1.4rem; font-weight: 500; margin: 3rem 0 1rem; letter-spacing: -0.01em; font-variation-settings: 'opsz' 72;">Anchors the RFT adds beyond the original seven</h3>
+
+  <div class="cohort-grid">
+    <div class="cohort"><h4>Australia's Disability Strategy 2021–31</h4><p>The whole-of-government strategy under which the NAS sits. RFT General Req 5 directs content alignment with both.</p></div>
+    <div class="cohort"><h4>Disability Royal Commission</h4><p>Final report; recommendations on inclusive education. RFT cites it in the Overview and in General Req 5.</p></div>
+    <div class="cohort"><h4>Senate Inquiry — Autism services &amp; life outcomes</h4><p>Found Autistic students face disproportionate barriers to inclusive education; informs RFT design.</p></div>
+    <div class="cohort"><h4>Senate Inquiry — School refusal</h4><p>Identified the national trend; recommendations on teacher capability. RFT cites it.</p></div>
+    <div class="cohort"><h4>Autism CRC research</h4><p>RFT General Req 5 names Autism CRC explicitly. Craig's co-authorship is a direct response.</p></div>
+    <div class="cohort"><h4>Autism microcredential</h4><p>Australian Government parallel initiative for teachers and school staff. RFT Service 6B must align.</p></div>
+    <div class="cohort"><h4>PWDA Co-Design Programming Overview</h4><p>The named co-design standard. RFT General Req 5 requires adherence wherever co-design is undertaken.</p></div>
+    <div class="cohort"><h4>Closing the Gap Priority Reforms</h4><p>Specifically applies to Service 4 (First Nations outreach) — community-led, shared decision-making, ACCO capability.</p></div>
+  </div>
+
+  <div class="callout" style="margin-top: 2.5rem; border-color: var(--amber); background: rgba(245, 217, 155, 0.18);">
+    <strong style="color: var(--amber);">Service-level direction is in the Brief. </strong>
+    For the operational reading — annual targets, KPIs, mandated content focus per Service, and the specific
+    content moves we'd recommend for each — see
+    <a href="../brief/#direction" style="color: var(--ink); border-bottom: 1px solid var(--amber);">The Phase 5 Service Brief §06 Direction</a>.
+    Each of the recommendations in §05 above is cross-referenced to its Brief equivalent.
+  </div>
+</section>
+
+<!-- §07 ============================================ COHORTS -->
+<section id="cohorts">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;07 <span class="glyph">Priority Cohorts</span></div>
+    <h2 class="section-title">Intersectionality is not <em>a chapter</em>.</h2>
+    <p class="section-lede">
+      The NAS names twelve cohorts as facing compounded barriers. Every pillar above must hold these in view —
+      not as a postscript, but as a design parameter.
+    </p>
+  </div>
+
+  <div class="cohort-grid">
+    <div class="cohort"><h4>First Nations Autistic people</h4><p>Underdiagnosis, racism, and the absence of culturally safe pathways. Closing the Gap priority reforms apply.</p></div>
+    <div class="cohort"><h4>CALD &amp; CARM communities</h4><p>Cultural and linguistic responsiveness as design — not translation as afterthought.</p></div>
+    <div class="cohort"><h4>Women, girls &amp; gender-diverse</h4><p>Late identification, mental-health-first presentations, parenting-while-Autistic stigma.</p></div>
+    <div class="cohort"><h4>LGBTQIA+ Autistic people</h4><p>Higher representation; layered stigma and barriers; safety in school settings.</p></div>
+    <div class="cohort"><h4>Older Autistic people</h4><p>Late or absent diagnosis; growing sensory and communication needs over time.</p></div>
+    <div class="cohort"><h4>Children &amp; young people</h4><p>Disproportionate bullying, harassment, educational exclusion. Phase 5's core audience.</p></div>
+    <div class="cohort"><h4>People with very high support needs</h4><p>Risk of being spoken for; reliance on family carers; AAC and non-speaking communication.</p></div>
+    <div class="cohort"><h4>AAC &amp; non-speaking</h4><p>Right to choice over communication device(s) and method(s). Consultation duty applies fully.</p></div>
+    <div class="cohort"><h4>Co-occurring conditions</h4><p>Most Autistic people are multiply neurodivergent and/or have co-occurring conditions.</p></div>
+    <div class="cohort"><h4>Regional &amp; remote</h4><p>Service deserts; PP's traditional reach has been thin outside metro centres.</p></div>
+    <div class="cohort"><h4>People in care or institutions</h4><p>Group homes, child protection, justice systems — significantly higher risk of harm.</p></div>
+    <div class="cohort"><h4>Trauma experience</h4><p>Many Autistic people carry trauma from systems that were supposed to support them. Trauma-informed design throughout.</p></div>
+  </div>
+</section>
+
+<!-- §08 ============================================ CO-DESIGN -->
+<section id="codesign">
+  <div class="section-head">
+    <div class="section-num">§&nbsp;08 <span class="glyph">For the AutismCRC Conversation</span></div>
+    <h2 class="section-title">What this atlas is offering as a <em>starting point</em>.</h2>
+    <p class="section-lede">
+      Read as a draft for co-authorship, not a finished framework — what is here to test, deepen, contest or
+      discard with AutismCRC and the Autistic community.
+    </p>
+  </div>
+
+  <div class="codesign-grid">
+    <div class="codesign">
+      <h4>What is firm</h4>
+      <p>
+        The seven documents named here are the seven that govern. The eight pillars are derived from reading
+        these documents in conversation — they are open to renaming, recombining, or splitting where co-design
+        finds a sharper shape.
+      </p>
+    </div>
+    <div class="codesign">
+      <h4>What is provisional</h4>
+      <p>
+        The recommendations in §05 are one reader's analytical synthesis. They are written to be argued with.
+        Recommendation 01 — the ECEC pivot — is time-bound by the legislation; the others are negotiable in
+        weight and framing.
+      </p>
+    </div>
+    <div class="codesign">
+      <h4>What is missing</h4>
+      <p>
+        This atlas does not yet hold the voice of Autistic adults, families and young people. That is the most
+        important gap and the most important next step. Co-design panels — paid, representative, sustained —
+        belong before any workshop content is written.
+      </p>
+    </div>
+    <div class="codesign">
+      <h4>What this should become</h4>
+      <p>
+        A living document, versioned, with the version notes visible. A workshop content map that holds across
+        Phase 5 and the documents above. A point of reference for AutismCRC co-authorship sessions. Not the
+        content; the map under the content.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="shell">
+  <div class="colophon">
+    <div>
+      <h5>Anchor documents (local)</h5>
+      <ul>
+        <li><a href="../docs/DDA-1992_compilation-2024-10-14.pdf">DDA 1992 (compilation)</a></li>
+        <li><a href="../docs/DSE-2005_Disability-Standards-for-Education.pdf">DSE 2005</a></li>
+        <li><a href="../docs/DSE-2025_Amendment-Standards.pdf">DSE Amendment 2025</a></li>
+        <li><a href="../docs/DSE-2005_Guidance-Notes.pdf">DSE Guidance Notes</a></li>
+        <li><a href="../docs/NCCD-Guidelines-2025.pdf">NCCD Guidelines 2025</a></li>
+        <li><a href="../docs/Australian-Curriculum-v9_workbook.xlsx">Australian Curriculum v9</a></li>
+        <li><a href="../docs/APST_Australian-Professional-Standards-for-Teachers.pdf">APST (AITSL)</a></li>
+        <li><a href="../docs/APSP_Australian-Professional-Standard-for-Principals.pdf">APSP (AITSL)</a></li>
+        <li><a href="../docs/National-Autism-Strategy-2025-2031.pdf">National Autism Strategy</a></li>
+        <li><a href="../docs/National-Autism-Strategy-First-Action-Plan-2025-2026.pdf">NAS First Action Plan</a></li>
+        <li><a href="../docs/AutismCRC_Assessment-and-Diagnosis-Guideline-2023.pdf">AutismCRC A&amp;D Guideline 2023</a></li>
+        <li><a href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf">AutismCRC Supporting Children Guideline</a></li>
+        <li><a href="../docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf">AutismCRC Strengths &amp; Supports Framework</a></li>
+        <li>RFT — Phase 5 PP program (PRN. ESE25/10020) · ~/Downloads</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Original sources</h5>
+      <ul>
+        <li><a href="https://www.legislation.gov.au/C2004A04426/latest/text">legislation.gov.au · DDA</a></li>
+        <li><a href="https://www.legislation.gov.au/F2005L00767/asmade">legislation.gov.au · DSE</a></li>
+        <li><a href="https://www.legislation.gov.au/F2025L01390/asmade">legislation.gov.au · DSE 2025 Amendment</a></li>
+        <li><a href="https://www.nccd.edu.au/">nccd.edu.au</a></li>
+        <li><a href="https://www.australiancurriculum.edu.au/">v9.australiancurriculum.edu.au</a></li>
+        <li><a href="https://www.aitsl.edu.au/">aitsl.edu.au</a></li>
+        <li><a href="https://www.dss.gov.au/national-autism-strategy">dss.gov.au · NAS</a></li>
+        <li><a href="https://www.autismcrc.com.au/best-practice/home">autismcrc.com.au · Best Practice Portal</a></li>
+        <li><a href="https://www.autismcrc.com.au/best-practice/assessment-and-diagnosis">AutismCRC · A&amp;D Guideline (register for 2023 update)</a></li>
+        <li><a href="https://www.autismcrc.com.au/best-practice/supporting-children">AutismCRC · Supporting Children Guideline</a></li>
+        <li><a href="https://www.autismcrc.com.au/best-practice/strengths-and-supports">AutismCRC · Strengths &amp; Supports Framework</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Version</h5>
+      <ul>
+        <li>v0.1 · working draft</li>
+        <li>2026-05-15</li>
+        <li>Author: prepared for Craig Smith, Positive Partnerships</li>
+        <li>For co-authorship: AutismCRC</li>
+        <li>Phase: 5 · 2026–2029</li>
+        <li>Status: ready for Autistic co-author review</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Note on language</h5>
+      <p style="font-size: 0.78rem; line-height: 1.55;">
+        This atlas uses identity-first language (&ldquo;Autistic person&rdquo;) following the National Autism
+        Strategy's settings. It does not use functioning labels, deficit framings, or puzzle imagery. Where the
+        anchor documents use older terminology, that is preserved in direct citation only.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ---------- Favourites with localStorage ---------- */
+  var STORE_KEY = 'pp-anchor-atlas-favs-v1';
+  var favs = new Set();
+  try {
+    var raw = localStorage.getItem(STORE_KEY);
+    if (raw) JSON.parse(raw).forEach(function (id) { favs.add(String(id)); });
+  } catch (e) {}
+
+  function saveFavs() {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(Array.from(favs)));
+    } catch (e) {}
+  }
+
+  function applyFavs() {
+    document.querySelectorAll('.fav-btn').forEach(function (btn) {
+      var id = btn.dataset.fav;
+      var on = favs.has(id);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.querySelector('.star').textContent = on ? '★' : '☆';
+      btn.querySelector('span:last-child').textContent = on ? 'Saved' : 'Save';
+      var pillar = document.getElementById('pillar-' + id);
+      if (pillar) pillar.classList.toggle('is-fav', on);
+    });
+  }
+
+  document.querySelectorAll('.fav-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.dataset.fav;
+      if (favs.has(id)) favs.delete(id); else favs.add(id);
+      saveFavs();
+      applyFavs();
+    });
+  });
+  applyFavs();
+
+  /* ---------- Audience filter ---------- */
+  var audienceBtns = document.querySelectorAll('.audience-btn');
+  var pillars = document.querySelectorAll('.pillar');
+  audienceBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var aud = btn.dataset.audience;
+      audienceBtns.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      pillars.forEach(function (p) {
+        if (aud === 'all') {
+          p.classList.remove('is-dim');
+        } else {
+          var match = (p.dataset.audience || '').indexOf(aud) >= 0;
+          p.classList.toggle('is-dim', !match);
+        }
+      });
+    });
+  });
+
+  /* ---------- Matrix cell → pillar deep-link (matrix row heads already linked) ---------- */
+  // (no extra JS needed; anchor links handle it)
+
+  /* ---------- Index drawer toggle ---------- */
+  var drawerToggle = document.querySelector('.index-toggle');
+  var drawer = document.getElementById('index-drawer');
+  if (drawerToggle && drawer) {
+    drawerToggle.addEventListener('click', function () {
+      var open = drawer.classList.toggle('is-open');
+      drawerToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+  }
+
+  /* ---------- Active section highlight in index bar ---------- */
+  var sectionLinks = {};
+  document.querySelectorAll('.index-bar .index-link').forEach(function (link) {
+    var id = link.getAttribute('href').replace('#', '');
+    sectionLinks[id] = link;
+  });
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var id = e.target.id;
+        if (sectionLinks[id] && e.isIntersecting) {
+          Object.values(sectionLinks).forEach(function (l) { l.removeAttribute('aria-current'); });
+          sectionLinks[id].setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-120px 0px -55% 0px' });
+    Object.keys(sectionLinks).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) spy.observe(el);
+    });
+  }
+
+  /* ---------- Stuck shadow for index bar ---------- */
+  var indexBar = document.querySelector('.index-bar');
+  if (indexBar) {
+    var sentinel = document.createElement('div');
+    sentinel.style.height = '1px';
+    sentinel.style.position = 'absolute';
+    sentinel.style.top = '0';
+    document.body.insertBefore(sentinel, document.body.firstChild);
+    var stuckObs = new IntersectionObserver(function (entries) {
+      indexBar.classList.toggle('is-stuck', !entries[0].isIntersecting);
+    });
+    stuckObs.observe(document.querySelector('.masthead'));
+  }
+
+  /* ---------- Subtle scroll reveal ---------- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+    document.querySelectorAll('.pillar, .doc-card, .rec, .cohort, .codesign').forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(12px)';
+      io.observe(el);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

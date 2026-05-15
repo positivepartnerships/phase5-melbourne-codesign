@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Phase 5 Co-design — Timetable</title>
+<style>
+  :root {
+    --pp-medium-purple: #712D90;
+    --pp-dark-purple: #330044;
+    --pp-light-purple: #C2A7CF;
+    --pp-lime: #BBD64A;
+    --pp-red: #F15B40;
+    --pp-orange: #F7941E;
+    --pp-dark-grey: #333333;
+    --pp-medium-grey: #777777;
+    --pp-light-grey: #E5E0EB;
+    --crc-teal: #00A6A0;
+    --crc-deep: #154058;
+    --crc-sand: #F5F0E6;
+    --bg: #F4F1F7;
+    --sky-1: #E7F3FB;
+    --sky-2: #CFE6F4;
+    --card: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--pp-dark-grey);
+    background:
+      radial-gradient(1200px 600px at 90% 100%, #ffffff 0%, var(--sky-2) 60%, var(--sky-1) 100%);
+    min-height: 100vh;
+    line-height: 1.4;
+  }
+
+  /* ── Header / Brand bar ─────────────────────────────── */
+  header.brandbar {
+    background: linear-gradient(135deg, var(--pp-dark-purple) 0%, var(--pp-medium-purple) 100%);
+    color: #fff;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    border-bottom: 4px solid var(--pp-lime);
+  }
+  .brand-blocks {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px 6px 0;
+  }
+  .brand .mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  .brand.pp .mark {
+    background: var(--pp-lime);
+    color: var(--pp-dark-purple);
+  }
+  .brand.crc .mark {
+    background: var(--crc-teal);
+    color: #fff;
+  }
+  .brand .label {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+  .brand .label .top {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--pp-light-purple);
+  }
+  .brand .label .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.25);
+  }
+  .title-block {
+    margin-left: auto;
+    text-align: right;
+  }
+  .title-block .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    color: var(--pp-light-purple);
+  }
+  .title-block h1 {
+    margin: 2px 0 0;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* ── Toolbar ────────────────────────────────────────── */
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 14px 28px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--pp-light-grey);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .toolbar .group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 0 6px;
+  }
+  .toolbar .group + .group {
+    border-left: 1px solid var(--pp-light-grey);
+    padding-left: 14px;
+  }
+  .toolbar label.checkbox {
+    font-size: 13px;
+    color: var(--pp-dark-grey);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  button {
+    font-family: inherit;
+    font-size: 13px;
+    border: 1px solid var(--pp-medium-purple);
+    background: #fff;
+    color: var(--pp-medium-purple);
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  button:hover {
+    background: var(--pp-medium-purple);
+    color: #fff;
+  }
+  button.primary {
+    background: var(--pp-medium-purple);
+    color: #fff;
+  }
+  button.primary:hover {
+    background: var(--pp-dark-purple);
+    border-color: var(--pp-dark-purple);
+  }
+  button.ghost {
+    border-color: transparent;
+    color: var(--pp-dark-grey);
+  }
+  button.ghost:hover {
+    background: var(--pp-light-grey);
+    color: var(--pp-dark-purple);
+  }
+  button.danger {
+    border-color: var(--pp-red);
+    color: var(--pp-red);
+  }
+  button.danger:hover {
+    background: var(--pp-red);
+    color: #fff;
+  }
+
+  /* ── Layout ─────────────────────────────────────────── */
+  main {
+    padding: 24px 28px 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  .day {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow:
+      0 1px 0 rgba(51,0,68,0.04),
+      0 8px 24px rgba(51,0,68,0.06);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+  }
+
+  .day h2 {
+    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--pp-lime);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    color: var(--pp-dark-purple);
+    outline: none;
+  }
+
+  .day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .session {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 10px 12px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    position: relative;
+  }
+  .session:hover {
+    background: #FAFAFD;
+    border-color: var(--pp-light-grey);
+  }
+  .session .time {
+    font-size: 13px;
+    color: var(--pp-medium-grey);
+    outline: none;
+  }
+  .session .body {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pp-dark-grey);
+    outline: none;
+    white-space: pre-wrap;
+    line-height: 1.45;
+  }
+  .session.break .body { color: var(--pp-medium-purple); }
+  .session.break { background: #FBF7E8; border-color: #F3E9C0; }
+  .session.break:hover { background: #F7F0CC; }
+
+  /* Per-session controls */
+  .session-controls {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: none;
+    gap: 4px;
+  }
+  .session:hover .session-controls,
+  .session:focus-within .session-controls {
+    display: flex;
+  }
+  .icon-btn {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    color: var(--pp-medium-grey);
+    font-size: 14px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .icon-btn:hover {
+    background: var(--pp-light-grey);
+    color: var(--pp-dark-purple);
+  }
+  .icon-btn.delete:hover {
+    background: var(--pp-red);
+    color: #fff;
+  }
+
+  /* Add session button */
+  .add-session {
+    margin-top: auto;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px dashed var(--pp-light-purple);
+    color: var(--pp-medium-purple);
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .add-session:hover {
+    background: var(--pp-light-purple);
+    color: var(--pp-dark-purple);
+    border-style: solid;
+  }
+
+  /* Add day */
+  .add-day {
+    background: transparent;
+    border: 2px dashed var(--pp-light-purple);
+    border-radius: 14px;
+    color: var(--pp-medium-purple);
+    display: grid;
+    place-items: center;
+    min-height: 200px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .add-day:hover {
+    background: rgba(194,167,207,0.18);
+    color: var(--pp-dark-purple);
+    border-color: var(--pp-medium-purple);
+  }
+
+  /* ── Editing affordance ─────────────────────────────── */
+  body.editing [contenteditable="true"] {
+    background: linear-gradient(transparent calc(100% - 1px), var(--pp-light-purple) 1px);
+    background-size: 100% 1.4em;
+    cursor: text;
+  }
+  [contenteditable="true"]:focus {
+    background: #FFF8DC !important;
+    outline: 2px solid var(--pp-orange);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  body:not(.editing) .day-header .day-controls,
+  body:not(.editing) .session-controls,
+  body:not(.editing) .add-session,
+  body:not(.editing) .add-day {
+    display: none !important;
+  }
+  body:not(.editing) [contenteditable] {
+    cursor: default;
+  }
+
+  /* ── Toast ──────────────────────────────────────────── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--pp-dark-purple);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ── Footer ─────────────────────────────────────────── */
+  footer {
+    padding: 14px 28px 24px;
+    color: var(--pp-medium-grey);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* ── Print ──────────────────────────────────────────── */
+  @media print {
+    .toolbar, .session-controls, .add-session, .add-day, .day-controls, footer {
+      display: none !important;
+    }
+    body {
+      background: #fff !important;
+    }
+    header.brandbar {
+      background: #fff !important;
+      color: var(--pp-dark-purple) !important;
+      border-bottom: 2px solid var(--pp-medium-purple);
+    }
+    header.brandbar .brand .label .top { color: var(--pp-medium-grey); }
+    header.brandbar .brand .label .name { color: var(--pp-dark-purple); }
+    header.brandbar .title-block .eyebrow { color: var(--pp-medium-grey); }
+    header.brandbar .title-block h1 { color: var(--pp-dark-purple); }
+    .day {
+      box-shadow: none;
+      border: 1px solid var(--pp-light-grey);
+      break-inside: avoid;
+    }
+    main { padding: 12px; }
+    .days { gap: 8px; }
+  }
+</style>
+</head>
+<body class="editing">
+
+<header class="brandbar">
+  <div class="brand-blocks">
+    <div class="brand pp">
+      <div class="mark">PP</div>
+      <div class="label">
+        <span class="top">In partnership</span>
+        <span class="name">Positive Partnerships</span>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="brand crc">
+      <div class="mark">CRC</div>
+      <div class="label">
+        <span class="top">With</span>
+        <span class="name">Autism CRC</span>
+      </div>
+    </div>
+  </div>
+  <div class="title-block">
+    <div class="eyebrow">Phase 5 · Co-design Workshop</div>
+    <h1 contenteditable="true" data-key="title">Melbourne Co-design Timetable</h1>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="group">
+    <label class="checkbox">
+      <input type="checkbox" id="editToggle" checked />
+      Edit mode
+    </label>
+  </div>
+  <div class="group">
+    <button class="ghost" id="addDayBtn">+ Add day</button>
+    <button class="ghost" id="resetBtn">Reset to original</button>
+  </div>
+  <div class="group">
+    <button id="exportBtn">Download HTML</button>
+    <button id="printBtn">Print / PDF</button>
+    <button class="primary" id="saveBtn">Save changes</button>
+  </div>
+</div>
+
+<main>
+  <div class="days" id="days"></div>
+</main>
+
+<footer>
+  Edits save automatically to this browser. Use <b>Download HTML</b> to share a snapshot, or <b>Print / PDF</b> for a printable version.
+</footer>
+
+<div class="toast" id="toast">Saved</div>
+
+<script>
+  // ── Original timetable data ─────────────────────────────
+  const ORIGINAL = [
+    {
+      day: "Wednesday",
+      sessions: [
+        { time: "11:30 - 1:00", body: "Welcome / Intros.\nAcknowledge different ways of recording / contributing (whiteboards/sticky notes/etc).\nOverview of intention for this collaboration (PP).\nOverview of typical co-design process (Autism CRC)." },
+        { time: "1:00 - 1:30", body: "Break.", isBreak: true },
+        { time: "1:30 - 3:00", body: "Landscape: linking to national initiatives.\nWhat do we like / not like about Phase 4 PP.\nBrief review of current PP content." },
+        { time: "3:00 - 3:20", body: "Break.", isBreak: true },
+        { time: "3:20 - 4:30", body: "Review what constituents have said about us.\nWhat do we take with us from Phase 4, and what do we leave in the past and build new for Phase 5." }
+      ]
+    },
+    {
+      day: "Thursday",
+      sessions: [
+        { time: "9:30 - 11:00", body: "What is our working co-design framework?\nWhose voice, where, in what role?\n\nWhat are the needs?\nWhat does the research say?\nWhat were the key priorities coming out of the NAS?" },
+        { time: "11:00 - 11:30", body: "Morning Tea.", isBreak: true },
+        { time: "11:30 - 1:00", body: "What are the core content points participants need in a 1/2 day?\nGive an overview of the evaluation expectations (PP)." },
+        { time: "1:00 - 1:45", body: "Lunch.", isBreak: true },
+        { time: "1:45 - 3:00", body: "What can become auxiliary topic content that isn't core material?" },
+        { time: "3:00 - 3:20", body: "Break.", isBreak: true },
+        { time: "3:20 - 4:30", body: "Prep for Friday.\nParking Lot / Next Steps." }
+      ]
+    },
+    {
+      day: "Friday",
+      sessions: [
+        { time: "9:00 - 11:00", body: "Decisions for future planning.\nOwners / Dates." },
+        { time: "11:00 - 11:20", body: "Morning Tea.", isBreak: true },
+        { time: "11:20 - 12:00", body: "Wrap Up." }
+      ]
+    }
+  ];
+
+  const STORAGE_KEY = "pp-phase5-codesign-timetable-v1";
+  const TITLE_KEY = "pp-phase5-codesign-timetable-title-v1";
+
+  // ── State ──────────────────────────────────────────────
+  let state = loadState();
+  let titleText = loadTitle();
+
+  const daysEl = document.getElementById("days");
+  const toastEl = document.getElementById("toast");
+  const titleEl = document.querySelector('[data-key="title"]');
+
+  titleEl.textContent = titleText;
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    return JSON.parse(JSON.stringify(ORIGINAL));
+  }
+  function loadTitle() {
+    return localStorage.getItem(TITLE_KEY) || "Melbourne Co-design Timetable";
+  }
+  function persist(silent = false) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    localStorage.setItem(TITLE_KEY, titleEl.textContent.trim() || "Co-design Timetable");
+    if (!silent) toast("Saved");
+  }
+
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toastEl.classList.remove("show"), 1500);
+  }
+
+  // ── Render ─────────────────────────────────────────────
+  function render() {
+    daysEl.innerHTML = "";
+    state.forEach((day, dIdx) => {
+      const dayEl = document.createElement("section");
+      dayEl.className = "day";
+      dayEl.dataset.day = dIdx;
+
+      const header = document.createElement("div");
+      header.className = "day-header";
+
+      const h2 = document.createElement("h2");
+      h2.contentEditable = true;
+      h2.spellcheck = false;
+      h2.textContent = day.day;
+      h2.addEventListener("input", () => {
+        state[dIdx].day = h2.textContent.trim();
+      });
+      h2.addEventListener("blur", () => persist(true));
+
+      const dayCtrl = document.createElement("div");
+      dayCtrl.className = "day-controls";
+      const delDay = document.createElement("button");
+      delDay.className = "icon-btn delete";
+      delDay.title = "Delete this day";
+      delDay.textContent = "✕";
+      delDay.addEventListener("click", () => {
+        if (confirm(`Delete the ${day.day} column and all its sessions?`)) {
+          state.splice(dIdx, 1);
+          persist();
+          render();
+        }
+      });
+      dayCtrl.appendChild(delDay);
+
+      header.appendChild(h2);
+      header.appendChild(dayCtrl);
+      dayEl.appendChild(header);
+
+      day.sessions.forEach((s, sIdx) => {
+        dayEl.appendChild(renderSession(s, dIdx, sIdx));
+      });
+
+      const addBtn = document.createElement("button");
+      addBtn.className = "add-session";
+      addBtn.textContent = "+ Add session";
+      addBtn.addEventListener("click", () => {
+        state[dIdx].sessions.push({ time: "Time", body: "New session.", isBreak: false });
+        persist(true);
+        render();
+      });
+      dayEl.appendChild(addBtn);
+
+      daysEl.appendChild(dayEl);
+    });
+
+    // Add-day card
+    const addDayCard = document.createElement("button");
+    addDayCard.className = "add-day";
+    addDayCard.id = "addDayCard";
+    addDayCard.textContent = "+ Add a day";
+    addDayCard.addEventListener("click", addDay);
+    daysEl.appendChild(addDayCard);
+  }
+
+  function renderSession(s, dIdx, sIdx) {
+    const el = document.createElement("div");
+    el.className = "session" + (s.isBreak ? " break" : "");
+
+    const time = document.createElement("div");
+    time.className = "time";
+    time.contentEditable = true;
+    time.spellcheck = false;
+    time.textContent = s.time;
+    time.addEventListener("input", () => {
+      state[dIdx].sessions[sIdx].time = time.textContent;
+    });
+    time.addEventListener("blur", () => persist(true));
+
+    const body = document.createElement("div");
+    body.className = "body";
+    body.contentEditable = true;
+    body.spellcheck = true;
+    body.textContent = s.body;
+    body.addEventListener("input", () => {
+      state[dIdx].sessions[sIdx].body = body.innerText;
+    });
+    body.addEventListener("blur", () => persist(true));
+
+    const ctrls = document.createElement("div");
+    ctrls.className = "session-controls";
+
+    const breakBtn = document.createElement("button");
+    breakBtn.className = "icon-btn";
+    breakBtn.title = s.isBreak ? "Mark as regular session" : "Mark as break";
+    breakBtn.textContent = s.isBreak ? "●" : "○";
+    breakBtn.addEventListener("click", () => {
+      state[dIdx].sessions[sIdx].isBreak = !state[dIdx].sessions[sIdx].isBreak;
+      persist(true);
+      render();
+    });
+
+    const upBtn = document.createElement("button");
+    upBtn.className = "icon-btn";
+    upBtn.title = "Move up";
+    upBtn.textContent = "↑";
+    upBtn.addEventListener("click", () => {
+      if (sIdx === 0) return;
+      const arr = state[dIdx].sessions;
+      [arr[sIdx - 1], arr[sIdx]] = [arr[sIdx], arr[sIdx - 1]];
+      persist(true);
+      render();
+    });
+
+    const downBtn = document.createElement("button");
+    downBtn.className = "icon-btn";
+    downBtn.title = "Move down";
+    downBtn.textContent = "↓";
+    downBtn.addEventListener("click", () => {
+      const arr = state[dIdx].sessions;
+      if (sIdx === arr.length - 1) return;
+      [arr[sIdx + 1], arr[sIdx]] = [arr[sIdx], arr[sIdx + 1]];
+      persist(true);
+      render();
+    });
+
+    const delBtn = document.createElement("button");
+    delBtn.className = "icon-btn delete";
+    delBtn.title = "Delete session";
+    delBtn.textContent = "✕";
+    delBtn.addEventListener("click", () => {
+      state[dIdx].sessions.splice(sIdx, 1);
+      persist(true);
+      render();
+    });
+
+    ctrls.append(breakBtn, upBtn, downBtn, delBtn);
+    el.append(time, body, ctrls);
+    return el;
+  }
+
+  function addDay() {
+    state.push({
+      day: "New Day",
+      sessions: [
+        { time: "9:00 - 10:00", body: "New session.", isBreak: false }
+      ]
+    });
+    persist(true);
+    render();
+  }
+
+  // ── Toolbar wiring ─────────────────────────────────────
+  document.getElementById("editToggle").addEventListener("change", (e) => {
+    document.body.classList.toggle("editing", e.target.checked);
+    // Toggle contenteditable on all editable elements
+    document.querySelectorAll('[contenteditable]').forEach(el => {
+      el.contentEditable = e.target.checked ? "true" : "false";
+    });
+  });
+
+  document.getElementById("saveBtn").addEventListener("click", () => persist());
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    if (!confirm("Reset all edits and restore the original timetable?")) return;
+    state = JSON.parse(JSON.stringify(ORIGINAL));
+    titleEl.textContent = "Melbourne Co-design Timetable";
+    persist();
+    render();
+  });
+
+  document.getElementById("addDayBtn").addEventListener("click", addDay);
+
+  document.getElementById("printBtn").addEventListener("click", () => {
+    window.print();
+  });
+
+  document.getElementById("exportBtn").addEventListener("click", () => {
+    // Build a clean, view-only HTML snapshot
+    const clone = document.documentElement.cloneNode(true);
+    // Remove toolbar, controls, footer note, scripts
+    clone.querySelectorAll('.toolbar, .session-controls, .add-session, .add-day, .day-controls, script, .toast').forEach(n => n.remove());
+    // Lock down contenteditable
+    clone.querySelectorAll('[contenteditable]').forEach(n => n.removeAttribute('contenteditable'));
+    // Drop editing class
+    clone.querySelector('body').classList.remove('editing');
+    const html = "<!DOCTYPE html>\n" + clone.outerHTML;
+    const blob = new Blob([html], { type: "text/html" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    const safeTitle = (titleEl.textContent || "timetable").trim().replace(/[^a-z0-9]+/gi, "-").toLowerCase();
+    a.href = url;
+    a.download = `${safeTitle}.html`;
+    a.click();
+    URL.revokeObjectURL(url);
+    toast("Downloaded HTML snapshot");
+  });
+
+  // Persist title edits
+  titleEl.addEventListener("input", () => {
+    localStorage.setItem(TITLE_KEY, titleEl.textContent.trim());
+  });
+
+  // First render
+  render();
+</script>
+</body>
+</html>
