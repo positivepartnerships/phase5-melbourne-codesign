@@ -7,7 +7,7 @@
 <meta name="description" content="A service-first working map of the Phase 5 Positive Partnerships RFT: nine Service Types, the annual targets and KPIs that bind them, the document set each one draws on, and the content direction recommended for each." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    THE PHASE 5 SERVICE BRIEF — service-first dashboard
@@ -15,34 +15,35 @@
    ===================================================================== */
 
 :root {
-  --ink: #1a1f2c;
-  --ink-soft: #2c3344;
-  --ink-faint: #5a6072;
-  --parchment: #f4efe5;
-  --vellum: #fbf7ee;
-  --vellum-deep: #ede4d0;
-  --rule: #c4b79f;
-  --rule-soft: #d8cdb6;
-  --amber: #c25a1f;
-  --amber-soft: #e89464;
-  --verdigris: #1f5c5f;
-  --verdigris-deep: #133c3f;
-  --gold: #b48438;
-  --highlight: #f5d99b;
-  --cardinal: #8e2d22;
+  /* Positive Partnerships palette (cleaner sibling) */
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --lime: #BBD64A;
+  --purple-pale: #f0e6f7;
+  --orange: #F7941E;
   --slate: #4a5468;
-  --shadow: 0 1px 0 rgba(26, 31, 44, 0.06), 0 12px 28px -18px rgba(26, 31, 44, 0.4);
+  --shadow: 0 1px 0 rgba(34, 34, 34, 0.04), 0 8px 24px -16px rgba(67, 27, 86, 0.25);
 
   --display: "Fraunces", "Source Serif 4", Georgia, serif;
-  --body: "IBM Plex Sans", "Source Serif 4", -apple-system, sans-serif;
+  --body: "Public Sans", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* Category colours for document categorisation */
   --cat-stat: var(--ink);
-  --cat-ops: var(--verdigris);
-  --cat-pol: var(--amber);
-  --cat-bpg: var(--gold);
-  --cat-cult: var(--cardinal);
+  --cat-ops: var(--purple-dark);
+  --cat-pol: var(--purple);
+  --cat-bpg: var(--lime);
+  --cat-cult: var(--orange);
   --cat-gov: var(--slate);
   --cat-tech: #4a6b7a;
 }
@@ -59,11 +60,9 @@ body {
   font-family: var(--body);
   font-feature-settings: "kern", "liga", "tnum", "calt";
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ink);
   background: var(--parchment);
-  background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   -webkit-font-smoothing: antialiased;
 }
 
@@ -76,7 +75,7 @@ h1, h2, h3, h4 {
 }
 .mono { font-family: var(--mono); font-size: 0.85em; }
 
-::selection { background: var(--highlight); color: var(--ink); }
+::selection { background: var(--purple-pale); color: var(--ink); }
 
 /* ---------- Shell ---------- */
 .shell {
@@ -129,7 +128,7 @@ h1, h2, h3, h4 {
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   display: block;
   line-height: 1;
   margin-bottom: 1px;
@@ -147,7 +146,7 @@ h1, h2, h3, h4 {
 .index-link .glyph {
   font-family: var(--mono);
   font-size: 0.62rem;
-  color: var(--amber);
+  color: var(--purple);
   opacity: 0.8;
 }
 .index-link:hover { background: rgba(245, 217, 155, 0.4); color: var(--ink); }
@@ -165,31 +164,32 @@ h1, h2, h3, h4 {
   padding: 0.5rem 0.7rem;
   border-left: 1px solid var(--rule);
 }
-.index-companion:hover { color: var(--amber); }
+.index-companion:hover { color: var(--purple); }
 
 /* ---------- Masthead ---------- */
 .masthead {
-  padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2rem);
   border-bottom: 1px solid var(--rule);
-  background: linear-gradient(180deg, var(--vellum) 0%, var(--parchment) 100%);
+  background: var(--vellum);
 }
 .masthead h1 {
-  font-size: clamp(2.2rem, 6vw, 4.6rem);
-  font-weight: 300;
-  line-height: 0.95;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
-  letter-spacing: -0.025em;
-  margin-bottom: 0.5em;
+  font-size: clamp(1.8rem, 3.6vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.05;
+  font-variation-settings: "opsz" 96, "SOFT" 20;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.4em;
+  color: var(--purple-darker);
 }
-.masthead h1 .em { font-style: italic; color: var(--verdigris-deep); }
+.masthead h1 .em { font-style: italic; color: var(--purple); }
 .masthead .deck {
-  font-family: var(--display);
-  font-style: italic;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--ink-soft);
-  max-width: 60ch;
+  max-width: 64ch;
   margin: 0 0 1.5rem;
-  font-variation-settings: "opsz" 36;
 }
 .masthead .meta {
   display: flex;
@@ -206,7 +206,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.62rem;
-  color: var(--amber);
+  color: var(--purple);
   margin-bottom: 0.2rem;
   font-weight: 500;
 }
@@ -229,8 +229,8 @@ section {
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--amber);
-  border-top: 2px solid var(--amber);
+  color: var(--purple);
+  border-top: 2px solid var(--purple);
   padding-top: 0.5rem;
 }
 .section-num .glyph {
@@ -252,7 +252,7 @@ section {
   font-variation-settings: "opsz" 96;
   letter-spacing: -0.02em;
 }
-.section-title em { color: var(--verdigris-deep); font-style: italic; }
+.section-title em { color: var(--purple-darker); font-style: italic; }
 .section-lede {
   grid-column: 2;
   margin-top: 0.6rem;
@@ -282,7 +282,7 @@ section {
 .chip--stat { color: var(--vellum); background: var(--cat-stat); border-color: var(--cat-stat); }
 .chip--ops { color: var(--vellum); background: var(--cat-ops); border-color: var(--cat-ops); }
 .chip--pol { color: var(--vellum); background: var(--cat-pol); border-color: var(--cat-pol); }
-.chip--bpg { color: var(--ink); background: var(--highlight); border-color: var(--gold); }
+.chip--bpg { color: var(--ink); background: var(--purple-pale); border-color: var(--lime); }
 .chip--cult { color: var(--vellum); background: var(--cat-cult); border-color: var(--cat-cult); }
 .chip--gov { color: var(--vellum); background: var(--cat-gov); border-color: var(--cat-gov); }
 .chip--tech { color: var(--vellum); background: var(--cat-tech); border-color: var(--cat-tech); }
@@ -314,7 +314,7 @@ section {
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   margin-bottom: 0.3rem;
   font-weight: 500;
 }
@@ -357,18 +357,18 @@ section {
   transition: background 0.15s ease;
 }
 .services-tape .stape-cell:last-child { border-right: none; }
-.services-tape .stape-cell:hover { background: var(--highlight); }
+.services-tape .stape-cell:hover { background: var(--purple-pale); }
 .services-tape .stape-cell.is-workshop {
   background: rgba(245, 217, 155, 0.5);
 }
 .services-tape .stape-cell.is-workshop:hover {
-  background: var(--highlight);
+  background: var(--purple-pale);
 }
 .services-tape .stape-num {
   font-family: var(--mono);
   font-size: 0.62rem;
   letter-spacing: 0.14em;
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 600;
   display: block;
   margin-bottom: 0.2rem;
@@ -412,14 +412,14 @@ section {
   content: "";
   position: absolute;
   left: 0; top: 0; bottom: 0; width: 3px;
-  background: var(--amber);
+  background: var(--purple);
 }
 .kpi-card .lbl {
   font-family: var(--mono);
   font-size: 0.62rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
@@ -471,7 +471,7 @@ section {
   font-weight: 300;
   font-style: italic;
   line-height: 1;
-  color: var(--amber);
+  color: var(--purple);
   font-variation-settings: "opsz" 96, "WONK" 1;
 }
 .scard-num .prefix {
@@ -519,7 +519,7 @@ section {
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   margin-top: 0.2rem;
 }
 .scard-body {
@@ -537,7 +537,7 @@ section {
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -559,7 +559,7 @@ section {
 .scard-subservices .lbl {
   font-family: var(--mono);
   font-size: 0.7rem;
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -578,14 +578,14 @@ section {
   content: "→";
   position: absolute;
   left: 0;
-  color: var(--amber);
+  color: var(--purple);
   font-family: var(--mono);
 }
 .scard-innovation {
   background: rgba(245, 217, 155, 0.3) !important;
   font-size: 0.85rem;
 }
-.scard-innovation h4 { color: var(--cardinal); }
+.scard-innovation h4 { color: var(--orange); }
 .scard-innovation ul {
   margin: 0;
   padding: 0;
@@ -602,7 +602,7 @@ section {
   content: "★";
   position: absolute;
   left: 0;
-  color: var(--cardinal);
+  color: var(--orange);
   font-size: 0.75rem;
   top: 0.4rem;
 }
@@ -671,17 +671,17 @@ section {
   font-size: 0.7rem;
 }
 .doc-table td.status .held {
-  color: var(--verdigris-deep);
+  color: var(--purple-darker);
 }
 .doc-table td.status .source {
-  color: var(--cardinal);
+  color: var(--orange);
 }
 .doc-table td.status a {
   color: inherit;
   text-decoration: none;
   border-bottom: 1px dotted currentColor;
 }
-.doc-table td.status a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+.doc-table td.status a:hover { color: var(--purple); border-bottom-color: var(--purple); }
 
 .cat-key {
   display: flex;
@@ -752,14 +752,14 @@ section {
 .master-matrix th.row-head .snum {
   font-family: var(--mono);
   font-size: 0.6rem;
-  color: var(--amber);
+  color: var(--purple);
   letter-spacing: 0.1em;
   margin-right: 0.4em;
   font-weight: 600;
 }
 .master-matrix td.h-cell {
   background: rgba(194, 90, 31, 0.15);
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 600;
 }
 .master-matrix td.h-cell::after {
@@ -768,7 +768,7 @@ section {
 }
 .master-matrix td.m-cell {
   background: rgba(31, 92, 95, 0.1);
-  color: var(--verdigris-deep);
+  color: var(--purple-darker);
 }
 .master-matrix td.m-cell::after {
   content: "○";
@@ -805,7 +805,7 @@ section {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 600;
 }
 .dcard-head .for .svc {
@@ -855,7 +855,7 @@ section {
   font-family: var(--mono);
   font-size: 0.66rem;
   letter-spacing: 0.1em;
-  color: var(--amber);
+  color: var(--purple);
   margin-right: 0.5em;
   font-weight: 600;
   vertical-align: 0.1em;
@@ -885,18 +885,18 @@ section {
   font-size: 0.62rem;
 }
 .rec .where .arrow {
-  color: var(--amber);
+  color: var(--purple);
   font-family: var(--mono);
 }
 .rec .where .ref {
-  color: var(--verdigris-deep);
-  border-bottom: 1px dotted var(--verdigris);
+  color: var(--purple-darker);
+  border-bottom: 1px dotted var(--purple-dark);
   padding-bottom: 1px;
   flex: 1;
 }
 .rec .where:hover .ref {
-  color: var(--amber);
-  border-bottom-color: var(--amber);
+  color: var(--purple);
+  border-bottom-color: var(--purple);
 }
 .rec.is-future {
   background: rgba(245, 217, 155, 0.18);
@@ -934,7 +934,7 @@ section {
 .source-list .src .where a {
   font-family: var(--mono);
   font-size: 0.72rem;
-  color: var(--amber);
+  color: var(--purple);
 }
 
 /* ---------- Footer ---------- */
@@ -954,7 +954,7 @@ section {
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   margin: 0 0 0.5rem;
   font-weight: 600;
 }
@@ -1018,7 +1018,7 @@ section {
     <p class="section-lede">What Phase 5 is, what it owes annually, and where to look.</p>
   </div>
 
-  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin: 0 0 0.6rem; font-weight: 600;">Scope &amp; key dates</h3>
+  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--purple); margin: 0 0 0.6rem; font-weight: 600;">Scope &amp; key dates</h3>
   <div class="contract-strip">
     <div class="contract-cell">
       <div class="label">Phase</div>
@@ -1046,7 +1046,7 @@ section {
     </div>
   </div>
 
-  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin: 1.6rem 0 0.6rem; font-weight: 600;">The nine Services</h3>
+  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--purple); margin: 1.6rem 0 0.6rem; font-weight: 600;">The nine Services</h3>
   <div class="services-tape">
     <a class="stape-cell is-workshop" href="#service-1"><span class="stape-num">S 1</span><span class="stape-name">Professional Learning</span><span class="stape-tag">teachers · principals · staff</span></a>
     <a class="stape-cell is-workshop" href="#service-2"><span class="stape-num">S 2</span><span class="stape-name">Parent &amp; Carer</span><span class="stape-tag">workshops · training</span></a>
@@ -1059,7 +1059,7 @@ section {
     <a class="stape-cell" href="#service-9"><span class="stape-num">S 9</span><span class="stape-name">Targeted Projects</span><span class="stape-tag">on request</span></a>
   </div>
 
-  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin: 1.6rem 0 0.6rem; font-weight: 600;">Annual delivery targets (Attachment A)</h3>
+  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--purple); margin: 1.6rem 0 0.6rem; font-weight: 600;">Annual delivery targets (Attachment A)</h3>
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="lbl">PL Services 1 / 3 / 6</div>
@@ -1093,24 +1093,24 @@ section {
     </div>
   </div>
 
-  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); margin: 1.6rem 0 0.6rem; font-weight: 600;">Four KPI indicators · eight measures</h3>
+  <h3 style="font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--purple); margin: 1.6rem 0 0.6rem; font-weight: 600;">Four KPI indicators · eight measures</h3>
   <div class="kpi-grid">
-    <div class="kpi-card" style="border-left-color: var(--amber);">
+    <div class="kpi-card" style="border-left-color: var(--purple);">
       <div class="lbl">KPI 1 · Service Effectiveness</div>
       <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M1 Educator · M2 Parent/Carer · M3 Whole-school capability</div>
       <div class="desc">Pre/post survey change; school leader reflection; case studies (S 3).</div>
     </div>
-    <div class="kpi-card" style="border-left-color: var(--verdigris);">
+    <div class="kpi-card" style="border-left-color: var(--purple-dark);">
       <div class="lbl">KPI 2 · Service Quality</div>
       <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M4 Quality of PL — accreditation by teacher reg. authorities</div>
       <div class="desc">All PL meets state/territory accreditation or recognition requirements.</div>
     </div>
-    <div class="kpi-card" style="border-left-color: var(--gold);">
+    <div class="kpi-card" style="border-left-color: var(--lime);">
       <div class="lbl">KPI 3 · Engagement</div>
       <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M5 Stakeholder engagement · M6 ACCO partnership</div>
       <div class="desc">Stakeholder forum outcomes; ACCO-endorsed capability uplift.</div>
     </div>
-    <div class="kpi-card" style="border-left-color: var(--cardinal);">
+    <div class="kpi-card" style="border-left-color: var(--orange);">
       <div class="lbl">KPI 4 · Accessibility</div>
       <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M7 Equitable delivery · M8 Accessible &amp; culturally safe</div>
       <div class="desc">National coverage; WCAG 2.1 AA compliance; cohort-specific survey data.</div>
@@ -1964,82 +1964,70 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>Open with the ECEC pivot from day one.</h5>
           <p>
-            The DSE Amendment Standards 2025 commence 1 August 2026 — 31 days into Phase 5. They extend the
-            Standards for the first time to educational early childhood services (preschools, kindergartens,
-            centre-based day care, family day care, OSHC, vacation care, in-home care). The PL workforce in those
-            settings has never been bound by the DSE before. A dedicated ECEC educator stream — distinct from
-            school-teacher PL — should be live within the first six months of operation.
+            The DSE Amendment commences 1 August 2026 — extending the Standards to early childhood services
+            (preschools, kindergartens, day care, OSHC) for the first time. A dedicated ECEC educator stream
+            should be live in Phase 5's first six months.
           </p>
           <a class="where" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 Sch 1 items 1–20 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 Sch 1 items 1–20</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Name <em>consultation literacy</em> as a single transferable PL skill.</h5>
           <p>
-            The duty to consult is the same duty re-written across DSE (s 3.5, 4.2(3), 5.2(2), 6.2(2),
-            7.2(5)(6)), NCCD (evidence area 1), APST (7.3) and the NAS (co-design principle). Whoever can
-            consult well at enrolment can consult well in an adjustment review, around an incident, at NCCD
-            time, and at a transition. Phase 5 should teach it explicitly with practice and assessment, not as
-            background.
+            The duty to consult repeats across DSE (s 3.5 + every Part), NCCD (evidence area 1), APST (7.3) and
+            the NAS (co-design). Teach it explicitly with practice and assessment, not as background.
           </p>
           <a class="where" href="../docs/DSE-2005_Disability-Standards-for-Education.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 2005 s 3.5 + Part references · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 2005 s 3.5</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>Adopt the AutismCRC F-Words framework as the adjustments vocabulary.</h5>
           <p>
-            The National Framework (S&amp;S 2024) builds on the ICF and Rosenbaum &amp; Gorter's F-Words:
-            <em>Fitness</em> (body), <em>Functioning</em> (activity), <em>Friends</em> (participation),
-            <em>Family</em> (environment), <em>Fun</em> (personal), <em>Future</em> (life ahead). Mapping DSE
-            adjustments and NCCD levels through F-Words gives teachers and families a single child-functional
-            vocabulary that replaces the deficit lexicon still dominant in teacher PD.
+            The S&amp;S 2024 Framework uses the F-Words from the ICF: <em>Fitness, Functioning, Friends, Family,
+            Fun, Future</em>. Mapping DSE adjustments and NCCD levels through F-Words replaces the deficit
+            lexicon with one child-functional vocabulary.
           </p>
           <a class="where" href="../docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 Foundations p.5 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 Foundations p.5</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">04</span>Reproduce the Statement of Rights verbatim in PL materials.</h5>
           <p>
-            The DSE 25 Amendment inserts a new "Rights given by this Part" box at the head of Parts 4–8
-            (enrolment, participation, curriculum, support services, harassment/victimisation). Reproducing
-            them visibly in PL materials reframes the conversation from "provider obligation" to "student
-            right" — a small change that rotates posture significantly.
+            The DSE 25 Amendment inserts a "Rights given by this Part" box at the head of Parts 4–8. Reproducing
+            them visibly reframes the conversation from "provider obligation" to "student right".
           </p>
           <a class="where" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 Sch 1 — ss 4.1A, 5.1A, 6.1A, 7.1A, 8.1A · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 ss 4.1A–8.1A</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">05</span>Align every module to the autism microcredential from day one.</h5>
           <p>
-            The Australian Government is funding an autism microcredential for teachers and school staff in
-            parallel with PP. Service 6B requires complementarity. Designing PP modules to share metadata,
-            learning records and assessment evidence with the microcredential — from day one rather than as a
-            retrofit — protects educator time and gives the program a recognised credential pathway.
+            The Australian Government's autism microcredential runs parallel to PP and Service 6B requires
+            complementarity. Share metadata, learning records and assessment evidence from day one — not as a
+            retrofit.
           </p>
           <a class="where" href="https://www.education.gov.au/disability-loading-program" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 4 + B.1.97 · DoE microcredential (forthcoming)</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 4 + B.1.97</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Build paraprofessional content as a discrete stream.</h5>
           <p>
-            The RFT explicitly names "strategies for working effectively with paraprofessionals (such as teacher
-            aides / learning assistants)" as required content focus. Aides carry a disproportionate share of
-            in-class implementation but are usually treated as recipients of teacher-led PD, not as a distinct
-            audience. A dedicated paraprofessional content layer — and a parallel module for teachers on
-            supervising aides — addresses both sides of a known gap.
+            The RFT names "strategies for working effectively with paraprofessionals" as required content. Aides
+            carry a large share of in-class implementation but are usually treated as recipients of teacher-led
+            PD — give them their own stream.
           </p>
           <a class="where" href="#service-1">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.1.99 content focus list · §02 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.1.99 content focus</span>
           </a>
         </li>
 
@@ -2057,81 +2045,71 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>Add an NCCD-for-Families module.</h5>
           <p>
-            NCCD is named in Service 1's content focus but not in Service 2's. Yet every Autistic child's
-            adjustments are being recorded against NCCD's four levels (QDTP, Supplementary, Substantial,
-            Extensive) and four categories (Physical, Cognitive, Sensory, Social/Emotional) every year — and
-            family voice is one of NCCD's four evidence elements. A short, plain-language module turns
-            families from subjects of the data collection into active partners in its accuracy.
+            Every Autistic child's adjustments are being recorded against NCCD's four levels and four
+            categories each year — family voice is one of four evidence elements. Most families have never
+            heard of NCCD. A short, plain-language module turns subjects into partners.
           </p>
           <a class="where" href="../docs/NCCD-Guidelines-2025.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NCCD Guidelines 2025 — Evidence Area 1 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NCCD Guidelines 2025 Evidence Area 1</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Teach the SAC goal-setting tests as a parent skill.</h5>
           <p>
-            The AutismCRC Supporting Autistic Children Guideline anchors every supports plan in four tests — is
-            the goal <em>relevant, safe, desired, and feasible</em>? Teaching parents these four tests gives
-            them a working scaffold for adjustment conversations with schools, and models the goal-setting that
-            schools should be doing under DSE s 3.5.
+            The SAC Guideline anchors every supports plan in four tests — is the goal <em>relevant, safe,
+            desired, feasible</em>? Give parents the four tests as a scaffold for school adjustment
+            conversations.
           </p>
           <a class="where" href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 2 (Goal Setting) · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 2 (Goal Setting)</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>Distinguish <em>assent</em> from <em>informed consent</em> — teach both.</h5>
           <p>
-            SAC Recommendation 11 establishes that every child has the right to say no to supports (assent),
-            whether they communicate using words or in other ways. Recommendation 12 establishes that parents
-            should have the information they need to make informed choices (informed consent). These are
-            different rights, both important. Teaching families to recognise the difference is a small skill
-            with large downstream effects.
+            SAC Rec 11: every child has the right to say no (assent) — words or otherwise. SAC Rec 12: parents
+            have the right to information they need to make informed choices. Different rights, both essential.
           </p>
           <a class="where" href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Recs 11–12 · p.7 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Recs 11–12 · p.7</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">04</span>Name parents' own rights under DDA s 4, not just rights for their child.</h5>
           <p>
-            The DDA defines "associate" to include spouse, cohabiter, relative, carer, and people in
-            business/sporting/recreational relationships with a person with disability. Parents, carers and
-            siblings hold rights in their own person against discrimination. Most family workshops only cover
-            rights via the child. Naming the associate's standalone right enables parents to act when they
-            themselves are being discriminated against in a school context.
+            The DDA protects "associates" — spouse, relative, carer — from discrimination based on a person's
+            disability. Parents hold their own rights, not just rights via the child. Most family workshops
+            miss this.
           </p>
           <a class="where" href="../docs/DDA-1992_compilation-2024-10-14.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DDA 1992 s 4 (associate) + Part 2 Div 4 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DDA 1992 s 4 (associate) + Part 2 Div 4</span>
           </a>
         </li>
 
         <li class="rec">
-          <h5><span class="rnum">05</span>Give families the Statement of Rights as their tool, not legal text.</h5>
+          <h5><span class="rnum">05</span>Give families the Statement of Rights as a working tool.</h5>
           <p>
-            The DSE 25 Amendment's Statement of Rights boxes are written for the person whose rights they
-            describe. Families should leave a workshop holding the boxes verbatim — printed, accessible, with
-            the workshop's annotations — as a working artefact for the next school meeting. Pair with a short
-            "how to use this in a meeting" guide.
+            The DSE 25 Statement of Rights boxes are written for the person whose rights they describe. Send
+            families home with the boxes verbatim — printed and annotated — plus a short "how to use this in a
+            meeting" guide.
           </p>
           <a class="where" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 Sch 1 — Statement of Rights × 5 Parts · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 ss 4.1A–8.1A</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Centre family wellbeing as a focal area in its own right.</h5>
           <p>
-            SAC Section 3 names nine focal areas of support, including <em>family wellbeing</em> as distinct
-            from supporting the child and distinct from advocacy training. Parent and carer workshops should
-            treat family wellbeing as a named workshop strand — the impact of being an associate, the mental
-            health load of advocacy, sibling needs, financial pressure — not as a "self-care" footnote.
+            SAC Section 3 names <em>family wellbeing</em> as one of nine focal support areas — distinct from
+            supporting the child or training advocacy. Treat it as a named workshop strand: the load of being
+            an associate, mental health, siblings, finances.
           </p>
           <a class="where" href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 3 — focal area "Focusing on family wellbeing" · p.72 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 3 · p.72</span>
           </a>
         </li>
 
@@ -2149,81 +2127,70 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>Build a discrete leadership stratum within Service 3.</h5>
           <p>
-            The RFT requires "PL targeted at the school leadership team to address overarching school culture
-            and policies to prioritise inclusive education" (3A). PP has historically been thinnest at the
-            leadership tier — and classroom inclusion decays without it. A coherent leader-facing stream
-            aligned to the APSP's five Practices, plus the Approved Authority responsibilities under NCCD,
-            addresses the gap.
+            RFT 3A requires PL for the leadership team. PP has historically been thinnest there and classroom
+            inclusion decays without it. A coherent leader stream aligned to APSP's five Practices and NCCD's
+            Approved Authority duties closes the gap.
           </p>
           <a class="where" href="../docs/APSP_Australian-Professional-Standard-for-Principals.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">APSP — 3 Leadership Reqs × 5 Professional Practices · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">APSP 3 Requirements × 5 Practices</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Make anti-bullying a stand-alone whole-school workshop.</h5>
           <p>
-            DSE Part 8 is the only Part with no unjustifiable hardship exception — schools cannot say "too
-            hard" to anti-bullying. NAS data: 68.9% of Autistic 5–20 year-olds experience difficulty at their
-            place of learning; disproportionate bullying. The current PP approach folds this into general
-            inclusion training. A stand-alone whole-school workshop covering peer culture, masking as a safety
-            signal, online safety, and Part 9 associates is overdue.
+            DSE Part 8 has no unjustifiable hardship exception. NAS: 68.9% of Autistic 5–20 year-olds report
+            difficulty at school. A stand-alone workshop covering peer culture, masking, online safety and
+            Part 9 associates is overdue.
           </p>
           <a class="where" href="../docs/DSE-2005_Disability-Standards-for-Education.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 2005 Part 8 + Part 9 · NAS pp.14–17 · local PDFs</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 2005 Part 8 + Part 9 · NAS pp.14–17</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>Treat the 12-month action plan as a co-designed artefact.</h5>
           <p>
-            The RFT requires schools to develop an action plan with milestones. That action plan should itself
-            be co-designed with school leaders, staff, parents and carers, and (where appropriate) students —
-            not handed down from PP. The action plan is the most concrete artefact of the engagement; its
-            provenance matters.
+            The RFT requires schools to develop an action plan. Co-design it with school leaders, staff,
+            parents/carers and (where appropriate) students — don't hand it down from PP. Provenance matters.
           </p>
           <a class="where" href="https://www.pwd.org.au/resources/co-design/" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Service 3A · PWDA Co-Design Programming Overview</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 3A · PWDA Co-Design Programming Overview</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">04</span>Map the school champion role to NCCD coordinator duties.</h5>
           <p>
-            The RFT names a "school staff contact or 'champion'" who carries continuity between PP visits. In
-            most schools an inclusion coordinator or learning support coordinator already carries NCCD
-            coordination. Mapping the PP champion role to that existing function gives the school a sustained
-            point of expertise and the program a known operational counterpart.
+            The RFT names a school "champion" carrying continuity between PP visits. Most schools' inclusion or
+            learning support coordinator already carries NCCD coordination. Mapping the two gives a sustained
+            point of expertise and a known counterpart.
           </p>
           <a class="where" href="../docs/NCCD-Guidelines-2025.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NCCD Guidelines 2025 — Approved Authority duties · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NCCD Guidelines 2025 · Approved Authority duties</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">05</span>Use S&amp;S's "deconstructing exclusion" as the pre-assessment lens.</h5>
           <p>
-            The S&amp;S Framework's Section 8 names "deconstructing exclusion" as an implementation
-            imperative — frameworks rarely address <em>why</em> exclusion happens. School pre-assessment under
-            S 3 should adopt this lens — looking at where current policies, practices and knowledge produce
-            exclusion, not just where they lack inclusion. This is a sharper diagnostic than "what training do
-            you need".
+            S&amp;S 2024 Section 8 names "deconstructing exclusion" as an implementation imperative — most
+            frameworks don't address <em>why</em> exclusion happens. Use this lens in S 3 pre-assessments
+            instead of "what training do you need".
           </p>
           <a class="where" href="../docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 Section 8 — "Deconstructing exclusion" p.52 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 Section 8 · p.52</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Plan the action plan against the SAC goal-tests.</h5>
           <p>
-            The same four goal-tests (relevant, safe, desired, feasible) that frame parent advocacy in S 2
-            should frame school action plans in S 3. A goal that fails on any of the four needs revisiting
-            before it is committed to. This gives schools a working diagnostic and connects S 2 and S 3
-            vocabulary into one shared language.
+            The four SAC goal-tests (relevant, safe, desired, feasible) that frame parent advocacy in S 2
+            should also frame school action plans in S 3 — same vocabulary, both sides of the partnership.
           </p>
           <a class="where" href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 2 — Ensuring goals are relevant, safe, desired, feasible · p.62</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 2 · p.62</span>
           </a>
         </li>
 
@@ -2241,37 +2208,32 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>Position ACCOs as co-deliverers, not partners.</h5>
           <p>
-            The RFT requires partnerships with ACCOs and capability transfer. <em>Co-deliverer</em> status —
-            actively delivering workshops, not just informing them — is the practical test of whether
-            capability is transferring. Build the operational mechanics (revenue sharing, accreditation,
-            co-presenter models) that make co-delivery possible from year 1, not "earned" over time.
+            <em>Co-deliverer</em> status — actively delivering workshops, not just informing them — is the
+            practical test of capability transfer. Build the operational mechanics (revenue sharing,
+            accreditation, co-presenter models) from year 1, not "earned" over time.
           </p>
           <a class="where" href="https://www.closingthegap.gov.au/national-agreement/national-agreement-closing-the-gap" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 4C + Closing the Gap Priority Reform 3 (ACCO-led)</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 4C · Closing the Gap Priority Reform 3</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Adopt S&amp;S's First Nations approach as the assessment foundation.</h5>
           <p>
-            S&amp;S 2024 includes a substantial "Partnering with Aboriginal and Torres Strait Islander
-            children, families, and communities" section grounded in lived experience, IAHA's Cultural
-            Responsiveness Framework, and direct quotes from community members. Adopting this as the
-            foundation for Service 4 design (rather than adapting a generic PP framework) signals seriousness
-            and aligns to AutismCRC research base named in RFT Gen Req 5.
+            S&amp;S 2024 has a substantial "Partnering with Aboriginal and Torres Strait Islander children,
+            families and communities" section grounded in lived experience and the IAHA Cultural
+            Responsiveness Framework. Adopt it as the foundation — not as adaptation of a generic PP framework.
           </p>
           <a class="where" href="../docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 pp.7–11 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 pp.7–11</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>Standing forum seats for FPDN and NACCHO.</h5>
           <p>
-            Service 7's stakeholder forums are the place to operationalise ongoing First Nations partnership.
-            FPDN (the representative organisation for First Nations people with disability) and NACCHO
-            (peak for Aboriginal Community Controlled Health Organisations) should have standing seats — and
-            their feedback should appear in the Annual Report's stakeholder engagement section.
+            FPDN (First Peoples Disability Network) and NACCHO (peak for ACCHOs) should have standing seats in
+            Service 7 forums, with their feedback appearing in the Annual Report.
           </p>
           <a class="where" href="https://fpdn.org.au/" target="_blank" rel="noopener">
             <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 7B · FPDN + NACCHO</span>
@@ -2281,10 +2243,8 @@ section {
         <li class="rec">
           <h5><span class="rnum">04</span>Treat translation as upstream content design.</h5>
           <p>
-            RFT 4A requires materials to be translated into First Nations languages where required. Treating
-            translation as an upstream content design parameter — writing concepts that translate well, rather
-            than translating after the fact — is consistent with the IAHA Cultural Responsiveness Framework's
-            "two-worlds" principle. It also produces sharper materials in English.
+            Write concepts that translate well, rather than translating after the fact. Consistent with IAHA's
+            "two-worlds" principle, and produces sharper English too.
           </p>
           <a class="where" href="https://iaha.com.au/cultural-responsiveness-in-action-framework/" target="_blank" rel="noopener">
             <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">IAHA Cultural Responsiveness Framework</span>
@@ -2294,27 +2254,23 @@ section {
         <li class="rec">
           <h5><span class="rnum">05</span>Design for travel, not metro defaults.</h5>
           <p>
-            The annual target requires ≥60% of First Nations sessions in regional/remote locations. This is a
-            workforce, logistics and content design constraint — not just delivery. Materials need to assume
-            one-day-on-Country windows; facilitators need community-network relationships, not just academic
-            credentials; the workshop calendar needs to flex around community priorities (sorry business,
-            NAIDOC, school terms in remote settings).
+            ≥60% regional/remote target is a workforce, logistics and content design constraint. Assume
+            one-day-on-Country windows; require community-network relationships in facilitators; flex around
+            sorry business, NAIDOC, remote school terms.
           </p>
           <a class="where" href="#contract">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Attachment A — S 4B annual target · §01 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Att. A · S 4B target · §01 above</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Measure cultural safety separately, and publish results.</h5>
           <p>
-            KPI 4 Measure 8 covers "Accessible and Culturally Safe Delivery" but the measurement is "to be
-            negotiated". Phase 5 should commit upfront to cultural safety being measured separately by First
-            Nations partners, with results published in the Annual Report. This makes the measure honest and
-            gives ACCOs a transparent accountability mechanism.
+            KPI 4 M8 covers "Accessible and Culturally Safe Delivery" but measurement is "to be negotiated".
+            Commit upfront to measurement by First Nations partners with results published in the Annual Report.
           </p>
           <a class="where" href="#contract">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Attachment A KPI 4 M8 · §01 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Att. A KPI 4 M8 · §01 above</span>
           </a>
         </li>
 
@@ -2333,23 +2289,20 @@ section {
           <h5><span class="rnum">01</span>Auslan as first-class delivery, not post-translation.</h5>
           <p>
             CALD in the RFT explicitly includes the Deaf community. Auslan-first content design — signing as
-            the primary delivery mode for Deaf-community sessions, not a captioning layer over spoken English —
-            is a different content design exercise. Deaf workshop facilitators should be Deaf community
-            members, not hearing interpreters working from English scripts.
+            primary mode, not captioning over spoken English. Deaf facilitators should be Deaf community
+            members, not hearing interpreters.
           </p>
           <a class="where" href="https://deafaustralia.org.au/" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.5.1 · Deaf Australia · Expression Australia</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.5.1 · Deaf Australia</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Identify the 15 languages by demand data, not assumption.</h5>
           <p>
-            The RFT requires the top resources to be translated into "at least 15 languages identified as most
-            in demand". Community selection must be "based on identified needs, reliable data sources, and
-            informed by CALD stakeholder representatives". Build a data process (ABS census, school census,
-            DHA migration data, website analytics) that surfaces actual demand and consult NEDA before
-            committing the 15.
+            Community selection must be "based on identified needs, reliable data sources, and informed by CALD
+            stakeholder representatives". Use ABS census, school census, DHA migration data and website
+            analytics — and consult NEDA before committing.
           </p>
           <a class="where" href="https://www.neda.org.au/" target="_blank" rel="noopener">
             <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 6 · NEDA Alliance</span>
@@ -2359,37 +2312,31 @@ section {
         <li class="rec">
           <h5><span class="rnum">03</span>Differentiate new-arrival from established CALD families.</h5>
           <p>
-            A new-arrival refugee family, an established Cantonese-speaking family with school-age children,
-            and a Deaf family of three generations are all "CALD" under the RFT but have radically different
-            relationships to the Australian school system. Workshop design should differentiate at least two
-            streams — new to the system, and established but in-language — rather than treating CALD as a
-            single audience.
+            A new-arrival refugee family and an established Cantonese-speaking family with school-age children
+            have radically different relationships to the school system. Design at least two streams: new to
+            the system, and established but in-language.
           </p>
           <a class="where" href="https://www.neda.org.au/submissions" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NEDA submissions · NESB community profiles</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NEDA submissions · NESB profiles</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">04</span>Map cultural understandings of autism per community.</h5>
           <p>
-            Autism is understood differently across cultures — sometimes pathologised, sometimes
-            spiritualised, sometimes invisible. A workshop that translates <em>concepts</em> (what
-            "neurodiversity" maps to in a given community's frame) is more effective than one that translates
-            words. Pre-workshop community consultation is the place this happens, before content is written.
+            Autism is understood differently across cultures — pathologised, spiritualised, invisible. Translate
+            <em>concepts</em>, not just words. Pre-workshop community consultation, before content is written.
           </p>
           <a class="where" href="../docs/AutismCRC_Assessment-and-Diagnosis-Guideline-2023.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">A&amp;D 2023 Rec 6 culturally-affirming · SAC 2022 Rec 8 · local PDFs</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">A&amp;D 2023 Rec 6 · SAC 2022 Rec 8</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">05</span>NEDA Alliance as the standing CALD forum partner.</h5>
           <p>
-            The National Ethnic Disability Alliance is the peak body for CALD people with disability and is
-            named in Service 7's forum list. Treating NEDA as the primary CALD stakeholder body — and routing
-            community selection, content review and evaluation through NEDA — is consistent with the RFT and
-            reduces ad-hoc cultural consultation.
+            NEDA is the peak body for CALD people with disability and is named in Service 7's forum list.
+            Route community selection, content review and evaluation through them.
           </p>
           <a class="where" href="https://www.neda.org.au/" target="_blank" rel="noopener">
             <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 7B · NEDA Alliance</span>
@@ -2399,13 +2346,11 @@ section {
         <li class="rec">
           <h5><span class="rnum">06</span>Co-presenter model: language fluency plus lived experience.</h5>
           <p>
-            The RFT requires workshops "delivered by persons with experience working with CALD families, who
-            can speak the primary language/s of that community". Pair this with Autistic or parent
-            co-presenters where possible — the strongest workshops in this space are bilingual <em>and</em>
-            lived-experience-led, not one or the other.
+            The RFT requires facilitators with CALD experience and community language. Pair them with Autistic
+            or parent co-presenters — bilingual <em>and</em> lived-experience-led, not one or the other.
           </p>
           <a class="where" href="#service-5">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.5.2 facilitator requirement · §02 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.5.2 facilitator requirement</span>
           </a>
         </li>
 
@@ -2423,80 +2368,69 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>One learning record across PP and the microcredential.</h5>
           <p>
-            The microcredential and PP modules are funded as complements. Treating them as a single learning
-            record from day one — single sign-on, shared assessment evidence, unified certificate framework —
-            means educators don't carry the integration cost. This is a Service 6B architecture decision, not
-            a content decision, but content design needs to enable it.
+            PP modules and the microcredential are funded as complements. Single sign-on, shared assessment
+            evidence, unified certificate framework — from day one, not as a retrofit.
           </p>
           <a class="where" href="https://www.education.gov.au/disability-loading-program" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.1.49 microcredential complementarity · DoE</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.1.49 · Aust. Gov. Microcredential</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Statement of Rights as a reusable web component.</h5>
           <p>
-            The DSE 25 Statement of Rights boxes should be a reusable component on the website — appearing on
-            the parent landing page, the educator landing page, every workshop module, and any resource
-            related to enrolment, participation, curriculum, support services or anti-bullying. Build it once,
-            surface it everywhere.
+            Build the DSE 25 Statement of Rights boxes once as a component. Surface on parent landing, educator
+            landing, every workshop module, every resource related to enrolment/participation/curriculum/support
+            services/anti-bullying.
           </p>
           <a class="where" href="../docs/DSE-2025_Amendment-Standards.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 ss 4.1A, 5.1A, 6.1A, 7.1A, 8.1A · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DSE 25 ss 4.1A–8.1A</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>Translation as an upstream content design parameter.</h5>
           <p>
-            Resources requiring translation into 15+ languages cannot be written for English-fluent readers
-            and then translated after the fact. Writing concepts and structures that translate well (short
-            sentences, concrete examples, image-supported, plain syntax) at source produces better English
-            text and faster, cheaper translations. NAATI-certified translators should be consulted at writing
-            stage, not at translation stage.
+            Resources for 15+ languages can't be written for English-fluent readers and translated after the
+            fact. Short sentences, concrete examples, plain syntax. Consult NAATI translators at writing stage,
+            not translation stage.
           </p>
           <a class="where" href="https://www.naati.com.au/" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 6 · NAATI translation services</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 6 · NAATI</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">04</span>Community of Practice moderated by paid Autistic moderators.</h5>
           <p>
-            The Service 1C Community of Practice is an obvious place for Autistic-led leadership to be
-            visible. A paid moderator team — not volunteers — keeps the space safe, on-topic, and reflective
-            of the NAS's co-design principle. Honoraria as line items in the project budget, not
-            after-thoughts.
+            The S 1C CoP is an obvious place for Autistic-led leadership to be visible. A paid moderator team,
+            not volunteers — keeps the space safe, on-topic, NAS co-design-aligned. Honoraria as line items.
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS 2025–31 Co-design principle p.21 · RFT 1C · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Co-design p.21 · RFT 1C</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">05</span>Analytics tied to KPI measures, not vanity metrics.</h5>
           <p>
-            Service 8 names eight KPI measures. Service 6's website analytics should be designed to measure
-            those (cohort-disaggregated completion, accessibility usage, language uptake, regional reach) —
-            not just page views. Build the analytics dashboard against KPIs from day one, with cohort
-            metadata captured at registration with consent.
+            Service 6 analytics should be designed to measure the 8 KPIs (cohort completion, accessibility,
+            language uptake, regional reach) — not page views. Cohort metadata at registration, with consent.
           </p>
           <a class="where" href="#contract">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Attachment A · 4 KPIs / 8 measures · §01 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Att. A · 4 KPIs / 8 measures</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Brand redesign as a co-design output, not a vendor brief.</h5>
           <p>
-            The RFT requires "user testing of the new branding and visual design to ensure it is modern,
-            relevant, trustworthy and accessible for end users". This is an explicit opportunity to co-design
-            the visual identity with Autistic users, families and education authorities — not a job for an
-            external design vendor working from a deck. PP's brand is one of the program's most visible
-            artefacts; its redesign is the most visible co-design.
+            The RFT requires user testing of the new brand with Autistic users, families and education
+            authorities. Co-design the visual identity — not a vendor deck. PP's brand is its most visible
+            artefact; its redesign is the most visible co-design.
           </p>
           <a class="where" href="https://www.pwd.org.au/resources/co-design/" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 6A · PWDA Co-Design Programming Overview</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT 6A · PWDA Co-Design Programming</span>
           </a>
         </li>
 
@@ -2514,37 +2448,31 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>Separate Autistic-led organisations from autism peak bodies.</h5>
           <p>
-            Autism peaks (e.g. Autism Awareness Australia, Aspect, Amaze) and Autistic-led organisations
-            (e.g. Reframing Autism, I CAN Network, Yellow Ladybugs) are distinct stakeholder voices. Folding
-            them into a single forum routinely dilutes Autistic-led voice. A separate Autistic-led
-            organisations forum strand acknowledges this and aligns with the NAS's identity-first co-design
-            principle.
+            Autism peaks (Aspect, Amaze, AAA) and Autistic-led orgs (Reframing Autism, I CAN Network, Yellow
+            Ladybugs) are distinct voices. Folding them into a single forum routinely dilutes Autistic-led
+            voice.
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS 2025–31 Statement on Language p.8 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Statement on Language p.8</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Paid participation; honoraria as line items.</h5>
           <p>
-            Co-design without payment is extraction. The RFT does not prevent paid stakeholder participation.
-            Building honoraria for Autistic and lived-experience family participation into the budget — and
-            showing those amounts in the Annual Report — operationalises the NAS commitment in a measurable
-            way that other tender responses are unlikely to match.
+            Co-design without payment is extraction. Build honoraria for Autistic and lived-experience family
+            participation into the budget, and show the amounts in the Annual Report.
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Co-design principle · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Co-design principle</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>AITSL channel for accreditation visibility.</h5>
           <p>
-            General Requirement 4 requires PL to meet teacher regulatory authority accreditation requirements.
-            AITSL is the federal coordinator and steward of the APST and APSP. A direct AITSL channel into
-            PP's forum membership — not just one-off meetings — bakes accreditation visibility into the
-            program's design loops rather than treating it as a year-end compliance task.
+            Gen Req 4 requires PL to meet teacher regulator accreditation. AITSL is the federal coordinator
+            and steward of APST and APSP. A direct AITSL channel in PP's forums — not ad-hoc meetings.
           </p>
           <a class="where" href="https://www.aitsl.edu.au/" target="_blank" rel="noopener">
             <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 4 · aitsl.edu.au</span>
@@ -2554,10 +2482,8 @@ section {
         <li class="rec">
           <h5><span class="rnum">04</span>AutismCRC as a standing forum seat.</h5>
           <p>
-            The RFT names AutismCRC research explicitly in General Requirement 5 as a content alignment
-            source. AutismCRC partnership at the forum tier — not just as content alignment after the fact —
-            is defensible and distinctive in a Phase 5 response, and it operationalises the co-author
-            relationship already being built into the program.
+            The RFT names AutismCRC research in Gen Req 5. AutismCRC at the forum tier — not just content
+            alignment — is defensible and distinctive.
           </p>
           <a class="where" href="https://www.autismcrc.com.au/" target="_blank" rel="noopener">
             <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 5 · autismcrc.com.au</span>
@@ -2567,26 +2493,24 @@ section {
         <li class="rec">
           <h5><span class="rnum">05</span>Annual public stakeholder report.</h5>
           <p>
-            Currently stakeholder engagement is reported privately to the department via Annual Reports. A
-            separate <em>public</em> stakeholder report — published on the website — turns engagement into a
-            transparent artefact, gives stakeholders visibility of how their feedback shaped the program, and
-            signals the same seriousness PP would expect from a school.
+            Stakeholder engagement is currently reported privately to the department. A public report turns
+            it into a transparent artefact and gives stakeholders visibility of how their feedback shaped the
+            program.
           </p>
           <a class="where" href="#contract">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.1.131 reporting requirements · §01 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.1.131 reporting</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Cohort representation explicit on every forum.</h5>
           <p>
-            The NAS names 12 priority cohorts. Every Service 7 forum should be designed with explicit cohort
-            representation as a target — and where a cohort is not represented, that gap should be named in
-            the Annual Report. This is how intersectionality stops being a chapter and becomes a structural
-            constraint on who is in the room.
+            The NAS names 12 priority cohorts. Design every forum with explicit cohort representation as a
+            target — and name any unrepresented cohort in the Annual Report. Intersectionality as a
+            structural constraint, not a chapter.
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS 2025–31 Priority Cohorts pp.12–15 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Priority Cohorts pp.12–15</span>
           </a>
         </li>
 
@@ -2604,79 +2528,67 @@ section {
         <li class="rec">
           <h5><span class="rnum">01</span>Use F-Words as the outcome framework.</h5>
           <p>
-            The S&amp;S 2024 Framework's F-Words — Fitness, Functioning, Friends, Family, Fun, Future — give
-            Phase 5 a child-functional outcome vocabulary that goes beyond participation counts. Outcome
-            measures designed against F-Words tell a story about how the program changes children's lives,
-            not just how many adults attended workshops. Align M1–M3 measures to F-Words explicitly in the
-            Data, Performance &amp; Continuous Improvement Plan.
+            F-Words (Fitness, Functioning, Friends, Family, Fun, Future) give Phase 5 a child-functional
+            outcome vocabulary that goes beyond participation counts. Align M1–M3 measures to F-Words in the
+            Data &amp; CI Plan.
           </p>
           <a class="where" href="../docs/AutismCRC_National-Framework-Strengths-Support-Needs-2023.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 Foundations: F-Words p.5 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">S&amp;S 2024 F-Words p.5</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">02</span>Autistic-led evaluation methodology, co-published.</h5>
           <p>
-            KPI 4 Measure 8 — Accessible and Culturally Safe Delivery — should be measured by Autistic and
-            cohort-representative evaluators, not solely by the Tenderer. Publishing methodology alongside
-            results (open-methods evaluation) aligns with the NAS co-design principle and is defensible
-            against bias accusations that have dogged previous evaluation efforts.
+            KPI 4 M8 should be measured by Autistic and cohort-representative evaluators, not solely the
+            Tenderer. Publish methodology alongside results — open-methods evaluation, NAS co-design aligned.
           </p>
           <a class="where" href="#contract">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Attachment A KPI 4 M8 · §01 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Att. A KPI 4 M8</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">03</span>School-leader self-evaluation using SAC goal-tests.</h5>
           <p>
-            M3 Whole School Capability is described as "change in pre and post assessment of priority area/s
-            for improvement identified by participating school leaders". The SAC goal-tests (relevant, safe,
-            desired, feasible) give school leaders a working scaffold for self-evaluation — and connect S 3
-            with S 8 measurement using the same vocabulary.
+            M3 Whole School Capability rests on pre/post assessment by school leaders. The SAC goal-tests
+            (relevant, safe, desired, feasible) give them a scaffold, and connect S 3 and S 8 measurement.
           </p>
           <a class="where" href="../docs/AutismCRC_Supporting-Autistic-Children-Guideline-2022.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 2 — Ensuring goals are relevant, safe, desired, feasible</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">SAC 2022 Section 2</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">04</span>Cohort-disaggregated reporting from day one.</h5>
           <p>
-            Surveys and analytics should collect cohort metadata (with consent and care) and report
-            disaggregated from day one — not added in year 2 when patterns are visible. This makes equity
-            visible early and creates a baseline against which Phase 5's reach to priority cohorts can be
-            tracked over time.
+            Collect cohort metadata (with consent and care) at registration. Report disaggregated from day one,
+            not year 2. Creates a baseline for tracking Phase 5's reach to priority cohorts over time.
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 6 · NAS Priority Cohorts pp.12–15</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 6 · NAS Cohorts pp.12–15</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">05</span>Participant feedback loop visible to participants.</h5>
           <p>
-            Build a mechanism by which workshop participants can see how their feedback shaped the next
-            version of the workshop. This is the smallest co-design loop the program can run — and it
-            converts evaluation from extraction to dialogue. A simple "you said / we changed" page on the
-            website, updated after each survey cycle, is enough.
+            A simple "you said / we changed" page on the website, updated after each survey cycle. The
+            smallest co-design loop — converts evaluation from extraction to dialogue.
           </p>
           <a class="where" href="#service-8">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 1 lived experience · §02 / S 8 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Gen Req 1 lived experience</span>
           </a>
         </li>
 
         <li class="rec">
           <h5><span class="rnum">06</span>Open methodology, transparent measurement.</h5>
           <p>
-            Where M1–M8 measurements depend on calculations "to be negotiated with the successful Tenderer",
-            commit upfront to publishing the agreed calculation, minimum performance level, and data source
-            on the website. This protects the program's credibility in moments of contention and aligns the
-            program with the public-data norms the Australian Government already applies to its own programs.
+            Where M1–M8 calculations are "to be negotiated", commit upfront to publishing the agreed
+            calculation, minimum performance level, and data source on the website.
           </p>
           <a class="where" href="#contract">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Attachment A — measure definitions · §01 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT Att. A measure definitions</span>
           </a>
         </li>
 
@@ -2694,66 +2606,56 @@ section {
         <li class="rec is-future">
           <h5><span class="rnum">01</span>Reserve capacity for the NAS Autism Health Roadmap.</h5>
           <p>
-            The fourth outcome area of the National Autism Strategy — Health and Mental Health — is being
-            developed as a separate roadmap by the Department of Health and Aged Care. When it lands during
-            Phase 5, it will create new content priorities at the school/health interface (school nurses,
-            mental health first aid, late-identification of girls and gender-diverse students). Service 9
-            capacity should be reserved for it.
+            The NAS's fourth outcome area — Health &amp; Mental Health — is being developed as a separate
+            roadmap by Health and Aged Care. When it lands, expect new priorities at the school/health
+            interface (school nurses, mental health first aid, late-identification).
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS 2025–31 p.18 — Health &amp; Mental Health roadmap · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS p.18 · Health &amp; Mental Health roadmap</span>
           </a>
         </li>
 
         <li class="rec is-future">
           <h5><span class="rnum">02</span>Reserve capacity for Royal Commission-driven priorities.</h5>
           <p>
-            The Disability Royal Commission's recommendations on inclusive education are referenced in the
-            RFT but the implementation cadence will roll out during Phase 5. New content priorities will
-            emerge as governments respond. Service 9 capacity should be reserved to respond quickly, with a
+            DRC's inclusive-education recommendations will roll out over Phase 5. Reserve capacity and a
             standing process for translating recommendations into content scope.
           </p>
           <a class="where" href="https://disability.royalcommission.gov.au/publications/final-report" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DRC Final Report — Volume 7 Inclusive Education · royal commission site</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">DRC Final Report · Vol. 7 Inclusive Education</span>
           </a>
         </li>
 
         <li class="rec is-future">
           <h5><span class="rnum">03</span>Reserve for microcredential gaps.</h5>
           <p>
-            As the autism microcredential is delivered and evaluated, gaps in coverage will emerge — content
-            the microcredential doesn't cover but educators need. Service 9 is the natural mechanism to fill
-            them, provided PP and the microcredential team have a working relationship that surfaces gaps
-            early. Build that relationship in year 1.
+            As the microcredential is delivered, gaps will emerge. Build the working relationship in year 1 so
+            S 9 can fill gaps as they're identified.
           </p>
           <a class="where" href="https://www.education.gov.au/disability-loading-program" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">Aust. Gov. Autism Microcredential (forthcoming) · DoE</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">Aust. Gov. Microcredential (forthcoming)</span>
           </a>
         </li>
 
         <li class="rec is-future">
           <h5><span class="rnum">04</span>Be ready for sector-emerging priorities.</h5>
           <p>
-            Generative AI in schools, neuro-affirming classroom design, post-pandemic school refusal,
-            late-identification of Autistic women and girls — these are all sector-emerging priorities Phase 5
-            may need to engage. Service 9 is the right home. The skill the program needs to demonstrate is
-            rapid scoping, not predicting in advance.
+            Generative AI, neuro-affirming classroom design, post-pandemic school refusal,
+            late-identification — all candidates. The skill needed is rapid scoping, not advance prediction.
           </p>
           <a class="where" href="#service-9">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.9.1 — Targeted Projects scope · §03 above</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">RFT B.9.1 Targeted Projects scope</span>
           </a>
         </li>
 
         <li class="rec is-future">
           <h5><span class="rnum">05</span>Stand-alone research for emerging cohorts.</h5>
           <p>
-            The NAS names cohorts (LGBTQIA+ Autistic people, older Autistic people, people with very high
-            support needs, AAC users) for whom education-specific evidence is thin. Service 9 is the right
-            vehicle for stand-alone research projects co-designed with these cohorts — producing peer-reviewed
-            outputs that strengthen the program's evidence base.
+            NAS names cohorts where education-specific evidence is thin: LGBTQIA+, older Autistic people, very
+            high support needs, AAC users. S 9 is the right vehicle for co-designed peer-reviewed research.
           </p>
           <a class="where" href="../docs/National-Autism-Strategy-2025-2031.pdf" target="_blank" rel="noopener">
-            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Priority Cohorts pp.10–15 · local PDF</span>
+            <span class="lbl">Where to look</span><span class="arrow">→</span><span class="ref">NAS Priority Cohorts pp.10–15</span>
           </a>
         </li>
 
