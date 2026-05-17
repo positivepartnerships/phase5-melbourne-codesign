@@ -4,47 +4,52 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Phase 5 Co-design — Timetable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
+    /* Positive Partnerships palette (cleaner sibling) */
     --pp-medium-purple: #712D90;
-    --pp-dark-purple: #330044;
-    --pp-light-purple: #C2A7CF;
+    --pp-dark-purple: #532169;
+    --pp-darker-purple: #431b56;
+    --pp-light-purple: #d4cee0;
+    --pp-pale-purple: #f0e6f7;
     --pp-lime: #BBD64A;
     --pp-red: #F15B40;
     --pp-orange: #F7941E;
-    --pp-dark-grey: #333333;
-    --pp-medium-grey: #777777;
-    --pp-light-grey: #E5E0EB;
+    --pp-dark-grey: #222222;
+    --pp-medium-grey: #555555;
+    --pp-faint-grey: #888888;
+    --pp-light-grey: #ebe7f0;
     --crc-teal: #00A6A0;
     --crc-deep: #154058;
     --crc-sand: #F5F0E6;
-    --bg: #F4F1F7;
-    --sky-1: #E7F3FB;
-    --sky-2: #CFE6F4;
+    --bg: #fafafa;
     --card: #FFFFFF;
   }
 
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: var(--pp-dark-grey);
-    background:
-      radial-gradient(1200px 600px at 90% 100%, #ffffff 0%, var(--sky-2) 60%, var(--sky-1) 100%);
+    background: var(--bg);
     min-height: 100vh;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-size: 15px;
   }
 
   /* ── Header / Brand bar ─────────────────────────────── */
   header.brandbar {
-    background: linear-gradient(135deg, var(--pp-dark-purple) 0%, var(--pp-medium-purple) 100%);
-    color: #fff;
+    background: var(--card);
+    color: var(--pp-dark-grey);
     padding: 18px 28px;
     display: flex;
     align-items: center;
     gap: 22px;
     flex-wrap: wrap;
-    border-bottom: 4px solid var(--pp-lime);
+    border-bottom: 1px solid var(--pp-light-grey);
   }
   .brand-blocks {
     display: flex;
@@ -82,35 +87,48 @@
     line-height: 1.05;
   }
   .brand .label .top {
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--pp-light-purple);
+    letter-spacing: 1.4px;
+    color: var(--pp-faint-grey);
   }
   .brand .label .name {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
-    color: #fff;
+    color: var(--pp-dark-grey);
   }
   .divider {
     width: 1px;
-    height: 36px;
-    background: rgba(255,255,255,0.25);
+    height: 32px;
+    background: var(--pp-light-grey);
+  }
+  .back-link {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--pp-medium-grey);
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid var(--pp-light-grey);
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+  .back-link:hover {
+    color: var(--pp-medium-purple);
+    border-color: var(--pp-medium-purple);
   }
   .title-block {
-    margin-left: auto;
     text-align: right;
   }
   .title-block .eyebrow {
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 11px;
-    color: var(--pp-light-purple);
+    letter-spacing: 1.6px;
+    font-size: 10px;
+    color: var(--pp-faint-grey);
   }
   .title-block h1 {
     margin: 2px 0 0;
-    font-size: 22px;
-    color: #fff;
+    font-size: 20px;
+    color: var(--pp-darker-purple);
     font-weight: 600;
   }
 
@@ -201,11 +219,9 @@
 
   .day {
     background: var(--card);
-    border-radius: 14px;
+    border: 1px solid var(--pp-light-grey);
+    border-radius: 6px;
     padding: 18px;
-    box-shadow:
-      0 1px 0 rgba(51,0,68,0.04),
-      0 8px 24px rgba(51,0,68,0.06);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -215,13 +231,13 @@
 
   .day h2 {
     margin: 0 0 4px 0;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-color: var(--pp-lime);
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
-    color: var(--pp-dark-purple);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    color: var(--pp-darker-purple);
     outline: none;
   }
 
@@ -434,6 +450,7 @@
       </div>
     </div>
   </div>
+  <a class="back-link" href="../">← Materials</a>
   <div class="title-block">
     <div class="eyebrow">Phase 5 · Co-design Workshop</div>
     <h1 contenteditable="true" data-key="title">Melbourne Co-design Timetable</h1>
