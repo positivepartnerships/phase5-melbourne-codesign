@@ -7,7 +7,7 @@
 <meta name="description" content="Pre-reading and workshop materials for the Phase 5 Positive Partnerships Melbourne co-design workshops. The Service Brief, the Co-Design Atlas, and the workshop Timetable." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    PHASE 5 CO-DESIGN — landing & pre-reading
@@ -15,26 +15,27 @@
    ===================================================================== */
 
 :root {
-  --ink: #1a1f2c;
-  --ink-soft: #2c3344;
-  --ink-faint: #5a6072;
-  --parchment: #f4efe5;
-  --vellum: #fbf7ee;
-  --vellum-deep: #ede4d0;
-  --rule: #c4b79f;
-  --rule-soft: #d8cdb6;
-  --amber: #c25a1f;
-  --amber-soft: #e89464;
-  --verdigris: #1f5c5f;
-  --verdigris-deep: #133c3f;
-  --gold: #b48438;
-  --highlight: #f5d99b;
-  --cardinal: #8e2d22;
-  --shadow: 0 1px 0 rgba(26, 31, 44, 0.06), 0 12px 28px -18px rgba(26, 31, 44, 0.4);
-  --shadow-hover: 0 2px 0 rgba(26, 31, 44, 0.08), 0 24px 50px -22px rgba(26, 31, 44, 0.55);
+  /* Positive Partnerships palette (cleaner sibling) */
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --lime: #BBD64A;
+  --purple-pale: #f0e6f7;
+  --orange: #F7941E;
+  --shadow: 0 1px 0 rgba(34, 34, 34, 0.04), 0 8px 24px -16px rgba(67, 27, 86, 0.25);
+  --shadow-hover: 0 2px 0 rgba(34, 34, 34, 0.06), 0 18px 40px -20px rgba(67, 27, 86, 0.4);
 
   --display: "Fraunces", "Source Serif 4", Georgia, serif;
-  --body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --body: "Public Sans", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -44,13 +45,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 body {
   margin: 0;
   font-family: var(--body);
-  font-feature-settings: "kern", "liga", "onum";
-  font-size: 18px;
-  line-height: 1.6;
+  font-feature-settings: "kern", "liga";
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--ink);
   background: var(--parchment);
-  background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10 0 0 0 0 0.12 0 0 0 0 0.17 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -63,9 +62,9 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-::selection { background: var(--highlight); color: var(--ink); }
+::selection { background: var(--purple-pale); color: var(--ink); }
 
-a { color: var(--amber); }
+a { color: var(--purple); }
 
 .shell {
   max-width: 1280px;
@@ -93,50 +92,39 @@ a { color: var(--amber); }
 .masthead .stamp .dot {
   display: inline-block;
   width: 6px; height: 6px;
-  background: var(--amber);
+  background: var(--purple);
   border-radius: 50%;
 }
 .masthead h1 {
-  font-size: clamp(3rem, 9vw, 7.5rem);
-  font-weight: 300;
-  line-height: 0.93;
-  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  font-variation-settings: "opsz" 96, "SOFT" 20;
+  letter-spacing: -0.02em;
   margin-bottom: 0.4em;
+  color: var(--purple-darker);
 }
 .masthead h1 .em {
   font-style: italic;
-  font-weight: 350;
-  color: var(--verdigris-deep);
+  font-weight: 400;
+  color: var(--purple);
 }
 .masthead .deck {
-  font-family: var(--display);
-  font-style: italic;
-  font-weight: 350;
-  font-size: clamp(1.2rem, 2vw, 1.55rem);
-  line-height: 1.4;
-  max-width: 55ch;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 60ch;
   color: var(--ink-soft);
   margin: 0 0 1.5rem;
-  font-variation-settings: "opsz" 36, "SOFT" 40;
 }
 .masthead .welcome {
-  max-width: 60ch;
-  font-size: 1.05rem;
-  line-height: 1.65;
+  max-width: 62ch;
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--ink);
 }
-.masthead .welcome p { margin: 0 0 1em; }
-.masthead .welcome p:first-of-type::first-letter {
-  font-family: var(--display);
-  font-variation-settings: "opsz" 144, "SOFT" 50;
-  font-size: 4rem;
-  line-height: 0.85;
-  float: left;
-  padding: 0.05em 0.12em 0 0;
-  color: var(--amber);
-  font-weight: 400;
-}
+.masthead .welcome p { margin: 0 0 0.8em; }
 
 /* ---------- Section frame ---------- */
 section { padding: clamp(2.5rem, 5vw, 4rem) 0; position: relative; }
@@ -154,8 +142,8 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 0.74rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--amber);
-  border-top: 2px solid var(--amber);
+  color: var(--purple);
+  border-top: 2px solid var(--purple);
   padding-top: 0.6rem;
 }
 .section-num .glyph {
@@ -176,7 +164,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-variation-settings: "opsz" 96, "SOFT" 30;
   letter-spacing: -0.02em;
 }
-.section-title em { color: var(--verdigris-deep); font-style: italic; }
+.section-title em { color: var(--purple-darker); font-style: italic; }
 .section-lede {
   grid-column: 2;
   margin-top: 0.7rem;
@@ -216,18 +204,18 @@ section + section { border-top: 1px solid var(--rule-soft); }
   position: absolute;
   left: 0; top: 0; bottom: 0; width: 4px;
 }
-.material-card--amber::before { background: var(--amber); }
-.material-card--verdigris::before { background: var(--verdigris); }
-.material-card--gold::before { background: var(--gold); }
+.material-card--purple::before { background: var(--purple); }
+.material-card--purple-dark::before { background: var(--purple-dark); }
+.material-card--lime::before { background: var(--lime); }
 
 .material-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
   text-decoration: none;
 }
-.material-card--amber:hover { border-color: var(--amber-soft); }
-.material-card--verdigris:hover { border-color: var(--verdigris); }
-.material-card--gold:hover { border-color: var(--gold); }
+.material-card--purple:hover { border-color: var(--purple-light); }
+.material-card--purple-dark:hover { border-color: var(--purple-dark); }
+.material-card--lime:hover { border-color: var(--lime); }
 
 .material-card .type-stamp {
   font-family: var(--mono);
@@ -250,9 +238,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
   text-transform: none;
   font-variation-settings: "opsz" 24, "WONK" 1;
 }
-.material-card--amber .type-stamp .ord { color: var(--amber); }
-.material-card--verdigris .type-stamp .ord { color: var(--verdigris); }
-.material-card--gold .type-stamp .ord { color: var(--gold); }
+.material-card--purple .type-stamp .ord { color: var(--purple); }
+.material-card--purple-dark .type-stamp .ord { color: var(--purple-dark); }
+.material-card--lime .type-stamp .ord { color: var(--lime); }
 
 .material-card h3 {
   font-size: 1.7rem;
@@ -263,9 +251,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
   margin-bottom: 0.4rem;
 }
 .material-card h3 .em { font-style: italic; }
-.material-card--amber h3 .em { color: var(--amber); }
-.material-card--verdigris h3 .em { color: var(--verdigris-deep); }
-.material-card--gold h3 .em { color: var(--gold); }
+.material-card--purple h3 .em { color: var(--purple); }
+.material-card--purple-dark h3 .em { color: var(--purple-darker); }
+.material-card--lime h3 .em { color: var(--lime); }
 
 .material-card .tagline {
   font-family: var(--display);
@@ -300,9 +288,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
   left: 0;
   color: var(--ink-faint);
 }
-.material-card--amber .what-you-see li::before { color: var(--amber); }
-.material-card--verdigris .what-you-see li::before { color: var(--verdigris); }
-.material-card--gold .what-you-see li::before { color: var(--gold); }
+.material-card--purple .what-you-see li::before { color: var(--purple); }
+.material-card--purple-dark .what-you-see li::before { color: var(--purple-dark); }
+.material-card--lime .what-you-see li::before { color: var(--lime); }
 
 .material-card .footer {
   display: flex;
@@ -322,9 +310,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
   letter-spacing: 0.12em;
   font-weight: 600;
 }
-.material-card--amber .footer .enter { color: var(--amber); }
-.material-card--verdigris .footer .enter { color: var(--verdigris); }
-.material-card--gold .footer .enter { color: var(--gold); }
+.material-card--purple .footer .enter { color: var(--purple); }
+.material-card--purple-dark .footer .enter { color: var(--purple-dark); }
+.material-card--lime .footer .enter { color: var(--lime); }
 .material-card .footer .enter::after { content: " →"; }
 
 /* ---------- How to use ---------- */
@@ -346,7 +334,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-weight: 500;
   margin-bottom: 0.6rem;
   font-variation-settings: "opsz" 36;
-  color: var(--verdigris-deep);
+  color: var(--purple-darker);
   font-style: italic;
 }
 .howto-card ol {
@@ -370,7 +358,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   left: 0;
   font-family: var(--mono);
   font-size: 0.75rem;
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 600;
   letter-spacing: 0.06em;
   top: 0.6rem;
@@ -392,7 +380,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   content: "§";
   position: absolute;
   left: 0;
-  color: var(--amber);
+  color: var(--purple);
   font-family: var(--display);
   font-style: italic;
 }
@@ -416,7 +404,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   font-weight: 600;
   padding-top: 0.15rem;
 }
@@ -432,7 +420,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   border-bottom: 1px dotted var(--rule);
   padding-bottom: 1px;
 }
-.lib-row .docs a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+.lib-row .docs a:hover { color: var(--purple); border-bottom-color: var(--purple); }
 .lib-row .docs .sep { color: var(--rule); }
 
 /* ---------- Footer ---------- */
@@ -453,7 +441,7 @@ footer h5 {
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--purple);
   margin: 0 0 0.5rem;
   font-weight: 600;
 }
@@ -498,14 +486,12 @@ footer a { color: var(--ink); }
     </p>
     <div class="welcome">
       <p>
-        Welcome. This page is your starting point for the Phase 5 co-design workshop materials. There are three
-        things to look at: a working <strong>Brief</strong> that maps the contract to its nine Service Types; a
-        deeper <strong>Atlas</strong> that maps the policy anchors to eight content pillars; and the
-        <strong>Timetable</strong> for the three days we'll spend together.
+        Three pre-reading materials for the Melbourne co-design workshop: a working <strong>Brief</strong> that
+        maps the contract to its nine Service Types; an <strong>Atlas</strong> that maps the policy anchors to
+        eight content pillars; and the workshop <strong>Timetable</strong>.
       </p>
       <p>
-        Read the Brief first. Browse the Atlas for depth. Bring the Timetable to each session. None of these
-        are finished documents — they are drafts to test, deepen, contest and improve together.
+        Drafts to test, deepen and improve together — not finished documents.
       </p>
     </div>
   </div>
@@ -527,21 +513,20 @@ footer a { color: var(--ink); }
   <div class="materials-grid">
 
     <!-- CARD 01: BRIEF -->
-    <a class="material-card material-card--amber" href="brief/">
+    <a class="material-card material-card--purple" href="brief/">
       <div class="type-stamp">
         <span class="ord">i</span><span>Working dashboard</span>
       </div>
       <h3>The Phase 5 <span class="em">Service</span> Brief</h3>
       <p class="tagline">From contract to workshop — services first.</p>
       <p class="description">
-        A service-first dashboard of the nine RFT Service Types — with annual delivery targets, KPI measures,
-        anchor documents and recommended content direction for each. The working document for tender response
-        drafting and team planning.
+        Service-first dashboard of the nine RFT Service Types — annual targets, KPI measures, anchors and
+        content direction for each. The working document for tender response drafting.
       </p>
       <ul class="what-you-see">
-        <li>9 Services laid out as cards with sub-services, targets, anchors</li>
-        <li>53 specific content recommendations, each linked to its source</li>
-        <li>Service × Document master matrix · 27-document categorised list</li>
+        <li>9 Services as cards · sub-services · targets · anchors</li>
+        <li>53 content recommendations, each linked to its source</li>
+        <li>Service × Document matrix · 27-document categorised list</li>
       </ul>
       <div class="footer">
         <span class="time">Dashboard&nbsp;·&nbsp;~25 min</span>
@@ -550,20 +535,20 @@ footer a { color: var(--ink); }
     </a>
 
     <!-- CARD 02: ATLAS -->
-    <a class="material-card material-card--verdigris" href="atlas/">
+    <a class="material-card material-card--purple-dark" href="atlas/">
       <div class="type-stamp">
         <span class="ord">ii</span><span>Deep reading</span>
       </div>
       <h3>The Phase 5 Co-Design <span class="em">Atlas</span></h3>
       <p class="tagline">Anchor documents &amp; eight content pillars.</p>
       <p class="description">
-        The policy-first reading. Maps ten anchor documents — seven Commonwealth foundations plus three
-        AutismCRC best-practice guidelines — against eight workshop content pillars, with editorial
-        recommendations drafted for AutismCRC co-authorship.
+        Policy-first reading. Maps ten anchor documents — seven Commonwealth foundations plus three AutismCRC
+        best-practice guidelines — against eight workshop content pillars, with recommendations drafted for
+        AutismCRC co-authorship.
       </p>
       <ul class="what-you-see">
         <li>8 pillar essays — Rights · Consultation · Adjustments · Curriculum · Belonging · Leadership · Family · Transitions</li>
-        <li>10 high-level strategic recommendations</li>
+        <li>10 high-level recommendations</li>
         <li>Pillar × Document matrix · Cohorts · Co-design notes</li>
       </ul>
       <div class="footer">
@@ -573,20 +558,19 @@ footer a { color: var(--ink); }
     </a>
 
     <!-- CARD 03: TIMETABLE -->
-    <a class="material-card material-card--gold" href="timetable/">
+    <a class="material-card material-card--lime" href="timetable/">
       <div class="type-stamp">
         <span class="ord">iii</span><span>Workshop schedule</span>
       </div>
       <h3>The Melbourne <span class="em">Timetable</span></h3>
       <p class="tagline">Three days, Wednesday → Friday.</p>
       <p class="description">
-        The day-by-day timetable for the Melbourne co-design workshop. Sessions, times, and what each block
-        of work is about. Bring it to each session — it is editable in place so we can revise as we go.
+        Day-by-day timetable for the Melbourne co-design workshop. Editable inline so we can revise as we go.
       </p>
       <ul class="what-you-see">
-        <li>Three days of sessions, with times and prompts</li>
-        <li>Editable inline — revise as we go</li>
-        <li>Doubles as a journal for parking-lot items and decisions</li>
+        <li>Three days of sessions · times · prompts</li>
+        <li>Editable inline</li>
+        <li>Doubles as a journal for parking-lot items</li>
       </ul>
       <div class="footer">
         <span class="time">Reference&nbsp;·&nbsp;~5 min</span>
