@@ -97,16 +97,31 @@ a { color: var(--purple); }
   text-transform: uppercase;
   color: var(--ink-faint);
 }
-.masthead .back-link {
+/* Sticky back-to-Materials strip */
+.back-strip {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 0;
+}
+.back-strip .inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 3vw, 2rem);
+}
+.back-strip a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink-faint);
   text-decoration: none;
-  padding: 6px 10px;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  font-size: 11px;
-  letter-spacing: 0.05em;
+  font-weight: 600;
 }
-.masthead .back-link:hover { color: var(--purple); border-color: var(--purple); }
+.back-strip a:hover { color: var(--purple); }
+.back-strip a::before { content: "← "; color: var(--purple); }
 .masthead h1 {
   font-size: clamp(1.8rem, 3.6vw, 2.6rem);
   font-weight: 600;
@@ -448,6 +463,10 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
 </head>
 <body>
 
+<div class="back-strip">
+  <div class="inner"><a href="../">Back to materials</a></div>
+</div>
+
 <div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
   <div class="inner">
     <span class="label">AI-compiled draft</span>
@@ -460,7 +479,6 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
   <div class="shell">
     <div class="top-row">
       <span>Positive Partnerships · Phase 5 · Operations Plan</span>
-      <a class="back-link" href="../">← Materials</a>
     </div>
     <h1>Phase 5 Operations Plan</h1>
     <p class="deck">

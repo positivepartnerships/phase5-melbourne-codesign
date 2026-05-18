@@ -1161,6 +1161,23 @@ section + section { border-top: 1px solid var(--rule-soft); }
   .index-companion { display: none; }
 }
 
+.index-home {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem 0.5rem 0;
+  border-right: 1px solid var(--rule);
+  margin-right: 0.4rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.index-home:hover { color: var(--purple); }
+.index-home::before { content: "← "; color: var(--purple); }
+
 /* expanded pillar drawer */
 .index-drawer {
   display: none;
@@ -1265,6 +1282,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 
 <nav class="index-bar" aria-label="Atlas sections">
   <div class="shell">
+    <a href="../" class="index-home" title="Back to materials">Materials</a>
     <a href="#top" class="index-brand" style="text-decoration:none;">
       <span class="num">Atlas · §00</span>The <em>Co-Design</em> Atlas
     </a>

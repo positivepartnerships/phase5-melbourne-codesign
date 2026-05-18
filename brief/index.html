@@ -213,6 +213,23 @@ h1, h2, h3, h4 {
 }
 .index-companion:hover { color: var(--purple); }
 
+.index-home {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem 0.5rem 0;
+  border-right: 1px solid var(--rule);
+  margin-right: 0.4rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.index-home:hover { color: var(--purple); }
+.index-home::before { content: "← "; color: var(--purple); }
+
 /* ---------- Masthead ---------- */
 .masthead {
   padding: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2rem);
@@ -1034,6 +1051,7 @@ section {
 
 <nav class="index-bar" aria-label="Brief sections">
   <div class="shell">
+    <a href="../" class="index-home" title="Back to materials">Materials</a>
     <a href="#top" class="index-brand"><span class="num">Brief · §00</span>Phase 5 <em style="font-style:italic">Service</em> Brief</a>
     <a class="index-link" href="#contract"><span class="glyph">§01</span>Contract</a>
     <a class="index-link" href="#workshops"><span class="glyph">§02</span>Workshops 1–3</a>
