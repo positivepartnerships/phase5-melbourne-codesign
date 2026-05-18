@@ -244,22 +244,31 @@ section + section { border-top: 1px solid var(--rule-soft); }
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
 }
-@media (min-width: 1200px) {
-  .materials-grid { grid-template-columns: repeat(5, 1fr); }
+@media (min-width: 900px) {
+  .materials-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .material-card {
   background: var(--vellum);
   border: 1px solid var(--rule);
-  padding: 1.8rem 1.8rem 1.4rem;
+  padding: 1.4rem 1.5rem 1.1rem;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  min-height: 460px;
+  min-height: 240px;
   scroll-margin-top: 1.5rem;
+}
+.material-card.tbc {
+  opacity: 0.7;
+  pointer-events: auto;
+  cursor: not-allowed;
+}
+.material-card.tbc:hover {
+  transform: none;
+  box-shadow: var(--shadow);
 }
 .material-card::before {
   content: "";
@@ -585,17 +594,10 @@ footer a { color: var(--ink); }
         <span class="ord">i</span><span>Workshop schedule</span>
       </div>
       <h3>The Melbourne <span class="em">Timetable</span></h3>
-      <p class="tagline">Three days, Wednesday → Friday.</p>
-      <p class="description">
-        Day-by-day timetable for the Melbourne co-design workshop.
-      </p>
-      <ul class="what-you-see">
-        <li>Three days of sessions · times · prompts</li>
-        <li>20 – 22 May 2026</li>
-      </ul>
+      <p class="description">Day-by-day schedule for the three-day co-design workshop.</p>
       <div class="footer">
-        <span class="time">Reference&nbsp;·&nbsp;~5 min</span>
-        <span class="enter">Open the Timetable</span>
+        <span class="time">~5 min</span>
+        <span class="enter">Open</span>
       </div>
     </a>
 
@@ -605,18 +607,10 @@ footer a { color: var(--ink); }
         <span class="ord">ii</span><span>Phase 4 snapshot</span>
       </div>
       <h3>Phase 4 <span class="em">Content</span> Overview</h3>
-      <p class="tagline">What we deliver now.</p>
-      <p class="description">
-        A snapshot of the current Positive Partnerships content set — workshops, webinars and online
-        resources — as a reference for the conversation about what to keep, build on, or change.
-      </p>
-      <ul class="what-you-see">
-        <li>9 workshop topics · 15 webinar topics · 16 online resource topics</li>
-        <li>Cross-cutting themes across all three delivery modes</li>
-      </ul>
+      <p class="description">What we deliver now — workshops, webinars and online resources.</p>
       <div class="footer">
-        <span class="time">Snapshot&nbsp;·&nbsp;~5 min</span>
-        <span class="enter">Open Content Overview</span>
+        <span class="time">~5 min</span>
+        <span class="enter">Open</span>
       </div>
     </a>
 
@@ -626,19 +620,10 @@ footer a { color: var(--ink); }
         <span class="ord">iii</span><span>Transition timeline</span>
       </div>
       <h3>Phase 5 <span class="em">Operations</span> Plan</h3>
-      <p class="tagline">The year ahead — April 2026 → July 2027+.</p>
-      <p class="description">
-        Transition timeline, key milestones, sub-contractor partnerships, staffing, and the content
-        development roadmap. The shape of what's happening between contract sign-off and confirmed new
-        content.
-      </p>
-      <ul class="what-you-see">
-        <li>16-month transition timeline · 17 milestones</li>
-        <li>Sub-contractor partners · staffing plan · content phases</li>
-      </ul>
+      <p class="description">The year ahead — timeline, milestones, partners and staffing.</p>
       <div class="footer">
-        <span class="time">Plan&nbsp;·&nbsp;~10 min</span>
-        <span class="enter">Open Operations Plan</span>
+        <span class="time">~10 min</span>
+        <span class="enter">Open</span>
       </div>
     </a>
 
@@ -648,19 +633,10 @@ footer a { color: var(--ink); }
         <span class="ord">iv</span><span>Working dashboard</span>
       </div>
       <h3>The Phase 5 <span class="em">Service</span> Brief</h3>
-      <p class="tagline">From contract to workshop — services first.</p>
-      <p class="description">
-        Service-first dashboard of the nine RFT Service Types — annual targets, KPI measures, anchors and
-        content direction for each.
-      </p>
-      <ul class="what-you-see">
-        <li>9 Services as cards · sub-services · targets · anchors</li>
-        <li>53 AI-surfaced content directions, each linked to its source</li>
-        <li>Service × Document matrix · 27-document categorised list</li>
-      </ul>
+      <p class="description">The nine RFT Service Types — targets, anchors, and AI-surfaced content directions.</p>
       <div class="footer">
-        <span class="time">Dashboard&nbsp;·&nbsp;~25 min</span>
-        <span class="enter">Open the Brief</span>
+        <span class="time">~25 min</span>
+        <span class="enter">Open</span>
       </div>
     </a>
 
@@ -670,19 +646,23 @@ footer a { color: var(--ink); }
         <span class="ord">v</span><span>Deep reading</span>
       </div>
       <h3>The Phase 5 Co-Design <span class="em">Atlas</span></h3>
-      <p class="tagline">Anchor documents &amp; eight content pillars.</p>
-      <p class="description">
-        Policy-first reading. Maps ten anchor documents — seven Commonwealth foundations plus three AutismCRC
-        best-practice guidelines — against eight workshop content pillars.
-      </p>
-      <ul class="what-you-see">
-        <li>8 pillar essays — Rights · Consultation · Adjustments · Curriculum · Belonging · Leadership · Family · Transitions</li>
-        <li>10 AI-surfaced directions for Phase 5</li>
-        <li>Pillar × Document matrix · Cohorts · Co-design notes</li>
-      </ul>
+      <p class="description">Ten anchor documents mapped against eight workshop content pillars.</p>
       <div class="footer">
-        <span class="time">Long-form&nbsp;·&nbsp;~45 min</span>
-        <span class="enter">Open the Atlas</span>
+        <span class="time">~45 min</span>
+        <span class="enter">Open</span>
+      </div>
+    </a>
+
+    <!-- CARD 06: PARTICIPANT PERSPECTIVES (TBC) -->
+    <a class="material-card material-card--purple-light tbc" href="#">
+      <div class="type-stamp">
+        <span class="ord">vi</span><span>Coming soon</span>
+      </div>
+      <h3>Participant <span class="em">Perspectives</span></h3>
+      <p class="description">Voices and feedback from current participants — content to be added.</p>
+      <div class="footer">
+        <span class="time">TBC</span>
+        <span class="enter">Soon</span>
       </div>
     </a>
 
