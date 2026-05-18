@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phase 5 Operations Plan — Positive Partnerships</title>
+<meta name="description" content="The Phase 5 Operations Plan: transition timeline, milestones, sub-contractor partnerships, staffing, content development phases, and annual program delivery plan attachments." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --lime: #BBD64A;
+  --lime-soft: #d8e890;
+  --purple-pale: #f0e6f7;
+  --orange: #F7941E;
+  --orange-soft: #fbc481;
+  --slate: #4a5468;
+  --slate-soft: #b8c0cc;
+
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--body); margin: 0; letter-spacing: -0.01em; }
+a { color: var(--purple); }
+::selection { background: var(--purple-pale); color: var(--ink); }
+
+.shell { max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.2rem, 3vw, 2rem); }
+
+/* ---------- Disclosure banner ---------- */
+.disclosure-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.disclosure-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.disclosure-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+.masthead .top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.masthead .back-link {
+  color: var(--ink-faint);
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.masthead .back-link:hover { color: var(--purple); border-color: var(--purple); }
+.masthead h1 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--purple-darker);
+  margin-bottom: 0.4rem;
+}
+.masthead .deck {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  max-width: 65ch;
+  line-height: 1.5;
+}
+
+/* ---------- Section ---------- */
+section {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.section-head {
+  margin-bottom: 1.4rem;
+}
+.section-head h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  color: var(--purple-darker);
+  margin-bottom: 0.3rem;
+}
+.section-head p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 70ch;
+}
+.kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Timeline (Gantt) ---------- */
+.timeline-wrap {
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+.timeline {
+  display: grid;
+  gap: 0;
+  min-width: 1100px;
+}
+.timeline-header,
+.timeline-row {
+  display: grid;
+  grid-template-columns: 230px repeat(16, minmax(50px, 1fr));
+  gap: 3px;
+  padding: 6px 8px 6px 12px;
+  align-items: center;
+}
+.timeline-header {
+  background: var(--vellum-deep);
+  border-bottom: 1px solid var(--rule);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+}
+.timeline-header .stream-label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 700;
+}
+.timeline-header .month {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+  line-height: 1;
+}
+.timeline-header .month small {
+  display: block;
+  color: var(--purple);
+  font-size: 0.58rem;
+  margin-top: 2px;
+  font-weight: 500;
+}
+.timeline-row {
+  border-bottom: 1px solid var(--rule-soft);
+  min-height: 36px;
+}
+.timeline-row:last-child { border-bottom: none; }
+.timeline-row .stream-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+  padding-right: 8px;
+}
+.timeline-row .stream-label small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 1px;
+}
+.timeline-group {
+  background: var(--vellum-deep);
+  padding: 9px 12px;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--purple);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.bar {
+  padding: 5px 8px;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bar--gov { background: var(--purple); }
+.bar--gov-light { background: var(--purple-light); }
+.bar--dev { background: var(--orange); color: var(--ink); }
+.bar--staff { background: var(--lime); color: var(--ink); }
+.bar--existing { background: var(--slate); }
+.bar--live { background: var(--purple-darker); }
+.bar--trial { background: var(--lime-soft); color: var(--ink); }
+
+.timeline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.6rem;
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+.timeline-legend span { display: inline-flex; align-items: center; gap: 0.5em; }
+.timeline-legend .sw {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border-radius: 2px;
+}
+
+/* ---------- Milestones list ---------- */
+.milestones {
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.milestone-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 200px;
+  gap: 1rem;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  align-items: baseline;
+}
+.milestone-row:last-child { border-bottom: none; }
+.milestone-row:nth-child(odd) { background: var(--parchment); }
+.milestone-row .num {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+.milestone-row .what { font-size: 0.92rem; line-height: 1.4; }
+.milestone-row .when {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  text-align: right;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 680px) {
+  .milestone-row { grid-template-columns: 36px 1fr; }
+  .milestone-row .when { grid-column: 2; text-align: left; padding-top: 4px; }
+}
+
+/* ---------- Tables ---------- */
+.t-table {
+  border: 1px solid var(--rule);
+  background: var(--vellum);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.t-row {
+  display: grid;
+  gap: 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.t-row:last-child { border-bottom: none; }
+.t-row.t-head {
+  background: var(--vellum-deep);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--purple-darker);
+}
+.t-row > div {
+  padding: 12px 16px;
+  border-right: 1px solid var(--rule-soft);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.t-row > div:last-child { border-right: none; }
+.t-row strong { color: var(--purple-darker); font-weight: 700; }
+
+.t-partners .t-row { grid-template-columns: 180px 220px 1fr; }
+.t-staffing .t-row { grid-template-columns: 220px 200px 1fr; }
+@media (max-width: 720px) {
+  .t-partners .t-row, .t-staffing .t-row { grid-template-columns: 1fr; }
+  .t-row > div { border-right: none; border-bottom: 1px dotted var(--rule-soft); }
+  .t-row > div:last-child { border-bottom: none; }
+  .t-row.t-head { display: none; }
+}
+
+/* ---------- Content phases ---------- */
+.phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+.phase-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+  position: relative;
+}
+.phase-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 3px;
+}
+.phase-card.p1::before { background: var(--orange); }
+.phase-card.p2::before { background: var(--slate); }
+.phase-card.p3::before { background: var(--lime); }
+.phase-card.p4::before { background: var(--purple-light); }
+.phase-card.p5::before { background: var(--purple-darker); }
+
+.phase-card .phase-num {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 4px;
+}
+.phase-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  margin-bottom: 4px;
+}
+.phase-card .phase-when {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.phase-card p {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ---------- APDP attachments ---------- */
+.apdp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.apdp-item {
+  background: var(--vellum);
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  position: relative;
+  padding-left: 36px;
+}
+.apdp-item::before {
+  content: "✓";
+  position: absolute;
+  left: 14px;
+  color: var(--purple);
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .apdp { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem 0 3rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: white; }
+  .disclosure-banner { background: white; border-color: black; }
+  section { break-inside: auto; }
+  .timeline-wrap, .milestones, .t-table, .phase-card { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
+  <div class="inner">
+    <span class="label">AI-compiled draft</span>
+    The recommendations and analysis across these materials were synthesised by an AI assistant from the source
+    documents. They are starting points for co-design with AutismCRC.
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="top-row">
+      <span>Positive Partnerships · Phase 5 · Operations Plan</span>
+      <a class="back-link" href="../">← Materials</a>
+    </div>
+    <h1>Phase 5 Operations Plan</h1>
+    <p class="deck">
+      Transition into Phase 5: timeline, milestones, partnerships, staffing, and content development across the
+      year ahead. April 2026 through July 2027 and beyond.
+    </p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="section-head">
+      <span class="kicker">§ Transition timeline</span>
+      <h2>One year of transition.</h2>
+      <p>The key streams of work across the transition period, from contract sign-off in April 2026 to confirmed
+        new content from July 2027.</p>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline">
+
+        <!-- HEADER -->
+        <div class="timeline-header">
+          <div class="stream-label">Workstream</div>
+          <div class="month">Apr<small>26</small></div>
+          <div class="month">May</div>
+          <div class="month">Jun</div>
+          <div class="month">Jul</div>
+          <div class="month">Aug</div>
+          <div class="month">Sep</div>
+          <div class="month">Oct</div>
+          <div class="month">Nov</div>
+          <div class="month">Dec</div>
+          <div class="month">Jan<small>27</small></div>
+          <div class="month">Feb</div>
+          <div class="month">Mar</div>
+          <div class="month">Apr</div>
+          <div class="month">May</div>
+          <div class="month">Jun</div>
+          <div class="month">Jul<small>+</small></div>
+        </div>
+
+        <!-- CONTRACT & GOVERNANCE -->
+        <div class="timeline-group">Contract &amp; Governance</div>
+        <div class="timeline-row">
+          <div class="stream-label">Contract executed</div>
+          <div class="bar bar--gov" style="grid-column: 2 / 3;">Apr</div>
+        </div>
+        <div class="timeline-row">
+          <div class="stream-label">Ops plans — ongoing</div>
+          <div class="bar bar--gov-light" style="grid-column: 2 / 18;">Ongoing across Phase 5</div>
+        </div>
+
+        <!-- PROGRAM DELIVERY PLAN -->
+        <div class="timeline-group">Program Delivery Plan &amp; support plans</div>
+        <div class="timeline-row">
+          <div class="stream-label">Develop &amp; submit</div>
+          <div class="bar bar--dev" style="grid-column: 2 / 4;">Apr – May</div>
+        </div>
+
+        <!-- SUB-CONTRACTORS -->
+        <div class="timeline-group">Sub-contractor agreements</div>
+        <div class="timeline-row">
+          <div class="stream-label">ACER · Bright Labs · Catalyst · Arlo · CRC</div>
+          <div class="bar bar--gov" style="grid-column: 2 / 4;">Apr – May</div>
+        </div>
+
+        <!-- STAFFING -->
+        <div class="timeline-group">Staffing</div>
+        <div class="timeline-row">
+          <div class="stream-label">Existing staff extensions</div>
+          <div class="bar bar--staff" style="grid-column: 2 / 3;">Apr</div>
+        </div>
+        <div class="timeline-row">
+          <div class="stream-label">Recruitment for vacant positions</div>
+          <div class="bar bar--staff" style="grid-column: 3 / 5;">May – Jun</div>
+        </div>
+
+        <!-- CONTENT DEVELOPMENT -->
+        <div class="timeline-group">Content development</div>
+        <div class="timeline-row">
+          <div class="stream-label">New content, guides &amp; resources</div>
+          <div class="bar bar--dev" style="grid-column: 3 / 8;">May – Sep</div>
+        </div>
+        <div class="timeline-row">
+          <div class="stream-label">Trial &amp; review</div>
+          <div class="bar bar--trial" style="grid-column: 8 / 17;">Oct – Jun</div>
+        </div>
+        <div class="timeline-row">
+          <div class="stream-label">Confirmed &amp; live</div>
+          <div class="bar bar--live" style="grid-column: 17 / 18;">Jul +</div>
+        </div>
+
+        <!-- WORKSHOP DELIVERY -->
+        <div class="timeline-group">Workshop delivery</div>
+        <div class="timeline-row">
+          <div class="stream-label">T3 — existing models</div>
+          <div class="bar bar--existing" style="grid-column: 5 / 8;">Jul – Sep</div>
+        </div>
+        <div class="timeline-row">
+          <div class="stream-label">T4 — reduced existing + trial new</div>
+          <div class="bar bar--trial" style="grid-column: 8 / 11;">Oct – Dec</div>
+        </div>
+
+        <!-- WEBSITE MVP -->
+        <div class="timeline-group">Website MVP</div>
+        <div class="timeline-row">
+          <div class="stream-label">Bright Labs — MVP build</div>
+          <div class="bar bar--dev" style="grid-column: 3 / 5;">May – Jun</div>
+        </div>
+
+        <!-- COMMUNICATIONS -->
+        <div class="timeline-group">Communications</div>
+        <div class="timeline-row">
+          <div class="stream-label">Stakeholder comms</div>
+          <div class="bar bar--gov" style="grid-column: 2 / 4;">Apr – May</div>
+        </div>
+        <div class="timeline-row">
+          <div class="stream-label">Phase 5 launch</div>
+          <div class="bar bar--live" style="grid-column: 4 / 5;">Jun</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="timeline-legend">
+      <span><span class="sw" style="background: var(--purple);"></span>Governance / Comms</span>
+      <span><span class="sw" style="background: var(--orange);"></span>Development / Review</span>
+      <span><span class="sw" style="background: var(--lime);"></span>Staffing</span>
+      <span><span class="sw" style="background: var(--lime-soft);"></span>Trial</span>
+      <span><span class="sw" style="background: var(--slate);"></span>Existing delivery</span>
+      <span><span class="sw" style="background: var(--purple-darker);"></span>Confirmed / Live</span>
+    </div>
+  </section>
+
+  <!-- KEY MILESTONES -->
+  <section id="milestones">
+    <div class="section-head">
+      <span class="kicker">§ Key milestones</span>
+      <h2>Key milestones.</h2>
+    </div>
+
+    <div class="milestones">
+      <div class="milestone-row">
+        <div class="num">01</div>
+        <div class="what">Contract signed</div>
+        <div class="when">April 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">02</div>
+        <div class="what">Government progress meetings</div>
+        <div class="when">April / May 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">03</div>
+        <div class="what">2026–27 Program Delivery Plan &amp; supporting documents submitted for approval</div>
+        <div class="when">Q4 · April / May 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">04</div>
+        <div class="what">Transition-in Plan finalised — including Fraud Control Plan</div>
+        <div class="when">April 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">05</div>
+        <div class="what">Semester 2 workshop schedule developed (existing content + trial of new workshop types)</div>
+        <div class="when">April 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">06</div>
+        <div class="what">Sub-contractor agreements developed and signed</div>
+        <div class="when">April – May 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">07</div>
+        <div class="what">Existing staff contract extensions signed</div>
+        <div class="when">End of April 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">08</div>
+        <div class="what">Recruitment process begins for vacant positions</div>
+        <div class="when">April – May 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">09</div>
+        <div class="what">Stakeholder communication regarding Phase 5 tender outcome</div>
+        <div class="when">April – May 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">10</div>
+        <div class="what">Website MVP developed (Bright Labs)</div>
+        <div class="when">May – June 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">11</div>
+        <div class="what">Vacant positions appointed</div>
+        <div class="when">By June – July 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">12</div>
+        <div class="what">Communication and promotion regarding the launch of Phase 5, including link to website MVP</div>
+        <div class="when">June 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">13</div>
+        <div class="what"><strong>Phase 5 service delivery commences</strong></div>
+        <div class="when">1 July 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">14</div>
+        <div class="what">New workshop type content developed — facilitator guides, participant resources, survey
+          instruments, website content audit, initial support resources identified. Microcredential alignment
+          discussions begin.</div>
+        <div class="when">July – December 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">15</div>
+        <div class="what">New workshop type trial &amp; review</div>
+        <div class="when">October – December 2026</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">16</div>
+        <div class="what">Continued new workshop type trial &amp; review</div>
+        <div class="when">January – June 2027</div>
+      </div>
+      <div class="milestone-row">
+        <div class="num">17</div>
+        <div class="what"><strong>All new workshop types finalised and operational</strong></div>
+        <div class="when">July 2027 onwards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB-CONTRACTORS -->
+  <section id="partners">
+    <div class="section-head">
+      <span class="kicker">§ Sub-contractor partnerships</span>
+      <h2>Five working partners.</h2>
+    </div>
+
+    <div class="t-table t-partners">
+      <div class="t-row t-head">
+        <div>Partner</div>
+        <div>Role</div>
+        <div>Key activities</div>
+      </div>
+      <div class="t-row">
+        <div><strong>ACER</strong></div>
+        <div>Evaluation</div>
+        <div>Evaluation framework design, data instrument setup, reporting alignment.</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Bright Labs</strong></div>
+        <div>Website development</div>
+        <div>MVP development for the new Program website.</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Catalyst</strong></div>
+        <div>Learning Management System</div>
+        <div>Hosting and management of online learning access and resources.</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Arlo</strong></div>
+        <div>Workshop registration</div>
+        <div>Management and delivery of online registration for workshops and webinars.</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Autism CRC</strong></div>
+        <div>Content development</div>
+        <div>Content review, co-design, development of new materials.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAFFING -->
+  <section id="staffing">
+    <div class="section-head">
+      <span class="kicker">§ Staffing</span>
+      <h2>People on the ground.</h2>
+    </div>
+
+    <div class="t-table t-staffing">
+      <div class="t-row t-head">
+        <div>Action</div>
+        <div>Timeline</div>
+        <div>Detail</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Existing staff contract extensions</strong></div>
+        <div>April 2026</div>
+        <div>Signed by end of April to ensure continuity of service during transition.</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Vacant position recruitment</strong></div>
+        <div>May – June 2026</div>
+        <div>Recruitment process begins May; appointments made by 30 June 2026.</div>
+      </div>
+      <div class="t-row">
+        <div><strong>Full staffing operational</strong></div>
+        <div>1 July 2026</div>
+        <div>All positions filled for Phase 5 service delivery commencement.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT PHASES -->
+  <section id="phases">
+    <div class="section-head">
+      <span class="kicker">§ Content development roadmap</span>
+      <h2>Five phases, fourteen months.</h2>
+      <p>From review and development through to confirmed new content for the two-year delivery period.</p>
+    </div>
+
+    <div class="phases">
+      <article class="phase-card p1">
+        <div class="phase-num">Phase 1</div>
+        <h3>Review &amp; develop</h3>
+        <div class="phase-when">May – September 2026</div>
+        <p>Review existing content; develop new content across PL, Workshops, Parent/Carer, First Nations, CALD.
+          Build facilitator guides, participant resources, survey instruments and website content audit.</p>
+      </article>
+
+      <article class="phase-card p2">
+        <div class="phase-num">Phase 2</div>
+        <h3>Continuity of service</h3>
+        <div class="phase-when">Term 3, 2026 · Jul – Sep</div>
+        <p>Run existing workshop models to maintain continuity of service while new content is in development.</p>
+      </article>
+
+      <article class="phase-card p3">
+        <div class="phase-num">Phase 3</div>
+        <h3>Transition &amp; trial</h3>
+        <div class="phase-when">Term 4, 2026 · Oct – Dec</div>
+        <p>Reduced existing models alongside trial of new content workshops and initial focus sessions on select
+          topics. All new content completed by end of 2026.</p>
+      </article>
+
+      <article class="phase-card p4">
+        <div class="phase-num">Phase 4</div>
+        <h3>Extended trial</h3>
+        <div class="phase-when">January – June 2027</div>
+        <p>Continued trial and refinement of new content based on feedback and evaluation data. Iterative
+          improvements across all workshop types.</p>
+      </article>
+
+      <article class="phase-card p5">
+        <div class="phase-num">Phase 5</div>
+        <h3>Confirmed new content</h3>
+        <div class="phase-when">July 2027 onwards</div>
+        <p>All new workshop types confirmed for the two-year delivery period.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- APDP -->
+  <section id="apdp">
+    <div class="section-head">
+      <span class="kicker">§ Annual Program Delivery Plan</span>
+      <h2>Seven attachments due April–May 2026.</h2>
+      <p>The comprehensive framework for Phase 5 operations, developed and submitted with the Annual Program
+        Delivery Plan.</p>
+    </div>
+
+    <div class="apdp">
+      <div class="apdp-item">Program Schedule</div>
+      <div class="apdp-item">Data, Performance Monitoring &amp; Continuous Improvement Plan</div>
+      <div class="apdp-item">Stakeholder, Communications &amp; Promotion Plan</div>
+      <div class="apdp-item">Quality Management Plan</div>
+      <div class="apdp-item">Contract Material Register</div>
+      <div class="apdp-item">Risk Register</div>
+      <div class="apdp-item">System Development &amp; Management Plan</div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="shell">
+  <p>
+    <a href="../">← Back to materials</a> &nbsp;·&nbsp;
+    <a href="../timetable/">Timetable</a> &nbsp;·&nbsp;
+    <a href="../brief/">Service Brief</a> &nbsp;·&nbsp;
+    <a href="../atlas/">Co-Design Atlas</a>
+  </p>
+</footer>
+
+</body>
+</html>

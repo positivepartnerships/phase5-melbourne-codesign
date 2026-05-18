@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phase 4 Content Overview — Positive Partnerships</title>
+<meta name="description" content="A snapshot of the current Positive Partnerships content set: workshop topics, webinar topics, and online resource topics delivered in Phase 4." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --lime: #BBD64A;
+  --purple-pale: #f0e6f7;
+  --orange: #F7941E;
+
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--body); margin: 0; letter-spacing: -0.01em; }
+a { color: var(--purple); }
+::selection { background: var(--purple-pale); color: var(--ink); }
+
+.shell { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.2rem, 3vw, 2rem); }
+
+/* ---------- Banner ---------- */
+.notice-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.notice-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.notice-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+.masthead .top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.masthead .back-link {
+  color: var(--ink-faint);
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.masthead .back-link:hover { color: var(--purple); border-color: var(--purple); }
+.masthead h1 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--purple-darker);
+  margin-bottom: 0.4rem;
+}
+.masthead .deck {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  max-width: 65ch;
+  line-height: 1.5;
+}
+
+/* ---------- Section ---------- */
+section {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.section-head {
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.section-head .heading h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  color: var(--purple-darker);
+  margin-bottom: 0.3rem;
+}
+.section-head .heading p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 60ch;
+}
+.section-head .count {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.section-head .count strong {
+  display: block;
+  font-family: var(--body);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--purple);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Topic grid ---------- */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+.topic {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  position: relative;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.topic:hover {
+  border-color: var(--purple-light);
+}
+.topic .name {
+  font-weight: 600;
+  color: var(--ink);
+}
+.topic .meta {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin-top: 4px;
+  text-transform: lowercase;
+}
+
+.topic--workshop { border-left: 3px solid var(--purple); }
+.topic--webinar { border-left: 3px solid var(--orange); }
+.topic--resource { border-left: 3px solid var(--lime); }
+.topic--interview { border-left: 3px solid var(--purple-light); }
+
+/* ---------- Themes summary ---------- */
+.themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+.theme {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+}
+.theme .theme-name {
+  font-weight: 700;
+  color: var(--purple-darker);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.theme .theme-modes {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 6px;
+}
+.theme .theme-modes span {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  margin-right: 4px;
+  margin-top: 2px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem 0 3rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+
+@media print {
+  body { background: white; }
+  .notice-banner { border-color: black; background: white; }
+  .topic { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="notice-banner" role="note" aria-label="Phase 4 content snapshot">
+  <div class="inner">
+    <span class="label">Phase 4 in delivery</span>
+    A snapshot of the current Positive Partnerships content set — the workshop, webinar and resource topics
+    being delivered right now.
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="top-row">
+      <span>Positive Partnerships · Phase 4 · Content Overview</span>
+      <a class="back-link" href="../">← Materials</a>
+    </div>
+    <h1>Phase 4 Content Overview</h1>
+    <p class="deck">
+      What we deliver now: across the Professional Learning workshop, the webinar program, and the online
+      resource library. A reference for the conversation about what to keep, build on, or change for Phase 5.
+    </p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- WORKSHOPS -->
+  <section id="workshops">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ Workshops</span>
+        <h2>Professional Learning · 1.5-day program.</h2>
+        <p>Core content delivered across two half-days, face-to-face and online.</p>
+      </div>
+      <div class="count"><strong>9</strong>core topics</div>
+    </div>
+
+    <div class="topic-grid">
+      <div class="topic topic--workshop"><span class="name">Setting the scene</span><span class="meta">opener</span></div>
+      <div class="topic topic--workshop"><span class="name">Strengths and interests</span><span class="meta">day 1</span></div>
+      <div class="topic topic--workshop"><span class="name">Connections to culture and community</span><span class="meta">day 1</span></div>
+      <div class="topic topic--workshop"><span class="name">Executive functioning</span><span class="meta">day 1</span></div>
+      <div class="topic topic--workshop"><span class="name">Communication and social interaction</span><span class="meta">day 1</span></div>
+      <div class="topic topic--workshop"><span class="name">Sensory processing</span><span class="meta">day 2</span></div>
+      <div class="topic topic--workshop"><span class="name">Self care</span><span class="meta">day 2</span></div>
+      <div class="topic topic--workshop"><span class="name">Mental health, wellbeing &amp; behaviour</span><span class="meta">day 2</span></div>
+      <div class="topic topic--workshop"><span class="name">Working in partnership with families &amp; students</span><span class="meta">day 2</span></div>
+    </div>
+  </section>
+
+  <!-- WEBINARS -->
+  <section id="webinars">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ Webinars</span>
+        <h2>Live webinar program.</h2>
+        <p>Stand-alone sessions, delivered day and evening across the year, often in multi-part series.</p>
+      </div>
+      <div class="count"><strong>15</strong>topics</div>
+    </div>
+
+    <div class="topic-grid">
+      <div class="topic topic--webinar"><span class="name">An introduction to Positive Partnerships</span></div>
+      <div class="topic topic--webinar"><span class="name">Communication</span><span class="meta">parts 1 &amp; 2</span></div>
+      <div class="topic topic--webinar"><span class="name">Executive Functioning</span></div>
+      <div class="topic topic--webinar"><span class="name">Interoception</span><span class="meta">parts 1 &amp; 2</span></div>
+      <div class="topic topic--webinar"><span class="name">Sensory processing strategies</span></div>
+      <div class="topic topic--webinar"><span class="name">Understanding sensory processing</span></div>
+      <div class="topic topic--webinar"><span class="name">Transitions &amp; Change</span><span class="meta">primary · secondary · educator</span></div>
+      <div class="topic topic--webinar"><span class="name">Back to School with the Planning Tool</span><span class="meta">be IEP ready</span></div>
+      <div class="topic topic--webinar"><span class="name">Interest-based learning</span></div>
+      <div class="topic topic--webinar"><span class="name">Health &amp; Hygiene</span></div>
+      <div class="topic topic--webinar"><span class="name">Self-care and Independence</span></div>
+      <div class="topic topic--webinar"><span class="name">Artificial Intelligence and Inclusive Education</span></div>
+      <div class="topic topic--webinar"><span class="name">Practical AI for Inclusive Education</span><span class="meta">prompts &amp; projects</span></div>
+      <div class="topic topic--webinar"><span class="name">AI and Autistic Students</span></div>
+      <div class="topic topic--webinar"><span class="name">Yarning and Sharing</span></div>
+    </div>
+  </section>
+
+  <!-- ONLINE RESOURCES -->
+  <section id="resources">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ Online resources</span>
+        <h2>Website library.</h2>
+        <p>Information sheets, support tools, webinar recordings, and lived-experience interviews — available
+          on the Positive Partnerships website.</p>
+      </div>
+      <div class="count"><strong>16</strong>topics</div>
+    </div>
+
+    <div class="topic-grid">
+      <div class="topic topic--resource"><span class="name">The Diversity Wheel and Planning Tool</span><span class="meta">support tool</span></div>
+      <div class="topic topic--resource"><span class="name">Executive Functioning</span><span class="meta">info sheet</span></div>
+      <div class="topic topic--resource"><span class="name">Self Care</span><span class="meta">info sheet</span></div>
+      <div class="topic topic--resource"><span class="name">Statement on PDA</span><span class="meta">pathological demand avoidance</span></div>
+      <div class="topic topic--resource"><span class="name">Reactions to Diagnosis</span><span class="meta">info sheet</span></div>
+      <div class="topic topic--resource"><span class="name">Supporting Transitions &amp; Change</span><span class="meta">info sheet</span></div>
+      <div class="topic topic--resource"><span class="name">Sensory Processing</span><span class="meta">webinar recordings</span></div>
+      <div class="topic topic--resource"><span class="name">Communication and Autism</span><span class="meta">webinar recordings</span></div>
+      <div class="topic topic--resource"><span class="name">Interoception</span><span class="meta">info sheet</span></div>
+      <div class="topic topic--resource"><span class="name">Wellbeing and Resilience</span><span class="meta">webinar recording</span></div>
+      <div class="topic topic--resource"><span class="name">Interest Based Learning</span><span class="meta">resources &amp; planning sheets</span></div>
+      <div class="topic topic--resource"><span class="name">Makerspace Projects</span><span class="meta">classroom &amp; home</span></div>
+      <div class="topic topic--resource"><span class="name">Talking about Sexuality</span><span class="meta">webinar recording</span></div>
+      <div class="topic topic--resource"><span class="name">Artificial Intelligence and Inclusive Education</span><span class="meta">resources</span></div>
+      <div class="topic topic--resource"><span class="name">Tech Accessibility Tools</span><span class="meta">support tools</span></div>
+      <div class="topic topic--interview"><span class="name">My schooling experience</span><span class="meta">autistic adult interviews</span></div>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section id="themes">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ Cross-cutting themes</span>
+        <h2>Where topics span all three delivery modes.</h2>
+        <p>The themes that appear in workshops, webinars and the online library — the connective tissue of
+          Phase 4 content.</p>
+      </div>
+    </div>
+
+    <div class="themes">
+      <div class="theme">
+        <div class="theme-name">Communication &amp; social interaction</div>
+        <div class="theme-modes"><span>Workshop</span><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Sensory processing</div>
+        <div class="theme-modes"><span>Workshop</span><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Executive functioning</div>
+        <div class="theme-modes"><span>Workshop</span><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Self care &amp; independence</div>
+        <div class="theme-modes"><span>Workshop</span><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Transitions &amp; change</div>
+        <div class="theme-modes"><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Interoception</div>
+        <div class="theme-modes"><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Strengths &amp; interests</div>
+        <div class="theme-modes"><span>Workshop</span><span>Webinar</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Family &amp; school partnership</div>
+        <div class="theme-modes"><span>Workshop</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Mental health &amp; wellbeing</div>
+        <div class="theme-modes"><span>Workshop</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Culture &amp; community</div>
+        <div class="theme-modes"><span>Workshop</span><span>Webinar</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">AI &amp; inclusive education</div>
+        <div class="theme-modes"><span>Webinar</span><span>Resource</span></div>
+      </div>
+      <div class="theme">
+        <div class="theme-name">Lived experience</div>
+        <div class="theme-modes"><span>Resource</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="shell">
+  <p>
+    <a href="../">← Back to materials</a> &nbsp;·&nbsp;
+    <a href="../timetable/">Timetable</a> &nbsp;·&nbsp;
+    <a href="../operations/">Operations Plan</a> &nbsp;·&nbsp;
+    <a href="../brief/">Service Brief</a> &nbsp;·&nbsp;
+    <a href="../atlas/">Co-Design Atlas</a>
+  </p>
+</footer>
+
+</body>
+</html>

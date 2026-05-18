@@ -241,11 +241,11 @@ section + section { border-top: 1px solid var(--rule-soft); }
 /* ---------- Materials cards ---------- */
 .materials-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
 }
-@media (max-width: 980px) {
-  .materials-grid { grid-template-columns: 1fr; }
+@media (min-width: 1200px) {
+  .materials-grid { grid-template-columns: repeat(5, 1fr); }
 }
 
 .material-card {
@@ -268,7 +268,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
 }
 .material-card--purple::before { background: var(--purple); }
 .material-card--purple-dark::before { background: var(--purple-dark); }
+.material-card--purple-light::before { background: var(--purple-light); }
 .material-card--lime::before { background: var(--lime); }
+.material-card--orange::before { background: var(--orange); }
 
 .material-card:hover {
   transform: translateY(-3px);
@@ -277,7 +279,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
 }
 .material-card--purple:hover { border-color: var(--purple-light); }
 .material-card--purple-dark:hover { border-color: var(--purple-dark); }
+.material-card--purple-light:hover { border-color: var(--purple-light); }
 .material-card--lime:hover { border-color: var(--lime); }
+.material-card--orange:hover { border-color: var(--orange); }
 
 .material-card .type-stamp {
   font-family: var(--mono);
@@ -302,7 +306,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
 }
 .material-card--purple .type-stamp .ord { color: var(--purple); }
 .material-card--purple-dark .type-stamp .ord { color: var(--purple-dark); }
+.material-card--purple-light .type-stamp .ord { color: var(--purple-light); }
 .material-card--lime .type-stamp .ord { color: var(--lime); }
+.material-card--orange .type-stamp .ord { color: var(--orange); }
 
 .material-card h3 {
   font-size: 1.7rem;
@@ -315,7 +321,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
 .material-card h3 .em { font-style: italic; }
 .material-card--purple h3 .em { color: var(--purple); }
 .material-card--purple-dark h3 .em { color: var(--purple-darker); }
+.material-card--purple-light h3 .em { color: var(--purple-light); }
 .material-card--lime h3 .em { color: var(--lime); }
+.material-card--orange h3 .em { color: var(--orange); }
 
 .material-card .tagline {
   font-family: var(--display);
@@ -554,9 +562,8 @@ footer a { color: var(--ink); }
       </h1>
       <div class="welcome">
         <p>
-          Three pre-reading materials for the Melbourne co-design workshop: a working <strong>Brief</strong> that
-          maps the contract to its nine Service Types; an <strong>Atlas</strong> that maps the policy anchors to
-          eight content pillars; and the workshop <strong>Timetable</strong>.
+          Pre-reading materials for the Melbourne co-design workshop — from the practical (Timetable, current
+          Content, Operations Plan) to the deeper analysis (Brief, Atlas).
         </p>
       </div>
     </div>
@@ -580,12 +587,11 @@ footer a { color: var(--ink); }
       <h3>The Melbourne <span class="em">Timetable</span></h3>
       <p class="tagline">Three days, Wednesday → Friday.</p>
       <p class="description">
-        Day-by-day timetable for the Melbourne co-design workshop. Editable inline so we can revise as we go.
+        Day-by-day timetable for the Melbourne co-design workshop.
       </p>
       <ul class="what-you-see">
         <li>Three days of sessions · times · prompts</li>
-        <li>Editable inline</li>
-        <li>Doubles as a journal for parking-lot items</li>
+        <li>20 – 22 May 2026</li>
       </ul>
       <div class="footer">
         <span class="time">Reference&nbsp;·&nbsp;~5 min</span>
@@ -593,20 +599,63 @@ footer a { color: var(--ink); }
       </div>
     </a>
 
-    <!-- CARD 02: BRIEF -->
+    <!-- CARD 02: CONTENT OVERVIEW -->
+    <a class="material-card material-card--purple-light" href="content/">
+      <div class="type-stamp">
+        <span class="ord">ii</span><span>Phase 4 snapshot</span>
+      </div>
+      <h3>Phase 4 <span class="em">Content</span> Overview</h3>
+      <p class="tagline">What we deliver now.</p>
+      <p class="description">
+        A snapshot of the current Positive Partnerships content set — workshops, webinars and online
+        resources — as a reference for the conversation about what to keep, build on, or change.
+      </p>
+      <ul class="what-you-see">
+        <li>9 workshop topics · 15 webinar topics · 16 online resource topics</li>
+        <li>Cross-cutting themes across all three delivery modes</li>
+      </ul>
+      <div class="footer">
+        <span class="time">Snapshot&nbsp;·&nbsp;~5 min</span>
+        <span class="enter">Open Content Overview</span>
+      </div>
+    </a>
+
+    <!-- CARD 03: OPERATIONS PLAN -->
+    <a class="material-card material-card--orange" href="operations/">
+      <div class="type-stamp">
+        <span class="ord">iii</span><span>Transition timeline</span>
+      </div>
+      <h3>Phase 5 <span class="em">Operations</span> Plan</h3>
+      <p class="tagline">The year ahead — April 2026 → July 2027+.</p>
+      <p class="description">
+        Transition timeline, key milestones, sub-contractor partnerships, staffing, and the content
+        development roadmap. The shape of what's happening between contract sign-off and confirmed new
+        content.
+      </p>
+      <ul class="what-you-see">
+        <li>16-month transition timeline · 17 milestones</li>
+        <li>Sub-contractor partners · staffing plan · content phases</li>
+      </ul>
+      <div class="footer">
+        <span class="time">Plan&nbsp;·&nbsp;~10 min</span>
+        <span class="enter">Open Operations Plan</span>
+      </div>
+    </a>
+
+    <!-- CARD 04: BRIEF -->
     <a class="material-card material-card--purple" href="brief/">
       <div class="type-stamp">
-        <span class="ord">ii</span><span>Working dashboard</span>
+        <span class="ord">iv</span><span>Working dashboard</span>
       </div>
       <h3>The Phase 5 <span class="em">Service</span> Brief</h3>
       <p class="tagline">From contract to workshop — services first.</p>
       <p class="description">
         Service-first dashboard of the nine RFT Service Types — annual targets, KPI measures, anchors and
-        content direction for each. The working document for tender response drafting.
+        content direction for each.
       </p>
       <ul class="what-you-see">
         <li>9 Services as cards · sub-services · targets · anchors</li>
-        <li>53 content recommendations, each linked to its source</li>
+        <li>53 AI-surfaced content directions, each linked to its source</li>
         <li>Service × Document matrix · 27-document categorised list</li>
       </ul>
       <div class="footer">
@@ -615,21 +664,20 @@ footer a { color: var(--ink); }
       </div>
     </a>
 
-    <!-- CARD 03: ATLAS -->
+    <!-- CARD 05: ATLAS -->
     <a class="material-card material-card--purple-dark" href="atlas/">
       <div class="type-stamp">
-        <span class="ord">iii</span><span>Deep reading</span>
+        <span class="ord">v</span><span>Deep reading</span>
       </div>
       <h3>The Phase 5 Co-Design <span class="em">Atlas</span></h3>
       <p class="tagline">Anchor documents &amp; eight content pillars.</p>
       <p class="description">
         Policy-first reading. Maps ten anchor documents — seven Commonwealth foundations plus three AutismCRC
-        best-practice guidelines — against eight workshop content pillars, with recommendations drafted for
-        AutismCRC co-authorship.
+        best-practice guidelines — against eight workshop content pillars.
       </p>
       <ul class="what-you-see">
         <li>8 pillar essays — Rights · Consultation · Adjustments · Curriculum · Belonging · Leadership · Family · Transitions</li>
-        <li>10 high-level recommendations</li>
+        <li>10 AI-surfaced directions for Phase 5</li>
         <li>Pillar × Document matrix · Cohorts · Co-design notes</li>
       </ul>
       <div class="footer">
