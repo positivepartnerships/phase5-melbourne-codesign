@@ -322,6 +322,8 @@ section + section { border-top: 1px solid var(--rule-soft); }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.6rem;
+  padding-right: 3.6rem; /* leave room for the absolutely-positioned .download pill */
 }
 .doc-card .call-number .year {
   color: var(--ink-faint);
@@ -1225,7 +1227,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 </style>
 </head>
 <body>
-<a href="#preamble" class="skip">Skip to content</a>
+<a href="#documents" class="skip">Skip to content</a>
 
 <div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
   <div class="inner">
@@ -1266,14 +1268,13 @@ section + section { border-top: 1px solid var(--rule-soft); }
     <a href="#top" class="index-brand" style="text-decoration:none;">
       <span class="num">Atlas · §00</span>The <em>Co-Design</em> Atlas
     </a>
-    <a class="index-link" href="#preamble"><span class="glyph">§01</span>Preamble</a>
-    <a class="index-link" href="#documents"><span class="glyph">§02</span>Anchors</a>
-    <a class="index-link" href="#matrix"><span class="glyph">§03</span>Matrix</a>
-    <a class="index-link" href="#pillars"><span class="glyph">§04</span>Pillars</a>
-    <a class="index-link" href="#recommendations"><span class="glyph">§05</span>Recommendations</a>
-    <a class="index-link" href="#tender"><span class="glyph">§06</span>Tender Map</a>
-    <a class="index-link" href="#cohorts"><span class="glyph">§07</span>Cohorts</a>
-    <a class="index-link" href="#codesign"><span class="glyph">§08</span>AutismCRC</a>
+    <a class="index-link" href="#documents"><span class="glyph">§01</span>Anchors</a>
+    <a class="index-link" href="#matrix"><span class="glyph">§02</span>Matrix</a>
+    <a class="index-link" href="#pillars"><span class="glyph">§03</span>Pillars</a>
+    <a class="index-link" href="#recommendations"><span class="glyph">§04</span>Directions</a>
+    <a class="index-link" href="#tender"><span class="glyph">§05</span>Tender Map</a>
+    <a class="index-link" href="#cohorts"><span class="glyph">§06</span>Cohorts</a>
+    <a class="index-link" href="#codesign"><span class="glyph">§07</span>AutismCRC</a>
     <button class="index-toggle" type="button" aria-expanded="false" aria-controls="index-drawer">Pillars ▾</button>
     <a class="index-companion" href="../brief/">↗ Companion · Service Brief</a>
   </div>
@@ -1295,25 +1296,10 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <main class="shell" id="content">
 
 <!-- §01 ============================================ PREAMBLE -->
-<section id="preamble">
-  <div class="section-head">
-    <div class="section-num">§&nbsp;01 <span class="glyph">Preamble</span></div>
-    <h2 class="section-title">A working map.</h2>
-  </div>
-  <div class="preamble">
-    <div class="body" style="grid-column: 1 / -1;">
-      <p>
-        Ten anchor documents. Eight content pillars. Open any pillar to see what the documents say and what it
-        might mean for a workshop.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- §02 ============================================ THE ANCHOR DOCUMENTS -->
+<!-- §01 ============================================ THE ANCHOR DOCUMENTS -->
 <section id="documents">
   <div class="section-head">
-    <div class="section-num">§&nbsp;02 <span class="glyph">The Anchors</span></div>
+    <div class="section-num">§&nbsp;01 <span class="glyph">The Anchors</span></div>
     <h2 class="section-title">Two registers: Commonwealth foundations, AutismCRC <em>best-practice guidelines</em>.</h2>
     <p class="section-lede">
       Seven Commonwealth documents set the legal and policy floor. Three AutismCRC best-practice guidelines name
@@ -1534,7 +1520,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <!-- §03 ============================================ THE MATRIX -->
 <section id="matrix">
   <div class="section-head">
-    <div class="section-num">§&nbsp;03 <span class="glyph">The Matrix</span></div>
+    <div class="section-num">§&nbsp;02 <span class="glyph">The Matrix</span></div>
     <h2 class="section-title">Eight pillars × seven documents.</h2>
     <p class="section-lede">
       Tap a row title to read the full pillar brief. Cells show the most pointed reference; a starred cell flags the
@@ -1662,7 +1648,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <!-- §04 ============================================ THE EIGHT PILLARS -->
 <section id="pillars">
   <div class="section-head">
-    <div class="section-num">§&nbsp;04 <span class="glyph">The Pillars</span></div>
+    <div class="section-num">§&nbsp;03 <span class="glyph">The Pillars</span></div>
     <h2 class="section-title">Eight content pillars, <em>read in conversation</em>.</h2>
     <p class="section-lede">
       Each pillar opens with one sentence — the design provocation — and a working brief for content. Star a pillar
@@ -2308,7 +2294,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <!-- §05 ============================================ RECOMMENDATIONS -->
 <section id="recommendations">
   <div class="section-head">
-    <div class="section-num">§&nbsp;05 <span class="glyph">AI-surfaced directions</span></div>
+    <div class="section-num">§&nbsp;04 <span class="glyph">AI-surfaced directions</span></div>
     <h2 class="section-title">Ten <em>possible directions</em> for Phase 5 — surfaced by AI from the documents.</h2>
     <p class="section-lede">
       Ten directions an AI assistant surfaced from reading the anchor documents and the RFT in conversation. Starting points for discussion with AutismCRC and the Autistic community — not Positive Partnerships positions.
@@ -2497,7 +2483,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <!-- §06 ============================================ MAPPING TO THE TENDER -->
 <section id="tender">
   <div class="section-head">
-    <div class="section-num">§&nbsp;06 <span class="glyph">Mapping to the Tender</span></div>
+    <div class="section-num">§&nbsp;05 <span class="glyph">Mapping to the Tender</span></div>
     <h2 class="section-title">Nine Services, eight pillars — <em>the contract underneath the framework</em>.</h2>
     <p class="section-lede">
       The RFT for Phase 5 (PRN. ESE25/10020, closing 3 December 2025) names nine Service Types and ten General
@@ -2683,7 +2669,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <!-- §07 ============================================ COHORTS -->
 <section id="cohorts">
   <div class="section-head">
-    <div class="section-num">§&nbsp;07 <span class="glyph">Priority Cohorts</span></div>
+    <div class="section-num">§&nbsp;06 <span class="glyph">Priority Cohorts</span></div>
     <h2 class="section-title">Intersectionality is not <em>a chapter</em>.</h2>
     <p class="section-lede">
       The NAS names twelve cohorts as facing compounded barriers. Every pillar above must hold these in view —
@@ -2710,7 +2696,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 <!-- §08 ============================================ CO-DESIGN -->
 <section id="codesign">
   <div class="section-head">
-    <div class="section-num">§&nbsp;08 <span class="glyph">For the AutismCRC Conversation</span></div>
+    <div class="section-num">§&nbsp;07 <span class="glyph">For the AutismCRC Conversation</span></div>
     <h2 class="section-title">What this atlas is offering as a <em>starting point</em>.</h2>
     <p class="section-lede">
       Read as a draft for co-authorship, not a finished framework — what is here to test, deepen, contest or
