@@ -267,12 +267,16 @@
     color: var(--pp-medium-grey);
     outline: none;
   }
+  .session .body strong { color: var(--pp-darker-purple); display: block; font-weight: 700; margin-bottom: 4px; }
+  .session .body ul { margin: 6px 0 0; padding-left: 1.2rem; font-weight: 400; }
+  .session .body ul li { margin-bottom: 4px; line-height: 1.45; }
+  .session .body .lead { font-size: 12px; color: var(--pp-medium-grey); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4em; }
   .session .body {
     font-size: 14px;
     font-weight: 600;
     color: var(--pp-dark-grey);
     outline: none;
-    white-space: pre-wrap;
+    white-space: normal;
     line-height: 1.45;
   }
   .session.break .body { color: var(--pp-medium-purple); }
@@ -457,7 +461,7 @@
   }
 </style>
 </head>
-<body class="editing">
+<body>
 
 <div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
   <div class="inner">
@@ -488,314 +492,157 @@
   <a class="back-link" href="../">← Materials</a>
   <div class="title-block">
     <div class="eyebrow">Phase 5 · Co-design Workshop</div>
-    <h1 contenteditable="true" data-key="title">Melbourne Co-design Timetable</h1>
+    <h1>Melbourne Co-design Timetable</h1>
   </div>
 </header>
 
-<div class="toolbar">
-  <div class="group">
-    <label class="checkbox">
-      <input type="checkbox" id="editToggle" checked />
-      Edit mode
-    </label>
-  </div>
-  <div class="group">
-    <button class="ghost" id="addDayBtn">+ Add day</button>
-    <button class="ghost" id="resetBtn">Reset to original</button>
-  </div>
-  <div class="group">
-    <button id="exportBtn">Download HTML</button>
-    <button id="printBtn">Print / PDF</button>
-    <button class="primary" id="saveBtn">Save changes</button>
-  </div>
-</div>
 
 <main>
-  <div class="days" id="days"></div>
+  <div class="days">
+
+    <div class="day">
+      <div class="day-header"><h2>Wednesday 20 May</h2></div>
+
+      <div class="session">
+        <div class="time">11:30 – 1:00</div>
+        <div class="body">
+          <strong>Acknowledgement · Welcome · Introductions</strong>
+          Acknowledge different ways of recording, contributing and parking ideas (whiteboards, sticky notes, etc).<br>
+          Overview of intention for this collaboration <span class="lead">led by PP</span><br>
+          Autism CRC's co-design process <span class="lead">led by Autism CRC</span>
+          <ul>
+            <li>Validate against the research.</li>
+            <li>What do we know about the topic? Is it a problem worth solving?</li>
+            <li>How do we validate this? What are the community priorities?</li>
+            <li>What inputs will help us clarify what we are developing?</li>
+            <li>What do we want participants to leave with?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="session break">
+        <div class="time">1:00 – 1:30</div>
+        <div class="body">Lunch</div>
+      </div>
+
+      <div class="session">
+        <div class="time">1:30 – 3:00</div>
+        <div class="body">
+          <strong>National Landscape</strong>
+          Review of national initiatives and how they link to the core contractual requirements for Phase 5 <span class="lead">led by PP</span><br>
+          Brief review of current PP content <span class="lead">led by PP</span><br>
+          PP4 SWOT reflection — what do we like about the topics, content, activities, resources? What's past its used-by date? What's missing? What's an opportunity? Any threats or risks? <span class="lead">co-led within the group</span>
+        </div>
+      </div>
+
+      <div class="session break">
+        <div class="time">3:00 – 3:20</div>
+        <div class="body">Short break</div>
+      </div>
+
+      <div class="session">
+        <div class="time">3:20 – 4:30</div>
+        <div class="body">
+          <strong>Listening to our constituents</strong>
+          Review a summary of qualitative data for Phase 4 across PP4 programs <span class="lead">led by PP</span><br>
+          Discussion — reflecting on SWOT and what constituents have said:
+          <ul>
+            <li>What might we retain from Phase 4? What might we build on? What might we discard?</li>
+            <li>What do we do face-to-face that's different from online?</li>
+            <li>Co-design: we want a volume of ideas, not consensus.</li>
+            <li>What are the big challenges in education? How does that fit with the contract and what we've learned?</li>
+            <li>Priorities from the education community, reference groups, etc.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-header"><h2>Thursday 21 May</h2></div>
+
+      <div class="session">
+        <div class="time">9:30 – 11:00</div>
+        <div class="body">
+          <strong>Co-design fundamentals</strong>
+          What do we know? What don't we know? What do we need to learn? <span class="lead">led by Autism CRC</span>
+          <ul>
+            <li>What is our working co-design framework?</li>
+            <li>Whose voice, where, in what role?</li>
+            <li>What are the needs? What does the research say?</li>
+            <li>What are the key priorities coming out of the NAS?</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="session break">
+        <div class="time">11:00 – 11:30</div>
+        <div class="body">Morning Tea</div>
+      </div>
+
+      <div class="session">
+        <div class="time">11:30 – 1:00</div>
+        <div class="body">
+          <strong>Core content for a half-day workshop</strong>
+          What are the core content points participants need? Overview of the evaluation expectations <span class="lead">led by PP</span>
+        </div>
+      </div>
+
+      <div class="session break">
+        <div class="time">1:00 – 1:45</div>
+        <div class="body">Lunch</div>
+      </div>
+
+      <div class="session">
+        <div class="time">1:45 – 3:00</div>
+        <div class="body">
+          <strong>Auxiliary content</strong>
+          What can become auxiliary topic content that isn't core material? Modes of delivery, types of resources. <span class="lead">co-led discussion</span>
+        </div>
+      </div>
+
+      <div class="session break">
+        <div class="time">3:00 – 3:20</div>
+        <div class="body">Break</div>
+      </div>
+
+      <div class="session">
+        <div class="time">3:20 – 4:30</div>
+        <div class="body">
+          <strong>Preparation for Friday</strong>
+          Revisit the past two days. Parking lot and next steps.
+        </div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-header"><h2>Friday 22 May</h2></div>
+
+      <div class="session">
+        <div class="time">9:00 – 11:00</div>
+        <div class="body">
+          <strong>Outstanding items &amp; next steps</strong>
+          Review outstanding items and questions.<br>
+          Determine next steps — including other inputs, stakeholders and personnel.
+        </div>
+      </div>
+
+      <div class="session break">
+        <div class="time">11:00 – 11:20</div>
+        <div class="body">Morning Tea</div>
+      </div>
+
+      <div class="session">
+        <div class="time">11:20 – 12:00</div>
+        <div class="body">
+          <strong>Summary reflection</strong>
+          Wrap up and finish.
+        </div>
+      </div>
+    </div>
+
+  </div>
 </main>
 
-<footer>
-  Edits save automatically to this browser. Use <b>Download HTML</b> to share a snapshot, or <b>Print / PDF</b> for a printable version.
-</footer>
 
-<div class="toast" id="toast">Saved</div>
-
-<script>
-  // ── Original timetable data ─────────────────────────────
-  const ORIGINAL = [
-    {
-      day: "Wednesday",
-      sessions: [
-        { time: "11:30 - 1:00", body: "Welcome / Intros.\nAcknowledge different ways of recording / contributing (whiteboards/sticky notes/etc).\nOverview of intention for this collaboration (PP).\nOverview of typical co-design process (Autism CRC)." },
-        { time: "1:00 - 1:30", body: "Break.", isBreak: true },
-        { time: "1:30 - 3:00", body: "Landscape: linking to national initiatives.\nWhat do we like / not like about Phase 4 PP.\nBrief review of current PP content." },
-        { time: "3:00 - 3:20", body: "Break.", isBreak: true },
-        { time: "3:20 - 4:30", body: "Review what constituents have said about us.\nWhat do we take with us from Phase 4, and what do we leave in the past and build new for Phase 5." }
-      ]
-    },
-    {
-      day: "Thursday",
-      sessions: [
-        { time: "9:30 - 11:00", body: "What is our working co-design framework?\nWhose voice, where, in what role?\n\nWhat are the needs?\nWhat does the research say?\nWhat were the key priorities coming out of the NAS?" },
-        { time: "11:00 - 11:30", body: "Morning Tea.", isBreak: true },
-        { time: "11:30 - 1:00", body: "What are the core content points participants need in a 1/2 day?\nGive an overview of the evaluation expectations (PP)." },
-        { time: "1:00 - 1:45", body: "Lunch.", isBreak: true },
-        { time: "1:45 - 3:00", body: "What can become auxiliary topic content that isn't core material?" },
-        { time: "3:00 - 3:20", body: "Break.", isBreak: true },
-        { time: "3:20 - 4:30", body: "Prep for Friday.\nParking Lot / Next Steps." }
-      ]
-    },
-    {
-      day: "Friday",
-      sessions: [
-        { time: "9:00 - 11:00", body: "Decisions for future planning.\nOwners / Dates." },
-        { time: "11:00 - 11:20", body: "Morning Tea.", isBreak: true },
-        { time: "11:20 - 12:00", body: "Wrap Up." }
-      ]
-    }
-  ];
-
-  const STORAGE_KEY = "pp-phase5-codesign-timetable-v1";
-  const TITLE_KEY = "pp-phase5-codesign-timetable-title-v1";
-
-  // ── State ──────────────────────────────────────────────
-  let state = loadState();
-  let titleText = loadTitle();
-
-  const daysEl = document.getElementById("days");
-  const toastEl = document.getElementById("toast");
-  const titleEl = document.querySelector('[data-key="title"]');
-
-  titleEl.textContent = titleText;
-
-  function loadState() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) return JSON.parse(raw);
-    } catch (e) {}
-    return JSON.parse(JSON.stringify(ORIGINAL));
-  }
-  function loadTitle() {
-    return localStorage.getItem(TITLE_KEY) || "Melbourne Co-design Timetable";
-  }
-  function persist(silent = false) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    localStorage.setItem(TITLE_KEY, titleEl.textContent.trim() || "Co-design Timetable");
-    if (!silent) toast("Saved");
-  }
-
-  function toast(msg) {
-    toastEl.textContent = msg;
-    toastEl.classList.add("show");
-    clearTimeout(toast._t);
-    toast._t = setTimeout(() => toastEl.classList.remove("show"), 1500);
-  }
-
-  // ── Render ─────────────────────────────────────────────
-  function render() {
-    daysEl.innerHTML = "";
-    state.forEach((day, dIdx) => {
-      const dayEl = document.createElement("section");
-      dayEl.className = "day";
-      dayEl.dataset.day = dIdx;
-
-      const header = document.createElement("div");
-      header.className = "day-header";
-
-      const h2 = document.createElement("h2");
-      h2.contentEditable = true;
-      h2.spellcheck = false;
-      h2.textContent = day.day;
-      h2.addEventListener("input", () => {
-        state[dIdx].day = h2.textContent.trim();
-      });
-      h2.addEventListener("blur", () => persist(true));
-
-      const dayCtrl = document.createElement("div");
-      dayCtrl.className = "day-controls";
-      const delDay = document.createElement("button");
-      delDay.className = "icon-btn delete";
-      delDay.title = "Delete this day";
-      delDay.textContent = "✕";
-      delDay.addEventListener("click", () => {
-        if (confirm(`Delete the ${day.day} column and all its sessions?`)) {
-          state.splice(dIdx, 1);
-          persist();
-          render();
-        }
-      });
-      dayCtrl.appendChild(delDay);
-
-      header.appendChild(h2);
-      header.appendChild(dayCtrl);
-      dayEl.appendChild(header);
-
-      day.sessions.forEach((s, sIdx) => {
-        dayEl.appendChild(renderSession(s, dIdx, sIdx));
-      });
-
-      const addBtn = document.createElement("button");
-      addBtn.className = "add-session";
-      addBtn.textContent = "+ Add session";
-      addBtn.addEventListener("click", () => {
-        state[dIdx].sessions.push({ time: "Time", body: "New session.", isBreak: false });
-        persist(true);
-        render();
-      });
-      dayEl.appendChild(addBtn);
-
-      daysEl.appendChild(dayEl);
-    });
-
-    // Add-day card
-    const addDayCard = document.createElement("button");
-    addDayCard.className = "add-day";
-    addDayCard.id = "addDayCard";
-    addDayCard.textContent = "+ Add a day";
-    addDayCard.addEventListener("click", addDay);
-    daysEl.appendChild(addDayCard);
-  }
-
-  function renderSession(s, dIdx, sIdx) {
-    const el = document.createElement("div");
-    el.className = "session" + (s.isBreak ? " break" : "");
-
-    const time = document.createElement("div");
-    time.className = "time";
-    time.contentEditable = true;
-    time.spellcheck = false;
-    time.textContent = s.time;
-    time.addEventListener("input", () => {
-      state[dIdx].sessions[sIdx].time = time.textContent;
-    });
-    time.addEventListener("blur", () => persist(true));
-
-    const body = document.createElement("div");
-    body.className = "body";
-    body.contentEditable = true;
-    body.spellcheck = true;
-    body.textContent = s.body;
-    body.addEventListener("input", () => {
-      state[dIdx].sessions[sIdx].body = body.innerText;
-    });
-    body.addEventListener("blur", () => persist(true));
-
-    const ctrls = document.createElement("div");
-    ctrls.className = "session-controls";
-
-    const breakBtn = document.createElement("button");
-    breakBtn.className = "icon-btn";
-    breakBtn.title = s.isBreak ? "Mark as regular session" : "Mark as break";
-    breakBtn.textContent = s.isBreak ? "●" : "○";
-    breakBtn.addEventListener("click", () => {
-      state[dIdx].sessions[sIdx].isBreak = !state[dIdx].sessions[sIdx].isBreak;
-      persist(true);
-      render();
-    });
-
-    const upBtn = document.createElement("button");
-    upBtn.className = "icon-btn";
-    upBtn.title = "Move up";
-    upBtn.textContent = "↑";
-    upBtn.addEventListener("click", () => {
-      if (sIdx === 0) return;
-      const arr = state[dIdx].sessions;
-      [arr[sIdx - 1], arr[sIdx]] = [arr[sIdx], arr[sIdx - 1]];
-      persist(true);
-      render();
-    });
-
-    const downBtn = document.createElement("button");
-    downBtn.className = "icon-btn";
-    downBtn.title = "Move down";
-    downBtn.textContent = "↓";
-    downBtn.addEventListener("click", () => {
-      const arr = state[dIdx].sessions;
-      if (sIdx === arr.length - 1) return;
-      [arr[sIdx + 1], arr[sIdx]] = [arr[sIdx], arr[sIdx + 1]];
-      persist(true);
-      render();
-    });
-
-    const delBtn = document.createElement("button");
-    delBtn.className = "icon-btn delete";
-    delBtn.title = "Delete session";
-    delBtn.textContent = "✕";
-    delBtn.addEventListener("click", () => {
-      state[dIdx].sessions.splice(sIdx, 1);
-      persist(true);
-      render();
-    });
-
-    ctrls.append(breakBtn, upBtn, downBtn, delBtn);
-    el.append(time, body, ctrls);
-    return el;
-  }
-
-  function addDay() {
-    state.push({
-      day: "New Day",
-      sessions: [
-        { time: "9:00 - 10:00", body: "New session.", isBreak: false }
-      ]
-    });
-    persist(true);
-    render();
-  }
-
-  // ── Toolbar wiring ─────────────────────────────────────
-  document.getElementById("editToggle").addEventListener("change", (e) => {
-    document.body.classList.toggle("editing", e.target.checked);
-    // Toggle contenteditable on all editable elements
-    document.querySelectorAll('[contenteditable]').forEach(el => {
-      el.contentEditable = e.target.checked ? "true" : "false";
-    });
-  });
-
-  document.getElementById("saveBtn").addEventListener("click", () => persist());
-
-  document.getElementById("resetBtn").addEventListener("click", () => {
-    if (!confirm("Reset all edits and restore the original timetable?")) return;
-    state = JSON.parse(JSON.stringify(ORIGINAL));
-    titleEl.textContent = "Melbourne Co-design Timetable";
-    persist();
-    render();
-  });
-
-  document.getElementById("addDayBtn").addEventListener("click", addDay);
-
-  document.getElementById("printBtn").addEventListener("click", () => {
-    window.print();
-  });
-
-  document.getElementById("exportBtn").addEventListener("click", () => {
-    // Build a clean, view-only HTML snapshot
-    const clone = document.documentElement.cloneNode(true);
-    // Remove toolbar, controls, footer note, scripts
-    clone.querySelectorAll('.toolbar, .session-controls, .add-session, .add-day, .day-controls, script, .toast').forEach(n => n.remove());
-    // Lock down contenteditable
-    clone.querySelectorAll('[contenteditable]').forEach(n => n.removeAttribute('contenteditable'));
-    // Drop editing class
-    clone.querySelector('body').classList.remove('editing');
-    const html = "<!DOCTYPE html>\n" + clone.outerHTML;
-    const blob = new Blob([html], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    const safeTitle = (titleEl.textContent || "timetable").trim().replace(/[^a-z0-9]+/gi, "-").toLowerCase();
-    a.href = url;
-    a.download = `${safeTitle}.html`;
-    a.click();
-    URL.revokeObjectURL(url);
-    toast("Downloaded HTML snapshot");
-  });
-
-  // Persist title edits
-  titleEl.addEventListener("input", () => {
-    localStorage.setItem(TITLE_KEY, titleEl.textContent.trim());
-  });
-
-  // First render
-  render();
-</script>
 </body>
 </html>
