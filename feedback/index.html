@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Participant Feedback — Positive Partnerships</title>
+<meta name="description" content="A visual summary of qualitative feedback from Positive Partnerships participants across four workshop programs (PL, PC, DC, YASA) and internal content feedback from facilitators." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --lime: #BBD64A;
+  --lime-deep: #8fa530;
+  --purple-pale: #f0e6f7;
+  --orange: #F7941E;
+  --orange-pale: #fff1de;
+  --lime-pale: #f3f7df;
+  --teal-pale: #e9eef0;
+
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 3.5rem; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--body); margin: 0; letter-spacing: -0.01em; }
+a { color: var(--purple); }
+::selection { background: var(--purple-pale); color: var(--ink); }
+
+.shell { max-width: 1200px; margin: 0 auto; padding: 0 clamp(1.2rem, 3vw, 2rem); }
+
+/* ---------- Sticky back-to-Materials strip ---------- */
+.back-strip {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 0;
+}
+.back-strip .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 3vw, 2rem);
+}
+.back-strip a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-strip a:hover { color: var(--purple); }
+.back-strip a::before { content: "← "; color: var(--purple); }
+
+/* ---------- Disclosure banner ---------- */
+.notice-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.notice-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.notice-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+}
+.masthead .top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.masthead h1 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--purple-darker);
+  margin-bottom: 0.4rem;
+}
+.masthead .deck {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  max-width: 70ch;
+  line-height: 1.5;
+}
+
+/* ---------- At-a-glance ---------- */
+.glance {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
+}
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+}
+.glance-cell {
+  background: var(--vellum);
+  padding: 1rem 1.2rem;
+}
+.glance-cell .num {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--purple);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.glance-cell .lbl {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* ---------- Section ---------- */
+section.program {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+  scroll-margin-top: 3.5rem;
+}
+.section-head {
+  margin-bottom: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem;
+  align-items: start;
+}
+.section-head .heading {
+  max-width: 70ch;
+}
+.section-head .kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid currentColor;
+}
+.section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--purple-darker);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.section-head .deck {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
+}
+.section-head .meta {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.section-head .meta .source {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--ink-faint);
+}
+
+/* program accents */
+.program--pl .section-head .kicker { color: var(--purple); }
+.program--pc .section-head .kicker { color: var(--lime-deep); }
+.program--dc .section-head .kicker { color: var(--orange); }
+.program--yasa .section-head .kicker { color: var(--purple-light); }
+.program--content .section-head .kicker { color: var(--purple-dark); }
+
+.program--pl { background: linear-gradient(to bottom, var(--purple-pale) 0%, transparent 240px); }
+.program--pc { background: linear-gradient(to bottom, var(--lime-pale) 0%, transparent 240px); }
+.program--dc { background: linear-gradient(to bottom, var(--orange-pale) 0%, transparent 240px); }
+.program--yasa { background: linear-gradient(to bottom, var(--vellum-deep) 0%, transparent 240px); }
+.program--content { background: linear-gradient(to bottom, var(--purple-pale) 0%, transparent 240px); }
+
+/* ---------- Themes pills ---------- */
+.themes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+.themes-row .pill {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.program--pl .themes-row .pill { border-color: var(--purple-light); color: var(--purple-dark); }
+.program--pc .themes-row .pill { border-color: var(--lime-deep); color: var(--lime-deep); }
+.program--dc .themes-row .pill { border-color: var(--orange); color: #b66a14; }
+.program--yasa .themes-row .pill { border-color: var(--purple-light); color: var(--purple-dark); }
+.program--content .themes-row .pill { border-color: var(--purple-dark); color: var(--purple-dark); }
+
+/* ---------- Quote cards ---------- */
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.quote-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--purple);
+  padding: 1.2rem 1.3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+}
+.program--pl .quote-card { border-left-color: var(--purple); }
+.program--pc .quote-card { border-left-color: var(--lime-deep); }
+.program--dc .quote-card { border-left-color: var(--orange); }
+.program--yasa .quote-card { border-left-color: var(--purple-light); }
+.program--content .quote-card { border-left-color: var(--purple-dark); }
+
+.quote-card .open-quote {
+  font-family: Georgia, serif;
+  font-size: 2.6rem;
+  line-height: 0.6;
+  color: var(--rule);
+  font-weight: 700;
+  margin: 0;
+}
+.program--pl .quote-card .open-quote { color: var(--purple-light); }
+.program--pc .quote-card .open-quote { color: var(--lime); }
+.program--dc .quote-card .open-quote { color: var(--orange); }
+.program--yasa .quote-card .open-quote { color: var(--purple-light); }
+.program--content .quote-card .open-quote { color: var(--purple-dark); }
+
+.quote-card blockquote {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 400;
+}
+.quote-card .attribution {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-top: auto;
+  padding-top: 0.6rem;
+  border-top: 1px dotted var(--rule);
+}
+
+/* ---------- Subhead inside section ---------- */
+.subhead {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 2.5rem 0 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.subhead::before {
+  content: "§";
+  color: var(--purple);
+  font-family: var(--body);
+  font-size: 1rem;
+  font-style: italic;
+}
+.subhead .count {
+  margin-left: auto;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+/* ---------- Suggestions list ---------- */
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 8px;
+}
+.suggestions .item {
+  background: var(--vellum);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink);
+  display: flex;
+  gap: 0.5rem;
+}
+.suggestions .item::before {
+  content: "→";
+  color: var(--purple);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.program--pc .suggestions .item::before { color: var(--lime-deep); }
+.program--dc .suggestions .item::before { color: var(--orange); }
+.program--yasa .suggestions .item::before { color: var(--purple-light); }
+.program--content .suggestions .item::before { color: var(--purple-dark); }
+
+/* ---------- Actions bar chart (DC + YASA) ---------- */
+.actions-list {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.4rem 0;
+}
+.actions-list .action-row {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  align-items: center;
+  gap: 1rem;
+  padding: 8px 14px;
+  border-bottom: 1px dotted var(--rule-soft);
+}
+.actions-list .action-row:last-child { border-bottom: none; }
+.actions-list .action-label {
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+.actions-list .action-bar-wrap {
+  position: relative;
+  height: 22px;
+  background: var(--rule-soft);
+  border-radius: 2px;
+}
+.actions-list .action-bar {
+  position: absolute;
+  inset: 0;
+  background: var(--purple-light);
+  border-radius: 2px;
+}
+.actions-list .action-count {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--vellum);
+}
+.program--dc .actions-list .action-bar { background: var(--orange); }
+
+/* ---------- Content section: themes grid with counts ---------- */
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+.theme-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+  border-top: 3px solid var(--purple-dark);
+}
+.theme-card .theme-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--purple-darker);
+  margin-bottom: 0.3rem;
+}
+.theme-card .theme-count {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.6rem;
+}
+.theme-card .theme-snippet {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* ---------- In-page TOC ---------- */
+.toc {
+  background: var(--vellum);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin: 2rem 0 0;
+}
+.toc-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  font-size: 0.92rem;
+}
+.toc-list a {
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 1px;
+}
+.toc-list a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+.toc-list a .num {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--purple);
+  margin-right: 0.4rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem 0 3rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 700px) {
+  .section-head { grid-template-columns: 1fr; }
+  .section-head .meta { text-align: left; white-space: normal; }
+}
+
+@media print {
+  body { background: white; }
+  .back-strip, .notice-banner { display: none; }
+  .quote-card, .theme-card, .suggestions .item { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-strip">
+  <div class="inner"><a href="../">Back to materials</a></div>
+</div>
+
+<div class="notice-banner" role="note" aria-label="AI-curated participant feedback notice">
+  <div class="inner">
+    <span class="label">AI-curated selection</span>
+    Representative voices selected and summarised by an AI assistant from full qualitative feedback files
+    (2022&ndash;2026). Quotes are verbatim. Themes are starting points for co-design discussion.
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="top-row">
+      <span>Positive Partnerships · Phase 4 · Participant Voices</span>
+    </div>
+    <h1>Participant Feedback.</h1>
+    <p class="deck">
+      What participants and facilitators have told us across four Phase 4 program streams &mdash; Professional
+      Learning, Parent/Carer, Diverse Communities, and Yarning &amp; Sharing &mdash; plus internal content
+      feedback gathered by the delivery team. A reference for the conversation about what to keep, deepen,
+      and reshape for Phase 5.
+    </p>
+
+    <nav class="toc" aria-label="Sections on this page">
+      <span class="toc-label">On this page</span>
+      <div class="toc-list">
+        <a href="#glance"><span class="num">00</span>At a glance</a>
+        <a href="#pl"><span class="num">01</span>Professional Learning</a>
+        <a href="#pc"><span class="num">02</span>Parent &amp; Carer</a>
+        <a href="#dc"><span class="num">03</span>Diverse Communities</a>
+        <a href="#yasa"><span class="num">04</span>Yarning &amp; Sharing</a>
+        <a href="#content"><span class="num">05</span>Content Feedback</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- AT A GLANCE -->
+<section class="glance" id="glance">
+  <div class="shell">
+    <div class="glance-grid">
+      <div class="glance-cell">
+        <div class="num">5</div>
+        <span class="lbl">Source files</span>
+      </div>
+      <div class="glance-cell">
+        <div class="num">4</div>
+        <span class="lbl">Program streams</span>
+      </div>
+      <div class="glance-cell">
+        <div class="num">2022&ndash;26</div>
+        <span class="lbl">Period covered</span>
+      </div>
+      <div class="glance-cell">
+        <div class="num">2,400+</div>
+        <span class="lbl">Lines of qualitative feedback</span>
+      </div>
+      <div class="glance-cell">
+        <div class="num">230</div>
+        <span class="lbl">Internal content feedback items</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL LEARNING -->
+<section class="program program--pl" id="pl">
+  <div class="shell">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 01 &middot; Professional Learning</span>
+        <h2>Educators &mdash; what teachers and school staff said.</h2>
+        <p class="deck">Feedback from 2-day, 1-day, online sessional, and whole-school Professional Learning
+          workshops delivered across every state and territory. Educators consistently described the
+          workshops as the most useful PD they had attended &mdash; engaging, neurodiversity-affirming, and
+          immediately applicable in the classroom.</p>
+      </div>
+      <div class="meta">
+        ~1,087 lines<span class="source">PL.docx</span>
+      </div>
+    </div>
+
+    <div class="themes-row">
+      <span class="pill">Quality of delivery</span>
+      <span class="pill">Respectful of professional experience</span>
+      <span class="pill">Knowledgeable, empathetic facilitators</span>
+      <span class="pill">The Planning Tool</span>
+      <span class="pill">Communication</span>
+      <span class="pill">Adjustments</span>
+      <span class="pill">Behaviour</span>
+      <span class="pill">Visuals</span>
+      <span class="pill">Student voice</span>
+      <span class="pill">Strategies</span>
+    </div>
+
+    <div class="subhead">Representative voices <span class="count">selected from full file</span></div>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>This is the best workshop I have attended in a long time. The content was relevant,
+          engaging and useful. I would like the rest of my faculty to be able to attend this training and
+          development opportunity.</blockquote>
+        <div class="attribution">2-Day PL Workshop &middot; NSW</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>So great to have autistic presenters and hearing their experiences, perspectives.
+          Facilitators worked really well as a team, had sense of humour, created many laughs and light
+          moments. Well done.</blockquote>
+        <div class="attribution">2-day PL workshop &middot; SA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I love the most likely/least likely tool. It takes out all the emotion in finding out
+          why a behaviour occurs.</blockquote>
+        <div class="attribution">2-Day PL Workshop &middot; QLD</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>Thank you so much for accommodating my medical needs. It is the first time since I
+          started working for the education department (20 years ago) that I have ever been truly
+          accommodated for &mdash; and advocated for. I have never felt so accepted and understood; it means
+          the world.</blockquote>
+        <div class="attribution">Two-day PL workshop &middot; WA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>A well-balanced view from multiple perspectives including the teacher, parent and young
+          person gave valuable insight into how we could best support a person with ASD. A well-researched
+          program with expertise from a range of professionals with passion.</blockquote>
+        <div class="attribution">2-Day PL workshop &middot; VIC</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I feel much better equipped to meet not only the needs of autistic kids, but many kids,
+          and to improve their levels of enjoyment, engagement, social and academic outcomes. I thoroughly
+          recommend this training to classroom teachers.</blockquote>
+        <div class="attribution">2-day PL workshops &middot; NSW</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT & CARER -->
+<section class="program program--pc" id="pc">
+  <div class="shell">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 02 &middot; Parent / Carer</span>
+        <h2>Parents and carers &mdash; the journey they brought, the journey they leave with.</h2>
+        <p class="deck">Feedback from 2-day, 1-day, online sessional, and Families and Schools Together
+          workshops. Themes mirror the educator stream but are layered with personal grief, relief,
+          recognition, and practical hope. Many participants described the workshop as the most useful
+          parenting course they had ever attended.</p>
+      </div>
+      <div class="meta">
+        ~732 lines<span class="source">PC.docx</span>
+      </div>
+    </div>
+
+    <div class="themes-row">
+      <span class="pill">Well-organised, engaging facilitators</span>
+      <span class="pill">Safe space &amp; lived experience</span>
+      <span class="pill">Knowledgeable &amp; empathetic</span>
+      <span class="pill">The Planning Tool</span>
+      <span class="pill">Sensory processing</span>
+      <span class="pill">Communication</span>
+      <span class="pill">Adjustments</span>
+      <span class="pill">Behaviour</span>
+      <span class="pill">Student voice</span>
+      <span class="pill">Suggestions</span>
+    </div>
+
+    <div class="subhead">Representative voices</div>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I may have shed a little tear because of the sheer relief of being understood! Finally!
+          I have done over 40 hours of other parenting courses trying to find something like this course.
+          Wish I had started here!</blockquote>
+        <div class="attribution">Online Sessional Workshop &middot; National</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>Honestly, this is the best workshop I have been to &mdash; well-organised, easy to
+          follow, respectful, and informative. I am so impressed and would love more information.</blockquote>
+        <div class="attribution">1-Day Parent/Carer workshop &middot; WA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>This workshop has opened my eyes to the varied ways my child communicates, a stronger
+          understanding of their needs and how to support them.</blockquote>
+        <div class="attribution">2-Day Parent/Carer Workshop &middot; SA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>In the eleven years since diagnosis, this has been the most positive step forward, and
+          access to further resources is greatly appreciated.</blockquote>
+        <div class="attribution">2-Day Parent/Carer Workshop &middot; WA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>It is also a beautiful reminder that we are not alone in our journey and that support is
+          available.</blockquote>
+        <div class="attribution">2-day Bendigo PC workshop &middot; VIC</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>This program helped me understand my child&rsquo;s experience better and consider
+          strategies to ensure his voice is heard. I encourage all people who work with or parent children
+          to learn from this program, so the experience of people with autism can be better understood and
+          we can create an environment that supports them.</blockquote>
+        <div class="attribution">Parent/Carer workshop</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVERSE COMMUNITIES -->
+<section class="program program--dc" id="dc">
+  <div class="shell">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 03 &middot; Diverse Communities</span>
+        <h2>Parents from CALD communities &mdash; first-language workshops, family-first framing.</h2>
+        <p class="deck">Workshops delivered in Japanese, Afghani, Vietnamese, and other community languages.
+          Feedback foregrounds the relief of receiving information in mother tongue, the value of culturally
+          attuned facilitators, and intended actions parents will take with their children &mdash; especially
+          using the Sensory Planning Tool and creating support plans.</p>
+      </div>
+      <div class="meta">
+        ~407 lines<span class="source">DC.docx</span>
+      </div>
+    </div>
+
+    <div class="themes-row">
+      <span class="pill">First-language delivery</span>
+      <span class="pill">Cultural safety</span>
+      <span class="pill">Sensory Planning Tool</span>
+      <span class="pill">Acceptance &amp; understanding</span>
+      <span class="pill">Practical strategies</span>
+      <span class="pill">Visuals</span>
+      <span class="pill">Behaviour</span>
+      <span class="pill">Interoception</span>
+      <span class="pill">Anxiety</span>
+      <span class="pill">Parenting of autistic children</span>
+    </div>
+
+    <div class="subhead">What parents said they would do next <span class="count">aggregated intended actions</span></div>
+    <div class="actions-list">
+      <div class="action-row">
+        <div class="action-label">Acceptance &amp; better understanding of their autistic child</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 100%;"></div><span class="action-count">16</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Observing the child for sensory issues &amp; behaviour</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 81%;"></div><span class="action-count">13</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Make a support plan / use the Sensory Planning Tool</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 69%;"></div><span class="action-count">11</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Use strategies learned at the workshop</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 56%;"></div><span class="action-count">9</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Support the child with executive function</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 19%;"></div><span class="action-count">3</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Use visuals &amp; visual schedules</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 19%;"></div><span class="action-count">3</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Get support from OT / work with the school</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 19%;"></div><span class="action-count">3</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Adjust the environment rather than change the child</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 13%;"></div><span class="action-count">2</span></div>
+      </div>
+    </div>
+
+    <div class="subhead">Representative voices</div>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I was glad I could share my story in Japanese because it made me feel less nervous
+          compared to speaking in English.</blockquote>
+        <div class="attribution">DC Parent/Carer Workshop &middot; WA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>It was my first time attending a government-funded program in Japanese, and I sincerely
+          appreciated receiving information in my mother tongue.</blockquote>
+        <div class="attribution">Liz Takahashi &middot; Garden City, WA</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>The team members of the delivery team have shared information very clearly. Therefore,
+          I have found ways and strategies to support my child and reduce stress when communicating.</blockquote>
+        <div class="attribution">DC Parent/Carer Workshop</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I&rsquo;d like to use the sensory planning tool to share the information with my
+          son&rsquo;s teachers.</blockquote>
+        <div class="attribution">Japanese workshop &middot; QLD</div>
+      </div>
+    </div>
+
+    <div class="subhead">Suggestions from participants</div>
+    <div class="suggestions">
+      <div class="item">More opportunities like this in the future</div>
+      <div class="item">Hold sessions at the beginning or middle of school term (less burdensome to attend)</div>
+      <div class="item">Hear from the autistic community directly</div>
+      <div class="item">Longer time for parent-to-parent sharing</div>
+      <div class="item">Follow-up support for families</div>
+      <div class="item">A session specifically for grandparents</div>
+      <div class="item">Help with improving self-management, self-care, and executive functioning</div>
+      <div class="item">Information shared about government policies that support these children and their caregivers</div>
+    </div>
+  </div>
+</section>
+
+<!-- YARNING & SHARING -->
+<section class="program program--yasa" id="yasa">
+  <div class="shell">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 04 &middot; Yarning &amp; Sharing</span>
+        <h2>First Nations Program &mdash; parents, carers, educators, community.</h2>
+        <p class="deck">Feedback from Yarning and Sharing workshops delivered with First Nations
+          facilitators across communities including Brewarrina, Tennant Creek, and many more. Participants
+          described the program as a culturally safe space to learn about autism without shame, share
+          stories, and bring information back to families and schools.</p>
+      </div>
+      <div class="meta">
+        ~183 lines<span class="source">YASA.docx</span>
+      </div>
+    </div>
+
+    <div class="themes-row">
+      <span class="pill">Cultural safety</span>
+      <span class="pill">First Nations facilitators &amp; lived experience</span>
+      <span class="pill">My Child&rsquo;s Story Map</span>
+      <span class="pill">Storyboards &amp; visual supports</span>
+      <span class="pill">Understanding sensory needs</span>
+      <span class="pill">Family &amp; community support</span>
+      <span class="pill">Take to school &amp; teachers</span>
+      <span class="pill">Educator practice</span>
+    </div>
+
+    <div class="subhead">Representative voices &mdash; parents &amp; carers</div>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>It was great to have down-to-earth conversations regarding autism without shame. Thanks
+          for coming to Brewarrina. We need more workshops for parents/caregivers and a partnership with
+          the local school.</blockquote>
+        <div class="attribution">Frayn Barker</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I am a mother of two neurodivergent boys and an assistant coordinator at ACCO. This was
+          the best workshop &mdash; it was a safe space to learn and share my stories. I felt heard, accepted
+          without judgment. I have learnt so much more than I ever have. I can now better support mob, as
+          well as my own child.</blockquote>
+        <div class="attribution">Parent/Carer participant</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>These workshops should be part of every school for every teacher to examine and
+          understand children who have autism.</blockquote>
+        <div class="attribution">Elsa Morton</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>Thank you amazing ladies Skye and Jay for delivering a successful online workshop for us
+          here in Tennant Creek. We hope to meet you both soon to learn more about autism and how we can
+          help our mob in our communities.</blockquote>
+        <div class="attribution">Tennant Creek online workshop &middot; NT</div>
+      </div>
+    </div>
+
+    <div class="subhead">Representative voices &mdash; educators</div>
+    <div class="quotes">
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I think this was one of the best workshops I have attended. I felt comfortable and it
+          was much more engaging hearing First Nations facilitators who can also relate their own lived
+          experiences. So many deadly yarns within the group.</blockquote>
+        <div class="attribution">YASA PL workshop</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>Compared to other workshops this PD provided us with valuable knowledge of how we can
+          include cultural understandings when helping with gathering information about a child.</blockquote>
+        <div class="attribution">Early Years Place manager</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>Great to see and have PD about autism and see student/family through an Aboriginal
+          lens.</blockquote>
+        <div class="attribution">YASA PL workshop &middot; QLD</div>
+      </div>
+      <div class="quote-card">
+        <p class="open-quote">&ldquo;</p>
+        <blockquote>I highly recommend this very high-quality workshop. The facilitators were very
+          knowledgeable and provided a calming, non-judgemental environment for us to learn more ways to
+          help our mob.</blockquote>
+        <div class="attribution">YASA PL workshop &middot; SA</div>
+      </div>
+    </div>
+
+    <div class="subhead">Suggestions from participants</div>
+    <div class="suggestions">
+      <div class="item">More autism workshops &mdash; more often, more regularly</div>
+      <div class="item">More support for families</div>
+      <div class="item">Have more resources available</div>
+      <div class="item">Workshops held on weekends so more families can attend</div>
+      <div class="item">Workshops delivered into schools where there are autistic children</div>
+      <div class="item">More interaction and shared experiences from people with lived experience</div>
+      <div class="item">Follow-up sessions for AIEWs, community members</div>
+      <div class="item">A partnership with the local school</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT FEEDBACK (Excel) -->
+<section class="program program--content" id="content">
+  <div class="shell">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 05 &middot; Content Feedback (internal)</span>
+        <h2>Facilitator notes from the room &mdash; what to refine in the content.</h2>
+        <p class="deck">Internal feedback from Team Leaders and Delivery Team Members across four workshop
+          formats. These are notes from people running the workshops &mdash; observations about slides,
+          videos, workbooks, pacing, language, and the Planning Tool. Useful raw material for the next
+          content cycle.</p>
+      </div>
+      <div class="meta">
+        230 items<span class="source">Google reports.xlsx</span>
+      </div>
+    </div>
+
+    <div class="subhead">Coverage by workshop type</div>
+    <div class="actions-list">
+      <div class="action-row">
+        <div class="action-label">2-Day PL workshops</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 100%; background: var(--purple-dark);"></div><span class="action-count">143</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Parent &amp; Carer (1-day, 2-day, online)</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 34%; background: var(--purple-dark);"></div><span class="action-count">49</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">Whole School</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 18%; background: var(--purple-dark);"></div><span class="action-count">26</span></div>
+      </div>
+      <div class="action-row">
+        <div class="action-label">SAFT &middot; Schools and Families Together</div>
+        <div class="action-bar-wrap"><div class="action-bar" style="width: 8%; background: var(--purple-dark);"></div><span class="action-count">12</span></div>
+      </div>
+    </div>
+
+    <div class="subhead">Recurring themes <span class="count">surfaced from 230 items</span></div>
+    <div class="theme-grid">
+      <div class="theme-card">
+        <div class="theme-title">Planning Tool examples</div>
+        <div class="theme-count">~25 mentions</div>
+        <div class="theme-snippet">&ldquo;Have all sections of the planning tool modelled &mdash; really
+          helpful for families more so than teachers.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Content volume vs time</div>
+        <div class="theme-count">~18 mentions</div>
+        <div class="theme-snippet">&ldquo;Too much content for one day. Reduce content so more time can be
+          spent on discussion.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Video sound &amp; quality</div>
+        <div class="theme-count">~12 mentions</div>
+        <div class="theme-snippet">&ldquo;Video sound &mdash; Mia and Xander video very quiet, Dean video
+          very loud. Looked unprofessional having to fix the sound for each video.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Neurodiversity-affirming language</div>
+        <div class="theme-count">~10 mentions</div>
+        <div class="theme-snippet">&ldquo;Day 1: Remove co-morbidity and use co-occurring. Strategies
+          video &mdash; outdated, not neurodiversity affirming.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Workbook printing &amp; accessibility</div>
+        <div class="theme-count">~10 mentions</div>
+        <div class="theme-snippet">&ldquo;Printing in participant&rsquo;s handbook hard to read where colour
+          copy has been changed to black and white &mdash; details missing from the diversity wheel.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Sensory section refinement</div>
+        <div class="theme-count">~10 mentions</div>
+        <div class="theme-snippet">&ldquo;Cup video &mdash; older video that still includes the metaphorical
+          cup, change to new video. Add example of how to use the sensory strategies tool.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Stimming &amp; masking gap</div>
+        <div class="theme-count">~7 mentions</div>
+        <div class="theme-snippet">&ldquo;Need to include stimming and masking in the content &mdash; be a
+          bit more explicit, have a slide around stimming, echolalia and masking.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">DSE &amp; NCCD integration</div>
+        <div class="theme-count">~6 mentions</div>
+        <div class="theme-snippet">&ldquo;Need a more engaging activity re DSE. Include an NCCD video and
+          reflect on what this looks like at their school.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Communication section</div>
+        <div class="theme-count">~9 mentions</div>
+        <div class="theme-snippet">&ldquo;Communication video needs updating re non-verbal. Refocus to
+          communication for interaction and connection.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Slides, visuals &amp; readability</div>
+        <div class="theme-count">~15 mentions</div>
+        <div class="theme-snippet">&ldquo;White writing on green/yellow circles impossible to read. Update
+          tennis-balls-on-chair image. Tidy up slide deck.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Social model &amp; double empathy</div>
+        <div class="theme-count">~6 mentions</div>
+        <div class="theme-snippet">&ldquo;Our team thought inclusion of information about the social model
+          of disability and neurodiversity-affirming language and practice would be beneficial.&rdquo;</div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-title">Working Together / partnerships</div>
+        <div class="theme-count">~6 mentions</div>
+        <div class="theme-snippet">&ldquo;Strengthen the Working Together session with information about
+          barriers for families who may be harder for the school to engage.&rdquo;</div>
+      </div>
+    </div>
+
+    <div class="subhead">Raw facilitator notes <span class="count">a selection from the file</span></div>
+    <div class="suggestions">
+      <div class="item">Add questions to slides as prompts</div>
+      <div class="item">Need to include stimming and masking in the content</div>
+      <div class="item">Day 1: Remove co-morbidity and use co-occurring (workbook)</div>
+      <div class="item">Reduce Sensory Solutions video to just Judy Endow</div>
+      <div class="item">Add examples of strengths as well as interests for the clip</div>
+      <div class="item">Bring back the visuals; incorporate Berry Street brain breaks</div>
+      <div class="item">Communication video needs updating re non-verbal</div>
+      <div class="item">Strategies video &mdash; very outdated strategies that are not neurodiversity-affirming</div>
+      <div class="item">Diversity wheel slides need to be updated to the fluctuating graphic</div>
+      <div class="item">Put example from Planning Tool after each section</div>
+      <div class="item">Consider inclusion of information about the social model of disability</div>
+      <div class="item">Need to emphasise clear examples of double empathy</div>
+      <div class="item">Introduction of AI Tools &mdash; examples of each area of the Planning Tool</div>
+      <div class="item">Universal design for learning to be updated with regards to the science of learning and explicit teaching practices</div>
+      <div class="item">UNESCO videos &mdash; both feel outdated, feels like not needed</div>
+      <div class="item">Add a QR code so participants can access the Educational Needs questionnaire in colour on their phones</div>
+    </div>
+  </div>
+</section>
+
+<footer class="shell">
+  <p>
+    <a href="../">← Back to materials</a> &nbsp;·&nbsp;
+    <a href="../timetable/">Timetable</a> &nbsp;·&nbsp;
+    <a href="../content/">Content Overview</a> &nbsp;·&nbsp;
+    <a href="../operations/">Operations Plan</a> &nbsp;·&nbsp;
+    <a href="../brief/">Service Brief</a> &nbsp;·&nbsp;
+    <a href="../atlas/">Co-Design Atlas</a>
+  </p>
+</footer>
+
+</body>
+</html>
