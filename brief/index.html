@@ -7,7 +7,7 @@
 <meta name="description" content="A service-first working map of the Phase 5 Positive Partnerships RFT: nine Service Types, the annual targets and KPIs that bind them, the document set each one draws on, and the content direction recommended for each." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    THE PHASE 5 SERVICE BRIEF — service-first dashboard
@@ -34,8 +34,8 @@
   --slate: #4a5468;
   --shadow: 0 1px 0 rgba(34, 34, 34, 0.04), 0 8px 24px -16px rgba(67, 27, 86, 0.25);
 
-  --display: "Fraunces", "Source Serif 4", Georgia, serif;
-  --body: "Public Sans", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* Category colours for document categorisation */
@@ -76,6 +76,53 @@ h1, h2, h3, h4 {
 .mono { font-family: var(--mono); font-size: 0.85em; }
 
 ::selection { background: var(--purple-pale); color: var(--ink); }
+
+/* ---------- AI disclosure banner ---------- */
+.disclosure-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.disclosure-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.disclosure-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+/* ---------- Helvetica clean: remove magazine-style display italics ---------- */
+.index-brand em, .index-brand .em,
+.masthead h1 em, .masthead h1 .em,
+.masthead .deck,
+.section-title em, .section-lede,
+.scard-title .one-liner, .one-liner,
+.scard-num,
+.direction-card h4 em, .direction-card h4 .em,
+.dcard-head em, .dcard-head .em,
+.master-matrix caption, .doc-table caption,
+.rec h5 em, .rec h5 .em,
+.contract-cell em, .contract-cell .em,
+.kpi-card em, .kpi-card .em,
+.section-num .glyph,
+.scard-innovation h4 em {
+  font-style: normal;
+  font-family: var(--body);
+}
 
 /* ---------- Shell ---------- */
 .shell {
@@ -176,7 +223,7 @@ h1, h2, h3, h4 {
   font-size: clamp(1.8rem, 3.6vw, 2.9rem);
   font-weight: 400;
   line-height: 1.05;
-  font-variation-settings: "opsz" 96, "SOFT" 20;
+  
   letter-spacing: -0.015em;
   margin-bottom: 0.4em;
   color: var(--purple-darker);
@@ -243,13 +290,13 @@ section {
   letter-spacing: 0;
   margin-top: 0.25rem;
   text-transform: none;
-  font-variation-settings: "opsz" 24;
+  
 }
 .section-title {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   line-height: 1.05;
   font-weight: 400;
-  font-variation-settings: "opsz" 96;
+  
   letter-spacing: -0.02em;
 }
 .section-title em { color: var(--purple-darker); font-style: italic; }
@@ -259,9 +306,9 @@ section {
   font-size: 0.95rem;
   color: var(--ink-soft);
   max-width: 70ch;
-  font-style: italic;
-  font-family: var(--display);
-  font-variation-settings: "opsz" 24;
+  font-style: normal;
+  font-family: var(--body);
+  
 }
 
 /* ---------- Category chips ---------- */
@@ -325,7 +372,7 @@ section {
   line-height: 1.1;
   color: var(--ink);
   letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 36;
+  
 }
 .contract-cell .value .sub {
   display: block;
@@ -378,7 +425,7 @@ section {
   font-size: 0.88rem;
   font-weight: 500;
   line-height: 1.1;
-  font-variation-settings: "opsz" 24;
+  
 }
 .services-tape .stape-tag {
   display: block;
@@ -430,7 +477,7 @@ section {
   line-height: 1;
   color: var(--ink);
   letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 72;
+  
 }
 .kpi-card .num .unit {
   font-size: 0.95rem;
@@ -472,7 +519,7 @@ section {
   font-style: italic;
   line-height: 1;
   color: var(--purple);
-  font-variation-settings: "opsz" 96, "WONK" 1;
+  
 }
 .scard-num .prefix {
   display: block;
@@ -489,7 +536,7 @@ section {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.15;
-  font-variation-settings: "opsz" 36;
+  
 }
 .scard-title .one-liner {
   font-family: var(--display);
@@ -497,7 +544,7 @@ section {
   font-size: 0.85rem;
   color: var(--ink-soft);
   margin-top: 0.2rem;
-  font-variation-settings: "opsz" 24;
+  
 }
 .scard-target {
   text-align: right;
@@ -512,7 +559,7 @@ section {
   color: var(--ink);
   font-weight: 500;
   letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 36;
+  
 }
 .scard-target .pa {
   font-family: var(--mono);
@@ -649,7 +696,7 @@ section {
   font-family: var(--display);
   font-weight: 500;
   font-size: 0.92rem;
-  font-variation-settings: "opsz" 24;
+  
 }
 .doc-table td.doc-name .yr {
   display: block;
@@ -744,7 +791,7 @@ section {
   letter-spacing: -0.005em;
   text-transform: none;
   padding: 0.55rem 0.8rem;
-  font-variation-settings: "opsz" 24;
+  
   position: sticky;
   left: 0;
   z-index: 1;
@@ -825,7 +872,7 @@ section {
   font-size: 0.95rem;
   letter-spacing: -0.005em;
   margin-right: 0.3em;
-  font-variation-settings: "opsz" 24;
+  
 }
 
 .rec-list {
@@ -848,7 +895,7 @@ section {
   line-height: 1.25;
   margin: 0 0 0.45rem;
   letter-spacing: -0.005em;
-  font-variation-settings: "opsz" 36, "SOFT" 20;
+  
   color: var(--ink);
 }
 .rec h5 .rnum {
@@ -924,7 +971,7 @@ section {
 .source-list .src .what {
   font-family: var(--display);
   font-weight: 500;
-  font-variation-settings: "opsz" 24;
+  
 }
 .source-list .src .why {
   font-family: var(--mono);
@@ -976,6 +1023,15 @@ section {
 </style>
 </head>
 <body>
+
+<div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
+  <div class="inner">
+    <span class="label">AI-compiled draft</span>
+    The recommendations and analysis on this page were synthesised by an AI assistant from the source
+    documents. They are starting points for co-design with AutismCRC and the Autistic community — not Positive
+    Partnerships' formal positions.
+  </div>
+</div>
 
 <nav class="index-bar" aria-label="Brief sections">
   <div class="shell">
@@ -1097,22 +1153,22 @@ section {
   <div class="kpi-grid">
     <div class="kpi-card" style="border-left-color: var(--purple);">
       <div class="lbl">KPI 1 · Service Effectiveness</div>
-      <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M1 Educator · M2 Parent/Carer · M3 Whole-school capability</div>
+      <div class="num" style="font-size: 1.1rem; font-family: var(--display); ">M1 Educator · M2 Parent/Carer · M3 Whole-school capability</div>
       <div class="desc">Pre/post survey change; school leader reflection; case studies (S 3).</div>
     </div>
     <div class="kpi-card" style="border-left-color: var(--purple-dark);">
       <div class="lbl">KPI 2 · Service Quality</div>
-      <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M4 Quality of PL — accreditation by teacher reg. authorities</div>
+      <div class="num" style="font-size: 1.1rem; font-family: var(--display); ">M4 Quality of PL — accreditation by teacher reg. authorities</div>
       <div class="desc">All PL meets state/territory accreditation or recognition requirements.</div>
     </div>
     <div class="kpi-card" style="border-left-color: var(--lime);">
       <div class="lbl">KPI 3 · Engagement</div>
-      <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M5 Stakeholder engagement · M6 ACCO partnership</div>
+      <div class="num" style="font-size: 1.1rem; font-family: var(--display); ">M5 Stakeholder engagement · M6 ACCO partnership</div>
       <div class="desc">Stakeholder forum outcomes; ACCO-endorsed capability uplift.</div>
     </div>
     <div class="kpi-card" style="border-left-color: var(--orange);">
       <div class="lbl">KPI 4 · Accessibility</div>
-      <div class="num" style="font-size: 1.1rem; font-family: var(--display); font-variation-settings: 'opsz' 24;">M7 Equitable delivery · M8 Accessible &amp; culturally safe</div>
+      <div class="num" style="font-size: 1.1rem; font-family: var(--display); ">M7 Equitable delivery · M8 Accessible &amp; culturally safe</div>
       <div class="desc">National coverage; WCAG 2.1 AA compliance; cohort-specific survey data.</div>
     </div>
   </div>

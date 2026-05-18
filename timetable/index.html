@@ -403,6 +403,33 @@
     text-align: center;
   }
 
+  /* ── AI disclosure banner ───────────────────────────── */
+  .disclosure-banner {
+    background: var(--pp-pale-purple);
+    border-top: 3px solid var(--pp-medium-purple);
+    border-bottom: 1px solid var(--pp-light-grey);
+    color: var(--pp-dark-grey);
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 14px 0;
+  }
+  .disclosure-banner .inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 22px;
+    text-align: center;
+  }
+  .disclosure-banner .label {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--pp-darker-purple);
+    font-weight: 700;
+    margin-right: 8px;
+    white-space: nowrap;
+  }
+
   /* ── Print ──────────────────────────────────────────── */
   @media print {
     .toolbar, .session-controls, .add-session, .add-day, .day-controls, footer {
@@ -431,6 +458,15 @@
 </style>
 </head>
 <body class="editing">
+
+<div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
+  <div class="inner">
+    <span class="label">AI-compiled draft</span>
+    The recommendations and analysis across these materials were synthesised by an AI assistant from the source
+    documents. They are starting points for co-design with AutismCRC and the Autistic community — not Positive
+    Partnerships' formal positions.
+  </div>
+</div>
 
 <header class="brandbar">
   <div class="brand-blocks">

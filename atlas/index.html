@@ -7,7 +7,7 @@
 <meta name="description" content="A working framework, drafted for co-authorship with AutismCRC, mapping Australia's anchor documents on disability rights, education and autism against the workshop content priorities Positive Partnerships should design for in Phase 5 (2026–2029)." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    THE PHASE 5 CO-DESIGN ATLAS — editorial policy atlas
@@ -34,8 +34,8 @@
   --shadow: 0 1px 0 rgba(34, 34, 34, 0.04), 0 8px 24px -16px rgba(67, 27, 86, 0.25);
   --shadow-hover: 0 2px 0 rgba(34, 34, 34, 0.06), 0 16px 36px -18px rgba(67, 27, 86, 0.35);
 
-  --display: "Fraunces", "Source Serif 4", Georgia, serif;
-  --body: "Public Sans", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
 
   --measure: 64ch;
@@ -69,7 +69,7 @@ h1, h2, h3, h4 {
   color: var(--ink);
   letter-spacing: -0.01em;
   margin: 0;
-  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  
 }
 
 p, li, dd, dt { hyphens: auto; }
@@ -88,7 +88,7 @@ a:hover {
 
 .mono {
   font-family: var(--mono);
-  font-variation-settings: normal;
+  
   font-size: 0.85em;
   letter-spacing: 0.02em;
 }
@@ -154,7 +154,7 @@ a:hover {
   font-size: clamp(1.8rem, 3.6vw, 2.9rem);
   font-weight: 400;
   line-height: 1.05;
-  font-variation-settings: "opsz" 96, "SOFT" 20;
+  
   letter-spacing: -0.015em;
   margin-bottom: 0.5em;
   color: var(--purple-darker);
@@ -243,7 +243,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: clamp(1.4rem, 2.6vw, 2rem);
   line-height: 1.1;
   font-weight: 500;
-  font-variation-settings: "opsz" 72, "SOFT" 20;
+  
   letter-spacing: -0.01em;
   color: var(--purple-darker);
 }
@@ -331,7 +331,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 1.2rem;
   line-height: 1.15;
   font-weight: 400;
-  font-variation-settings: "opsz" 36, "SOFT" 30;
+  
 }
 .doc-card h3 .italic {
   font-style: italic;
@@ -436,7 +436,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   text-transform: none;
   letter-spacing: -0.005em;
   padding: 0.9rem 0.8rem;
-  font-variation-settings: "opsz" 36, "SOFT" 30;
+  
   width: 22%;
   position: sticky;
   left: 0;
@@ -550,7 +550,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 72, "SOFT" 30;
+  
 }
 .pillar-header h3 .em { font-style: italic; color: var(--purple-darker); }
 .pillar-header .one-liner {
@@ -610,7 +610,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-style: normal;
   margin-top: 1.8rem;
   margin-bottom: 0.6rem;
-  font-variation-settings: "opsz" 16;
+  
 }
 .pillar-body .prose h4:first-child { margin-top: 0; }
 .pillar-body .prose p + p { margin-top: 1em; }
@@ -687,7 +687,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   border-left: 3px solid var(--purple);
   padding: 0.4rem 0 0.4rem 1.2rem;
   margin: 1.6rem 0;
-  font-variation-settings: "opsz" 60, "SOFT" 30;
+  
 }
 .pull-quote cite {
   display: block;
@@ -800,7 +800,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-weight: 300;
   line-height: 0.9;
   color: var(--purple);
-  font-variation-settings: "opsz" 96, "WONK" 1;
+  
   font-style: italic;
 }
 .rec-number::before { content: counter(rec, decimal-leading-zero); }
@@ -811,7 +811,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   line-height: 1.15;
   margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
-  font-variation-settings: "opsz" 72, "SOFT" 30;
+  
 }
 .rec-content h4 .em { font-style: italic; color: var(--purple-darker); }
 .rec-content p {
@@ -890,7 +890,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 1.02rem;
   font-weight: 500;
   margin-bottom: 0.3rem;
-  font-variation-settings: "opsz" 36;
+  
 }
 .cohort p {
   margin: 0;
@@ -918,7 +918,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   margin-bottom: 0.5rem;
   color: var(--purple-darker);
   font-style: italic;
-  font-variation-settings: "opsz" 36;
+  
 }
 .codesign p {
   font-size: 0.95rem;
@@ -990,6 +990,54 @@ section + section { border-top: 1px solid var(--rule-soft); }
   color: var(--ink);
 }
 
+/* ---------- AI disclosure banner ---------- */
+.disclosure-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.disclosure-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.disclosure-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+/* ---------- Helvetica clean: remove magazine-style display italics ---------- */
+.index-brand em, .index-brand .em,
+.masthead h1 em, .masthead h1 .em,
+.masthead h1 .ital, .masthead h1 .amp,
+.masthead .deck,
+.section-title em, .section-lede,
+.preamble .marginalia em,
+.pillar-header h3 em, .pillar-header h3 .em,
+.pillar-header .one-liner,
+.pull-quote, .pull-quote cite,
+.callout em, .callout strong em,
+.rec h4 em, .rec h4 .em,
+.recs .marginalia em,
+.cohort h4 em, .codesign h4,
+.section-num .glyph,
+.doc-card h3 .italic {
+  font-style: normal;
+  font-family: var(--body);
+}
+
 /* ---------- Sticky Index Bar ---------- */
 .index-bar {
   position: sticky;
@@ -1033,7 +1081,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   padding-right: 1.2rem;
   border-right: 1px solid var(--rule);
   margin-right: 0.4rem;
-  font-variation-settings: "opsz" 24, "SOFT" 40;
+  
   white-space: nowrap;
 }
 .index-brand .num {
@@ -1141,7 +1189,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   text-decoration: none;
   padding: 0.35rem 0;
   border-bottom: 1px dotted var(--rule-soft);
-  font-variation-settings: "opsz" 24;
+  
 }
 .index-drawer a:hover { color: var(--purple); }
 .index-drawer a .num {
@@ -1178,6 +1226,15 @@ section + section { border-top: 1px solid var(--rule-soft); }
 </head>
 <body>
 <a href="#preamble" class="skip">Skip to content</a>
+
+<div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
+  <div class="inner">
+    <span class="label">AI-compiled draft</span>
+    The recommendations and analysis on this page were synthesised by an AI assistant from the source
+    documents. They are starting points for co-design with AutismCRC and the Autistic community — not Positive
+    Partnerships' formal positions.
+  </div>
+</div>
 
 <header class="masthead" id="top">
   <div class="shell">
@@ -1424,7 +1481,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
 
   <h3 style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--purple-darker); margin: 2.5rem 0 1rem; font-weight: 500;">Register B &middot; AutismCRC best-practice guidelines</h3>
 
-  <p style="font-family: var(--display); font-style: italic; color: var(--ink-soft); font-size: 1rem; max-width: 60ch; margin: 0 0 1.2rem; font-variation-settings: 'opsz' 36;">
+  <p style="font-family: var(--display); font-style: italic; color: var(--ink-soft); font-size: 1rem; max-width: 60ch; margin: 0 0 1.2rem; ">
     Three NHMRC-approved guidelines and frameworks published by AutismCRC. The RFT directs Phase 5 content to be
     informed by AutismCRC research (General Requirement 5). These guidelines are where that direction
     operationalises.
@@ -2506,7 +2563,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
     </div>
   </div>
 
-  <h3 style="font-family: var(--display); font-size: 1.4rem; font-weight: 500; margin: 2rem 0 1rem; letter-spacing: -0.01em; font-variation-settings: 'opsz' 72;">Service × Pillar map</h3>
+  <h3 style="font-family: var(--display); font-size: 1.4rem; font-weight: 500; margin: 2rem 0 1rem; letter-spacing: -0.01em; ">Service × Pillar map</h3>
 
   <div class="matrix-wrap">
     <table class="matrix" aria-label="Nine RFT Service Types mapped against eight content pillars">
@@ -2628,7 +2685,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
     </table>
   </div>
 
-  <h3 style="font-family: var(--display); font-size: 1.4rem; font-weight: 500; margin: 3rem 0 1rem; letter-spacing: -0.01em; font-variation-settings: 'opsz' 72;">Anchors the RFT adds beyond the original seven</h3>
+  <h3 style="font-family: var(--display); font-size: 1.4rem; font-weight: 500; margin: 3rem 0 1rem; letter-spacing: -0.01em; ">Anchors the RFT adds beyond the original seven</h3>
 
   <div class="cohort-grid">
     <div class="cohort"><h4>Australia's Disability Strategy 2021–31</h4><p>The whole-of-government strategy under which the NAS sits. RFT General Req 5 directs content alignment with both.</p></div>

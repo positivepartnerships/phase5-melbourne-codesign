@@ -7,7 +7,7 @@
 <meta name="description" content="Pre-reading and workshop materials for the Phase 5 Positive Partnerships Melbourne co-design workshops. The Service Brief, the Co-Design Atlas, and the workshop Timetable." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    PHASE 5 CO-DESIGN — landing & pre-reading
@@ -34,8 +34,8 @@
   --shadow: 0 1px 0 rgba(34, 34, 34, 0.04), 0 8px 24px -16px rgba(67, 27, 86, 0.25);
   --shadow-hover: 0 2px 0 rgba(34, 34, 34, 0.06), 0 18px 40px -20px rgba(67, 27, 86, 0.4);
 
-  --display: "Fraunces", "Source Serif 4", Georgia, serif;
-  --body: "Public Sans", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -72,11 +72,73 @@ a { color: var(--purple); }
   padding: 0 clamp(1.2rem, 3vw, 2.5rem);
 }
 
+/* ---------- AI disclosure banner ---------- */
+.disclosure-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.disclosure-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.disclosure-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-right: 0.6em;
+  white-space: nowrap;
+}
+
+/* ---------- Helvetica clean: remove magazine-style display italics ---------- */
+.masthead h1 .em, .masthead h1 .ital, .masthead h1 .amp,
+.deck, .section-title em, .section-lede,
+.tagline, .one-liner, .scard-title .one-liner,
+.material-card h3 .em, .material-card .tagline,
+.material-card .type-stamp .ord,
+.section-num .glyph, .howto-card h4, .codesign h4,
+.preamble .marginalia em,
+.pull-quote, .scard-num, .rec-number {
+  font-style: normal;
+  font-family: var(--body);
+}
+
 /* ---------- Masthead ---------- */
 .masthead {
-  padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(2rem, 4vw, 3.5rem);
   border-bottom: 1px solid var(--rule);
   position: relative;
+}
+.masthead .shell {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+.masthead-text { min-width: 0; }
+.masthead-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.masthead-illustration img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 800px) {
+  .masthead .shell { grid-template-columns: 1fr; }
+  .masthead-illustration { order: -1; max-width: 320px; margin: 0 auto 1rem; }
 }
 .masthead .stamp {
   font-family: var(--mono);
@@ -99,7 +161,7 @@ a { color: var(--purple); }
   font-size: clamp(2rem, 4.5vw, 3.6rem);
   font-weight: 400;
   line-height: 1.05;
-  font-variation-settings: "opsz" 96, "SOFT" 20;
+  
   letter-spacing: -0.02em;
   margin-bottom: 0.4em;
   color: var(--purple-darker);
@@ -161,7 +223,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: clamp(1.7rem, 3.4vw, 2.7rem);
   line-height: 1.05;
   font-weight: 400;
-  font-variation-settings: "opsz" 96, "SOFT" 30;
+  
   letter-spacing: -0.02em;
 }
 .section-title em { color: var(--purple-darker); font-style: italic; }
@@ -171,9 +233,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 1rem;
   color: var(--ink-soft);
   max-width: 65ch;
-  font-style: italic;
-  font-family: var(--display);
-  font-variation-settings: "opsz" 24;
+  font-style: normal;
+  font-family: var(--body);
+  
 }
 
 /* ---------- Materials cards ---------- */
@@ -236,7 +298,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-weight: 500;
   letter-spacing: 0;
   text-transform: none;
-  font-variation-settings: "opsz" 24, "WONK" 1;
+  
 }
 .material-card--purple .type-stamp .ord { color: var(--purple); }
 .material-card--purple-dark .type-stamp .ord { color: var(--purple-dark); }
@@ -246,7 +308,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 1.7rem;
   line-height: 1.05;
   font-weight: 400;
-  font-variation-settings: "opsz" 72, "SOFT" 30;
+  
   letter-spacing: -0.015em;
   margin-bottom: 0.4rem;
 }
@@ -261,7 +323,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 0.95rem;
   color: var(--ink-soft);
   margin: 0 0 1.2rem;
-  font-variation-settings: "opsz" 24;
+  
 }
 .material-card .description {
   font-size: 0.95rem;
@@ -333,7 +395,7 @@ section + section { border-top: 1px solid var(--rule-soft); }
   font-size: 1.05rem;
   font-weight: 500;
   margin-bottom: 0.6rem;
-  font-variation-settings: "opsz" 36;
+  
   color: var(--purple-darker);
   font-style: italic;
 }
@@ -467,32 +529,46 @@ footer a { color: var(--ink); }
 </head>
 <body>
 
+<div class="disclosure-banner" role="note" aria-label="AI-compiled draft notice">
+  <div class="inner">
+    <span class="label">AI-compiled draft</span>
+    The recommendations and analysis across these materials were synthesised by an AI assistant from the source
+    documents. They are starting points for co-design with AutismCRC and the Autistic community — not Positive
+    Partnerships' formal positions.
+  </div>
+</div>
+
 <header class="masthead">
   <div class="shell">
-    <div class="stamp">
-      <span>Positive&nbsp;Partnerships</span>
-      <span class="dot"></span>
-      <span>Phase&nbsp;5</span>
-      <span class="dot"></span>
-      <span>Melbourne&nbsp;Co-Design&nbsp;Workshop</span>
-      <span class="dot"></span>
-      <span>Pre-reading</span>
+    <div class="masthead-text">
+      <div class="stamp">
+        <span>Positive&nbsp;Partnerships</span>
+        <span class="dot"></span>
+        <span>Phase&nbsp;5</span>
+        <span class="dot"></span>
+        <span>Melbourne&nbsp;Co-Design&nbsp;Workshop</span>
+        <span class="dot"></span>
+        <span>Pre-reading</span>
+      </div>
+      <h1>
+        Phase 5 <span class="em">Co-Design</span>.
+      </h1>
+      <p class="deck">
+        Three materials to read before — and refer to during — the Melbourne co-design workshop.
+      </p>
+      <div class="welcome">
+        <p>
+          Three pre-reading materials for the Melbourne co-design workshop: a working <strong>Brief</strong> that
+          maps the contract to its nine Service Types; an <strong>Atlas</strong> that maps the policy anchors to
+          eight content pillars; and the workshop <strong>Timetable</strong>.
+        </p>
+        <p>
+          Drafts to test, deepen and improve together — not finished documents.
+        </p>
+      </div>
     </div>
-    <h1>
-      Phase 5 <span class="em">Co-Design</span>.
-    </h1>
-    <p class="deck">
-      Three materials to read before — and refer to during — the Melbourne co-design workshop.
-    </p>
-    <div class="welcome">
-      <p>
-        Three pre-reading materials for the Melbourne co-design workshop: a working <strong>Brief</strong> that
-        maps the contract to its nine Service Types; an <strong>Atlas</strong> that maps the policy anchors to
-        eight content pillars; and the workshop <strong>Timetable</strong>.
-      </p>
-      <p>
-        Drafts to test, deepen and improve together — not finished documents.
-      </p>
+    <div class="masthead-illustration">
+      <img src="images/pp-x-autismcrc.png" alt="A friendly illustration of the Positive Partnerships character and the AutismCRC character shaking hands in partnership." width="600" height="400" loading="eager">
     </div>
   </div>
 </header>
