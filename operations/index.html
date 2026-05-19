@@ -24,9 +24,11 @@
   --purple-darker: #431b56;
   --lime: #BBD64A;
   --lime-soft: #d8e890;
+  --lime-deep: #8fa530;
   --purple-pale: #f0e6f7;
   --orange: #F7941E;
   --orange-soft: #fbc481;
+  --orange-pale: #fff1de;
   --slate: #4a5468;
   --slate-soft: #b8c0cc;
 
@@ -442,6 +444,176 @@ section {
   .apdp { grid-template-columns: 1fr; }
 }
 
+/* ---------- KPIs ---------- */
+.kpi-intro {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--purple);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 1.6rem;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.kpi-intro strong { color: var(--purple-darker); }
+
+.kpi-band {
+  margin: 1.6rem 0 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  border-top: 2px solid var(--purple);
+  padding-top: 0.8rem;
+}
+.kpi-band .band-num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+}
+.kpi-band .band-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  letter-spacing: -0.01em;
+}
+.kpi-band .band-sub {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+.kpi-band--interim .band-num,
+.kpi-band--interim { border-top-color: var(--orange); }
+.kpi-band--interim .band-num { color: var(--orange); }
+.kpi-band--interim .band-title { color: #b66a14; }
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+}
+.kpi-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-top: 3px solid var(--purple);
+}
+.kpi-card--interim { border-top-color: var(--orange); }
+.kpi-card--effective { border-top-color: var(--purple); }
+.kpi-card--quality { border-top-color: var(--lime); }
+.kpi-card--engagement { border-top-color: var(--purple-light); }
+.kpi-card--access { border-top-color: var(--purple-darker); }
+
+.kpi-card .kpi-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+.kpi-card .kpi-id {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+}
+.kpi-card--interim .kpi-id { color: var(--orange); }
+.kpi-card--quality .kpi-id { color: var(--lime-deep, #8fa530); }
+.kpi-card--engagement .kpi-id { color: var(--purple-light); }
+.kpi-card--access .kpi-id { color: var(--purple-darker); }
+
+.kpi-card .kpi-target {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  background: var(--purple-pale);
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.kpi-card .kpi-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.kpi-card .kpi-desc {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+}
+.kpi-card .kpi-min {
+  background: var(--vellum-deep);
+  border-left: 2px solid var(--purple);
+  padding: 8px 10px;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.kpi-card--interim .kpi-min { border-left-color: var(--orange); background: var(--orange-pale, #fff1de); }
+.kpi-card .kpi-min .lbl {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.kpi-card--interim .kpi-min .lbl { color: #b66a14; }
+
+.kpi-card .kpi-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding-top: 0.6rem;
+  border-top: 1px dotted var(--rule);
+  font-size: 0.82rem;
+}
+.kpi-card .kpi-meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+  align-items: baseline;
+}
+.kpi-card .kpi-meta-row .key {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+.kpi-card .kpi-meta-row .val {
+  color: var(--ink);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 520px) {
+  .kpi-card .kpi-meta-row { grid-template-columns: 1fr; gap: 0; }
+  .kpi-card .kpi-meta-row .key { margin-bottom: 2px; }
+}
+
 /* ---------- Footer ---------- */
 footer {
   padding: 2rem 0 3rem;
@@ -788,6 +960,293 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
       <div class="apdp-item">Contract Material Register</div>
       <div class="apdp-item">Risk Register</div>
       <div class="apdp-item">System Development &amp; Management Plan</div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section id="kpis">
+    <div class="section-head">
+      <span class="kicker">§ Key Performance Indicators</span>
+      <h2>How Phase 5 will be measured.</h2>
+      <p>Two interim KPIs covering the transition period (1&nbsp;Jul&nbsp;&ndash;&nbsp;31&nbsp;Dec&nbsp;2026), and four
+        core KPIs &mdash; with eight underlying measures &mdash; that take effect from 1&nbsp;January&nbsp;2027 once
+        Services 1&ndash;8 are designed, tested, and live.</p>
+    </div>
+
+    <div class="kpi-intro">
+      <strong>Interim period (1&nbsp;Jul&nbsp;&ndash;&nbsp;31&nbsp;Dec&nbsp;2026)</strong> &mdash; the Supplier&rsquo;s
+      progress towards designing and implementing each of the Phase 5 Services so that all are tested, refined,
+      and operational from 1&nbsp;January&nbsp;2027. Includes evidence of genuine co-design and agile delivery.
+    </div>
+
+    <div class="kpi-band kpi-band--interim">
+      <span class="band-num">Interim KPIs</span>
+      <span class="band-title">Service readiness &amp; co-design</span>
+      <span class="band-sub">1&nbsp;Jul&nbsp;&ndash;&nbsp;31&nbsp;Dec&nbsp;2026</span>
+    </div>
+
+    <div class="kpi-grid">
+      <!-- KPI 0.1 -->
+      <div class="kpi-card kpi-card--interim">
+        <div class="kpi-head">
+          <span class="kpi-id">KPI #0.1</span>
+          <span class="kpi-target">Service Readiness</span>
+        </div>
+        <h4 class="kpi-title">Progress towards Service Readiness</h4>
+        <p class="kpi-desc">Progress towards the design, development and implementation of Phase&nbsp;5
+          Services&nbsp;1&ndash;8.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          All milestones &amp; deliverables in the Transition-in Plan and 2026 Program Schedule achieved on
+          time and to agreed standards; status updates submitted on time; risks reported and contingencies
+          implemented as agreed.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Interim status updates and evidence of completed implementation milestones.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Measured over the implementation period; reported in Apr&ndash;Jun status updates and Q1/Q2 Progress Reports FY26&ndash;27.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Interim status update, quarterly progress reports, draft Materials, pre-production website, UAT &amp; accessibility test results.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+
+      <!-- KPI 0.2 -->
+      <div class="kpi-card kpi-card--interim">
+        <div class="kpi-head">
+          <span class="kpi-id">KPI #0.2</span>
+          <span class="kpi-target">Co-design &amp; refinement</span>
+        </div>
+        <h4 class="kpi-title">Co-design and service refinement</h4>
+        <p class="kpi-desc">Services, content and resources co-designed with stakeholders and delivered using
+          agile methods &mdash; collaboration, user satisfaction, continuous improvement &mdash; with
+          participant feedback used to refine Services before full release on 1&nbsp;Jan&nbsp;2027.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          User testing of the new program website completed with demonstrated improvements in accessibility
+          &amp; UX; broad stakeholder engagement evidenced; feedback gathered, analysed and (where
+          appropriate) actioned across all trial workshops and training sessions.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Evidence of stakeholder engagement and service refinement informed by user-testing results.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Measured over the implementation period; reported in interim status update and Progress Reports.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Survey data, collated stakeholder &amp; participant feedback, interim status updates, Q1&ndash;Q2 status reports, website user-testing results.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-intro" style="margin-top: 2.5rem;">
+      <strong>Core KPIs (from 1&nbsp;Jan&nbsp;2027)</strong> &mdash; assessed against four KPIs across eight
+      measures, following the design, testing and delivery of Services 1&ndash;8.
+    </div>
+
+    <!-- KPI 1 — Service Effectiveness -->
+    <div class="kpi-band">
+      <span class="band-num">KPI #1</span>
+      <span class="band-title">Service Effectiveness</span>
+      <span class="band-sub">3 measures</span>
+    </div>
+    <div class="kpi-grid">
+      <!-- Measure 1 -->
+      <div class="kpi-card kpi-card--effective">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #1</span>
+          <span class="kpi-target">60% improved</span>
+        </div>
+        <h4 class="kpi-title">Educator Capability</h4>
+        <p class="kpi-desc">Increased educator knowledge, skills and confidence to support the educational
+          needs of Autistic school-age students.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          60% of respondents report improved attitudes, knowledge and skills, with improved results required
+          over time. Sector-led delivery results no more than 10% below face-to-face PL averages.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Change in pre- &amp; post-survey results to PL participant questions, and/or School Leader reflections.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Survey per scheduled training session. Reported biannually, aligned to each Semester&rsquo;s training.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Survey data per Data, Performance Monitoring &amp; Continuous Improvement Plan.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+
+      <!-- Measure 2 -->
+      <div class="kpi-card kpi-card--effective">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #2</span>
+          <span class="kpi-target">60% improved</span>
+        </div>
+        <h4 class="kpi-title">Parent / Carer Capability</h4>
+        <p class="kpi-desc">Increased knowledge about autism and reasonable adjustments; increased confidence
+          engaging with schools and staff to advocate for children in their care.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          60% of respondents report improved knowledge and confidence, with improved results required over
+          time.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Survey results for parent/carer participant questions on knowledge, skills and confidence.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Survey per scheduled training session. Reported biannually.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Survey data per Data, Performance Monitoring &amp; Continuous Improvement Plan.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+
+      <!-- Measure 3 -->
+      <div class="kpi-card kpi-card--effective">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #3</span>
+          <span class="kpi-target">Priority addressed</span>
+        </div>
+        <h4 class="kpi-title">Whole School Capability</h4>
+        <p class="kpi-desc">Whole-school communities show substantial increase in their effective support of
+          Autistic school-age students.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          School Leaders report the service has addressed the priority area(s) for improvement identified in
+          the school&rsquo;s pre-assessment, with evidence of progress towards agreed goals.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Change in pre- and post-assessment of priority area(s) identified by participating School Leaders.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Pre/post surveys from educators, parents, leaders + longer-term follow-up. Case studies biannually.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Leader surveys/interviews, case studies, school action plans, implementation logs, outcome data.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier, with input from participating schools.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI 2 — Service Quality -->
+    <div class="kpi-band">
+      <span class="band-num">KPI #2</span>
+      <span class="band-title">Service Quality</span>
+      <span class="band-sub">1 measure</span>
+    </div>
+    <div class="kpi-grid">
+      <!-- Measure 4 -->
+      <div class="kpi-card kpi-card--quality">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #4</span>
+          <span class="kpi-target">100% accredited</span>
+        </div>
+        <h4 class="kpi-title">Quality of Professional Learning</h4>
+        <p class="kpi-desc">PL Services meet teacher regulatory authority accreditation requirements and
+          formal PL requirements of all Australian State and Territory teacher regulatory authorities.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          All PL sessions, online learning modules and workshops delivered under the program meet formal
+          requirements for accreditation and/or recognition, where applicable.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Proportion of PL sessions, online modules &amp; workshops formally accredited or recognised by State/Territory authorities.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Reported quarterly under the Contract Material Register.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Formal accreditation, approved supplier lists, and equivalent per State/Territory.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI 3 — Engagement -->
+    <div class="kpi-band">
+      <span class="band-num">KPI #3</span>
+      <span class="band-title">Stakeholder Engagement</span>
+      <span class="band-sub">2 measures</span>
+    </div>
+    <div class="kpi-grid">
+      <!-- Measure 5 -->
+      <div class="kpi-card kpi-card--engagement">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #5</span>
+          <span class="kpi-target">60% positive</span>
+        </div>
+        <h4 class="kpi-title">Stakeholder Engagement</h4>
+        <p class="kpi-desc">Regular, proactive and productive engagement with relevant stakeholders
+          (identified as part of Service 7) to ensure Services meet sector and community needs.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          Actions in the Stakeholder, Communications &amp; Promotion Plan are implemented; user feedback is
+          incorporated into final outputs; 60% of planning group representatives report the program is
+          responsive to the needs of their state/territory and sector.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Stakeholder survey responses, agreed actions implemented, contributions to continuous improvement.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Reported in Q2 2027 (Jan&ndash;Jun 2027), then annually from 1 Jul 2027.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Surveys, user feedback, documentary evidence.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+
+      <!-- Measure 6 -->
+      <div class="kpi-card kpi-card--engagement">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #6</span>
+          <span class="kpi-target">Capability uplift</span>
+        </div>
+        <h4 class="kpi-title">Partnership with ACCOs</h4>
+        <p class="kpi-desc">The Supplier has worked in partnership with Aboriginal Community-Controlled
+          Organisations to build capacity for both the Supplier and the ACCO and ensure workshops, content,
+          resources and delivery are culturally safe.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          Positive engagement and partnership with ACCOs evidenced. At a minimum, partnered ACCOs report
+          the relationship has been positive and has resulted in capability uplift.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Case report from ACCO against agreed criteria.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Annual.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Documentary evidence, endorsed by partnered ACCOs.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI 4 — Accessibility -->
+    <div class="kpi-band">
+      <span class="band-num">KPI #4</span>
+      <span class="band-title">Access &amp; Inclusion</span>
+      <span class="band-sub">2 measures</span>
+    </div>
+    <div class="kpi-grid">
+      <!-- Measure 7 -->
+      <div class="kpi-card kpi-card--access">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #7</span>
+          <span class="kpi-target">Nationally equitable</span>
+        </div>
+        <h4 class="kpi-title">Equitable Delivery</h4>
+        <p class="kpi-desc">Demonstrated national, sector-wide delivery, with equitable distribution across
+          all states &amp; territories and across all school sectors.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          Training delivered to all States/Territories commensurate with population, reflecting an
+          appropriate mix of metropolitan, regional and remote locations. Educator participation reflects
+          sectoral distribution; whole-school training reflects the sector split nationally.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Disaggregated delivery metrics (workshop numbers), excluding Sector-led delivery.</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">Delivery locations agreed in forward schedule; demographics collected ongoing; reported annually.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Registration data in annual data sets.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier</span></div>
+        </div>
+      </div>
+
+      <!-- Measure 8 -->
+      <div class="kpi-card kpi-card--access">
+        <div class="kpi-head">
+          <span class="kpi-id">Measure #8</span>
+          <span class="kpi-target">70% / ICT compliant</span>
+        </div>
+        <h4 class="kpi-title">Accessible &amp; Culturally Safe Delivery</h4>
+        <p class="kpi-desc">Services are accessible and inclusive for target audiences.</p>
+        <div class="kpi-min">
+          <span class="lbl">Minimum performance level</span>
+          Demonstrated compliance with all ICT accessibility requirements. A minimum 70% of survey
+          respondents from key cohorts rate the Services as accessible and culturally safe.
+        </div>
+        <div class="kpi-meta">
+          <div class="kpi-meta-row"><span class="key">Calculation</span><span class="val">Compliance with accessibility standards plus participant survey responses (esp. Services 4 &amp; 5).</span></div>
+          <div class="kpi-meta-row"><span class="key">Frequency</span><span class="val">ICT accessibility assessed annually (independent); survey data biannual; ICT compliance reported annually.</span></div>
+          <div class="kpi-meta-row"><span class="key">Data source</span><span class="val">Survey responses, Compliance Reports, Independent Accessibility Assessment of Website.</span></div>
+          <div class="kpi-meta-row"><span class="key">Responsibility</span><span class="val">Supplier &amp; Independent Accessibility Assessor</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
