@@ -413,6 +413,166 @@ section.program {
 }
 .program--dc .actions-list .action-bar { background: var(--orange); }
 
+/* ---------- Suggestion clusters ---------- */
+.cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+.cluster-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cluster-card .cluster-num {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 600;
+}
+.program--pc .cluster-card .cluster-num { color: var(--lime-deep); }
+.program--dc .cluster-card .cluster-num { color: var(--orange); }
+.program--yasa .cluster-card .cluster-num { color: var(--purple-light); }
+
+.cluster-card .cluster-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  line-height: 1.2;
+  margin: 0 0 0.2rem;
+  letter-spacing: -0.01em;
+}
+.cluster-card .cluster-badge {
+  display: inline-block;
+  background: var(--purple-pale);
+  color: var(--purple-darker);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  align-self: flex-start;
+  margin-bottom: 0.3rem;
+}
+.program--pc .cluster-card .cluster-badge { background: var(--lime-pale); color: var(--lime-deep); }
+.program--dc .cluster-card .cluster-badge { background: var(--orange-pale); color: #b66a14; }
+.program--yasa .cluster-card .cluster-badge { background: var(--purple-pale); color: var(--purple-dark); }
+.cluster-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cluster-card ul li {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--ink);
+  padding: 4px 0 4px 14px;
+  position: relative;
+  border-top: 1px dotted var(--rule-soft);
+}
+.cluster-card ul li:first-child { border-top: none; }
+.cluster-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+  font-weight: 600;
+}
+.program--pc .cluster-card ul li::before { color: var(--lime-deep); }
+.program--dc .cluster-card ul li::before { color: var(--orange); }
+.program--yasa .cluster-card ul li::before { color: var(--purple-light); }
+
+/* ---------- Counted asks (PL — explicit participant counts) ---------- */
+.asks-callout {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--purple);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 1.4rem;
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 1.4rem;
+  align-items: center;
+}
+@media (max-width: 700px) {
+  .asks-callout { grid-template-columns: 1fr; }
+}
+.asks-callout .asks-intro {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+.asks-callout .asks-intro .lbl {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.asks-callout .asks-bars {
+  display: grid;
+  gap: 8px;
+}
+.ask-row {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  gap: 12px;
+  align-items: center;
+}
+.ask-row .ask-label {
+  font-size: 0.84rem;
+  color: var(--ink);
+}
+.ask-row .ask-bar-wrap {
+  position: relative;
+  height: 22px;
+  background: var(--rule-soft);
+  border-radius: 2px;
+}
+.ask-row .ask-bar {
+  position: absolute;
+  inset: 0;
+  background: var(--purple);
+  border-radius: 2px;
+}
+.ask-row .ask-count {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--vellum);
+}
+
+/* ---------- YASA: parent vs educator split label ---------- */
+.cohort-label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  background: var(--vellum-deep);
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 0.6rem;
+}
+
 /* ---------- Content section: themes grid with counts ---------- */
 .theme-grid {
   display: grid;
@@ -652,6 +812,168 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
         <div class="attribution">2-day PL workshops &middot; NSW</div>
       </div>
     </div>
+
+    <div class="subhead">Suggestions for improvement &mdash; the two strongest asks <span class="count">explicitly counted in the file</span></div>
+    <div class="asks-callout">
+      <div class="asks-intro">
+        <span class="lbl">Quantified asks</span>
+        Where the document explicitly counts how many educators raised an ask, two themes
+        dominate &mdash; <strong>more time for content and discussion</strong>, and
+        <strong>more movement breaks</strong> across the day.
+      </div>
+      <div class="asks-bars">
+        <div class="ask-row">
+          <div class="ask-label">More time for content covered</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 100%;"></div><span class="ask-count">61</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More time for discussion &amp; activities</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 84%;"></div><span class="ask-count">51</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More time for content covered</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 82%;"></div><span class="ask-count">50</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More brain &amp; movement breaks</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 80%;"></div><span class="ask-count">49</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More movement breaks</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 59%;"></div><span class="ask-count">36</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More movement breaks during the workshop</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 56%;"></div><span class="ask-count">34</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">Longer workshop / more time for discussion</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 49%;"></div><span class="ask-count">30</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More movement breaks</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 21%;"></div><span class="ask-count">13</span></div>
+        </div>
+        <div class="ask-row">
+          <div class="ask-label">More movement breaks</div>
+          <div class="ask-bar-wrap"><div class="ask-bar" style="width: 13%;"></div><span class="ask-count">8</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subhead">Suggestions for improvement &mdash; themed clusters <span class="count">from the file&rsquo;s named categories</span></div>
+    <div class="cluster-grid">
+      <div class="cluster-card">
+        <div class="cluster-num">§ 01 &middot; Content depth</div>
+        <h4 class="cluster-title">Content depth &amp; representation</h4>
+        <ul>
+          <li>More on female autism, masking, internalised presentations</li>
+          <li>Broader representation of non-verbal autistic people requiring high-level support</li>
+          <li>More on gender non-conforming students and autism</li>
+          <li>More content for non-teaching participants &amp; specialist staff</li>
+          <li>Almost all photos were of white people, except on the diversity slide</li>
+          <li>More integration and support around Aboriginal students with autism</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 02 &middot; Practical classroom strategies</div>
+        <h4 class="cluster-title">Practical, classroom-ready strategies</h4>
+        <span class="cluster-badge">most-frequent theme</span>
+        <ul>
+          <li>A bank of evidence-based strategies with a short description, contexts, and age groups</li>
+          <li>Concrete strategies for replacing behaviours, de-escalation, regulation</li>
+          <li>More sensory strategies and how to better accommodate them in the classroom</li>
+          <li>More on EF with practical strategies &mdash; this is where most adjustments happen</li>
+          <li>Model strategies with video clips of their use to support staff with fewer skills</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 03 &middot; Age range &amp; context</div>
+        <h4 class="cluster-title">More for secondary, early years &amp; complex cases</h4>
+        <ul>
+          <li>Bias toward primary settings &mdash; need more high-school examples</li>
+          <li>A workshop for children 5 and under</li>
+          <li>Early childhood foundations linked to primary-aged students</li>
+          <li>Case studies involving autistic students with intellectual disability</li>
+          <li>Strategies for high-behaviour-needs students in mainstream classrooms</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 04 &middot; Intersections</div>
+        <h4 class="cluster-title">Intersections with ADHD, PDA &amp; co-occurring</h4>
+        <ul>
+          <li>Discuss the link/relationship between autism and ADHD</li>
+          <li>Information on PDA (pathological demand avoidance)</li>
+          <li>Discussion of ODD/PDA as aspects of autism</li>
+          <li>How to support multiple autistic students with complex needs in one class</li>
+          <li>More on functions of behaviour, interoception, regulation</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 05 &middot; Pacing &amp; time</div>
+        <h4 class="cluster-title">Less rush &mdash; more time, more breaks</h4>
+        <span class="cluster-badge">quantified above</span>
+        <ul>
+          <li>Content was &lsquo;rushed&rsquo; through &mdash; either spread to 3 days or trim to 2</li>
+          <li>Day 2 felt content-heavy; shorter sessions after lunch</li>
+          <li>1.5 hours should be max per session</li>
+          <li>Brain/movement breaks consistently requested across delivery formats</li>
+          <li>More time for table discussion, peer sharing, problem-solving</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 06 &middot; Interactive &amp; engaging</div>
+        <h4 class="cluster-title">More interactive, less lecture</h4>
+        <ul>
+          <li>More think-pair-share, more table-discussion time</li>
+          <li>More hands-on activities, role-play, more frequent speaker changeover</li>
+          <li>Mentimeter or similar to reduce talk-time and gather responses quickly</li>
+          <li>Less video on Day 2, more practical strategies and brain breaks</li>
+          <li>School-based interactions, less &lsquo;what is Autism&rsquo;</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 07 &middot; Presentation &amp; visuals</div>
+        <h4 class="cluster-title">Slides, books, sound &amp; readability</h4>
+        <ul>
+          <li>Slides too small; questions on screen rather than verbalised</li>
+          <li>Coloured workbooks &mdash; book printed in colour</li>
+          <li>White writing on green/grey hard to read</li>
+          <li>Booklet aligned with presentation, with page numbers and a TOC</li>
+          <li>Sound amplification for large rooms; subtitles for back of room</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 08 &middot; Pre &amp; post-workshop</div>
+        <h4 class="cluster-title">Continuity &mdash; before, during &amp; after</h4>
+        <ul>
+          <li>Online module navigation is clunky &mdash; play/pause/skip needed</li>
+          <li>Online module covered a lot of Day 1 &mdash; build on rather than repeat</li>
+          <li>Follow-up Zoom 4 weeks after to check implementation</li>
+          <li>Email with all relevant links sent to attendees after</li>
+          <li>An advanced/Day 3 option for experienced participants</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 09 &middot; Light touches</div>
+        <h4 class="cluster-title">Small but appreciated</h4>
+        <ul>
+          <li>Coloured workbooks</li>
+          <li>Thumb drive with resources</li>
+          <li>More chocolates on the table</li>
+          <li>Subtitles at the top of the screen for people at the back</li>
+          <li>Updated statistics &mdash; recent data rather than 2019</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -725,6 +1047,117 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
           to learn from this program, so the experience of people with autism can be better understood and
           we can create an environment that supports them.</blockquote>
         <div class="attribution">Parent/Carer workshop</div>
+      </div>
+    </div>
+
+    <div class="subhead">Suggestions for improvement &mdash; themed clusters <span class="count">~110 suggestion items in the file</span></div>
+    <div class="cluster-grid">
+      <div class="cluster-card">
+        <div class="cluster-num">§ 01 &middot; Time &amp; pacing</div>
+        <h4 class="cluster-title">Longer workshops, less rush</h4>
+        <span class="cluster-badge">most-mentioned</span>
+        <ul>
+          <li>1-day was not enough &mdash; 2 days strongly preferred</li>
+          <li>Content felt rushed; would have liked more time to talk about strategies</li>
+          <li>Pace was too fast &mdash; missed parts while reading the slides</li>
+          <li>Videos ran very fast &mdash; slowing the voiceover would help</li>
+          <li>Extend duration so there&rsquo;s time for in-depth conversation</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 02 &middot; Practical strategies</div>
+        <h4 class="cluster-title">Strategies for behaviour, regulation &amp; daily life</h4>
+        <ul>
+          <li>How to manage meltdowns, swearing, eating issues</li>
+          <li>More behaviour examples and strategies, more emotional regulation tips</li>
+          <li>Strategies for stimming, masking and high-school-age behaviour</li>
+          <li>More de-escalation strategies for when the child has &lsquo;flipped their lid&rsquo;</li>
+          <li>Ideas/resources to prevent the behaviour before it occurs</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 03 &middot; Adolescent &amp; secondary content</div>
+        <h4 class="cluster-title">Less primary, more high school</h4>
+        <ul>
+          <li>Workshop felt directed at primary/early years &mdash; high school families need their own focus</li>
+          <li>Adolescent-specific examples and content</li>
+          <li>Strategies for kids at the start of high school</li>
+          <li>A separate workshop for parents of high-school-age students</li>
+          <li>What school will look like if the child is mainstreamed</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 04 &middot; Local supports</div>
+        <h4 class="cluster-title">Connect us to services &amp; next steps</h4>
+        <ul>
+          <li>List of local services and professional supports</li>
+          <li>Steps for applying to the NDIS / what to do next</li>
+          <li>More local workshops in our area</li>
+          <li>Knowledge of local and national supports for day-to-day life</li>
+          <li>Networking opportunities in local area</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 05 &middot; Workbook &amp; resources</div>
+        <h4 class="cluster-title">Better workbook, clearer materials</h4>
+        <ul>
+          <li>A bigger workbook with all the slides so we can follow along</li>
+          <li>Workbook better coordinated with content covered</li>
+          <li>Slides should reflect the page numbers in the workbook</li>
+          <li>Glossary of key terms (e.g. high masking, double empathy)</li>
+          <li>Some slides were missing from the book</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 06 &middot; Parent community</div>
+        <h4 class="cluster-title">Connect us with each other</h4>
+        <ul>
+          <li>Opportunities to connect afterwards and share experiences</li>
+          <li>More time for open communication and sharing between parents</li>
+          <li>6-month follow-up to address issues we&rsquo;ve had implementing actions</li>
+          <li>Standard follow-up email with relevant links in one place</li>
+          <li>Make space for everyone to write down one strategy that&rsquo;s helped</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 07 &middot; Family / school partnership</div>
+        <h4 class="cluster-title">When the relationship is strained</h4>
+        <ul>
+          <li>More on parent / teacher / school partnership when it has broken down</li>
+          <li>Strategies to work with the school to support my son</li>
+          <li>More time spent on improving home and school relationships</li>
+          <li>Hear from teachers about positive partnerships with parents</li>
+          <li>More guidance on advocating successfully at school</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 08 &middot; The Planning Tool</div>
+        <h4 class="cluster-title">More examples, more guidance</h4>
+        <ul>
+          <li>More examples of the filled-out planning tool</li>
+          <li>A column ensuring the problem is discussed with the child</li>
+          <li>List of prompting questions to help fill in the planning tool</li>
+          <li>Needed an extra hour to complete the planning tool with guidance</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 09 &middot; Pre-reading &amp; advanced</div>
+        <h4 class="cluster-title">Set expectations, offer depth</h4>
+        <ul>
+          <li>Advertise more clearly so people know it&rsquo;s intro vs advanced</li>
+          <li>Describe the workshop content in the advertisement</li>
+          <li>An advanced workshop for those who already understand the foundations</li>
+          <li>Pre-reading on sensory profiles before the session</li>
+          <li>Email after the workshop listing all relevant links</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -824,16 +1257,51 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
       </div>
     </div>
 
-    <div class="subhead">Suggestions from participants</div>
-    <div class="suggestions">
-      <div class="item">More opportunities like this in the future</div>
-      <div class="item">Hold sessions at the beginning or middle of school term (less burdensome to attend)</div>
-      <div class="item">Hear from the autistic community directly</div>
-      <div class="item">Longer time for parent-to-parent sharing</div>
-      <div class="item">Follow-up support for families</div>
-      <div class="item">A session specifically for grandparents</div>
-      <div class="item">Help with improving self-management, self-care, and executive functioning</div>
-      <div class="item">Information shared about government policies that support these children and their caregivers</div>
+    <div class="subhead">Suggestions for improvement &mdash; themed clusters</div>
+    <div class="cluster-grid">
+      <div class="cluster-card">
+        <div class="cluster-num">§ 01 &middot; Frequency &amp; access</div>
+        <h4 class="cluster-title">More workshops, more often, more places</h4>
+        <span class="cluster-badge">most-mentioned</span>
+        <ul>
+          <li>I hope the workshops can be held more often</li>
+          <li>More opportunities like this in the future</li>
+          <li>More workshops about autism held regularly</li>
+          <li>An online version for families who cannot attend in person</li>
+          <li>Hold sessions at the beginning or middle of the school term (less burdensome)</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 02 &middot; Specific audiences</div>
+        <h4 class="cluster-title">Sessions for particular family members</h4>
+        <ul>
+          <li>A session specifically for grandparents</li>
+          <li>Sessions about supporting autistic youth in employment and daily life</li>
+          <li>Longer sessions for sharing between parents</li>
+          <li>Follow-up support for families &mdash; not a one-off encounter</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 03 &middot; Topics requested</div>
+        <h4 class="cluster-title">Specific content asks</h4>
+        <ul>
+          <li>How to respond to hyperactive (excessive) behaviour &mdash; identify causes and resolve them</li>
+          <li>Improving the child&rsquo;s self-management, self-care, and executive functioning</li>
+          <li>Strategies that worked for other parents in similar situations</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 04 &middot; Autistic voice &amp; systems</div>
+        <h4 class="cluster-title">Hear from the community, connect to policy</h4>
+        <ul>
+          <li>Hear from the autistic community directly to understand their perspectives</li>
+          <li>Information about government policies supporting these children and their caregivers</li>
+          <li>Acknowledgement of the physical &amp; mental load on caregivers</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -928,16 +1396,72 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
       </div>
     </div>
 
-    <div class="subhead">Suggestions from participants</div>
-    <div class="suggestions">
-      <div class="item">More autism workshops &mdash; more often, more regularly</div>
-      <div class="item">More support for families</div>
-      <div class="item">Have more resources available</div>
-      <div class="item">Workshops held on weekends so more families can attend</div>
-      <div class="item">Workshops delivered into schools where there are autistic children</div>
-      <div class="item">More interaction and shared experiences from people with lived experience</div>
-      <div class="item">Follow-up sessions for AIEWs, community members</div>
-      <div class="item">A partnership with the local school</div>
+    <div class="subhead">Suggestions for improvement &mdash; themed clusters</div>
+
+    <div class="cohort-label">Parents &amp; carers</div>
+    <div class="cluster-grid">
+      <div class="cluster-card">
+        <div class="cluster-num">§ 01 &middot; Bring it to where we are</div>
+        <h4 class="cluster-title">Into our schools, our weekends, our communities</h4>
+        <span class="cluster-badge">strong recurring ask</span>
+        <ul>
+          <li>Workshops delivered into the schools where our children are</li>
+          <li>Held on weekends so more families can attend</li>
+          <li>A partnership with the local school alongside the workshop</li>
+          <li>More workshops &mdash; more often, more regularly</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 02 &middot; Lived experience &amp; sharing</div>
+        <h4 class="cluster-title">More yarning, more interaction</h4>
+        <ul>
+          <li>More interaction and shared experiences from people with lived experience</li>
+          <li>More time for thinking after learning</li>
+          <li>Follow-up sessions for AIEWs, community members</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 03 &middot; Resources &amp; support</div>
+        <h4 class="cluster-title">More to take home, more to lean on</h4>
+        <ul>
+          <li>More support for families</li>
+          <li>Have more resources available</li>
+          <li>More autism workshops in our area</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cohort-label">Educators</div>
+    <div class="cluster-grid">
+      <div class="cluster-card">
+        <div class="cluster-num">§ 04 &middot; Cultural depth</div>
+        <h4 class="cluster-title">Aboriginal autistic voices, careful language</h4>
+        <ul>
+          <li>Could be good to have an Aboriginal autistic facilitator</li>
+          <li>More on appropriate language about autism and behaviour</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 05 &middot; Format &amp; practice</div>
+        <h4 class="cluster-title">Longer, more hands-on, more practice</h4>
+        <ul>
+          <li>Training delivered as a 2-day format, done often</li>
+          <li>More hands-on activities &mdash; e.g. time to fill out the storyboard for a child we work with</li>
+          <li>Take-away resources handy for back-at-the-service application</li>
+        </ul>
+      </div>
+
+      <div class="cluster-card">
+        <div class="cluster-num">§ 06 &middot; Small but mighty</div>
+        <h4 class="cluster-title">Pens &amp; practical kit</h4>
+        <ul>
+          <li>Please give me a pen &mdash; other than that, great information</li>
+          <li>Take-away resources handy and pens</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
