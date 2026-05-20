@@ -388,6 +388,87 @@ section {
   color: var(--purple-darker);
   font-weight: 700;
 }
+
+/* ---------- Miro contributions ---------- */
+.miro-intro {
+  margin-bottom: 1.8rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 70ch;
+}
+.miro-cluster {
+  margin-bottom: 2.2rem;
+}
+.miro-cluster-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--rule);
+  flex-wrap: wrap;
+}
+.miro-cluster-head .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: #fff;
+  background: var(--purple);
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.miro-cluster--s .miro-cluster-head .badge { background: #4a9d5f; }
+.miro-cluster--w .miro-cluster-head .badge { background: var(--orange); }
+.miro-cluster--o .miro-cluster-head .badge { background: #d4a83e; }
+.miro-cluster--t .miro-cluster-head .badge { background: #c46b6b; }
+
+.miro-cluster--s .miro-cluster-head { border-bottom-color: #4a9d5f; }
+.miro-cluster--w .miro-cluster-head { border-bottom-color: var(--orange); }
+.miro-cluster--o .miro-cluster-head { border-bottom-color: #d4a83e; }
+.miro-cluster--t .miro-cluster-head { border-bottom-color: #c46b6b; }
+
+.miro-cluster-head h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.miro-cluster-head .frame-q {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  font-weight: 500;
+  margin-left: auto;
+}
+.miro-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.miro-note {
+  background: #cee0f0;
+  color: var(--ink);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  padding: 14px 16px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  position: relative;
+  min-height: 90px;
+}
+.miro-cluster--s .miro-note { background: #cee0f0; }
+.miro-cluster--w .miro-note { background: #fbd0a4; }
+.miro-cluster--o .miro-note { background: #fbef8a; }
+.miro-cluster--t .miro-note { background: #f4b8b3; }
 .topic--interview { border-left: 3px solid var(--purple-light); }
 
 /* ---------- Themes summary ---------- */
@@ -794,6 +875,100 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
         consistency, shared language, and practical tools, but move away from over-scripted, overly safe
         delivery toward more flexible, representative, and participatory learning.</strong>
       </p>
+    </div>
+  </section>
+
+  <!-- MIRO CONTRIBUTIONS -->
+  <section id="miro">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ Voices from the room</span>
+        <h2>Raw contributions from the Miro board.</h2>
+      </div>
+    </div>
+    <p class="miro-intro">
+      The individual sticky notes contributed by team members during the SWOT ideation, grouped by the
+      original Miro frame. Preserved verbatim.
+    </p>
+
+    <!-- WORKING -->
+    <div class="miro-cluster miro-cluster--s">
+      <div class="miro-cluster-head">
+        <span class="badge">S</span>
+        <h3>What&rsquo;s working? What do we like?</h3>
+        <span class="frame-q">Miro frame &middot; 8 notes</span>
+      </div>
+      <div class="miro-notes">
+        <div class="miro-note">In PP5, training for LSO and all-school training.</div>
+        <div class="miro-note">Real-time feedback on delivery and (from an AutismCRC point of view) being able to see it being delivered in real time.</div>
+        <div class="miro-note">Connections between parents and carers to build their networks &mdash; would love to see this explicitly thought about if that&rsquo;s within scope. Follow-up afternoon tea for a recap of content, but really it&rsquo;s about reconnection?</div>
+        <div class="miro-note">It&rsquo;s good to get a sense of where people are on their journey, but perhaps the Paper Person isn&rsquo;t the best way to do it.</div>
+        <div class="miro-note">The various DTM personal PP have is a great strength &mdash; that model to be retained.</div>
+        <div class="miro-note">Fantastic linkages for CALD and NESB families &mdash; cultural and linguistic variations.</div>
+        <div class="miro-note">Feedback highlighting how many people felt seen/heard during workshops &mdash; excellent &ldquo;holding the space&rdquo;.</div>
+        <div class="miro-note">The AAG involvement in the delivery in SA for the Autism Lead Teachers &mdash; the presence of at least one Autistic person on the DT at each workshop was brilliant. I&rsquo;d love to see that as a baseline.</div>
+      </div>
+    </div>
+
+    <!-- NOT WORKING -->
+    <div class="miro-cluster miro-cluster--w">
+      <div class="miro-cluster-head">
+        <span class="badge">W</span>
+        <h3>What&rsquo;s not working? What&rsquo;s past its used-by date?</h3>
+        <span class="frame-q">Miro frame &middot; 9 notes</span>
+      </div>
+      <div class="miro-notes">
+        <div class="miro-note">The labels on the paper person need updating &mdash; e.g. it still has gender on there.</div>
+        <div class="miro-note">We want to be inclusive, but we need to follow through: if someone says they aren&rsquo;t a fan of ice-breakers, and we do them anyway, then what are we doing?</div>
+        <div class="miro-note">Linkage between social media posts and registration is currently prohibitive / a barrier (must exit social media to email someone instead of clicking through and signing a registration form).</div>
+        <div class="miro-note">Whole-group question/answer can constrain how much energy participants bring to discussion if they are uncomfortable speaking to the whole group rather than in small-group settings.</div>
+        <div class="miro-note">Ways to update workbook content with references / links / etc. quickly and responsively instead of a tome that can&rsquo;t be modified readily.</div>
+        <div class="miro-note">The post-workshop tasks have been tricky in PL to get completion and engagement.</div>
+        <div class="miro-note">The online modules need a major update &mdash; we have made superficial changes but need to probably retire a few of them and rewrite.</div>
+        <div class="miro-note">We do some activities about home-school partnerships but it is very dry &mdash; need to re-think.</div>
+        <div class="miro-note">Our sexuality content is very light on.</div>
+      </div>
+    </div>
+
+    <!-- OPPORTUNITIES -->
+    <div class="miro-cluster miro-cluster--o">
+      <div class="miro-cluster-head">
+        <span class="badge">O</span>
+        <h3>What opportunities do we see for Phase 5? What&rsquo;s missing?</h3>
+        <span class="frame-q">Miro frame &middot; 10 notes</span>
+      </div>
+      <div class="miro-notes">
+        <div class="miro-note">Community of practice as an opportunity to be responsive to new resources / ideas that participants provide us. What are the links between the workbook content and the community of practice in this regard?</div>
+        <div class="miro-note">I would love to see content for our teens &mdash; identity. I think that with the AutismCRC collaboration this could be a real opportunity to explore this possibility.</div>
+        <div class="miro-note">Integrating current research on various topics that aren&rsquo;t in current content &mdash; e.g. masking, cognitive process style (bottom-up / top-down), Autistic language hypothesis, demand avoidance (as PDA and as demand avoidance below that PDA threshold), AuDHD, and the difference between Autism and AuDHD presentations and therefore the supports.</div>
+        <div class="miro-note">Navigating systems!!! Explicitly supporting the stepping in and stepping out of systems for parents and carers.</div>
+        <div class="miro-note">What could further adult-learning principles bring to workshops beyond slide-to-slide based delivery? How much flexibility is there in adjusting to the context of the room?</div>
+        <div class="miro-note">Handouts to participants could be a summative document that contains key points rather than a replication of every word of the delivery content. This will support updates / saving the planet. Digital version of content can have a place here too. This can also support extension resources &mdash; &ldquo;go to this webinar that&rsquo;s coming up&rdquo; etc.</div>
+        <div class="miro-note">Building on content for teens &mdash; strategies around executive functioning to manage high school context.</div>
+        <div class="miro-note">Different activities / ways of delivering content: options, UDL, but building on consistent delivery standards that everybody can access.</div>
+        <div class="miro-note">More opportunities for lived experience to be built into delivery practices.</div>
+        <div class="miro-note">Mental health content is missing from PC content and is a big gap currently.</div>
+      </div>
+    </div>
+
+    <!-- THREATS -->
+    <div class="miro-cluster miro-cluster--t">
+      <div class="miro-cluster-head">
+        <span class="badge">T</span>
+        <h3>What risks or threats do we need to consider?</h3>
+        <span class="frame-q">Miro frame &middot; 9 notes</span>
+      </div>
+      <div class="miro-notes">
+        <div class="miro-note">I love the idea of diversity in presentation, and in the workshops I have been part of there is variety between videos used or examples or activities used depending on the person delivering that section &mdash; but I think there is risk of DTM disengaging if there isn&rsquo;t the foundation of the Facilitator guide.</div>
+        <div class="miro-note">Thriving Kids &mdash; how this fits with PP, what is expected, community sentiment.</div>
+        <div class="miro-note">Spreading too thin and losing core meanings / messages &mdash; know when to be the expert or when to refer to another resource.</div>
+        <div class="miro-note">I think there is risk in being too comfortable. The landscape is moving and I think with the AutismCRC partnership we have an opportunity to step forth as a&hellip;</div>
+        <div class="miro-note">How do we ensure that our content doesn&rsquo;t exist in silos, particularly regarding representation across the groups we provide to? How does First Nations content make its way into Whole Schools content, how does etc&hellip; Intersectionality.</div>
+        <div class="miro-note">I think in the past workshops have been limited to teachers and schools, but allied health practitioners would be a great cohort to provide opportunity for, as they can then share the resources with caregivers.</div>
+        <div class="miro-note">Do we pitch our content too broad or too narrow, and how do we promote this accurately to families and schools?</div>
+        <div class="miro-note">The politics of autism is an ongoing challenge and threat. We have managed to keep out of the spotlight but that can always change.</div>
+        <div class="miro-note">PP has been around for a long time and changed a lot &mdash; some risk that people will think it is still the same as 2008 and not be aware of how it has changed.</div>
+      </div>
     </div>
   </section>
 
