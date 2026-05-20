@@ -243,6 +243,151 @@ section {
   font-weight: 600;
   margin-right: 0.5em;
 }
+
+/* ---------- SWOT ---------- */
+.swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 1.4rem;
+}
+@media (max-width: 760px) {
+  .swot-grid { grid-template-columns: 1fr; }
+}
+.swot-quadrant {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid var(--purple);
+}
+.swot-quadrant--s { border-top-color: #4a9d5f; }
+.swot-quadrant--w { border-top-color: var(--orange); }
+.swot-quadrant--o { border-top-color: var(--purple); }
+.swot-quadrant--t { border-top-color: var(--purple-dark); }
+
+.swot-quadrant .swot-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+  background: var(--purple);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0;
+}
+.swot-quadrant--s .swot-letter { background: #4a9d5f; }
+.swot-quadrant--w .swot-letter { background: var(--orange); }
+.swot-quadrant--o .swot-letter { background: var(--purple); }
+.swot-quadrant--t .swot-letter { background: var(--purple-dark); }
+
+.swot-quadrant .swot-kicker {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.swot-quadrant h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  margin: 0 0 0.7rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.swot-quadrant--s h3 { color: #2f6d40; }
+.swot-quadrant--w h3 { color: #b66a14; }
+.swot-quadrant--t h3 { color: var(--purple-dark); }
+
+.swot-quadrant ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.swot-quadrant ul li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+  padding: 8px 0 8px 18px;
+  position: relative;
+  border-top: 1px dotted var(--rule-soft);
+}
+.swot-quadrant ul li:first-child { border-top: none; }
+.swot-quadrant ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+  font-weight: 600;
+}
+.swot-quadrant--s ul li::before { color: #4a9d5f; }
+.swot-quadrant--w ul li::before { color: var(--orange); }
+.swot-quadrant--o ul li::before { color: var(--purple); }
+.swot-quadrant--t ul li::before { color: var(--purple-dark); }
+
+.swot-quadrant ul li strong {
+  color: var(--purple-darker);
+  font-weight: 700;
+}
+.swot-quadrant--s ul li strong { color: #2f6d40; }
+.swot-quadrant--w ul li strong { color: #b66a14; }
+.swot-quadrant--t ul li strong { color: var(--purple-dark); }
+
+.swot-takeaway {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--purple);
+  border-radius: 4px;
+  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .swot-takeaway { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+.swot-takeaway .stamp {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  border-right: 2px solid var(--purple);
+  padding-right: 1rem;
+}
+@media (max-width: 600px) {
+  .swot-takeaway .stamp {
+    writing-mode: horizontal-tb;
+    transform: none;
+    border-right: none;
+    border-bottom: 2px solid var(--purple);
+    padding: 0 0 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+}
+.swot-takeaway .body {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.swot-takeaway .body strong {
+  color: var(--purple-darker);
+  font-weight: 700;
+}
 .topic--interview { border-left: 3px solid var(--purple-light); }
 
 /* ---------- Themes summary ---------- */
@@ -552,6 +697,103 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
         <div class="theme-name">Lived experience &amp; student stories</div>
         <div class="theme-modes"><span>Module</span><span>Resource</span></div>
       </div>
+    </div>
+  </section>
+
+  <!-- SWOT -->
+  <section id="swot">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ SWOT ideation highlights</span>
+        <h2>What the team named in our Phase 4 SWOT.</h2>
+        <p>A working snapshot from the team&rsquo;s SWOT ideation on Phase 4 content &mdash; framing what to
+          carry into Phase 5, what to retire, what to chase, and what to be careful of.</p>
+      </div>
+    </div>
+
+    <div class="swot-grid">
+      <div class="swot-quadrant swot-quadrant--s">
+        <span class="swot-letter">S</span>
+        <span class="swot-kicker">Strengths</span>
+        <h3>What seems to be working well.</h3>
+        <ul>
+          <li><strong>Shared language across audiences</strong> was seen as a real strength: parents/carers
+            and educators getting aligned concepts and vocabulary makes later collaboration easier.</li>
+          <li><strong>The planning tool / diversity wheel</strong> was described as highly valued and
+            practical, even if the delivery around it may need updating.</li>
+          <li><strong>Contextualised delivery</strong> was repeatedly highlighted: DTMs adapt examples and
+            discussion to the local cohort, community, and participant mix rather than delivering a purely
+            generic national script.</li>
+          <li><strong>Community-building effects</strong>, especially in multicultural parent/carer
+            workshops, were seen as a major strength. People are not just learning content; they are forming
+            relationships and support networks.</li>
+          <li>Strong support for <strong>lived-experience storytelling</strong> as one of the most effective
+            parts of delivery, because it makes the content feel real and relatable.</li>
+        </ul>
+      </div>
+
+      <div class="swot-quadrant swot-quadrant--w">
+        <span class="swot-letter">W</span>
+        <span class="swot-kicker">Weaknesses</span>
+        <h3>What was seen as not working so well.</h3>
+        <ul>
+          <li>The <strong>&ldquo;paper person&rdquo; activity</strong> was called out as dated. The
+            underlying purpose still makes sense, but the activity itself feels tired and may not fit the
+            goal of helping people feel comfortable and authentic.</li>
+          <li>Some content is pitched too <strong>&ldquo;safe&rdquo; / &ldquo;Switzerland&rdquo; /
+            &ldquo;vanilla&rdquo;</strong>, which risks missing people whose experience is more complex or
+            higher-support-needs.</li>
+          <li>Parents of children with <strong>more complex / profound support needs</strong> may not see
+            themselves in examples or discussion and can feel the content is &ldquo;not my
+            experience.&rdquo;</li>
+          <li>Some topics, including <strong>sexuality and gender</strong>, have been treated conservatively
+            and may need fuller, more confident coverage.</li>
+          <li>The <strong>slide-by-slide, highly prescriptive facilitator guide model</strong> was seen as
+            useful for consistency, but also limiting for adult learning and flexibility.</li>
+        </ul>
+      </div>
+
+      <div class="swot-quadrant swot-quadrant--o">
+        <span class="swot-letter">O</span>
+        <span class="swot-kicker">Opportunities</span>
+        <h3>Opportunities that generated energy.</h3>
+        <ul>
+          <li>Shift toward <strong>more interactive and experiential learning</strong>, with less reliance
+            on linear PowerPoint delivery.</li>
+          <li>Enthusiasm for <strong>UDL-style delivery</strong>, where participants can engage in different
+            ways rather than everyone being taught identically.</li>
+          <li>Build activities where participants <strong>leave with something usable immediately</strong>
+            &mdash; practical visuals, supports, or resources they can apply that day.</li>
+          <li>Move from slide-by-slide workbooks toward <strong>theme-based participant resources</strong>
+            and <strong>digital facilitator guides</strong> that are easier to update over time.</li>
+          <li>Improve <strong>representation and intersectionality across all content</strong>, rather than
+            treating First Nations, multicultural, and other perspectives as siloed.</li>
+        </ul>
+      </div>
+
+      <div class="swot-quadrant swot-quadrant--t">
+        <span class="swot-letter">T</span>
+        <span class="swot-kicker">Threats &amp; cautions</span>
+        <h3>Risks raised by the team.</h3>
+        <ul>
+          <li>If content stays too comfortable, there is a risk of becoming <strong>less relevant</strong>
+            to current community needs and expectations.</li>
+          <li>At the same time, changing so much that the project loses the <strong>consistency and
+            safety</strong> that helps DTMs deliver confidently.</li>
+          <li>The project should not try to be expert in everything &mdash; sometimes the better move is to
+            <strong>refer participants to vetted external specialist resources</strong> rather than
+            overextending the content.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="swot-takeaway">
+      <span class="stamp">Most insightful takeaway</span>
+      <p class="body">
+        The strongest thread was a tension the group kept returning to: <strong>keep the strengths of
+        consistency, shared language, and practical tools, but move away from over-scripted, overly safe
+        delivery toward more flexible, representative, and participatory learning.</strong>
+      </p>
     </div>
   </section>
 
