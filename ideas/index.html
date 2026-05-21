@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Initial Phase 5 Content Ideas — Positive Partnerships</title>
+<meta name="description" content="A working draft pulling together early content design ideas for the Phase 5 Professional Learning workshop (Service 1) — themes, before/during/after the workshop, and the tensions still to resolve." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --purple-pale: #f0e6f7;
+  --lime: #BBD64A;
+  --lime-deep: #8fa530;
+  --lime-pale: #f3f7df;
+  --orange: #F7941E;
+  --orange-pale: #fff1de;
+
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 3.5rem; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--body); margin: 0; letter-spacing: -0.01em; }
+a { color: var(--purple); }
+::selection { background: var(--purple-pale); color: var(--ink); }
+
+.shell { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.2rem, 3vw, 2rem); }
+
+/* ---------- Sticky back-strip ---------- */
+.back-strip {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 0;
+}
+.back-strip .inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 3vw, 2rem);
+}
+.back-strip a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-strip a:hover { color: var(--purple); }
+.back-strip a::before { content: "← "; color: var(--purple); }
+
+/* ---------- Notice banners ---------- */
+.notice-banner {
+  background: var(--lime-pale);
+  border-top: 3px solid var(--lime-deep);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.notice-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.notice-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lime-deep);
+  font-weight: 700;
+  margin-right: 0.6em;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(2rem, 4vw, 3rem) 0;
+}
+.masthead .stamp {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+}
+.masthead h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--purple-darker);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.masthead .deck {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 70ch;
+  line-height: 1.5;
+}
+
+/* ---------- Section ---------- */
+section.block {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.section-head {
+  margin-bottom: 1.8rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem;
+  align-items: end;
+}
+.section-head .heading { max-width: 75ch; }
+.section-head .kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid var(--purple);
+}
+.section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--purple-darker);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.section-head .deck {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
+}
+.section-head .meta {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+@media (max-width: 700px) {
+  .section-head { grid-template-columns: 1fr; }
+  .section-head .meta { text-align: left; }
+}
+
+/* ---------- Principles ---------- */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.principle {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+  border-top: 3px solid var(--purple);
+}
+.principle .num {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.principle .text {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.principle .text strong { color: var(--purple-darker); font-weight: 700; }
+
+/* ---------- Theme cards ---------- */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 14px;
+}
+.theme-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-top: 3px solid var(--purple);
+}
+.theme-card--1 { border-top-color: var(--purple); }
+.theme-card--2 { border-top-color: var(--lime-deep); }
+.theme-card--3 { border-top-color: var(--orange); }
+.theme-card--4 { border-top-color: var(--purple-light); }
+.theme-card--5 { border-top-color: var(--purple-dark); }
+.theme-card--6 { border-top-color: #4a9d5f; }
+
+.theme-card .theme-num {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+}
+.theme-card--2 .theme-num { color: var(--lime-deep); }
+.theme-card--3 .theme-num { color: #b66a14; }
+.theme-card--4 .theme-num { color: var(--purple-light); }
+.theme-card--5 .theme-num { color: var(--purple-dark); }
+.theme-card--6 .theme-num { color: #2f6d40; }
+
+.theme-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.theme-card .lede {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+}
+.theme-card .sub-label {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+.theme-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.theme-card ul li {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink);
+  padding: 6px 0 6px 16px;
+  position: relative;
+  border-top: 1px dotted var(--rule-soft);
+}
+.theme-card ul li:first-child { border-top: none; }
+.theme-card ul li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 6px;
+}
+.theme-card--2 ul li::before { color: var(--lime-deep); }
+.theme-card--3 ul li::before { color: var(--orange); }
+.theme-card--4 ul li::before { color: var(--purple-light); }
+.theme-card--5 ul li::before { color: var(--purple-dark); }
+.theme-card--6 ul li::before { color: #4a9d5f; }
+
+/* ---------- Timeline (Before / During / After) ---------- */
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr; }
+}
+.phase {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+.phase--before { border-top: 4px solid var(--orange); }
+.phase--during { border-top: 4px solid var(--purple); }
+.phase--after { border-top: 4px solid var(--lime-deep); }
+
+.phase .phase-num {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+.phase--before .phase-num { color: var(--orange); }
+.phase--during .phase-num { color: var(--purple); }
+.phase--after .phase-num { color: var(--lime-deep); }
+
+.phase h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.phase .phase-sub {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0;
+}
+.phase .group-label {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin: 0.8rem 0 0.3rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dotted var(--rule);
+}
+.phase ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.phase ul li {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink);
+  padding: 5px 0 5px 16px;
+  position: relative;
+}
+.phase ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.phase--before ul li::before { color: var(--orange); }
+.phase--during ul li::before { color: var(--purple); }
+.phase--after ul li::before { color: var(--lime-deep); }
+
+/* Arrow connectors (large screens only) */
+.timeline-arrow {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .timeline {
+    grid-template-columns: 1fr 28px 1fr 28px 1fr;
+    align-items: stretch;
+  }
+  .timeline-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    color: var(--ink-faint);
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------- Tension callout ---------- */
+.tension {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--orange);
+  border-radius: 4px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+@media (max-width: 600px) {
+  .tension { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+.tension .stamp {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 4px;
+  border-right: 2px solid var(--orange);
+  padding-right: 1rem;
+}
+@media (max-width: 600px) {
+  .tension .stamp {
+    border-right: none;
+    border-bottom: 2px solid var(--orange);
+    padding: 0 0 0.4rem;
+  }
+}
+.tension .body {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.tension .body ul {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+.tension .body ul li {
+  padding: 4px 0 4px 18px;
+  position: relative;
+}
+.tension .body ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 600;
+}
+.tension .body strong { color: var(--purple-darker); }
+
+/* ---------- Converging direction ---------- */
+.convergence {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 22px 24px;
+  margin-bottom: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.2rem;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .convergence { grid-template-columns: 1fr; }
+}
+.layer {
+  padding: 14px 16px;
+  border-radius: 4px;
+  background: var(--vellum-deep);
+  position: relative;
+}
+.layer--1 { border-left: 3px solid var(--purple); }
+.layer--2 { border-left: 3px solid var(--purple-light); }
+.layer--3 { border-left: 3px solid var(--lime-deep); }
+.layer .layer-num {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.layer--2 .layer-num { color: var(--purple-light); }
+.layer--3 .layer-num { color: var(--lime-deep); }
+.layer h4 {
+  font-size: 1.02rem;
+  color: var(--purple-darker);
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+.layer p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+
+.synthesis {
+  background: var(--purple-pale);
+  border: 1px solid var(--purple-light);
+  border-radius: 4px;
+  padding: 20px 24px;
+}
+.synthesis .stamp {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.synthesis ol {
+  margin: 0;
+  padding-left: 1.3rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.synthesis ol li { padding: 3px 0; }
+.synthesis ol li strong { color: var(--purple-darker); }
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem 0 3rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+
+@media print {
+  body { background: white; }
+  .back-strip, .notice-banner { display: none; }
+  .theme-card, .principle, .phase, .layer { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-strip">
+  <div class="inner"><a href="../">Back to materials</a></div>
+</div>
+
+<div class="notice-banner" role="note" aria-label="Working draft notice">
+  <div class="inner">
+    <span class="label">Working draft</span>
+    A starting point that brings the content ideas discussed so far into one place &mdash; for the
+    co-design conversation, not a settled framework.
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="stamp">Positive Partnerships &middot; Phase 5 &middot; Service 1 (Professional Learning)</div>
+    <h1>Initial Phase 5 Content Ideas.</h1>
+    <p class="deck">
+      An early draft of the content thinking for a Phase 5 Professional Learning workshop &mdash; the
+      themes the room kept circling back to, and a first attempt at sorting what could sit before,
+      during, and after the live session. Built from notes; nothing here is set.
+    </p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- CORE FRAMING / DESIGN PRINCIPLES -->
+  <section class="block" id="principles">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 01 &middot; Core framing</span>
+        <h2>Design principles the team kept returning to.</h2>
+        <p class="deck">Before content, the room agreed on a set of principles for how Phase 5 PL content
+          should feel and operate.</p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">01</div>
+        <p class="text">Start with a <strong>shared foundational block</strong> before role-specific
+          content.</p>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <p class="text">Make it <strong>theme-based, not jargon-heavy</strong>, and grounded in
+          <strong>everyday language</strong> rather than internal terminology.</p>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <p class="text">Keep asking: what does someone <strong>walk out able to do tomorrow</strong>?</p>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <p class="text">Avoid trying to teach everything about autism in the room &mdash; some material
+          should sit in <strong>pre-work, intro resources, or post resources</strong>.</p>
+      </div>
+      <div class="principle">
+        <div class="num">05</div>
+        <p class="text">Use <strong>themes</strong>, not a long list of disconnected autism topics.
+          Pair each theme with <strong>practical strategies, tools, resources</strong>.</p>
+      </div>
+      <div class="principle">
+        <div class="num">06</div>
+        <p class="text">Make sure teachers leave with something usable &mdash; a tool, resource, strategy,
+          something they can apply the next day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOP THEMES -->
+  <section class="block" id="themes">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 02 &middot; Workshop themes</span>
+        <h2>Themes a Service 1 workshop could be structured around.</h2>
+        <p class="deck">The big organising ideas the room proposed for the foundational content of the
+          Professional Learning workshop. Each theme is paired with the specific topics the room said sit
+          inside it.</p>
+      </div>
+      <div class="meta">6 themes</div>
+    </div>
+
+    <div class="themes-grid">
+
+      <div class="theme-card theme-card--1">
+        <div class="theme-num">Theme 01</div>
+        <h3>How the autistic brain learns.</h3>
+        <p class="lede">One of the strongest organising ideas. A way to bring together how students take
+          in and organise information &mdash; and links directly to classroom action, not just theory.</p>
+        <div class="sub-label">What sits inside</div>
+        <ul>
+          <li>Sensory processing</li>
+          <li>Executive functioning</li>
+          <li>Cognitive processing</li>
+          <li>Bottom-up / top-down processing</li>
+          <li>Cognitive processing style &mdash; attention tunnel, deep focus, flow (positive and negative impacts)</li>
+          <li>The dynamic / changing support needs depending on capacity (fluctuating capacity)</li>
+        </ul>
+      </div>
+
+      <div class="theme-card theme-card--2">
+        <div class="theme-num">Theme 02</div>
+        <h3>Inclusive education &amp; inclusive classroom culture.</h3>
+        <p class="lede">Start broad with what an inclusive classroom or school is for. Frame inclusion as
+          good for all students, not only autistic students &mdash; connected to school purpose,
+          belonging, access, and students being able to contribute what they bring.</p>
+        <div class="sub-label">What sits inside</div>
+        <ul>
+          <li>What is school for? Who is school for?</li>
+          <li>Universal Design for Learning &mdash; what does inclusion look like?</li>
+          <li>Disability Standards for Education</li>
+          <li>Teacher attitudes towards education</li>
+          <li>Building an inclusive school environment / school environment design</li>
+          <li>Response-to-intervention framework</li>
+        </ul>
+      </div>
+
+      <div class="theme-card theme-card--3">
+        <div class="theme-num">Theme 03</div>
+        <h3>Neuro-affirming culture.</h3>
+        <p class="lede">What this means in practice, in plain language. Avoid overloading teachers with
+          terms &mdash; help them understand difference, needs, and support in practical ways.</p>
+        <div class="sub-label">What sits inside</div>
+        <ul>
+          <li>What does neuro-affirming culture look like in a school?</li>
+          <li>Neurodiversity / neuro-affirming language</li>
+          <li>Language: definitions &mdash; neuroinclusion, autism, neurodivergence</li>
+          <li>Medical model vs social model (stepping in / out depending on context)</li>
+          <li>Acknowledgement / recognition &mdash; school &lsquo;achievements&rsquo; and ableism</li>
+          <li>Checklist audit of a neurodiversity-affirming classroom / school</li>
+        </ul>
+      </div>
+
+      <div class="theme-card theme-card--4">
+        <div class="theme-num">Theme 04</div>
+        <h3>Barriers and opportunities.</h3>
+        <p class="lede">A way to move away from deficit thinking and toward what in the environment or
+          system is getting in the way.</p>
+        <div class="sub-label">Framed through</div>
+        <ul>
+          <li>Interpersonal barriers</li>
+          <li>Environmental barriers</li>
+          <li>Systemic barriers</li>
+          <li>Barriers autistic students can face in the school environment</li>
+          <li>What actions in the classroom have an outsized impact on the teacher experience? (behaviour / student shutdown etc.)</li>
+        </ul>
+      </div>
+
+      <div class="theme-card theme-card--5">
+        <div class="theme-num">Theme 05</div>
+        <h3>The autistic experience of school.</h3>
+        <p class="lede">Not just classroom learning, but the whole day. A resource that helps educators
+          understand school from the student&rsquo;s perspective across the whole environment, especially
+          for transitions like Year 7.</p>
+        <div class="sub-label">Across the whole day</div>
+        <ul>
+          <li>Drop-off</li>
+          <li>Transitions (including secondary &mdash; many more transitions to plan for)</li>
+          <li>Recess and lunch</li>
+          <li>Playgrounds</li>
+          <li>Unstructured time</li>
+          <li>End-of-day exhaustion</li>
+          <li>Whole school environment / classroom / transition points / lunch &amp; outdoor areas</li>
+        </ul>
+      </div>
+
+      <div class="theme-card theme-card--6">
+        <div class="theme-num">Theme 06</div>
+        <h3>How young people connect.</h3>
+        <p class="lede">How young people relate to learning and to others &mdash; the social and
+          communication side of the school day. Surfaced as a thread to bring alongside the cognitive and
+          environmental themes.</p>
+        <div class="sub-label">What sits inside</div>
+        <ul>
+          <li>Social and communication differences &mdash; what does this mean in real life</li>
+          <li>Double empathy</li>
+          <li>Masking</li>
+          <li>Stimming</li>
+          <li>Student voice</li>
+          <li>Talking to all students about neurodiversity and neurodivergence</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BEFORE / DURING / AFTER -->
+  <section class="block" id="timeline">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 03 &middot; Before · During · After</span>
+        <h2>Where each piece of content might sit.</h2>
+        <p class="deck">A first cut at sorting content into <em>before the workshop</em>, <em>in the
+          workshop</em>, and <em>after the workshop</em> &mdash; the room&rsquo;s &ldquo;in the room /
+          pre-loaded / optional follow-up&rdquo; conversation made visible.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="phase phase--before">
+        <div class="phase-num">Phase 01 &middot; Before</div>
+        <h3>Pre-workshop.</h3>
+        <p class="phase-sub">Pre-learning, intro resources, the &ldquo;101&rdquo; that doesn&rsquo;t need
+          to take up live time.</p>
+
+        <div class="group-label">Foundations to pre-load</div>
+        <ul>
+          <li>Raw stats / prevalence / some intro definitions</li>
+          <li>Some 101-style autism background material</li>
+          <li>Pre-learning module / intro resources</li>
+        </ul>
+
+        <div class="group-label">Language &amp; definitions</div>
+        <ul>
+          <li>Definitions and language (neuroinclusion, autism, neurodivergence)</li>
+          <li>What is included in pre-workshop learning vs in the workshop?</li>
+        </ul>
+
+        <div class="group-label">Context-setting stats</div>
+        <ul>
+          <li>Statistics that relate to the workshop (e.g. First Nations workshop stats to give a sense of the autism landscape)</li>
+          <li>Prevalence and statistics around autism</li>
+        </ul>
+      </div>
+
+      <div class="timeline-arrow" aria-hidden="true">→</div>
+
+      <div class="phase phase--during">
+        <div class="phase-num">Phase 02 &middot; During</div>
+        <h3>In the workshop.</h3>
+        <p class="phase-sub">Theme-led, low-jargon, paired with strategies &mdash; broad, practical,
+          inclusive, tied to how autistic students experience learning and school.</p>
+
+        <div class="group-label">Foundational block (the six themes above)</div>
+        <ul>
+          <li>How the autistic brain learns</li>
+          <li>Inclusive education &amp; classroom culture</li>
+          <li>Neuro-affirming culture</li>
+          <li>Barriers and opportunities</li>
+          <li>The autistic experience of school</li>
+          <li>How young people connect</li>
+        </ul>
+
+        <div class="group-label">A conceptual bridge</div>
+        <ul>
+          <li>A stronger bridge between current Session 1 and Session 2 &mdash; briefly framing autism within the broader context of human difference, disability, ableism, and the role environments play in enabling or disabling participation</li>
+        </ul>
+
+        <div class="group-label">Practical strategies &amp; take-aways</div>
+        <ul>
+          <li>Take-away resources and strategies &mdash; visual supports, executive functioning templates etc.</li>
+          <li>Toolbox that teachers can take away</li>
+          <li>Activities in the workshop to create strategies and resources</li>
+          <li>Teachers checking in with the student themselves and family before implementing strategies</li>
+        </ul>
+
+        <div class="group-label">Diagnosis (kept light)</div>
+        <ul>
+          <li>Diagnosis / late diagnosis / gendered diagnosis patterns</li>
+          <li>Self-identification / professional identification</li>
+          <li>One approach: share the medical model and then the social model &mdash; not either/or, but about stepping in/out depending on context and navigating systems. Doesn&rsquo;t need to be a big piece but can be very useful to include</li>
+        </ul>
+
+        <div class="group-label">Sensory (lighter touch, refer on)</div>
+        <ul>
+          <li>Sensory is highly valued but could be a briefer topic and then refer to webinar</li>
+        </ul>
+
+        <div class="group-label">Safety &amp; regulation (optional module candidate)</div>
+        <ul>
+          <li>Dealing with dangerous scenarios &mdash; safety for young people, families, educators</li>
+          <li>Fight / flight / freeze / fawn responses</li>
+          <li>Meltdown and responses</li>
+        </ul>
+      </div>
+
+      <div class="timeline-arrow" aria-hidden="true">→</div>
+
+      <div class="phase phase--after">
+        <div class="phase-num">Phase 03 &middot; After</div>
+        <h3>Community of practice &amp; resources.</h3>
+        <p class="phase-sub">A resource library / menu / bento-box of supports for deeper follow-up topics
+          &mdash; responsive to new ideas participants bring.</p>
+
+        <div class="group-label">Resource library / menu</div>
+        <ul>
+          <li>Resource library / menu / bento-box style set of supports</li>
+          <li>Deeper dives on specific topics via follow-up resources rather than the workshop</li>
+          <li>Reference webinars (e.g. executive functioning, predictive processing)</li>
+          <li>Extension resources &mdash; &ldquo;go to this webinar that&rsquo;s coming up&rdquo; etc.</li>
+        </ul>
+
+        <div class="group-label">Community of practice</div>
+        <ul>
+          <li>Be responsive to new resources / ideas that participants provide us</li>
+          <li>Links between workbook content and the community of practice</li>
+          <li>Real-time feedback on delivery</li>
+        </ul>
+
+        <div class="group-label">Optional modules</div>
+        <ul>
+          <li>Some safety-scenario / regulation content as an optional module</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TENSIONS -->
+  <section class="block" id="tensions">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 04 &middot; Tensions</span>
+        <h2>What the room kept getting stuck on.</h2>
+        <p class="deck">The repeated tension the team recognised throughout the conversation.</p>
+      </div>
+    </div>
+
+    <div class="tension">
+      <span class="stamp">Unresolved</span>
+      <div class="body">
+        There is a lot of important content, but the group kept recognising that the foundational block
+        <strong>cannot hold everything.</strong> The team was actively trying to distinguish:
+        <ul>
+          <li>What must be <strong>in the room</strong></li>
+          <li>What can be <strong>pre-loaded</strong></li>
+          <li>What can be <strong>optional follow-up</strong></li>
+        </ul>
+        There was concern that the current brainstorm was becoming too broad, and that
+        <strong>prioritisation will be needed next.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVERGENCE -->
+  <section class="block" id="convergence">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 05 &middot; Converging direction</span>
+        <h2>Where the room seemed to land.</h2>
+        <p class="deck">Three layers, then a short synthesis of the foundational-content direction.</p>
+      </div>
+    </div>
+
+    <div class="convergence">
+      <div class="layer layer--1">
+        <div class="layer-num">Layer 01</div>
+        <h4>Foundational</h4>
+        <p>Broad, practical, inclusive, theme-led, low-jargon, tied to how autistic students experience
+          learning and school.</p>
+      </div>
+      <div class="layer layer--2">
+        <div class="layer-num">Layer 02</div>
+        <h4>Role / cohort-specific</h4>
+        <p>A second layer of more role-specific or cohort-specific application.</p>
+      </div>
+      <div class="layer layer--3">
+        <div class="layer-num">Layer 03</div>
+        <h4>Optional resources / deeper dives</h4>
+        <p>Additional optional resources and deeper dives, sitting outside the core session.</p>
+      </div>
+    </div>
+
+    <div class="synthesis">
+      <div class="stamp">Best short synthesis of the foundational direction</div>
+      <ol>
+        <li>Start with <strong>inclusive education and neuro-affirming culture</strong></li>
+        <li>Explain <strong>how autistic students experience learning and school</strong></li>
+        <li>Cover the key mechanisms behind that experience &mdash; <strong>sensory, executive
+          functioning, cognitive processing, environment</strong></li>
+        <li>Frame it through <strong>barriers, access, and practical support</strong></li>
+        <li>Keep the language simple</li>
+        <li>Make sure it leads to <strong>concrete classroom action</strong></li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="shell">
+  <p>
+    <a href="../">← Back to materials</a> &nbsp;·&nbsp;
+    <a href="../timetable/">Timetable</a> &nbsp;·&nbsp;
+    <a href="../content/">Content Overview</a> &nbsp;·&nbsp;
+    <a href="../operations/">Operations Plan</a> &nbsp;·&nbsp;
+    <a href="../brief/">Service Brief</a> &nbsp;·&nbsp;
+    <a href="../atlas/">Co-Design Atlas</a> &nbsp;·&nbsp;
+    <a href="../feedback/">Participant Feedback</a>
+  </p>
+</footer>
+
+</body>
+</html>
