@@ -301,6 +301,121 @@ section.block {
 .theme-card--5 ul li::before { color: var(--purple-dark); }
 .theme-card--6 ul li::before { color: #4a9d5f; }
 
+/* ---------- Early Career Teachers ---------- */
+.ect-intro {
+  margin-bottom: 1.6rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 75ch;
+}
+.ect-cluster {
+  margin-bottom: 1.8rem;
+}
+.ect-cluster-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--orange);
+  flex-wrap: wrap;
+}
+.ect-cluster-head .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #fff;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+.ect-cluster-head h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.ect-questions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.ect-q {
+  background: var(--orange-pale);
+  border: 1px solid #f4d4a7;
+  border-radius: 4px;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink);
+  position: relative;
+  padding-left: 28px;
+}
+.ect-q::before {
+  content: "?";
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--orange);
+  line-height: 1;
+}
+.ect-q strong { color: var(--purple-darker); font-weight: 700; }
+
+.ect-considerations-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin: 1.8rem 0 0.8rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--ink);
+}
+.ect-considerations-head h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.ect-considerations-head .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #fff;
+  background: var(--ink);
+  flex-shrink: 0;
+}
+.ect-cons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+}
+.ect-cons {
+  background: #2a2a2a;
+  color: #f4f4f4;
+  border-radius: 4px;
+  padding: 14px 16px;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
+}
+.ect-cons strong { color: #fff; }
+
 /* ---------- Timeline (Before / During / After) ---------- */
 .timeline {
   display: grid;
@@ -742,11 +857,96 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
     </div>
   </section>
 
+  <!-- EARLY CAREER TEACHERS -->
+  <section class="block" id="ect">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 03 &middot; Early Career Teachers</span>
+        <h2>Draft ideas for an Early Career Teachers workshop.</h2>
+        <p class="deck">A second category of content captured as the <em>questions</em> early career
+          teachers might bring with them, plus the in-the-room <em>considerations</em> the team noted as
+          responses.</p>
+      </div>
+      <div class="meta">13 questions &middot; 5 considerations</div>
+    </div>
+
+    <p class="ect-intro">
+      Grouped into four clusters to make the conversation easier to navigate. The dark notes at the bottom
+      are the considerations / responses the team flagged alongside the questions.
+    </p>
+
+    <!-- Cluster A -->
+    <div class="ect-cluster">
+      <div class="ect-cluster-head">
+        <span class="badge">A</span>
+        <h3>Confidence, buy-in &amp; navigating uncertainty</h3>
+      </div>
+      <div class="ect-questions">
+        <div class="ect-q"><strong>I&rsquo;m an early career teacher and I don&rsquo;t have all the answers</strong> &mdash; how do I navigate this?</div>
+        <div class="ect-q"><strong>I&rsquo;ve been told I need to hit the ground running</strong> &mdash; what does that look like?</div>
+        <div class="ect-q"><strong>How do I make decisions</strong> around how to best support my students?</div>
+        <div class="ect-q"><strong>How do I be a &lsquo;curious&rsquo; teacher</strong> interested in learning more?</div>
+        <div class="ect-q"><strong>Get buy-in from early career teachers</strong> &mdash; why am I here, why is this important?</div>
+      </div>
+    </div>
+
+    <!-- Cluster B -->
+    <div class="ect-cluster">
+      <div class="ect-cluster-head">
+        <span class="badge">B</span>
+        <h3>Inclusive classroom &amp; the autistic experience</h3>
+      </div>
+      <div class="ect-questions">
+        <div class="ect-q"><strong>Behaviour as communication.</strong> Observation vs judgement. Teaching assumptions vs what might actually be happening.</div>
+        <div class="ect-q"><strong>Why reward/punishment framing is unhealthy</strong> for ND kids.</div>
+        <div class="ect-q"><strong>How the autistic brain experiences the world</strong> &mdash; why are they stressed, anxious, what is happening in their body? Emotional regulation / self-regulation / interoception.</div>
+        <div class="ect-q"><strong>How to manage movement break and fidget tool needs.</strong></div>
+        <div class="ect-q"><strong>How do I set my classroom up to be inclusive of all students?</strong> What environmental adjustments and resources should I have? What are visual supports &mdash; how do they work?</div>
+      </div>
+    </div>
+
+    <!-- Cluster C -->
+    <div class="ect-cluster">
+      <div class="ect-cluster-head">
+        <span class="badge">C</span>
+        <h3>Working with parents &amp; teaching assistants</h3>
+      </div>
+      <div class="ect-questions">
+        <div class="ect-q"><strong>How do I work with parents?</strong> What do good partnerships look like between home and school?</div>
+        <div class="ect-q"><strong>How do I work with teaching assistants?</strong></div>
+      </div>
+    </div>
+
+    <!-- Cluster D -->
+    <div class="ect-cluster">
+      <div class="ect-cluster-head">
+        <span class="badge">D</span>
+        <h3>Curriculum, materials &amp; teacher autonomy</h3>
+      </div>
+      <div class="ect-questions">
+        <div class="ect-q"><strong>Do I need to just use the teaching materials I&rsquo;m given, or can I adjust them?</strong> How do I balance curriculum with incorporating student interests?</div>
+      </div>
+    </div>
+
+    <!-- Considerations -->
+    <div class="ect-considerations-head">
+      <span class="badge">!</span>
+      <h3>Key considerations the team flagged alongside these questions</h3>
+    </div>
+    <div class="ect-cons-grid">
+      <div class="ect-cons"><strong>Presuming competence</strong> of the student &mdash; if a strategy isn&rsquo;t working it&rsquo;s not the right strategy, try something else.</div>
+      <div class="ect-cons">Continue to include <strong>strengths and interests</strong> &mdash; importance of learning through strengths and interests. Not all teachers are aware of this, unfortunately.</div>
+      <div class="ect-cons">The <strong>DSE</strong> &mdash; and also working with families where a child doesn&rsquo;t have a diagnosis.</div>
+      <div class="ect-cons">Teaching assistants do not have control over how they support students &mdash; will the <strong>TA workshops</strong> be just TAs, or the teachers they are working with?</div>
+      <div class="ect-cons">Stepping back further: in the last 50 years the environment around the world has changed so significantly &mdash; there was <strong>space, quiet, and movement built into life</strong> that doesn&rsquo;t exist in many places now. Neurodivergent experience has tipped to struggling at the same time.</div>
+    </div>
+  </section>
+
   <!-- BEFORE / DURING / AFTER -->
   <section class="block" id="timeline">
     <div class="section-head">
       <div class="heading">
-        <span class="kicker">§ 03 &middot; Before · During · After</span>
+        <span class="kicker">§ 04 &middot; Before · During · After</span>
         <h2>Where each piece of content might sit.</h2>
         <p class="deck">A first cut at sorting content into <em>before the workshop</em>, <em>in the
           workshop</em>, and <em>after the workshop</em> &mdash; the room&rsquo;s &ldquo;in the room /
@@ -869,7 +1069,7 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
   <section class="block" id="tensions">
     <div class="section-head">
       <div class="heading">
-        <span class="kicker">§ 04 &middot; Tensions</span>
+        <span class="kicker">§ 05 &middot; Tensions</span>
         <h2>What the room kept getting stuck on.</h2>
         <p class="deck">The repeated tension the team recognised throughout the conversation.</p>
       </div>
@@ -895,7 +1095,7 @@ footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
   <section class="block" id="convergence">
     <div class="section-head">
       <div class="heading">
-        <span class="kicker">§ 05 &middot; Converging direction</span>
+        <span class="kicker">§ 06 &middot; Converging direction</span>
         <h2>Where the room seemed to land.</h2>
         <p class="deck">Three layers, then a short synthesis of the foundational-content direction.</p>
       </div>
