@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phase 5 Co-Design Planning Notes — Positive Partnerships</title>
+<meta name="description" content="Working notes on the inputs and stakeholder groups to consider for the Phase 5 co-design process — internal PP groups, sector bodies, autistic-led & family-led organisations, participants, intersectional voices, research, and government." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #222222;
+  --ink-soft: #555555;
+  --ink-faint: #888888;
+  --parchment: #fafafa;
+  --vellum: #ffffff;
+  --vellum-deep: #f5f0f8;
+  --rule: #d4cee0;
+  --rule-soft: #ebe7f0;
+  --purple: #712D90;
+  --purple-light: #9b6cb1;
+  --purple-dark: #532169;
+  --purple-darker: #431b56;
+  --purple-pale: #f0e6f7;
+  --lime: #BBD64A;
+  --lime-deep: #8fa530;
+  --lime-pale: #f3f7df;
+  --orange: #F7941E;
+  --orange-pale: #fff1de;
+
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 3.5rem; }
+body {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--parchment);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--body); margin: 0; letter-spacing: -0.01em; }
+a { color: var(--purple); }
+::selection { background: var(--purple-pale); color: var(--ink); }
+
+.shell { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.2rem, 3vw, 2rem); }
+
+/* ---------- Sticky back-strip ---------- */
+.back-strip {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 0;
+}
+.back-strip .inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.2rem, 3vw, 2rem);
+}
+.back-strip a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-strip a:hover { color: var(--purple); }
+.back-strip a::before { content: "← "; color: var(--purple); }
+
+/* ---------- Notice banner ---------- */
+.notice-banner {
+  background: var(--purple-pale);
+  border-top: 3px solid var(--purple);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 0.9rem 0;
+}
+.notice-banner .inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.notice-banner .label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 700;
+  margin-right: 0.6em;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(2rem, 4vw, 3rem) 0;
+}
+.masthead .stamp {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+}
+.masthead h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--purple-darker);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.masthead .deck {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 70ch;
+  line-height: 1.5;
+}
+
+/* ---------- Section ---------- */
+section.block {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.section-head {
+  margin-bottom: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2rem;
+  align-items: end;
+}
+.section-head .heading { max-width: 75ch; }
+.section-head .kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid var(--purple);
+}
+.section-head h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--purple-darker);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.section-head .deck {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
+}
+.section-head .meta {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+@media (max-width: 700px) {
+  .section-head { grid-template-columns: 1fr; }
+  .section-head .meta { text-align: left; }
+}
+
+section.block--internal .section-head .kicker { color: var(--purple); border-top-color: var(--purple); }
+section.block--external .section-head .kicker { color: var(--purple-light); border-top-color: var(--purple-light); }
+section.block--participants .section-head .kicker { color: var(--lime-deep); border-top-color: var(--lime-deep); }
+section.block--intersect .section-head .kicker { color: var(--orange); border-top-color: var(--orange); }
+section.block--research .section-head .kicker { color: var(--purple-dark); border-top-color: var(--purple-dark); }
+section.block--gov .section-head .kicker { color: var(--purple-darker); border-top-color: var(--purple-darker); }
+
+/* ---------- Input cards ---------- */
+.inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.input-card {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 3px solid var(--purple);
+}
+.input-card--internal { border-top-color: var(--purple); }
+.input-card--external { border-top-color: var(--purple-light); }
+.input-card--participants { border-top-color: var(--lime-deep); }
+.input-card--intersect { border-top-color: var(--orange); }
+.input-card--research { border-top-color: var(--purple-dark); }
+.input-card--gov { border-top-color: var(--purple-darker); }
+
+.input-card .type-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.input-card .type-tag {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+}
+.input-card--external .type-tag { color: var(--purple-light); }
+.input-card--participants .type-tag { color: var(--lime-deep); }
+.input-card--intersect .type-tag { color: #b66a14; }
+.input-card--research .type-tag { color: var(--purple-dark); }
+.input-card--gov .type-tag { color: var(--purple-darker); }
+
+.input-card .acronym {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.input-card h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--purple-darker);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.input-card .who {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+.input-card .who em { color: var(--ink-soft); font-style: italic; }
+
+.input-card .field-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+.input-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.input-card ul li {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--ink);
+  padding: 4px 0 4px 14px;
+  position: relative;
+  border-top: 1px dotted var(--rule-soft);
+}
+.input-card ul li:first-child { border-top: none; }
+.input-card ul li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  top: 4px;
+}
+.input-card--external ul li::before { color: var(--purple-light); }
+.input-card--participants ul li::before { color: var(--lime-deep); }
+.input-card--intersect ul li::before { color: var(--orange); }
+.input-card--research ul li::before { color: var(--purple-dark); }
+.input-card--gov ul li::before { color: var(--purple-darker); }
+
+.input-card .external-list {
+  background: var(--vellum-deep);
+  border-left: 2px solid var(--purple-light);
+  padding: 8px 10px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  border-radius: 0 2px 2px 0;
+  margin-top: 0.5rem;
+}
+.input-card .external-list .lbl {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.input-card .external-list .orgs {
+  color: var(--ink);
+}
+
+/* ---------- Callout ---------- */
+.callout {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--purple-darker);
+  border-radius: 4px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+@media (max-width: 600px) {
+  .callout { grid-template-columns: 1fr; }
+}
+.callout .stamp {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple-darker);
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 4px;
+  border-right: 2px solid var(--purple-darker);
+  padding-right: 1rem;
+}
+@media (max-width: 600px) {
+  .callout .stamp {
+    border-right: none;
+    border-bottom: 2px solid var(--purple-darker);
+    padding: 0 0 0.4rem;
+  }
+}
+.callout .body {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.callout .body p { margin: 0 0 0.6rem; }
+.callout .body p:last-child { margin-bottom: 0; }
+.callout .body strong { color: var(--purple-darker); }
+
+/* ---------- Principles strip ---------- */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.principle {
+  background: var(--vellum);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+  border-top: 3px solid var(--purple);
+}
+.principle .num {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.principle .text {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.principle .text strong { color: var(--purple-darker); font-weight: 700; }
+
+/* ---------- TOC ---------- */
+.toc {
+  background: var(--vellum);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  margin: 1.6rem 0 0;
+}
+.toc-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.toc-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  font-size: 0.9rem;
+}
+.toc-list a {
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 1px;
+}
+.toc-list a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+.toc-list a .num {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--purple);
+  margin-right: 0.4rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem 0 3rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+footer a { color: var(--ink); border-bottom: 1px dotted var(--rule); text-decoration: none; }
+footer a:hover { color: var(--purple); border-bottom-color: var(--purple); }
+
+@media print {
+  body { background: white; }
+  .back-strip, .notice-banner { display: none; }
+  .input-card, .principle, .callout { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-strip">
+  <div class="inner"><a href="../">Back to materials</a></div>
+</div>
+
+<div class="notice-banner" role="note" aria-label="Working notes notice">
+  <div class="inner">
+    <span class="label">Working notes</span>
+    Captured from the co-design conversation on 22 May 2026. A scoping document, not a settled
+    engagement plan.
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="shell">
+    <div class="stamp">Positive Partnerships &middot; Phase 5 &middot; Co-design process</div>
+    <h1>Phase 5 Co-Design Planning Notes.</h1>
+    <p class="deck">
+      The inputs and stakeholder groups to consider for the Phase 5 co-design process &mdash; mapped from
+      the inputs mind-map and the Friday morning conversation. Each card holds who they are, what they
+      contribute, and the engagement considerations the team flagged.
+    </p>
+
+    <nav class="toc" aria-label="Sections on this page">
+      <span class="toc-label">On this page</span>
+      <div class="toc-list">
+        <a href="#internal"><span class="num">01</span>Existing PP groups &amp; teams</a>
+        <a href="#external"><span class="num">02</span>External sector &amp; organisations</a>
+        <a href="#participants"><span class="num">03</span>Participants &amp; end users</a>
+        <a href="#intersect"><span class="num">04</span>Intersectionality &amp; complex needs</a>
+        <a href="#research"><span class="num">05</span>Research &amp; academic</a>
+        <a href="#gov"><span class="num">06</span>Government as approver</a>
+        <a href="#principles"><span class="num">07</span>Engagement principles</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- INTERNAL -->
+  <section class="block block--internal" id="internal">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 01 &middot; Existing PP groups &amp; teams</span>
+        <h2>The groups already inside the tent.</h2>
+        <p class="deck">Internal reference groups and teams Positive Partnerships already convenes &mdash;
+          each with its own purpose, cadence, and history of co-design contribution.</p>
+      </div>
+      <div class="meta">6 inputs</div>
+    </div>
+
+    <div class="inputs-grid">
+
+      <div class="input-card input-card--internal">
+        <div class="type-stamp">
+          <span class="type-tag">Internal reference group</span>
+          <span class="acronym">PP&nbsp;AAG</span>
+        </div>
+        <h3>Autistic Advisory Group.</h3>
+        <p class="who">Six members offering advice across content development, workshop processes, and
+          delivery. Members include Victoria, Geraldine, Jared McLaughlin, Kate Betts, Annalie Palachay
+          and Nathan Watts &mdash; with diversity across education, NDIS, early childhood and lived
+          experience.</p>
+
+        <div class="field-label">Role in co-design</div>
+        <ul>
+          <li>Reviews content development and decisions on workshop processes</li>
+          <li>Brainstorms opportunities and emerging directions</li>
+          <li>Talking-heads video content has been recorded with the group</li>
+          <li>Active delivery presence &mdash; e.g. an AAG member at every SA Autism Lead Teacher workshop</li>
+          <li>Grounds the work (e.g. the PDA statement, the red/green participation language)</li>
+        </ul>
+
+        <div class="field-label">Engagement considerations</div>
+        <ul>
+          <li>Currently meets once a term, plus extraordinary meetings as required</li>
+          <li>Vanessa flagged value in <em>rethinking the role of the AAG</em> for Phase 5</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--internal">
+        <div class="type-stamp">
+          <span class="type-tag">Internal reference group</span>
+          <span class="acronym">FNRG</span>
+        </div>
+        <h3>First Nations Reference Group.</h3>
+        <p class="who">A group whose role has evolved from think-tank to hands-on co-design and on-the-ground
+          delivery. All members have lived experience (personal or familial). Supported internally by the
+          PP First Nations framework group.</p>
+
+        <div class="field-label">Role in co-design</div>
+        <ul>
+          <li>Content review and workshop scheduling review</li>
+          <li>Community engagement &mdash; e.g. Annie Mel coordinating Tasmania workshops; a member joining remote Broome communities in June</li>
+          <li>Project development (e.g. the co-designed Sensory Animation resource, the Voices book)</li>
+          <li>Regular online check-ins, plus working meetings on specific goals and opportunities</li>
+        </ul>
+
+        <div class="field-label">Engagement considerations</div>
+        <ul>
+          <li>Group is keen to collaborate more broadly with PP &mdash; and reported strong synergy meeting with the AAG and the Multicultural Collaboration Group</li>
+          <li>&ldquo;Nothing about us without us&rdquo; named as a shared frame</li>
+        </ul>
+
+        <div class="external-list">
+          <span class="lbl">Consider external groups</span>
+          <span class="orgs">SNAICC &middot; ACCO</span>
+        </div>
+      </div>
+
+      <div class="input-card input-card--internal">
+        <div class="type-stamp">
+          <span class="type-tag">Internal reference group</span>
+          <span class="acronym">MCG</span>
+        </div>
+        <h3>Multicultural Collaboration Group.</h3>
+        <p class="who">A 20+ strong group of professionals from different cultures and multilingual
+          backgrounds. Supported internally by the PP multicultural engagement group. &ldquo;We don&rsquo;t
+          plan any resource or workshop without their involvement.&rdquo;</p>
+
+        <div class="field-label">Role in co-design</div>
+        <ul>
+          <li>Review content for cultural appropriateness &mdash; that it&rsquo;s neuro-affirming, respectful, and reflects current conversations in culture</li>
+          <li>Work alongside NAATI-certified staff on translated resources</li>
+          <li>Shape <em>how</em> content is delivered (rather than what is delivered)</li>
+          <li>Example: sexuality content with Mandarin/Cantonese-speaking communities &mdash; conducted online for cultural appropriateness, with culturally relevant analogies (no &ldquo;birds and bees&rdquo;)</li>
+        </ul>
+
+        <div class="external-list">
+          <span class="lbl">Consider external groups</span>
+          <span class="orgs">Other multicultural and community-led organisations to be scoped</span>
+        </div>
+      </div>
+
+      <div class="input-card input-card--internal">
+        <div class="type-stamp">
+          <span class="type-tag">Internal delivery network</span>
+          <span class="acronym">DTM</span>
+        </div>
+        <h3>Delivery Team Members.</h3>
+        <p class="who">PP&rsquo;s national delivery team &mdash; the people in the rooms with educators
+          and families across Australia.</p>
+
+        <div class="field-label">Role in co-design</div>
+        <ul>
+          <li>Range of delivery team across Australia, with diverse professional and personal experience</li>
+          <li>Drawn from organisations and long-standing relationships</li>
+          <li>Know what is working and what is not in current delivery &mdash; valuable insight into the content process</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--internal">
+        <div class="type-stamp">
+          <span class="type-tag">Internal</span>
+        </div>
+        <h3>Broader PP Team.</h3>
+        <p class="who">The wider PP staff team beyond the named reference groups &mdash; flagged as
+          essential input not to be left out of the picture.</p>
+      </div>
+
+      <div class="input-card input-card--internal">
+        <div class="type-stamp">
+          <span class="type-tag">Standing consultative groups</span>
+        </div>
+        <h3>State &amp; Territory Planning Groups.</h3>
+        <p class="who">Made up of representatives from different education sectors, disability organisations,
+          autistic-led organisations, family organisations, and NGO/service providers.</p>
+
+        <div class="field-label">Role in co-design</div>
+        <ul>
+          <li>Representatives from Catholic, independent and government education sectors</li>
+          <li>Representatives from disability organisations, autistic-led organisations, family organisations</li>
+          <li>NGO/service providers</li>
+          <li>Strong understanding of state-specific issues, opportunities and gaps</li>
+          <li>Many autism peak bodies are already part of these planning groups</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXTERNAL -->
+  <section class="block block--external" id="external">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 02 &middot; External sector &amp; organisations</span>
+        <h2>Sector bodies, autistic-led organisations, and partners.</h2>
+        <p class="deck">External groups to bring on the journey at the right time &mdash; from education
+          authorities to autistic-led organisations to mental-health partners.</p>
+      </div>
+      <div class="meta">5 input groups</div>
+    </div>
+
+    <div class="inputs-grid">
+
+      <div class="input-card input-card--external">
+        <div class="type-stamp">
+          <span class="type-tag">Education authorities &amp; frameworks</span>
+        </div>
+        <h3>Education authorities.</h3>
+        <p class="who">The education bodies most influential in the frameworks PP works within. The
+          approach is to work strategically with national bodies first, then cascade down to state/sector
+          contacts rather than approaching them piecemeal.</p>
+
+        <div class="field-label">Who to consider</div>
+        <ul>
+          <li>Education Services Australia (ESA)</li>
+          <li>NCCD team</li>
+          <li>ACER (has reviewed content historically)</li>
+          <li>AERO &mdash; Australian Education Research Organisation, increasingly involved as a Commonwealth-endorsed authority</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--external">
+        <div class="type-stamp">
+          <span class="type-tag">Autistic-led &amp; family-led</span>
+        </div>
+        <h3>Autism organisations.</h3>
+        <p class="who">Autistic-led, family-led, and community organisations &mdash; some with long PP
+          relationships, others without. A key engagement question is <em>how</em> to bring them on the
+          journey so they end up alongside and championing the work, rather than agitating because they
+          haven&rsquo;t been included.</p>
+
+        <div class="field-label">Who is named</div>
+        <ul>
+          <li>I CAN Network</li>
+          <li>Reframing Autism</li>
+          <li>Spectrum Space (WA)</li>
+          <li>Yellow Lady Bugs</li>
+          <li>Different Journeys</li>
+          <li>Amaze</li>
+        </ul>
+
+        <div class="external-list">
+          <span class="lbl">Streamline via peak bodies</span>
+          <span class="orgs">Autism Alliance &middot; NABA &mdash; many of the peak bodies are already covered through State &amp; Territory Planning Groups</span>
+        </div>
+      </div>
+
+      <div class="input-card input-card--external">
+        <div class="type-stamp">
+          <span class="type-tag">Sector partners</span>
+        </div>
+        <h3>Aspect / Adelaide Uni &mdash; micro-credentials.</h3>
+        <p class="who">Aspect and Adelaide University are developing the national micro-credential modules
+          for educators. PP needs to liaise as a critical friend so PP&rsquo;s online module space
+          complements (not duplicates) what they produce.</p>
+
+        <div class="field-label">Engagement considerations</div>
+        <ul>
+          <li>What they include will help inform PP PL content for specific cohorts (e.g. early career)</li>
+          <li>Knowing their First Nations engagement approach is relevant &mdash; meeting scheduled to discuss</li>
+          <li>Live-date for first module not yet confirmed (contract delay)</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--external">
+        <div class="type-stamp">
+          <span class="type-tag">Mental health partners</span>
+        </div>
+        <h3>Mental health bodies.</h3>
+        <p class="who">PP&rsquo;s connections in the youth-mental-health space &mdash; relevant because of
+          the strong cross-over with autism, anxiety, and bullying.</p>
+
+        <div class="field-label">Who is named</div>
+        <ul>
+          <li>Headspace</li>
+          <li>ReachOut</li>
+          <li>Berry Street</li>
+          <li>BU (the former Beyond Blue anti-bullying initiative)</li>
+          <li>Technology Wellbeing Roundtable (Telstra Foundation)</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--external">
+        <div class="type-stamp">
+          <span class="type-tag">Strategic governance</span>
+        </div>
+        <h3>National Autism Strategy implementation.</h3>
+        <p class="who">The Autism Strategy Implementation Group and other broader governance forums.
+          Engagement here may not be co-design &mdash; more likely a communication / update strategy
+          (e.g. a 10-minute update at a meeting on what PP is doing in Phase 5).</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PARTICIPANTS -->
+  <section class="block block--participants" id="participants">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 03 &middot; Participants &amp; end users</span>
+        <h2>The people who actually walk into the room.</h2>
+        <p class="deck">Educators, families, school leaders and students &mdash; plus how PP captures (and
+          could deepen) their voice across the workshop life-cycle.</p>
+      </div>
+      <div class="meta">4 input streams</div>
+    </div>
+
+    <div class="inputs-grid">
+
+      <div class="input-card input-card--participants">
+        <div class="type-stamp">
+          <span class="type-tag">End users</span>
+        </div>
+        <h3>Participants &mdash; the four cohorts.</h3>
+        <p class="who">The audiences PP is delivering for in Phase 5.</p>
+
+        <div class="field-label">Cohorts</div>
+        <ul>
+          <li>Educators</li>
+          <li>Families</li>
+          <li>School Leaders</li>
+          <li>Students</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--participants">
+        <div class="type-stamp">
+          <span class="type-tag">Voice-capture mechanism</span>
+        </div>
+        <h3>Focus groups &mdash; 3-4 months post-workshop.</h3>
+        <p class="who">An opportunity to capture participant voice once they&rsquo;ve had time to apply
+          (or not) what they took from the workshop, surfaced as a possible input for the co-design
+          process.</p>
+      </div>
+
+      <div class="input-card input-card--participants">
+        <div class="type-stamp">
+          <span class="type-tag">Voice-capture mechanism</span>
+        </div>
+        <h3>Opt-in contacts &amp; testimonials.</h3>
+        <p class="who">Participants currently provide an email on the evaluation form and indicate whether
+          they&rsquo;re happy to be contacted to share their story or experience.</p>
+
+        <div class="field-label">Engagement considerations</div>
+        <ul>
+          <li>Comments on content sit separately from testimonial questions &mdash; both could be mined for input</li>
+          <li>People sometimes respond to resource emails years later, indicating relevance across life-stages</li>
+          <li>PL has a 3-month internal follow-up survey for self-reflection; broader ongoing engagement is currently light</li>
+        </ul>
+      </div>
+
+      <div class="input-card input-card--participants">
+        <div class="type-stamp">
+          <span class="type-tag">Internal voice</span>
+        </div>
+        <h3>Broader PP team voice.</h3>
+        <p class="who">Beyond the formal reference groups, the wider PP team carries everyday delivery
+          intelligence that should feed back into the co-design.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERSECTIONALITY -->
+  <section class="block block--intersect" id="intersect">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 04 &middot; Intersectionality &amp; complex needs</span>
+        <h2>Voices that have to be visible &mdash; not hidden in &ldquo;and others&rdquo;.</h2>
+        <p class="deck">A specific call from the room: authentic engagement with cohorts who represent
+          advanced complexity and intersectional experience needs to be <em>visible</em> in the process,
+          not buried in &ldquo;this group also includes&rdquo;.</p>
+      </div>
+      <div class="meta">5 input groups</div>
+    </div>
+
+    <div class="callout" style="margin-bottom: 1.4rem;">
+      <span class="stamp">Why this matters</span>
+      <div class="body">
+        <p>The conversation flagged the need for authentic engagement with those who represent
+          <strong>advanced representation and complex needs</strong> &mdash; visible across the process,
+          and not assumed to be implicit in other reference groups.</p>
+        <p>For teachers and specialists working in specialist settings, this visibility is also what
+          builds buy-in: &ldquo;we&rsquo;re not going to get that unless we can authentically say
+          we&rsquo;ve done that work.&rdquo;</p>
+      </div>
+    </div>
+
+    <div class="inputs-grid">
+
+      <div class="input-card input-card--intersect">
+        <div class="type-stamp">
+          <span class="type-tag">Complex needs voice</span>
+        </div>
+        <h3>Intellectual disability.</h3>
+        <p class="who">Parents, carers and individuals where autism intersects with intellectual
+          disability &mdash; flagged as often left out of the &ldquo;ADHD + autism&rdquo; co-occurrence
+          conversation.</p>
+      </div>
+
+      <div class="input-card input-card--intersect">
+        <div class="type-stamp">
+          <span class="type-tag">Complex needs voice</span>
+        </div>
+        <h3>Complex communication needs.</h3>
+        <p class="who">Voices from families and individuals across the range of complex communication
+          needs &mdash; ensuring representation across the whole spectrum, not just verbal /
+          high-masking experiences.</p>
+      </div>
+
+      <div class="input-card input-card--intersect">
+        <div class="type-stamp">
+          <span class="type-tag">Health intersection</span>
+        </div>
+        <h3>Autistic Doctors International.</h3>
+        <p class="who">Reference point for the co-occurring health conditions that affect autistic
+          students &mdash; POTS, MCAS, Ehlers-Danlos and the fatigue load that intensifies in high
+          school with hormonal change. Contact available within the team.</p>
+      </div>
+
+      <div class="input-card input-card--intersect">
+        <div class="type-stamp">
+          <span class="type-tag">Mental health intersection</span>
+        </div>
+        <h3>League of Autistic Psychologists.</h3>
+        <p class="who">LoPAC &mdash; consultation point on the autism / mental health intersection,
+          including the more prominent mental health concerns seen in later-diagnosed autistic adults.</p>
+      </div>
+
+      <div class="input-card input-card--intersect">
+        <div class="type-stamp">
+          <span class="type-tag">Identity intersection</span>
+        </div>
+        <h3>LGBTQIA+ intersection.</h3>
+        <p class="who">People identifying as autistic are more likely than the general population to also
+          identify on the LGBTQIA+ spectrum &mdash; an intersection to hold deliberately in the design
+          and the engagement.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="block block--research" id="research">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 05 &middot; Research &amp; academic</span>
+        <h2>Research connections &mdash; via the AutismCRC partnership.</h2>
+        <p class="deck">The AutismCRC relationship brings access to a wide research network. The focus
+          for Phase 5 is research <em>translation</em> &mdash; pulling out usable insight rather than
+          theory for its own sake.</p>
+      </div>
+      <div class="meta">2 input streams</div>
+    </div>
+
+    <div class="inputs-grid">
+
+      <div class="input-card input-card--research">
+        <div class="type-stamp">
+          <span class="type-tag">Via AutismCRC</span>
+        </div>
+        <h3>Researchers.</h3>
+        <p class="who">Links to universities and researchers via AutismCRC. AERO&rsquo;s education
+          guidance team also brings researchers from across Australia into play. The challenge: maintain
+          a research-translation focus that pulls out rich insight, experience and wisdom usable on the
+          ground in schools and teacher training.</p>
+      </div>
+
+      <div class="input-card input-card--research">
+        <div class="type-stamp">
+          <span class="type-tag">Via AutismCRC alumni</span>
+        </div>
+        <h3>Sylvia Roger Academy.</h3>
+        <p class="who">Touch-point for autistic adults and diverse perspectives via the AutismCRC alumni
+          network &mdash; people who care about inclusion and aren&rsquo;t necessarily in the sector,
+          and who don&rsquo;t yet know the PP content.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GOVERNMENT -->
+  <section class="block block--gov" id="gov">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 06 &middot; Government as approver</span>
+        <h2>The final sign-off &mdash; designing for the bureaucratic frame.</h2>
+        <p class="deck">A cautionary frame the team kept returning to: the government will be signing off
+          on the final product, and we need to give them what they need to turn it around quickly.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <span class="stamp">Bureaucratic frame</span>
+      <div class="body">
+        <p>The government will look at Phase 5 through the lens of the evaluation deliverables &mdash; are
+          teachers, parents and leaders moving from one knowledge/capability point to another? They are
+          not subject-matter experts, which makes <strong>visible alignment to frameworks and clear
+          program logic</strong> essential.</p>
+        <p>The shift away from the current Diversity Wheel / Planning Tool product is significant; the
+          team will need to be able to show, with referencing or embedded alignment, how the new
+          approach traces back to the National Autism Strategy, DSE, and other relevant frameworks.</p>
+        <p>The team&rsquo;s confidence: with the themes captured in the Ideas page, this <em>can</em>
+          be demonstrated on paper without regurgitating the frameworks &mdash; by saying the workshop
+          is aligned with the principles in the NAS (strengths-based, neurodiversity-affirming) and
+          mentioning the relevant frameworks at the right moments.</p>
+        <p>Practical asks the team named: <strong>capture the process</strong>, develop a
+          <strong>program-logic chain</strong> (if we build this knowledge or skill, this is likely to
+          lead to that behaviour change), and have <strong>supporting resources and links</strong> ready
+          rather than relying on regurgitation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="block block--internal" id="principles">
+    <div class="section-head">
+      <div class="heading">
+        <span class="kicker">§ 07 &middot; Engagement principles</span>
+        <h2>How the room said we should hold this.</h2>
+        <p class="deck">Cross-cutting principles for how to engage these inputs across the process.</p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">01</div>
+        <p class="text">Make sure representation is <strong>visible and explicit</strong>, not buried in
+          &ldquo;this group also includes&rdquo;.</p>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <p class="text">Bring autistic-led and other organisations <strong>on the journey</strong> so
+          they end up alongside and championing &mdash; not surprised and agitating.</p>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <p class="text"><strong>Nothing about us without us</strong> &mdash; named as a shared frame
+          across First Nations and autistic communities in the conversation.</p>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <p class="text">Different stakeholders need <strong>different timing</strong> &mdash; co-design
+          early; communication updates later; specialised cohort engagement once the Service 1/2/5
+          content informs First Nations and DC content.</p>
+      </div>
+      <div class="principle">
+        <div class="num">05</div>
+        <p class="text">Be strategic about <strong>where to streamline</strong> &mdash; many peak bodies
+          are already in State &amp; Territory Planning Groups; engage via Autism Alliance / NABA
+          rather than duplicating.</p>
+      </div>
+      <div class="principle">
+        <div class="num">06</div>
+        <p class="text">Maintain a <strong>research-translation focus</strong> &mdash; pull rich insight
+          out of academic research into something teachers can use in the classroom.</p>
+      </div>
+      <div class="principle">
+        <div class="num">07</div>
+        <p class="text">Use the AAG, FNRG and MCG not just for consultation but for <strong>active
+          delivery roles</strong> &mdash; building on the SA Autism Lead Teachers model.</p>
+      </div>
+      <div class="principle">
+        <div class="num">08</div>
+        <p class="text">Give government a <strong>clear program-logic chain</strong> so they can turn
+          drafts around quickly &mdash; aligned, not regurgitated.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="shell">
+  <p>
+    <a href="../">← Back to materials</a> &nbsp;·&nbsp;
+    <a href="../timetable/">Timetable</a> &nbsp;·&nbsp;
+    <a href="../content/">Content Overview</a> &nbsp;·&nbsp;
+    <a href="../operations/">Operations Plan</a> &nbsp;·&nbsp;
+    <a href="../brief/">Service Brief</a> &nbsp;·&nbsp;
+    <a href="../atlas/">Co-Design Atlas</a> &nbsp;·&nbsp;
+    <a href="../feedback/">Participant Feedback</a> &nbsp;·&nbsp;
+    <a href="../ideas/">Ideas</a>
+  </p>
+</footer>
+
+</body>
+</html>
